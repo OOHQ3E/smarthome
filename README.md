@@ -1,2 +1,2 @@
-# smarthome
-EKCU - smarthome project
+## HU: Szakdolgozat - Programozható elektronikák alkalmazásai - Okos otthon - EKKE IK PTI Bsc. - NK-OOHQ3E Bagoly Gábor
+## ENG: Thesis - Uses of programmable electronics - Smart home - EKCU IF CS Bsc. - NK-OOHQ3E Gábor Bagoly 
