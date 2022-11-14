@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/', function (\Illuminate\Http\Request $request) {
+    \Illuminate\Support\Facades\Storage::append("arduino-log.txt",
+        "Time: " . now()->format("Y-m-d H:i:s") . ', ' .
+        "Temperature: " . $request->get("temperature", "n/a") . '°C, ' .
+        "Humidity: " . $request->get("humidity", "n/a") . '%'
+    );
+});
