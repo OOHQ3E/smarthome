@@ -22,4 +22,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/{room}/{temperature}/{humidity}', [EspSensorController::class,'store'] );
+Route::post('/', function (\Illuminate\Http\Request $request) {
+    \Illuminate\Support\Facades\Storage::append("arduino-log.txt",
+        "Room: ".$request->get("room","n/a") ." " .
+        "Time: " . now()->format("Y-m-d H:i:s") . ', ' .
+        "Temperature: " . $request->get("temp", "n/a") . '°C, ' .
+        "Humidity: " . $request->get("hum", "n/a") . '%'
+    );
+
+ DB::insert('insert into Temperature (room, time, temperature, humidity) values (?,?,?,?)',
+        [$request->get("room","n/a"),
+        Carbon::now(),
+        $request->get("temp", "n/a"),
+        $request->get("hum", "n/a")]);
+});

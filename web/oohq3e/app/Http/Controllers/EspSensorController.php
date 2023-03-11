@@ -33,21 +33,16 @@ class EspSensorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store( $room,$temperature,$humidity)
     {
-        $request->validate(
-            [
-                'room' =>  'required',
-                'temperature'      =>  'required',
-                'humidity' => 'required'
-            ]
-        );
+       
         $esp = new espSensor();
-        $esp->room = $request->room;
-        $esp->temperature = $request->temp;
-        $esp->humidity = $request->hum;
+        $esp->room = $room;
+        $esp->temperature = $temperature;
+        $esp->humidity = $humidity;
         $esp->save();
         return with("success");
+        dd($request->room);
     }
 
     /**
