@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +27,10 @@ Route::post('/', function (\Illuminate\Http\Request $request) {
         "Temperature: " . $request->get("temp", "n/a") . '°C, ' .
         "Humidity: " . $request->get("hum", "n/a") . '%'
     );
+
+ DB::insert('insert into Temperature (room, time, temperature, humidity) values (?,?,?,?)',
+        [$request->get("room","n/a"),
+        Carbon::now(),
+        $request->get("temp", "n/a"),
+        $request->get("hum", "n/a")]);
 });
