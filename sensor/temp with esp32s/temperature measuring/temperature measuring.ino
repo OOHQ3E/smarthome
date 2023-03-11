@@ -49,6 +49,7 @@ void loop() {
 
   humidity = String(h);
   temperature = String(t);
+  String room = "1";
   
   
   if (isnan(h) || isnan(t)) {
@@ -56,12 +57,12 @@ void loop() {
     return;
   }
 
-  postData = "temperature=" + temperature + "&humidity=" + humidity ;
+  postData = "room=" + room + "&temp=" + temperature + "&hum=" + humidity ;
   http.begin(host);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   int httpCode = http.POST(postData);
   String payload = http.getString();
-  //Serial.println(postData);
+  Serial.println(postData);
   Serial.println(httpCode);
   Serial.println(payload);
   http.end();
