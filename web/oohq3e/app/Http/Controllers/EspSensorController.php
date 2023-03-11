@@ -44,8 +44,8 @@ class EspSensorController extends Controller
         );
         $esp = new espSensor();
         $esp->room = $request->room;
-        $esp->temperature = $request->temperature;
-        $esp->humidity = $request->humidity;
+        $esp->temperature = $request->temp;
+        $esp->humidity = $request->hum;
         $esp->save();
         return with("success");
     }
