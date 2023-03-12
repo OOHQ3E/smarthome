@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class espSensor extends Model
 {
     use HasFactory;
-    protected $table = 'espSensors';
+    //protected $table = 'espSensors';
     protected $primaryKey = 'id';
     protected $fillable = ['room','temperature','humidity'];
     protected $timestamp = true;
