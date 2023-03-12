@@ -85,4 +85,8 @@ class EspSensorController extends Controller
     {
         //
     }
+    public function getLatest()
+    {
+        espSensor::latest()->first();
+    }
 }

@@ -17,3 +17,4 @@ use \App\Http\Controllers\EspSensorController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/getLatest',[EspSensorController::class,'getLatest']);
