@@ -14,7 +14,7 @@ IPAddress subnet(255,255,255,0);
 
 DHT dht(DHTPIN, DHTTYPE);
 
-const char *host = "http://192.168.200.1/api";   // IP/web server address
+const char *host = "http://192.168.200.1/api/esp";   // IP/web server address
 
 void setup() {
   Serial.begin(9600); 
