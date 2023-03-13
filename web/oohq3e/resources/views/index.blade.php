@@ -11,7 +11,7 @@
            <a href="{{ asset('chart') }}">
                <div class="bg-opacity-75 bg-gray-400 p-4 rounded-lg">
                     <p id="espData">
-                        Temperature: 30°C<br> Humidity: 70%
+                        <!--Temperature: 30°C<br> Humidity: 70% -->
                     </p>
                 </div>
            </a>
