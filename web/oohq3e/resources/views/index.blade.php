@@ -8,9 +8,13 @@
     <div class=" bg-white bg-opacity-75 shadow-2xl p-4 rounded-lg m-auto lg:w-3/4 sm:w-10/12 lg:my-4 md:my-6 sm:my-8">
         <h2 class="text-left m-2 bold">Room 1</h2>
        <div class="flex flex-wrap gap-4 justify-center">
-		<div class="bg-opacity-75 bg-gray-400 p-4 rounded-lg">
-               <p id="espData"></p>
-           </div>
+           <a href="{{ asset('chart') }}">
+               <div class="bg-opacity-75 bg-gray-400 p-4 rounded-lg">
+                    <p id="espData">
+                        Temperature: 30°C<br> Humidity: 70%
+                    </p>
+                </div>
+           </a>
            <div class="bg-opacity-75 bg-gray-400 p-4 rounded-lg">
                <label for="large-toggle1" class="inline-flex relative items-center cursor-pointer">
                    <input type="checkbox" value="" id="large-toggle1" class="sr-only peer">
@@ -70,9 +74,10 @@
         setInterval(getLatest, 10000)
        function getLatest(){
            $.getJSON('http://192.168.200.1/getLatest', function(data) {
-               var text = `Temperature: ${data.temperature}°C<br> Humidity: ${data.humidity}%<br>`
+               var text = `Temperature: ${data.temperature}°C<br> Humidity: ${data.humidity}%`
             document.getElementById("espData").innerHTML = text;
 	});
        }
-	
+
     </script>
+

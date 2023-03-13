@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\espSensor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EspSensorController extends Controller
 {
@@ -14,7 +15,48 @@ class EspSensorController extends Controller
      */
     public function index()
     {
-        //
+        $tempData = espSensor::select(
+            DB::raw("YEAR(created_at) as year"),
+            DB::raw("MONTH(created_at) as month"),
+            DB::raw("DAY(created_at) as day"),
+            DB::raw("HOUR(created_at) as hour"),
+            DB::raw("AVG(temperature) as avgTemp"),
+            DB::raw("AVG(humidity) as avgHum")
+        )   ->groupBy(DB::raw("1,2,3,4"))
+            ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
+            ->limit(24)
+            ->pluck('avgTemp','hour')->reverse();
+
+        $humData = espSensor::select(
+            DB::raw("YEAR(created_at) as year"),
+            DB::raw("MONTH(created_at) as month"),
+            DB::raw("DAY(created_at) as day"),
+            DB::raw("HOUR(created_at) as hour"),
+            DB::raw("AVG(temperature) as avgTemp"),
+            DB::raw("AVG(humidity) as avgHum")
+        )   ->groupBy(DB::raw("1,2,3,4"))
+            ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
+            ->limit(24)
+            ->pluck('avgHum','hour')->reverse();
+        //$humData = array_slice($humData->values(),-24);
+//select YEAR(created_at) as year,
+// MONTH(created_at) as month,
+// DAY(created_at) as day,
+// HOUR(created_at) as hour,
+// AVG(temperature) as avgTemp,
+// AVG(humidity) as avgHum
+// from esp_sensors
+// GROUP BY 1,2,3,4;
+
+
+        $templabels = $tempData->keys();
+        $tempData = $tempData->values();
+
+        $humlabels = $humData->keys();
+        $humData = $humData->values();
+
+        return view('chart', compact('templabels', 'tempData','humlabels','humData'));
+
     }
 
     /**
