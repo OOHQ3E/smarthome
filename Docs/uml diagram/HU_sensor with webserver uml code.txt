@@ -1,0 +1,30 @@
+@startuml
+!theme vibrant
+cloud "{}API" #lightblue
+actor Felhasználó
+node nodeMCU
+entity Szenzor
+
+frame WebSzerver#lightgrey;line.dashed{
+node RaspberryPi
+node Laravel #red
+database MySQL #lightblue
+}
+WebSzerver -down-> Felhasználó: adat megjelenítés
+Felhasználó -> WebSzerver : adat lekérés
+
+WebSzerver -up-> "{}API" : JSON response a Laravel controllerből
+"{}API" -r-> WebSzerver  : status
+
+nodeMCU -up--> "{}API" : HTTP POST request
+"{}API" ---> nodeMCU : response status
+
+nodeMCU ----right-> WebSzerver : adat küldése
+
+Szenzor -up-> nodeMCU : adat küldés
+
+RaspberryPi -down-> Laravel
+Laravel -up-> RaspberryPi
+Laravel -down-> MySQL
+MySQL -up-> Laravel
+@enduml
