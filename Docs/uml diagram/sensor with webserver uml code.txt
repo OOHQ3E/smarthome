@@ -1,0 +1,30 @@
+@startuml
+!theme vibrant
+cloud "{}API" #lightblue
+actor User
+node nodeMCU
+entity Sensor
+
+frame WebServer#lightgrey;line.dashed{
+node RaspberryPi
+node Laravel #red
+database MySQL #lightblue
+}
+WebServer -down-> User : display data
+User -> WebServer : request data
+
+WebServer -up-> "{}API" : Return JSON response from Laravel controller
+"{}API" -r-> WebServer  : status
+
+nodeMCU -up--> "{}API" : HTTP POST request
+"{}API" ---> nodeMCU : response status
+
+nodeMCU ----right-> WebServer : send data
+
+Sensor -up-> nodeMCU : transmit data
+
+RaspberryPi -down-> Laravel
+Laravel -up-> RaspberryPi
+Laravel -down-> MySQL
+MySQL -up-> Laravel
+@enduml
