@@ -120,8 +120,16 @@
                 //console.log(text);
                 //console.log(resp);
                 getStatusOfLed();
-        });
-       }
+            }).fail(function(){
+                document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
+                document.getElementById("large-toggle_1").checked = false;
+                document.getElementById("large-toggle_1").disabled = true;
+            }).error(function(){
+                document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
+                document.getElementById("large-toggle_1").checked = false;
+                document.getElementById("large-toggle_1").disabled = true;
+            });
+        }
 
 
 
