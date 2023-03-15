@@ -12,14 +12,20 @@
 </head>
 
 <body>
-<div class="m-auto lg:w-3/4 sm:w-10/12 py-2">  
-    <div class="text-center">
-            <h1 class="text-2xl text-white font-sans pb-5 uppercase font-light">
+<div class="flex justify-center font-black">
+ <a href="{{ asset('/') }}" >
+    <button type="button" class="m-2 text-left w-16 h-16 bg-gray-400 rounded-full text-center  py-3 px-3  hover:bg-gray-500">
+       ←
+    </button>
+</a>
+
+<div class="my-4 text-center lg:w-6/12 sm:w-10/12">  
+            <h1 class="text-2xl text-white font-sans py-2 uppercase font-light">
                 Room 1 temperature and humidity chart
             </h1>
-    </div>
 </div>
-<body>
+
+</div>
 <div class=" bg-white bg-opacity-75 shadow-2xl p-4 rounded-lg m-auto lg:w-3/4 sm:w-10/12 my-4">
 <canvas id="tempChart"></canvas>
 </div>
@@ -64,12 +70,52 @@
     const configtemp = {
         type: 'line',
         data: tempdata,
-        options: {}
+        options: { 
+	
+	scales: {
+            y: { title:{display:true, text: "Average temperature"},
+                ticks: {
+                    // Include °C after ticks
+                    callback: function(value, index, ticks) {
+                        return  value +"°C";
+                    }
+                }
+            },
+	    x: { title:{display:true, text: "Hour"},
+                ticks: {
+                    // Include a :00 after tick
+                    callback: function(value, index, ticks) {
+                        return  this.getLabelForValue(value)+":00";
+                    }
+                }
+            }
+        }
+    }
     };
     const confighum = {
         type: 'line',
         data: humdata,
-        options: {}
+        options:{
+scales: {
+            y: {
+		title:{display:true, text: "Average relative humidity"},
+                ticks: {
+                    // Include % after ticks
+                    callback: function(value, index, ticks) {
+                        return  value +"%";
+                    }
+                }
+            },
+           x: { title:{display:true, text: "Hour"},
+                ticks: {
+                    // Include a :00 after tick
+                    callback: function(value, index, ticks) {
+                        return  this.getLabelForValue(value)+":00";
+                    }
+                }
+            }
+        }
+}
     };
 
     const tempChart = new Chart(
