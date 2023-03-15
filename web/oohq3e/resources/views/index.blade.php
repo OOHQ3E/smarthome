@@ -77,6 +77,7 @@
                 var text = `Temperature: ${data.temperature}°C<br> Humidity: ${data.humidity}%`
              document.getElementById("espData").innerHTML = text;
 	        });
+            document.getElementById("espData").innerHTML = "Humidity and temperature sensor is currently unavailable";
        }
 
         getStatusOfLed();
@@ -92,12 +93,12 @@
                    state = "off";
                    document.getElementById("large-toggle_1").checked = false;
                }
-               
+
 
                document.getElementById("led1_span").innerHTML = "LED is: "+state;
                console.log(text);
            });
- document.getElementById("led1_span").innerHTML = "LED is currently offline ";
+ document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
        }
 
         function toggle(){
