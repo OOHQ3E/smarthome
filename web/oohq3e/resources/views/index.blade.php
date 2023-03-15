@@ -16,7 +16,7 @@
            </a>
            <div class="bg-opacity-75 bg-gray-400 p-4 rounded-lg">
                <label for="large-toggle_1" class="inline-flex relative items-center cursor-pointer">
-                   <input type="checkbox" value="" id="large-toggle_1" class="sr-only peer" onclick="check_led()">
+                   <input type="checkbox" value="" id="large-toggle_1" class="sr-only peer" onclick="toggle()">
                    <div class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                    <span id="led1_span" class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-800"></span>
                </label>
@@ -80,26 +80,36 @@
        }
 
         getStatusOfLed();
-       function getStatusOfLed(){
+        function getStatusOfLed(){
            $.getJSON('http://192.168.200.1/getStatus', function(data) {
                var text = `${data.status}`
+               var state;
                if(text == 1){
+                   state = "on";
                    document.getElementById("large-toggle_1").checked = true;
                }
                if (text == 0){
+                   state = "off";
                    document.getElementById("large-toggle_1").checked = false;
                }
-               check_led();
+               
+
+               document.getElementById("led1_span").innerHTML = "LED is: "+state;
+               console.log(text);
            });
        }
 
-        function check_led(){
+        function toggle(){
             var led_1 = document.getElementById("large-toggle_1").checked;
-            var text = "Toggle " + (led_1? "on":"off");
-            console.log(led_1);
-            console.log(text);
-            document.getElementById("led1_span").innerHTML = text;
-        }
+            var text = led_1? "on":"off";
+            $.getJSON('http://192.168.200.1/esp/toggle/'+text, function(data) {
+                var resp = `${data.status}`
+                console.log(led_1);
+                console.log(text);
+                console.log(resp);
+                getStatusOfLed();
+        });
+       }
 
 
 

@@ -20,4 +20,4 @@ Route::get('/', function () {
 Route::get('chart', [EspSensorController::class, 'index']);
 Route::get('/getLatest',[EspSensorController::class,'getLatest']);
 Route::get('/getStatus',[EspSensorController::class,'getStatus']);
-
+Route::get('/esp/toggle/{status}',[EspSensorController::class,'Toggle']);
