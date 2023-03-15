@@ -75,14 +75,17 @@
         function getLatest(){
             $.getJSON('http://192.168.200.1/getLatest', function(data) {
                 var text = `Temperature: ${data.temperature}°C<br> Humidity: ${data.humidity}%`
-             document.getElementById("espData").innerHTML = text;
-	        });
-            document.getElementById("espData").innerHTML = "Humidity and temperature sensor is currently unavailable";
+                    document.getElementById("espData").innerHTML = text;
+	        }).fail(function (){
+                document.getElementById("espData").innerHTML = "Data currently unavailable";
+            });
+
        }
 
         getStatusOfLed();
         function getStatusOfLed(){
            $.getJSON('http://192.168.200.1/getStatus', function(data) {
+               document.getElementById("large-toggle_1").disabled = false;
                var text = `${data.status}`
                var state;
                if(text == 1){
@@ -93,22 +96,25 @@
                    state = "off";
                    document.getElementById("large-toggle_1").checked = false;
                }
-
-
                document.getElementById("led1_span").innerHTML = "LED is: "+state;
-               console.log(text);
+               //console.log(text);
+
+           }).fail(function(){
+                   document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
+               document.getElementById("large-toggle_1").checked = false;
+                   document.getElementById("large-toggle_1").disabled = true;
            });
- document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
+
        }
 
         function toggle(){
             var led_1 = document.getElementById("large-toggle_1").checked;
             var text = led_1? "on":"off";
-            $.getJSON('http://192.168.200.1/esp/toggle/'+text, function(data) {
-                var resp = `${data.status}`
-                console.log(led_1);
-                console.log(text);
-                console.log(resp);
+            $.getJSON('http://192.168.200.1/esp/toggle/'+text, function(/*data*/) {
+                //var resp = `${data.status}`
+                //console.log(led_1);
+                //console.log(text);
+                //console.log(resp);
                 getStatusOfLed();
         });
        }
