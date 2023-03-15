@@ -97,6 +97,7 @@
                document.getElementById("led1_span").innerHTML = "LED is: "+state;
                console.log(text);
            });
+ document.getElementById("led1_span").innerHTML = "LED is currently offline ";
        }
 
         function toggle(){
