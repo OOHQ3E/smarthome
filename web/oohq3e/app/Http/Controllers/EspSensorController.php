@@ -127,6 +127,10 @@ class EspSensorController extends Controller
     {
         //
     }
+    //public function getting()
+    //    {
+    //        return espSensor::latest()->first();
+    //    }
     public function getLatest()
     {
         return espSensor::latest()->first();

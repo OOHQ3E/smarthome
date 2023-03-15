@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 Route::get('chart', [EspSensorController::class, 'index']);
 Route::get('/getLatest',[EspSensorController::class,'getLatest']);
+//Route::get('/getting',[EspSensorController::class,'getting']);
+
