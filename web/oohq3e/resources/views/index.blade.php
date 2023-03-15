@@ -5,12 +5,12 @@
 @section('content')
 
     <!--TODO: with sm-my it doesn't want to work for whatever reason -->
-    <div class=" bg-white bg-opacity-75 shadow-2xl p-4 rounded-lg m-auto lg:w-3/4 sm:w-10/12 lg:my-4 md:my-6 sm:my-8">
-        <h2 class="text-left m-2 bold">Room 1</h2>
+    <div class="bg-white bg-opacity-75 shadow-2xl p-4 rounded-lg m-auto lg:w-3/4 sm:w-10/12 my-4">
+        <p class="text-left font-bold m-2 text-xl">Room 1</p>
        <div class="flex flex-wrap gap-4 justify-center">
            <a href="{{ asset('chart') }}">
                <div class="bg-opacity-75 bg-gray-400 p-4 rounded-lg">
-                    <p id="espData">
+                    <p id="espData" class="">
                         <!--Temperature: 30°C<br> Humidity: 70% -->
                     </p>
                 </div>
@@ -38,7 +38,7 @@
                </label>
            </div>
        </div>
-
+<!--
     </div>
     <div class=" bg-white bg-opacity-75 shadow-2xl p-4 rounded-lg m-auto lg:w-3/4 sm:w-10/12 lg:my-4 md:my-6 sm:my-8">
         <div class="flex flex-wrap gap-4 justify-center">
@@ -67,7 +67,7 @@
             </div>
         </div>
 
-    </div>
+    </div>-->
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script>
 	getLatest();
