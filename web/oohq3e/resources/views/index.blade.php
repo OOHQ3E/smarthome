@@ -81,7 +81,7 @@
 
         getStatusOfLed();
        function getStatusOfLed(){
-           $.getJSON('http://192.168.200.6/status', function(data) {
+           $.getJSON('http://192.168.200.1/getStatus', function(data) {
                var text = `${data.status}`
                if(text == 1){
                    document.getElementById("large-toggle_1").checked = true;

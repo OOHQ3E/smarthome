@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\espSensor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class EspSensorController extends Controller
 {
@@ -127,10 +128,10 @@ class EspSensorController extends Controller
     {
         //
     }
-    //public function getting()
-    //    {
-    //        return espSensor::latest()->first();
-    //    }
+    public function getStatus(){
+            $response = Http::get("http://192.168.200.6/status");
+            return $response;
+        }
     public function getLatest()
     {
         return espSensor::latest()->first();
