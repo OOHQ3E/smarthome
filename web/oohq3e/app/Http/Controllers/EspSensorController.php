@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\espSensor;
+use App\Models\EspSensorData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Http;
 
 class EspSensorController extends Controller
 {
@@ -16,39 +15,27 @@ class EspSensorController extends Controller
      */
     public function index($room)
     {
-        $tempData = espSensor::select(
+        $tempData = EspSensorData::select(
             DB::raw("YEAR(created_at) as year"),
             DB::raw("MONTH(created_at) as month"),
             DB::raw("DAY(created_at) as day"),
             DB::raw("HOUR(created_at) as hour"),
-            DB::raw("AVG(temperature) as avgTemp"),
-            DB::raw("AVG(humidity) as avgHum")
-        )->where("room",$room)   ->groupBy(DB::raw("1,2,3,4"))
+            DB::raw("AVG(temperature) as avgTemp")
+        )->where("room_id",$room)->groupBy(DB::raw("1,2,3,4"))
             ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
             ->limit(24)
             ->pluck('avgTemp','hour')->reverse();
 
-        $humData = espSensor::select(
+        $humData = EspSensorData::select(
             DB::raw("YEAR(created_at) as year"),
             DB::raw("MONTH(created_at) as month"),
             DB::raw("DAY(created_at) as day"),
             DB::raw("HOUR(created_at) as hour"),
-            DB::raw("AVG(temperature) as avgTemp"),
             DB::raw("AVG(humidity) as avgHum")
-        )   ->groupBy(DB::raw("1,2,3,4"))
+        ) ->where("room_id",$room)->groupBy(DB::raw("1,2,3,4"))
             ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
             ->limit(24)
             ->pluck('avgHum','hour')->reverse();
-        //$humData = array_slice($humData->values(),-24);
-//select YEAR(created_at) as year,
-// MONTH(created_at) as month,
-// DAY(created_at) as day,
-// HOUR(created_at) as hour,
-// AVG(temperature) as avgTemp,
-// AVG(humidity) as avgHum
-// from esp_sensors
-// GROUP BY 1,2,3,4;
-
 
         $templabels = $tempData->keys();
         $tempData = $tempData->values();
@@ -57,7 +44,6 @@ class EspSensorController extends Controller
         $humData = $humData->values();
 
         return view('chart', compact('templabels', 'tempData','humlabels','humData'));
-
     }
 
     /**
@@ -78,8 +64,8 @@ class EspSensorController extends Controller
      */
     public function store(Request $request)
     {
-        $esp = new espSensor();
-        $esp->room = $request->get("room","n/a");
+        $esp = new EspSensorData();
+        $esp->room_id = $request->get("room","n/a");
         $esp->temperature = $request->get("temp", "n/a");
         $esp->humidity = $request->get("hum", "n/a");
         $esp->save();
@@ -87,10 +73,10 @@ class EspSensorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\espSensor  $espSensor
+     * @param  \App\Models\EspSensorData  $EspSensorData
      * @return \Illuminate\Http\Response
      */
-    public function show(espSensor $espSensor)
+    public function show(EspSensorData $EspSensorData)
     {
         //
     }
@@ -98,10 +84,10 @@ class EspSensorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\espSensor  $espSensor
+     * @param  \App\Models\EspSensorData  $EspSensorData
      * @return \Illuminate\Http\Response
      */
-    public function edit(espSensor $espSensor)
+    public function edit(EspSensorData $EspSensorData)
     {
         //
     }
@@ -110,10 +96,10 @@ class EspSensorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\espSensor  $espSensor
+     * @param  \App\Models\EspSensorData  $EspSensorData
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, espSensor $espSensor)
+    public function update(Request $request, EspSensorData $EspSensorData)
     {
         //
     }
@@ -121,28 +107,19 @@ class EspSensorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\espSensor  $espSensor
+     * @param  \App\Models\EspSensorData  $EspSensorData
      * @return \Illuminate\Http\Response
      */
-    public function destroy(espSensor $espSensor)
+    public function destroy(EspSensorData $EspSensorData)
     {
         //
     }
-    public function getStatus($esp){
-             $response = json_decode(Http::get("http://192.168.200.".$esp."/status"));
-             return response()->json($response);
 
-        }
-
-    public function Toggle($esp,$status){
-
-        $response = json_decode(Http::get("http://192.168.200.".$esp."/".$status));
-        return response()->json($response);
-
-    }
     public function getLatest($room)
     {
-        return espSensor::where("room",$room)->latest()->first();
+        return EspSensorData::where("room_id",$room)->latest()->first();
     }
+
+
 }
 

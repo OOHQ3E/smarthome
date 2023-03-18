@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EspController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\EspSensorController;
 
@@ -19,5 +20,5 @@ Route::get('/', function () {
 });
 Route::get('/chart/{room}', [EspSensorController::class, 'index']);
 Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest']);
-Route::get('/getStatus/{esp}',[EspSensorController::class,'getStatus']);
-Route::get('/esp/toggle/{esp}/{status}',[EspSensorController::class,'Toggle']);
+Route::get('/getStatus/{esp}',[EspController::class,'getStatus']);
+Route::get('/esp/toggle/{esp}/{status}',[EspController::class,'Toggle']);
