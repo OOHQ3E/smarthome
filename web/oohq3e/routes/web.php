@@ -18,6 +18,8 @@ use \App\Http\Controllers\EspSensorController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/settings', [EspController::class, 'index'])->name('settings');
+
 Route::get('/chart/{room}', [EspSensorController::class, 'index']);
 Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest']);
 Route::get('/getStatus/{esp}',[EspController::class,'getStatus']);
