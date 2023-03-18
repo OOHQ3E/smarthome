@@ -71,13 +71,13 @@
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script>
 
-	    getLatest(1);
-        setInterval(getLatest(1), 10000)
+	 getLatest(1);
+        setInterval(getLatest.bind('room',1), 10000)
         function getLatest(room){
             $.getJSON('http://192.168.200.1/esp/getLatest/'+room, function(data) {
                 var text = `Temperature: ${data.temperature}°C<br> Humidity: ${data.humidity}%`
                     document.getElementById("espData-"+room).innerHTML = text;
-	        }).fail(function (){
+		}).fail(function (){
                 document.getElementById("espData-"+room).innerHTML = "Data currently unavailable";
             });
 
