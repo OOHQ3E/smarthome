@@ -109,7 +109,7 @@
        }
 
         function toggle(esp){
-            var device = document.getElementById("toggle"+esp).checked;
+            var device = document.getElementById("toggle-"+esp).checked;
             var text = device? "on":"off";
             $.getJSON('http://192.168.200.1/esp/toggle/'+text, function(/*data*/) {
                 //var resp = `${data.status}`
@@ -119,8 +119,8 @@
                 getStatusOfLed(esp);
             }).fail(function(){
                 document.getElementById("device-"+esp+"-span").innerHTML = "LED is currently unavailable";
-                document.getElementById("toggle"+esp).checked = false;
-                document.getElementById("toggle"+esp).disabled = true;
+                document.getElementById("toggle-"+esp).checked = false;
+                document.getElementById("toggle-"+esp).disabled = true;
             });
         }
 
