@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('chart', [EspSensorController::class, 'index']);
-Route::get('/getLatest',[EspSensorController::class,'getLatest']);
-Route::get('/getStatus',[EspSensorController::class,'getStatus']);
-Route::get('/esp/toggle/{status}',[EspSensorController::class,'Toggle']);
+Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest']);
+Route::get('/getStatus/{esp}',[EspSensorController::class,'getStatus']);
+Route::get('/esp/toggle/{esp}/{status}',[EspSensorController::class,'Toggle']);

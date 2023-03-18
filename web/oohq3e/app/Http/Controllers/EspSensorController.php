@@ -128,21 +128,21 @@ class EspSensorController extends Controller
     {
         //
     }
-    public function getStatus(){
-             $response = json_decode(Http::get("http://192.168.200.6/status"));
+    public function getStatus($esp){
+             $response = json_decode(Http::get("http://192.168.200.".$esp."/status"));
              return response()->json($response);
-            
-        }
-	
-public function Toggle($status){
 
-        $response = json_decode(Http::get("http://192.168.200.6/".$status));
+        }
+
+    public function Toggle($esp,$status){
+
+        $response = json_decode(Http::get("http://192.168.200.".$esp."/".$status));
         return response()->json($response);
 
     }
-    public function getLatest()
+    public function getLatest($room)
     {
-        return espSensor::latest()->first();
+        return espSensor::where("room",$room)->latest()->first();
     }
 }
 

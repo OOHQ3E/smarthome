@@ -9,16 +9,16 @@
        <div class="flex flex-wrap gap-4 justify-center">
            <a href="{{ asset('chart') }}">
                <div class="bg-opacity-75 bg-gray-400 hover:bg-gray-500 p-4 rounded-lg">
-                    <p id="espData" class="">
+                    <p id="espData-1" class="">
                         <!--Temperature: 30°C<br> Humidity: 70% -->
                     </p>
                 </div>
            </a>
            <div class="bg-opacity-75 bg-gray-400 p-4 rounded-lg">
-               <label for="large-toggle_1" class="inline-flex relative items-center cursor-pointer">
-                   <input type="checkbox" value="" id="large-toggle_1" class="sr-only peer" onclick="toggle()">
+               <label for="toggle-6" class="inline-flex relative items-center cursor-pointer">
+                   <input type="checkbox" value="" id="toggle-6" class="sr-only peer" onclick="toggle(6)">
                    <div class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                   <span id="led1_span" class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-800"></span>
+                   <span id="device-6-span" class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-800"></span>
                </label>
            </div>
 
@@ -64,70 +64,63 @@
                     <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-800">Toggle 6</span>
                 </label>
             </div>
-        </div>
+        -->
+       </div>
 
-    </div>-->
+    </div>
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script>
 
-	    getLatest();
-        setInterval(getLatest, 10000)
-        function getLatest(){
-            $.getJSON('http://192.168.200.1/getLatest', function(data) {
+	    getLatest(1);
+        setInterval(getLatest(1), 10000)
+        function getLatest(room){
+            $.getJSON('http://192.168.200.1/esp/getLatest/'+room, function(data) {
                 var text = `Temperature: ${data.temperature}°C<br> Humidity: ${data.humidity}%`
-                    document.getElementById("espData").innerHTML = text;
+                    document.getElementById("espData-"+room).innerHTML = text;
 	        }).fail(function (){
-                document.getElementById("espData").innerHTML = "Data currently unavailable";
+                document.getElementById("espData-"+room).innerHTML = "Data currently unavailable";
             });
 
        }
 
-        getStatusOfLed();
-        function getStatusOfLed(){
-           $.getJSON('http://192.168.200.1/getStatus', function(data) {
-               document.getElementById("large-toggle_1").disabled = false;
+        getStatusOfLed(6);
+        function getStatusOfLed(esp){
+           $.getJSON('http://192.168.200.1/getStatus/'+esp, function(data) {
+               document.getElementById("toggle-"+esp).disabled = false;
                var text = `${data.status}`
                var state;
                if(text == 1){
                    state = "on";
-                   document.getElementById("large-toggle_1").checked = true;
+                   document.getElementById("toggle-"+esp).checked = true;
                }
                if (text == 0){
                    state = "off";
-                   document.getElementById("large-toggle_1").checked = false;
+                   document.getElementById("toggle-"+esp).checked = false;
                }
-               document.getElementById("led1_span").innerHTML = "LED is: "+state;
+               document.getElementById("device-"+esp+"-span").innerHTML = "LED is: "+state;
                //console.log(text);
 
            }).fail(function(){
-                   document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
-                    document.getElementById("large-toggle_1").checked = false;
-                   document.getElementById("large-toggle_1").disabled = true;
-           }).error(function(){
-               document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
-               document.getElementById("large-toggle_1").checked = false;
-               document.getElementById("large-toggle_1").disabled = true;
+                   document.getElementById("device-"+esp+"-span").innerHTML = "LED is currently unavailable";
+                    document.getElementById("toggle-"+esp).checked = false;
+                   document.getElementById("toggle-"+esp).disabled = true;
            });
 
        }
 
-        function toggle(){
-            var led_1 = document.getElementById("large-toggle_1").checked;
-            var text = led_1? "on":"off";
+        function toggle(esp){
+            var device = document.getElementById("toggle"+esp).checked;
+            var text = device? "on":"off";
             $.getJSON('http://192.168.200.1/esp/toggle/'+text, function(/*data*/) {
                 //var resp = `${data.status}`
                 //console.log(led_1);
                 //console.log(text);
                 //console.log(resp);
-                getStatusOfLed();
+                getStatusOfLed(esp);
             }).fail(function(){
-                document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
-                document.getElementById("large-toggle_1").checked = false;
-                document.getElementById("large-toggle_1").disabled = true;
-            }).error(function(){
-                document.getElementById("led1_span").innerHTML = "LED is currently unavailable";
-                document.getElementById("large-toggle_1").checked = false;
-                document.getElementById("large-toggle_1").disabled = true;
+                document.getElementById("device-"+esp+"-span").innerHTML = "LED is currently unavailable";
+                document.getElementById("toggle"+esp).checked = false;
+                document.getElementById("toggle"+esp).disabled = true;
             });
         }
 
