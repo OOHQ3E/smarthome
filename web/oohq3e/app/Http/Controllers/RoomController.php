@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Esp;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,15 @@ class RoomController extends Controller
      */
     public function index()
     {
-        //
+        $rooms = Room::all();
+        $esps = Esp::all();
+
+        //dd($esps,$rooms);
+
+        return view('index',[
+            'rooms' => $rooms,
+            'esps' => $esps
+        ]);
     }
 
     /**

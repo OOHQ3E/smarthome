@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Esp;
 use App\Models\EspSensorData;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use function PHPUnit\Framework\isEmpty;
 
 class EspSensorController extends Controller
 {
@@ -15,35 +18,44 @@ class EspSensorController extends Controller
      */
     public function index($room)
     {
-        $tempData = EspSensorData::select(
-            DB::raw("YEAR(created_at) as year"),
-            DB::raw("MONTH(created_at) as month"),
-            DB::raw("DAY(created_at) as day"),
-            DB::raw("HOUR(created_at) as hour"),
-            DB::raw("AVG(temperature) as avgTemp")
-        )->where("room_id",$room)->groupBy(DB::raw("1,2,3,4"))
-            ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
-            ->limit(24)
-            ->pluck('avgTemp','hour')->reverse();
+        $roomData = Room::find($room);
+        $esps = DB::table('esp')->where("room_id","=", $room)->where("type","=","Sensor")->first();
 
-        $humData = EspSensorData::select(
-            DB::raw("YEAR(created_at) as year"),
-            DB::raw("MONTH(created_at) as month"),
-            DB::raw("DAY(created_at) as day"),
-            DB::raw("HOUR(created_at) as hour"),
-            DB::raw("AVG(humidity) as avgHum")
-        ) ->where("room_id",$room)->groupBy(DB::raw("1,2,3,4"))
-            ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
-            ->limit(24)
-            ->pluck('avgHum','hour')->reverse();
+        if ($esps == null){
+            return app(RoomController::class)->index();
+        }
+        else
+        {
+            $tempData = EspSensorData::select(
+                DB::raw("YEAR(created_at) as year"),
+                DB::raw("MONTH(created_at) as month"),
+                DB::raw("DAY(created_at) as day"),
+                DB::raw("HOUR(created_at) as hour"),
+                DB::raw("AVG(temperature) as avgTemp")
+            )->where("room_id",$room)->groupBy(DB::raw("1,2,3,4"))
+                ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
+                ->limit(24)
+                ->pluck('avgTemp','hour')->reverse();
 
-        $templabels = $tempData->keys();
-        $tempData = $tempData->values();
+            $humData = EspSensorData::select(
+                DB::raw("YEAR(created_at) as year"),
+                DB::raw("MONTH(created_at) as month"),
+                DB::raw("DAY(created_at) as day"),
+                DB::raw("HOUR(created_at) as hour"),
+                DB::raw("AVG(humidity) as avgHum")
+            ) ->where("room_id",$room)->groupBy(DB::raw("1,2,3,4"))
+                ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
+                ->limit(24)
+                ->pluck('avgHum','hour')->reverse();
 
-        $humlabels = $humData->keys();
-        $humData = $humData->values();
+            $templabels = $tempData->keys();
+            $tempData = $tempData->values();
 
-        return view('chart', compact('templabels', 'tempData','humlabels','humData'));
+            $humlabels = $humData->keys();
+            $humData = $humData->values();
+
+            return view('chart',compact('templabels', 'tempData','humlabels','humData','roomData', 'esps'));
+        }
     }
 
     /**

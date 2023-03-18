@@ -13,7 +13,7 @@
         @endif
 
 
-        <div class="p-5 text-center m-auto w-3/4 flex gap-2">
+        <div class="p-5 text-center m-auto w-full flex gap-2">
             <a href="{{ asset('/') }}" >
                 <button type="button" class="font-black text-left w-16 h-16 bg-gray-400 rounded-full text-center  py-3 px-3  hover:bg-gray-500">
                     ←
