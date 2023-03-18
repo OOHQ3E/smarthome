@@ -14,7 +14,7 @@ class EspSensorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($room)
     {
         $tempData = espSensor::select(
             DB::raw("YEAR(created_at) as year"),
@@ -23,7 +23,7 @@ class EspSensorController extends Controller
             DB::raw("HOUR(created_at) as hour"),
             DB::raw("AVG(temperature) as avgTemp"),
             DB::raw("AVG(humidity) as avgHum")
-        )   ->groupBy(DB::raw("1,2,3,4"))
+        )->where("room",$room)   ->groupBy(DB::raw("1,2,3,4"))
             ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
             ->limit(24)
             ->pluck('avgTemp','hour')->reverse();
