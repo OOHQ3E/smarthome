@@ -111,7 +111,7 @@
         function toggle(esp){
             var device = document.getElementById("toggle-"+esp).checked;
             var text = device? "on":"off";
-            $.getJSON('http://192.168.200.1/esp/toggle/'+text, function(/*data*/) {
+            $.getJSON('http://192.168.200.1/esp/toggle/'+esp+'/'+text, function(/*data*/) {
                 //var resp = `${data.status}`
                 //console.log(led_1);
                 //console.log(text);
