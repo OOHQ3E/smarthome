@@ -54,6 +54,7 @@
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                         <script>
                             $(document).ready(function(){
+                                toggle(@json($esp));
                                 getStatusOfDevice(@json($esp));
                             });
                         </script>
@@ -105,6 +106,7 @@
         }
 
         function toggle(esp){
+                console.log(esp);
             var device = document.getElementById("toggle-"+esp.ip_End).checked;
             var text = device? "on":"off";
             $.getJSON('http://192.168.200.1/esp/toggle/'+esp.ip_End+'/'+text, function() {
