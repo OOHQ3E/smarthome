@@ -3,6 +3,9 @@
 @section('title') {{'Index Page'}} @endsection
 
 @section('content')
+
+
+
     <div class="w-16 h-16">
         <a class="w-full rounded-full" href="{{ asset('settings') }}" >
             <div class="text-3xl text-center w-16 h-16 bg-gray-400 rounded-full text-center m-3 p-3 hover:bg-gray-500">
@@ -27,6 +30,13 @@
                                 </div>
                             </a>
                         </div>
+                        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                        <script>
+                            $(document).ready(function (){
+                                getLatestSensorData(@json($esp));
+                                setInterval(getLatestSensorData.bind('esp',@json($esp)), 10000);
+                            });
+                        </script>
 
                     @elseif($esp-> room_id === $room->id && $esp->type === "Toggle")
                         <div class="w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
@@ -40,6 +50,14 @@
                                 </div>
                             </label>
                         </div>
+
+                        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                        <script>
+                            $(document).ready(function(){
+                                getStatusOfDevice(@json($esp));
+                            });
+                        </script>
+
                     @endif
 
                 @empty
@@ -53,65 +71,50 @@
         </div>
     @endforelse
    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+            function getLatestSensorData(esp){
+            $.getJSON('http://192.168.200.1/esp/getLatest/'+esp.room_id, function(data) {
+            var text = `<span class="font-semibold">Temperature:</span> ${data.temperature}°C<br> <span class="font-semibold">Humidity:</span> ${data.humidity}%`
+            document.getElementById("espData-"+esp.room_id).innerHTML = text;
+        }).fail(function (){
+            document.getElementById("espData-"+esp.room_id).innerHTML = "Data currently unavailable from <span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span>";
+        });
+        }
 
- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
- <script>
-
-	 getLatest(1);
-        setInterval(getLatest.bind('room',1), 10000)
-        function getLatest(room){
-            $.getJSON('http://192.168.200.1/esp/getLatest/'+room, function(data) {
-                var text = `<span class="font-semibold">Temperature:</span> ${data.temperature}°C<br> <span class="font-semibold">Humidity:</span> ${data.humidity}%`
-                    document.getElementById("espData-"+room).innerHTML = text;
-		}).fail(function (){
-                document.getElementById("espData-"+room).innerHTML = "Data currently unavailable from <span class='font-semibold'>{{$esp->name}} ({{$esp->ip_End}}</span>)";
+        function getStatusOfDevice(esp){
+            $.getJSON('http://192.168.200.1/getStatus/'+esp.ip_End, function(data) {
+                document.getElementById("toggle-"+esp).disabled = false;
+                var text = `${data.status}`
+                var state;
+                if(text == 1){
+                    state = "on";
+                    document.getElementById("toggle-"+esp.ip_End).checked = true;
+                }
+                if (text == 0){
+                    state = "off";
+                    document.getElementById("toggle-"+esp.ip_End).checked = false;
+                }
+                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "{{$esp->name}}: <span class='font-semibold'>"+state+"</span>";
+            }).fail(function(){
+                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "<span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span> is currently unavailable";
+                document.getElementById("toggle-"+esp.ip_End).checked = false;
+                document.getElementById("toggle-"+esp.ip_End).disabled = true;
             });
 
-       }
-
-        getStatusOfLed(6);
-        function getStatusOfLed(esp){
-           $.getJSON('http://192.168.200.1/getStatus/'+esp, function(data) {
-               document.getElementById("toggle-"+esp).disabled = false;
-               var text = `${data.status}`
-               var state;
-               if(text == 1){
-                   state = "on";
-                   document.getElementById("toggle-"+esp).checked = true;
-               }
-               if (text == 0){
-                   state = "off";
-                   document.getElementById("toggle-"+esp).checked = false;
-               }
-               document.getElementById("device-"+esp+"-span").innerHTML = "{{$esp->name}}: <span class='font-semibold'>"+state+"</span>";
-               //console.log(text);
-
-           }).fail(function(){
-                   document.getElementById("device-"+esp+"-span").innerHTML = "<span class='font-semibold'>{{$esp->name}}, {{$esp->ip_End}}</span> is currently unavailable";
-                    document.getElementById("toggle-"+esp).checked = false;
-                   document.getElementById("toggle-"+esp).disabled = true;
-           });
-
-       }
+        }
 
         function toggle(esp){
             var device = document.getElementById("toggle-"+esp).checked;
             var text = device? "on":"off";
-            $.getJSON('http://192.168.200.1/esp/toggle/'+esp+'/'+text, function(/*data*/) {
-                //var resp = `${data.status}`
-                //console.log(led_1);
-                //console.log(text);
-                //console.log(resp);
-                getStatusOfLed(esp);
+            $.getJSON('http://192.168.200.1/esp/toggle/'+esp+'/'+text, function() {
+                getStatusOfDevice(esp);
             }).fail(function(){
                 document.getElementById("device-"+esp+"-span").innerHTML = "{{$esp->name}} is currently unavailable";
                 document.getElementById("toggle-"+esp).checked = false;
                 document.getElementById("toggle-"+esp).disabled = true;
             });
         }
-
-
-
-
     </script>
+
 
