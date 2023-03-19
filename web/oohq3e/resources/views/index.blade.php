@@ -43,7 +43,7 @@
                             <label for="toggle-{{$esp->ip_End}}" class="inline-flex relative items-center cursor-pointer">
                                 <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
                                     <div class="">
-                                        <input type="checkbox" value="" id="toggle-{{$esp->ip_End}}" class="sr-only peer" onclick="toggle(@json($esp))">
+                                        <input type="checkbox" value="" id="toggle-{{$esp->ip_End}}" class="sr-only peer" onclick='toggle(@json($esp))'>
                                         <div class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                     </div>
                                 <span id="device-{{$esp->ip_End}}-span" class="mt-0.5 text-xl text-gray-900 dark:text-gray-800"></span>
@@ -54,7 +54,6 @@
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                         <script>
                             $(document).ready(function(){
-                                toggle(@json($esp));
                                 getStatusOfDevice(@json($esp));
                             });
                         </script>
@@ -106,13 +105,12 @@
         }
 
         function toggle(esp){
-                console.log(esp);
             var device = document.getElementById("toggle-"+esp.ip_End).checked;
             var text = device? "on":"off";
             $.getJSON('http://192.168.200.1/esp/toggle/'+esp.ip_End+'/'+text, function() {
                 getStatusOfDevice(esp);
             }).fail(function(){
-                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = esp.name+" is currently unavailable";
+                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "<span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span> is currently unavailable";
                 document.getElementById("toggle-"+esp.ip_End).checked = false;
                 document.getElementById("toggle-"+esp.ip_End).disabled = true;
             });
