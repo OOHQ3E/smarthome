@@ -22,3 +22,5 @@ Route::get('/chart/{room}', [EspSensorController::class, 'index']);
 Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest']);
 Route::get('/getStatus/{esp}',[EspController::class,'getStatus']);
 Route::get('/esp/toggle/{esp}/{status}',[EspController::class,'Toggle']);
+Route::get("/create/device/{room}", [EspController::class,'createDevice']);
+Route::post("/create/device/{room}", [EspController::class,'storeDevice']);

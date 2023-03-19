@@ -26,6 +26,48 @@ class EspController extends Controller
             'esps' => $esps
         ]);
     }
+    public function createDevice($room){
+        $Room = Room::find($room);
+        if (!($Room === null)){
+            $types = ["Sensor","Toggle"];
+            return view("createDevice",[
+                'types' => $types,
+                'room' => $Room
+            ]);
+        }
+        else return view("settings");
+    }
+    public function storeDevice(Request $request){
+        $TempType = $request->get("type");
+        $roomName = DB::table('room')->select("name")->where('id','=',$request->get("roomId"))->first();
+        switch ($TempType){
+            case 0:
+                $type = "Sensor";
+                break;
+            case 1:
+                $type = "Toggle";
+                break;
+        }
+
+        $existing = DB::table("esp")->where("room_id","=", $request->get("roomId"))->where("type","=",$type)->first();
+
+           $request->validate([
+                   'type' => 'required|max:50|unique:esp,type,Sensor',
+                   'deviceName'=> 'required|max:50',
+                   'ip_End' => "required|integer|between:2,149|unique:esp",
+                   'roomId'=> 'required|integer'
+               ]
+           );
+           $esp = new Esp;
+           $esp ->type = $type;
+           $esp ->name = $request->get("deviceName");
+           $esp ->ip_End = $request->get("ip_End");
+           $esp ->room_id = $request->get("roomId");
+
+           $esp->save();
+           return redirect('/settings')->with("message","Successfully added a device to ".$roomName->name);
+
+    }
 
     /**
      * Show the form for creating a new resource.

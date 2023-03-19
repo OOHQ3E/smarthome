@@ -5,7 +5,7 @@
 @section('content')
 
         @if (Session::has('message'))
-            <div class="flex justify-center font-sans text-center">
+            <div class="flex justify-center font-sans text-center my-3">
                 <div class="w-full md:w-1/2 mb-10">
                     <div class="px-5 text-2xl text-gray-100 font-light">{{ Session::get('message') }}</div>
                 </div>
@@ -33,7 +33,7 @@
                         <div class="bg-gray-100 rounded-lg overflow-auto m-3 bg-opacity-90">
 
                             <div class="flex flex-wrap gap-2 justify-center m-5">
-                                <a href="/device/{{ asset('create') }}">
+                                <a href="{{ asset('create')}}/device/{{$room->id}}">
                                     <div class="my-1 bg-green-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-green-400 hover:text-white w-64 text-center">
                                         Add device
                                     </div>
