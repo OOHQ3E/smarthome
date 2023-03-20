@@ -4,13 +4,7 @@
 
 @section('content')
 
-        @if (Session::has('message'))
-            <div class="flex justify-center font-sans text-center my-3">
-                <div class="w-full md:w-1/2 mb-10">
-                    <div class="px-5 text-2xl text-gray-100 font-light">{{ Session::get('message') }}</div>
-                </div>
-            </div>
-        @endif
+
 
 
         <div class="p-5 text-center m-auto w-full flex gap-2">
@@ -25,6 +19,13 @@
                 </div>
             </a>
         </div>
+        @if (Session::has('message'))
+            <div class="flex justify-center font-sans text-center my-2">
+                <div class="w-full">
+                    <div class="px-5 text-2xl text-gray-100 font-light">{{ Session::get('message') }}</div>
+                </div>
+            </div>
+        @endif
 
         <div class="p-2">
             <div class="p-3 lg:max-w-3/12 md:max-w-10/12 sm:max-w-11/12 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 inline-block">
@@ -75,8 +76,9 @@
                                                     <p class=" uppercase p-2 text-center rounded-lg bg-yellow-300 transition hover:bg-yellow-400"> Modify device</p>
                                                 </a>
                                             <td class="p-2 m-1/3 text-white">
-                                                <form action="/delete" method="POST">
+                                                <form action="device/delete/{{$esp->id}}" method="POST">
                                                     @csrf
+                                                    {{method_field('DELETE')}}
                                                     <button class=" p-2 uppercase text-center rounded-lg bg-red-600 transition hover:bg-red-800"   name="id" type="submit" value="{{ $esp -> id }}">Delete device</button>
                                                 </form>
                                             </td>

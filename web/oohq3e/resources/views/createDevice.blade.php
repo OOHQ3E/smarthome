@@ -51,7 +51,7 @@
                     <input type="text" class="w-11/12 text-center rounded-full" value="192." disabled>
                     <input type="text" class="w-11/12 text-center rounded-full" value="168." disabled>
                     <input type="text" class="w-11/12 text-center rounded-full" value="200." disabled>
-                    <input type="number" id="ip_End" name="ip_End" class="w-11/12 text-center rounded-full" maxlength="3">
+                    <input type="number" id="ip_End" name="ip_End" class="w-11/12 text-center rounded-full" min="2" max="150">
                 </div>
 
                 <div class="text-center text-gray-50 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
