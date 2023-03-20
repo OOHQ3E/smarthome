@@ -75,6 +75,7 @@
     <script>
             function getLatestSensorData(esp){
             $.getJSON('http://192.168.200.1/esp/getLatest/'+esp.room_id, function(data) {
+            document.getElementById("espData-"+esp.room_id).innerHTML = "Connecting to <span class='font-semibold'>"+esp.name+"</span>...";
             var text = `<span class="font-semibold">Temperature:</span> ${data.temperature}°C<br> <span class="font-semibold">Humidity:</span> ${data.humidity}%`
             document.getElementById("espData-"+esp.room_id).innerHTML = text;
         }).fail(function (){
@@ -83,6 +84,7 @@
         }
 
         function getStatusOfDevice(esp){
+            document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "Connecting to <span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span> ...";
             $.getJSON('http://192.168.200.1/getStatus/'+esp.ip_End, function(data) {
                 document.getElementById("toggle-"+esp.ip_End).disabled = false;
                 var text = `${data.status}`
