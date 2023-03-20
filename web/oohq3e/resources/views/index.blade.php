@@ -56,7 +56,6 @@
                             $(document).ready(function(){
                                 document.getElementById("device-{{$esp->ip_End}}-span").innerHTML = "Connecting to <span class='font-semibold'>{{$esp->name}} ({{$esp->ip_End}})</span> ...";
                                 getStatusOfDevice(@json($esp));
-                                document.getElementById("device-{{$esp->ip_End}}-span").innerHTML = "";
                             });
                         </script>
 
