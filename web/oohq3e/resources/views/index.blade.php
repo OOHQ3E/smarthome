@@ -54,7 +54,9 @@
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                         <script>
                             $(document).ready(function(){
+                                document.getElementById("device-{{$esp->ip_End}}-span").innerHTML = "Connecting to <span class='font-semibold'>{{$esp->name}} ({{$esp->ip_End}})</span> ...";
                                 getStatusOfDevice(@json($esp));
+                                document.getElementById("device-{{$esp->ip_End}}-span").innerHTML = "";
                             });
                         </script>
 
@@ -84,7 +86,6 @@
         }
 
         function getStatusOfDevice(esp){
-            document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "Connecting to <span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span> ...";
             $.getJSON('http://192.168.200.1/getStatus/'+esp.ip_End, function(data) {
                 document.getElementById("toggle-"+esp.ip_End).disabled = false;
                 var text = `${data.status}`
