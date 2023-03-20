@@ -15,18 +15,21 @@ use \App\Http\Controllers\EspSensorController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [RoomController::class, 'index'])->name('index');
 Route::get('/settings', [EspController::class, 'index'])->name('settings');
 Route::get('/chart/{room}', [EspSensorController::class, 'index']);
 Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest']);
+
 Route::get('/getStatus/{esp}',[EspController::class,'getStatus']);
 Route::get('/esp/toggle/{esp}/{status}',[EspController::class,'Toggle']);
+Route::get("/create/device/{room}", [EspController::class,'create']);
+Route::post("/create/device/{room}", [EspController::class,'store']);
+Route::delete('/device/delete/{device}', [EspController::class,'destroy']);
+Route::get("/modify/device/{room}/{device}",[EspController::class,'edit']);
+Route::post("/modify/device/{room}/{device}",[EspController::class,'update']);
 
-Route::get("/create/device/{room}", [EspController::class,'createDevice']);
-Route::post("/create/device/{room}", [EspController::class,'storeDevice']);
-
-Route::delete('/device/delete/{device}', [EspController::class,'deleteDevice']);
-
-Route::get("/modify/device/{room}/{device}",[EspController::class,'modifyDevice']);
-Route::post("/modify/device/{room}/{device}",[EspController::class,'updateDevice']);
+Route::get('/', [RoomController::class, 'index'])->name('index');
+Route::get("/create/room", [RoomController::class,'create']);
+Route::post("/create/{room}", [EspController::class,'store']);
+Route::delete("/delete/{room}", [EspController::class,'delete']);
+Route::get("/modify/room/{room}",[EspController::class,'modify']);
+Route::post("/modify/room/{room}",[EspController::class,'update']);

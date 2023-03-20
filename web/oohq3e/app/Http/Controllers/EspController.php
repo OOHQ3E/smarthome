@@ -26,13 +26,19 @@ class EspController extends Controller
             'esps' => $esps
         ]);
     }
-    public function createDevice($room){
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create($room){
         $rooms = Room::all();
         $esps = Esp::all();
         $Room = Room::find($room);
         if ($Room !== null){
             $types = ["Sensor","Toggle"];
-            return view("createDevice",[
+            return view("device.create",[
                 'types' => $types,
                 'room' => $Room
             ]);
@@ -42,7 +48,14 @@ class EspController extends Controller
             'esps' => $esps
         ]);
     }
-    public function storeDevice(Request $request, Room $room){
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request, Room $room){
         $TempType = $request->get("type");
         $type = null;
         switch ($TempType){
@@ -78,19 +91,40 @@ class EspController extends Controller
             return redirect('/settings')->with("message","Successfully added ". $esp ->name." to ".$room->name);
         }
     }
-    public function deleteDevice(Esp $device){
-        $room = DB::table('room')->select("name")->where('id',"=",$device->room_id)->first();
-        $device->delete();
-        return redirect('/settings')->with("message","Successfully deleted ".$device->name." from ".$room->name);
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Esp  $esp
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Esp $esp)
+    {
+        //
     }
-    public function modifyDevice(Room $room,Esp $device){
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Esp  $esp
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Room $room,Esp $device){
         $types = ["Sensor","Toggle"];
-        return view('modifyDevice',[
+        return view('device.modify',[
             'types' => $types,
             'room'=>$room,
             'device'=>$device]);
     }
-    public function updateDevice(Request $request, Room $room, Esp $device){
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Esp  $esp
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Room $room, Esp $device){
         $TempType = $request->get("type");
         $type = null;
         switch ($TempType){
@@ -134,71 +168,16 @@ class EspController extends Controller
         }
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Esp  $esp
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Esp $esp)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Esp  $esp
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Esp $esp)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Esp  $esp
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Esp $esp)
-    {
-        //
-    }
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Esp  $esp
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Esp $esp)
-    {
-        //
+    public function destroy(Esp $device){
+        $room = DB::table('room')->select("name")->where('id',"=",$device->room_id)->first();
+        $device->delete();
+        return redirect('/settings')->with("message","Successfully deleted ".$device->name." from ".$room->name);
     }
 
     public function getStatus($esp){

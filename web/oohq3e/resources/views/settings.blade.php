@@ -10,7 +10,7 @@
                     ←
                 </button>
             </a>
-            <a href="{{ asset('create') }}" class="text-2xl text-black m-auto w-full">
+            <a href="{{ asset('create')}}/room" class="text-2xl text-black m-auto w-full">
                 <div class="bg-green-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-green-400 hover:text-white ">
                     Add new room
                 </div>
