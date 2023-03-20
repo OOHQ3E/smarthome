@@ -1,11 +1,8 @@
 @extends('layouts.app')
 
-@section('title') {{'Room settings'}} @endsection
+@section('title') {{'Settings'}} @endsection
 
 @section('content')
-
-
-
 
         <div class="p-5 text-center m-auto w-full flex gap-2">
             <a href="{{ asset('/') }}" >
@@ -39,7 +36,7 @@
                                         Add device
                                     </div>
                                 </a>
-                                <a href="/settings/{{ $room -> id }}/edit">
+                                <a href="/modify/room/{{ $room -> id }}">
                                     <div class="my-1 bg-yellow-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-yellow-400 hover:text-white w-64 text-center">
                                         Modify room
                                     </div>
@@ -72,7 +69,7 @@
                                             </td>
 
                                             <td class="p-2 m-1/3">
-                                                <a href="/settings/{{ $esp -> id }}/edit">
+                                                <a href="/modify/device/{{$room->id}}/{{ $esp -> id }}">
                                                     <p class=" uppercase p-2 text-center rounded-lg bg-yellow-300 transition hover:bg-yellow-400"> Modify device</p>
                                                 </a>
                                             <td class="p-2 m-1/3 text-white">

@@ -27,19 +27,23 @@ class EspController extends Controller
         ]);
     }
     public function createDevice($room){
+        $rooms = Room::all();
+        $esps = Esp::all();
         $Room = Room::find($room);
-        if (!($Room === null)){
+        if ($Room !== null){
             $types = ["Sensor","Toggle"];
             return view("createDevice",[
                 'types' => $types,
                 'room' => $Room
             ]);
         }
-        else return view("settings");
+        else return view('settings',[
+            'rooms' => $rooms,
+            'esps' => $esps
+        ]);
     }
-    public function storeDevice(Request $request){
+    public function storeDevice(Request $request, Room $room){
         $TempType = $request->get("type");
-        $roomName = DB::table('room')->select("name")->where('id','=',$request->get("roomId"))->first();
         $type = null;
         switch ($TempType){
             case 0:
@@ -53,7 +57,7 @@ class EspController extends Controller
         if ($type == "Sensor"){
             $existing = DB::table("esp")->where("room_id","=", $request->get("roomId"))->where("type","=","Sensor")->first();
         }
-        if (!($existing==null)){
+        if ($existing!==null){
             return back()->with('error','Rooms can only have 1 Sensor!');
         }
         else{
@@ -71,13 +75,63 @@ class EspController extends Controller
             $esp ->room_id = $request->get("roomId");
 
             $esp->save();
-            return redirect('/settings')->with("message","Successfully added a device to ".$roomName->name);
+            return redirect('/settings')->with("message","Successfully added ". $esp ->name." to ".$room->name);
         }
     }
     public function deleteDevice(Esp $device){
         $room = DB::table('room')->select("name")->where('id',"=",$device->room_id)->first();
         $device->delete();
-        return redirect('/settings')->with("message","Successfully deleted a device from ".$room->name);
+        return redirect('/settings')->with("message","Successfully deleted ".$device->name." from ".$room->name);
+    }
+    public function modifyDevice(Room $room,Esp $device){
+        $types = ["Sensor","Toggle"];
+        return view('modifyDevice',[
+            'types' => $types,
+            'room'=>$room,
+            'device'=>$device]);
+    }
+    public function updateDevice(Request $request, Room $room, Esp $device){
+        $TempType = $request->get("type");
+        $type = null;
+        switch ($TempType){
+            case 0:
+                $type = "Sensor";
+                break;
+            case 1:
+                $type = "Toggle";
+                break;
+        }
+        $existing = null;
+        if ($type == "Sensor"){
+            $existing = DB::table("esp")->where("room_id","=", $request->get("roomId"))->where("type","=","Sensor")->first();
+        }
+
+        if ($existing !== null && $existing->id !== $device->id){
+            return back()->with('error','Rooms can only have 1 Sensor!');
+        }
+        else{
+            $validateIP = "required|integer|between:2,149|unique:esp";
+
+            if ($device-> ip_End == $request->get("ip_End")){
+                $validateIP = "required|integer|between:2,149";
+
+            }
+            $request->validate([
+                    'type' => 'required|max:50',
+                    'deviceName'=> 'required|max:50',
+                    'ip_End' => $validateIP,
+                    'roomId'=> 'required|integer'
+                ]
+            );
+            $esp = $device;
+            $esp ->type = $type;
+            $esp ->name = $request->get("deviceName");
+            $esp ->ip_End = $request->get("ip_End");
+            $esp ->room_id = $request->get("roomId");
+
+            $esp->save();
+            return redirect('/settings')->with("message","Successfully updated ". $esp ->name." in ".$room->name);
+        }
     }
 
 
