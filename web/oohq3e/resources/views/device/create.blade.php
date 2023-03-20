@@ -43,8 +43,8 @@
                     </select>
                 </div>
                 <div class="text-left w-11/12 m-auto">
-                    <label for="device-name" class="my-6 font-semibold text-left">Device name:</label>
-                    <input type="text" class="truncate ... my-5 w-full text-xl rounded-md" id="deviceName" name="deviceName" class="rounded" required>
+                    <label for="name" class="my-6 font-semibold text-left">Device name:</label>
+                    <input type="text" class="truncate ... my-5 w-full text-xl rounded-md" id="name" name="name" class="rounded" required>
                 </div>
                 <div class="text-black  grid grid-cols-5 lg:w-1/2 md:w-2/3 w-11/12 m-auto my-3">
                     <span class="font-semibold">IP:</span>

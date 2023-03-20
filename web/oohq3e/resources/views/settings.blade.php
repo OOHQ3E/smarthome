@@ -6,8 +6,8 @@
 
         <div class="p-5 text-center m-auto w-full flex gap-2">
             <a href="{{ asset('/') }}" >
-                <button type="button" class="font-black text-left w-16 h-16 bg-gray-400 rounded-full text-center  py-3 px-3  hover:bg-gray-500">
-                    ←
+                <button type="button" class="text-4xl text-center pb-2 font-black w-16 h-16 bg-gray-400 rounded-full  hover:bg-gray-500">
+                    &larr;
                 </button>
             </a>
             <a href="{{ asset('create')}}/room" class="text-2xl text-black m-auto w-full">

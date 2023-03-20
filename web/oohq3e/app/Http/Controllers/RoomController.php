@@ -34,7 +34,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        return view('room.create');
     }
 
     /**
@@ -45,7 +45,13 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $request->validate([
+                    'name' => 'required|max:50|unique:room']
+            );
+            $room = new Room;
+            $room ->name = $request->get("name");
+            $room->save();
+            return redirect('/settings')->with("message","Successfully added a new room: ".$room->name);
     }
 
     /**

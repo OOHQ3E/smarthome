@@ -76,14 +76,14 @@ class EspController extends Controller
         else{
             $request->validate([
                     'type' => 'required|max:50',
-                    'deviceName'=> 'required|max:50',
+                    'name'=> 'required|max:50',
                     'ip_End' => "required|integer|between:2,149|unique:esp",
                     'roomId'=> 'required|integer'
                 ]
             );
             $esp = new Esp;
             $esp ->type = $type;
-            $esp ->name = $request->get("deviceName");
+            $esp ->name = $request->get("name");
             $esp ->ip_End = $request->get("ip_End");
             $esp ->room_id = $request->get("roomId");
 

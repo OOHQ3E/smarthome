@@ -54,7 +54,7 @@ class EspSensorController extends Controller
             $humlabels = $humData->keys();
             $humData = $humData->values();
 
-            return view('chart',compact('templabels', 'tempData','humlabels','humData','roomData', 'esps'));
+            return view('room.chart',compact('templabels', 'tempData','humlabels','humData','roomData', 'esps'));
         }
     }
 

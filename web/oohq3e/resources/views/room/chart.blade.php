@@ -13,12 +13,14 @@
     </head>
 
     <body>
-    <div class="flex justify-center font-black">
-        <a href="{{ asset('/') }}" >
-            <button type="button" class="m-2 text-left w-16 h-16 bg-gray-400 rounded-full text-center  py-3 px-3  hover:bg-gray-500">
-                ←
-            </button>
-        </a>
+    <div class="justify-center flex flex-wrap">
+        <div class="lg:w-16 md:w-full w-full">
+            <a href="{{ asset('/') }}" >
+                <button type="button" class="text-4xl m-3 text-center pb-2 font-black lg:w-16 md:w-11/12 w-11/12 h-16 bg-gray-400 lg:rounded-full md:rounded-md rounded-full hover:bg-gray-500">
+                    &larr;
+                </button>
+            </a>
+        </div>
 
         <div class="my-4 text-center lg:w-6/12 sm:w-10/12">
             <h1 class="text-2xl text-white font-sans py-2 uppercase font-light">

@@ -29,7 +29,7 @@ Route::post("/modify/device/{room}/{device}",[EspController::class,'update']);
 
 Route::get('/', [RoomController::class, 'index'])->name('index');
 Route::get("/create/room", [RoomController::class,'create']);
-Route::post("/create/{room}", [EspController::class,'store']);
-Route::delete("/delete/{room}", [EspController::class,'delete']);
-Route::get("/modify/room/{room}",[EspController::class,'modify']);
-Route::post("/modify/room/{room}",[EspController::class,'update']);
+Route::post("/create/room", [RoomController::class,'store']);
+Route::delete("/delete/{room}", [RoomController::class,'delete']);
+Route::get("/modify/room/{room}",[RoomController::class,'modify']);
+Route::post("/modify/room/{room}",[RoomController::class,'update']);

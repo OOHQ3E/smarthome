@@ -9,7 +9,7 @@
     <div class="w-16 h-16">
         <a class="w-full rounded-full" href="{{ asset('settings') }}" >
             <div class="text-3xl text-center w-16 h-16 bg-gray-400 rounded-full text-center m-3 p-3 hover:bg-gray-500">
-                &#9881;&#65039;
+                &#9881;
             </div>
         </a>
     </div>
