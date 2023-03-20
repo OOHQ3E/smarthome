@@ -41,8 +41,10 @@
                                         Modify room
                                     </div>
                                 </a>
-                                <form action="/delete" method="POST">
-                                    @csrf<button class="uppercase my-1 uppercase bg-red-500 text-white rounded-full py-3 px-6 transition hover:bg-red-400 hover:text-white w-64 text-center" name="id" type="submit" value="{{ $room -> id }}">Delete room</button>
+                                <form action="/delete/{{$room->id}}" method="POST">
+                                    @csrf
+                                    {{method_field('DELETE')}}
+                                    <button class="uppercase my-1 uppercase bg-red-500 text-white rounded-full py-3 px-6 transition hover:bg-red-400 hover:text-white w-64 text-center" name="id" type="submit" value="{{ $room -> id }}">Delete room</button>
                                 </form>
                             </div>
 
@@ -76,7 +78,7 @@
                                                 <form action="device/delete/{{$esp->id}}" method="POST">
                                                     @csrf
                                                     {{method_field('DELETE')}}
-                                                    <button class=" p-2 uppercase text-center rounded-lg bg-red-600 transition hover:bg-red-800"   name="id" type="submit" value="{{ $esp -> id }}">Delete device</button>
+                                                    <button class=" p-2 uppercase text-center rounded-lg bg-red-600 transition hover:bg-red-800" name="id" type="submit" value="{{ $esp -> id }}">Delete device</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -99,5 +101,10 @@
 
         </div>
 
-
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            document.onsubmit = function(){
+                return confirm('Are you sure you want to delete it? This action cannot be undone.');
+            }
+        </script>
 @endsection

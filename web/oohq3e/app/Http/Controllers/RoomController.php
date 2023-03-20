@@ -73,7 +73,7 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        //
+        return view('room.modify',['room'=>$room]);
     }
 
     /**
@@ -85,7 +85,20 @@ class RoomController extends Controller
      */
     public function update(Request $request, Room $room)
     {
-        //
+        $validateName = "required|max:50|unique:room";
+
+        if ($room-> name == $request->get("name")){
+            $validateName = "required|max:50";
+        }
+        $request->validate([
+                'name' => $validateName
+            ]
+        );
+        $Room = $room;
+        $Room ->name = $request->get("name");
+
+        $Room->save();
+        return redirect('/settings')->with("message","Successfully updated room: ". $Room ->name);
     }
 
     /**
@@ -96,6 +109,7 @@ class RoomController extends Controller
      */
     public function destroy(Room $room)
     {
-        //
+        $room->delete();
+        return redirect('/settings')->with("message","Successfully deleted room: ".$room->name);
     }
 }
