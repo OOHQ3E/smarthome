@@ -95,7 +95,7 @@
                     state = "off";
                     document.getElementById("toggle-"+esp.ip_End).checked = false;
                 }
-                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "{{$esp->name}}: <span class='font-semibold'>"+state+"</span>";
+                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = esp.name+": <span class='font-semibold'>"+state+"</span>";
             }).fail(function(){
                 document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "<span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span> is currently unavailable";
                 document.getElementById("toggle-"+esp.ip_End).checked = false;
