@@ -40,6 +40,7 @@ class EspController extends Controller
     public function storeDevice(Request $request){
         $TempType = $request->get("type");
         $roomName = DB::table('room')->select("name")->where('id','=',$request->get("roomId"))->first();
+        $type = null;
         switch ($TempType){
             case 0:
                 $type = "Sensor";
@@ -48,25 +49,30 @@ class EspController extends Controller
                 $type = "Toggle";
                 break;
         }
+        $existing = null;
+        if ($type == "Sensor"){
+            $existing = DB::table("esp")->where("room_id","=", $request->get("roomId"))->where("type","=","Sensor")->first();
+        }
+        if (!($existing==null)){
+            return back()->with('error','Rooms can only have 1 Sensor!');
+        }
+        else{
+            $request->validate([
+                    'type' => 'required|max:50',
+                    'deviceName'=> 'required|max:50',
+                    'ip_End' => "required|integer|between:2,149|unique:esp",
+                    'roomId'=> 'required|integer'
+                ]
+            );
+            $esp = new Esp;
+            $esp ->type = $type;
+            $esp ->name = $request->get("deviceName");
+            $esp ->ip_End = $request->get("ip_End");
+            $esp ->room_id = $request->get("roomId");
 
-        $existing = DB::table("esp")->where("room_id","=", $request->get("roomId"))->where("type","=",$type)->first();
-
-           $request->validate([
-                   'type' => 'required|max:50|unique:esp,type,Sensor',
-                   'deviceName'=> 'required|max:50',
-                   'ip_End' => "required|integer|between:2,149|unique:esp",
-                   'roomId'=> 'required|integer'
-               ]
-           );
-           $esp = new Esp;
-           $esp ->type = $type;
-           $esp ->name = $request->get("deviceName");
-           $esp ->ip_End = $request->get("ip_End");
-           $esp ->room_id = $request->get("roomId");
-
-           $esp->save();
-           return redirect('/settings')->with("message","Successfully added a device to ".$roomName->name);
-
+            $esp->save();
+            return redirect('/settings')->with("message","Successfully added a device to ".$roomName->name);
+        }
     }
 
     /**
