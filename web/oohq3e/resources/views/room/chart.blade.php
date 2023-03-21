@@ -13,10 +13,10 @@
     </head>
 
     <body>
-    <div class="justify-center flex flex-wrap">
+    <div class="justify-center flex flex-wrap gap-6">
         <div class="lg:w-16 md:w-full w-full">
             <a href="{{ asset('/') }}" >
-                <button type="button" class="text-4xl m-3 text-center pb-2 font-black lg:w-16 md:w-11/12 w-11/12 h-16 bg-gray-400 rounded-full hover:bg-gray-500">
+                <button type="button" class="text-4xl my-3 mx-5 text-center pb-1 font-black lg:w-16 md:w-11/12 w-11/12 h-16 bg-gray-400 rounded-full hover:bg-gray-500">
                     &larr;
                 </button>
             </a>

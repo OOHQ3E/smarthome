@@ -98,9 +98,9 @@ class EspController extends Controller
      * @param  \App\Models\Esp  $esp
      * @return \Illuminate\Http\Response
      */
-    public function show(Esp $esp)
+    public function show()
     {
-        //
+        return view('room.videostream');
     }
 
     /**
