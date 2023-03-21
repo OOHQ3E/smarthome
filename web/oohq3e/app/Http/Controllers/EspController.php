@@ -6,6 +6,7 @@ use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
+use Psy\Readline\Hoa\EventSource;
 
 class EspController extends Controller
 {
@@ -37,7 +38,7 @@ class EspController extends Controller
         $esps = Esp::all();
         $Room = Room::find($room);
         if ($Room !== null){
-            $types = ["Sensor","Toggle"];
+            $types = ["Sensor","Toggle","Camera"];
             return view("device.create",[
                 'types' => $types,
                 'room' => $Room
@@ -64,6 +65,9 @@ class EspController extends Controller
                 break;
             case 1:
                 $type = "Toggle";
+                break;
+            case 2:
+                $type = "Camera";
                 break;
         }
         $existing = null;
@@ -98,9 +102,15 @@ class EspController extends Controller
      * @param  \App\Models\Esp  $esp
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($ip_End)
     {
-        return view('room.videostream');
+        $device = Esp::where('ip_End',"=",$ip_End)->first();
+
+        if ($device !== null){
+            return view('room.videostream',['device' => $device]);
+        }
+        return redirect('/');
+
     }
 
     /**
@@ -110,7 +120,7 @@ class EspController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Room $room,Esp $device){
-        $types = ["Sensor","Toggle"];
+        $types = ["Sensor","Toggle","Camera"];
         return view('device.modify',[
             'types' => $types,
             'room'=>$room,
@@ -133,6 +143,9 @@ class EspController extends Controller
                 break;
             case 1:
                 $type = "Toggle";
+                break;
+            case 2:
+                $type = "Camera";
                 break;
         }
         $existing = null;

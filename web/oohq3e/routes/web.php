@@ -34,4 +34,4 @@ Route::delete("/delete/{room}", [RoomController::class,'destroy']);
 Route::get("/modify/room/{room}",[RoomController::class,'edit']);
 Route::post("/modify/room/{room}",[RoomController::class,'update']);
 
-Route::get('/cam',[EspController::class,'show']);
+Route::get('/cam/{ip_End}',[EspController::class,'show']);

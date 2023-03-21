@@ -38,7 +38,7 @@
                         @foreach($types as $type)
                             <option value="{{$i}}">{{$type}}</option>
 
-                            <?php $i = $i +1; ?>
+                            <?php $i = $i + 1; ?>
                         @endforeach
                     </select>
                 </div>

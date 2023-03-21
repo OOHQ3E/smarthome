@@ -58,7 +58,17 @@
                                 getStatusOfDevice(@json($esp));
                             });
                         </script>
-
+                    @elseif($esp-> room_id === $room->id && $esp->type === "Camera")
+                        <a href="{{ asset('cam/'.$esp->ip_End) }}">
+                        <div class="w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
+                            <span id="device-{{$esp->ip_End}}-span" class="font-semibold my-0.5 text-xl text-gray-900 dark:text-gray-800">
+                                {{$esp->name}} ({{$esp->ip_End}})
+                            </span>
+                            <label for="camera-{{$esp->ip_End}}" class="inline-flex relative items-center cursor-pointer">
+                                    <img id="camera-{{$esp->ip_End}}" class="rounded-lg w-full m-auto" src="http://192.168.200.{{$esp->ip_End}}/" alt="">
+                            </label>
+                        </div>
+                        </a>
                     @endif
 
                 @empty
