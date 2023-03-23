@@ -72,10 +72,14 @@ class EspController extends Controller
         }
         $existing = null;
         if ($type == "Sensor"){
-            $existing = DB::table("esp")->where("room_id","=", $request->get("roomId"))->where("type","=","Sensor")->first();
+            $existing = DB::table("esp")
+                ->where("room_id","=", $request->get("roomId"))
+                ->where("type","=","Sensor")
+                ->first();
         }
         if ($existing!==null){
-            return back()->with('error','Rooms can only have 1 Sensor!');
+            return back()
+                ->with('error','Rooms can only have 1 Sensor!');
         }
         else{
             $request->validate([
@@ -92,7 +96,8 @@ class EspController extends Controller
             $esp ->room_id = $request->get("roomId");
 
             $esp->save();
-            return redirect('/settings')->with("message","Successfully added ". $esp ->name." to ".$room->name);
+            return redirect('/settings')
+                ->with("message","Successfully added ". $esp -> name." to ".$room -> name);
         }
     }
 
@@ -107,7 +112,9 @@ class EspController extends Controller
         $device = Esp::where('ip_End',"=",$ip_End)->first();
 
         if ($device !== null){
-            return view('room.videostream',['device' => $device]);
+            return view('room.videostream',[
+                'device' => $device
+            ]);
         }
         return redirect('/');
 
@@ -119,12 +126,13 @@ class EspController extends Controller
      * @param  \App\Models\Esp  $esp
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room,Esp $device){
+    public function edit(Room $room, Esp $device){
         $types = ["Sensor","Toggle","Camera"];
         return view('device.modify',[
             'types' => $types,
             'room'=>$room,
-            'device'=>$device]);
+            'device'=>$device
+        ]);
     }
 
     /**

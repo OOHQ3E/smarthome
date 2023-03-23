@@ -13,19 +13,15 @@
     </head>
 
     <body>
-    <div class="justify-center flex flex-wrap gap-6">
-        <div class="lg:w-16 md:w-full w-full">
-            <a href="{{ asset('/') }}" >
-                <button type="button" class="text-4xl my-3 mx-5 text-center pb-1 font-black lg:w-16 md:w-11/12 w-11/12 h-16 bg-gray-400 rounded-full hover:bg-gray-500">
-                    &larr;
-                </button>
-            </a>
-        </div>
+    <div class="p-5 text-center m-auto w-full flex flex-wrap gap-4">
+        <button class="lg:w-16 text-3xl md:w-full w-full h-16 text-gray-700 transition hover:text-gray-800 rounded-full font-black bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/') }}'">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
 
-        <div class="my-4 text-center lg:w-6/12 sm:w-10/12">
-            <h1 class="text-2xl text-white font-sans py-2 uppercase font-light">
+        <div class="my-4 text-center w-11/12 m-auto">
+            <span class="text-3xl text-white font-sans py-2 uppercase font-light">
                 {{$roomData->name}}'s temperature and humidity chart
-            </h1>
+            </span>
         </div>
 
     </div>

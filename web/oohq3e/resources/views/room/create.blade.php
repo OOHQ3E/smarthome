@@ -34,14 +34,18 @@
                 <input type="text" class="truncate ... my-5 w-full text-xl rounded-md" id="name" name="name" class="rounded" required>
             </div>
 
-            <div class="text-center text-gray-50 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-                <button type="submit" class="truncate uppercase bg-green-500 rounded-full lg:w-11/12 md:w-10/12 w-full text-center p-3 my-2 hover:bg-green-400">Add</button>
-                <button type="reset" class="truncate uppercase bg-orange-500 rounded-full lg:w-11/12 md:w-10/12 w-full text-center p-3 my-2 hover:bg-orange-400">Reset data</button>
-                <a class="lg:w-11/12 md:w-10/12 w-full" href="{{ asset('settings') }}" >
-                    <button type="button" class="truncate text-black uppercase bg-red-500 hover:bg-red-400 rounded-full w-full text-center p-3 my-2">
-                        Cancel
-                    </button>
-                </a>
+            <div class="text-gray-50 flex flex-wrap justify-center gap-2">
+                <button type="submit" class="truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
+                    <i class="fa-solid fa-plus"></i><span> Add Room</span>
+                </button>
+
+                <button type="reset" class="text-black truncate uppercase bg-orange-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-orange-400">
+                    <i class="fa-solid fa-rotate-right"></i><span> Reset Data</span>
+                </button>
+
+                <button onclick="location.href='{{ asset('settings') }}'" type="button" class="truncate text-white uppercase bg-red-500 hover:bg-red-400 lg:w-64 md:w-64 w-11/12 rounded-full text-center p-3 my-2">
+                    <i class="fa-solid fa-ban"></i><span> Cancel</span>
+                </button>
             </div>
 
         </form>

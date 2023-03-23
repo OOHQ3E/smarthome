@@ -5,30 +5,26 @@
 @section('content')
 
 
-
-    <div class="w-16 h-16">
-        <a class="w-full rounded-full" href="{{ asset('settings') }}" >
-            <div class="text-3xl text-center w-16 h-16 bg-gray-400 rounded-full text-center m-3 p-3 hover:bg-gray-500">
-                &#9881;
-            </div>
-        </a>
+    <div class="m-auto p-4 lg:text-left md:text-center sm:text-center">
+        <button class="lg:w-16 md:w-11/12 w-full h-16 text-3xl text-gray-700 transition hover:text-gray-800 rounded-full bg-gray-400 rounded-full hover:bg-gray-500" onclick="location.href='{{ asset('settings') }}'">
+            <i class="fa-solid fa-gear"></i>
+        </button>
     </div>
+
    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
 
     @forelse($rooms as $room)
         <div class="bg-white bg-opacity-75 shadow-2xl p-4 rounded-lg m-auto lg:w-10/12 md:w-10/12 w-full my-2">
-            <p class="text-left font-bold m-2 text-xl">{{$room->name}}</p>
+            <p class="text-left font-bold m-2 text-2xl">{{$room->name}}</p>
             <div class="flex flex-wrap gap-4 justify-center">
                 @forelse($esps as $esp)
                     @if($esp-> room_id === $room->id && $esp->type === "Sensor")
-                        <div class="w-full text-xl justify-center">
-                            <a href="{{ asset('chart/'.$esp->room_id) }}">
-                                <div class="h-min-24 bg-opacity-75 bg-gray-400 hover:bg-gray-500 p-4 rounded-lg">
-                                    <p id="espData-{{$esp->room_id}}" class="">
-                                        <!--Temperature: 30°C<br> Humidity: 70% -->
-                                    </p>
-                                </div>
-                            </a>
+                        <div onclick="location.href='{{ asset('chart/'.$esp->room_id) }}'" class="hover:cursor-pointer w-full text-xl justify-center">
+                            <div class="h-min-24 bg-opacity-75 bg-gray-400 hover:bg-gray-500 p-4 rounded-lg">
+                                <p id="espData-{{$esp->room_id}}" class="">
+                                    <!--Temperature: 30°C<br> Humidity: 70% -->
+                                </p>
+                            </div>
                         </div>
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                         <script>
@@ -40,12 +36,11 @@
 
                     @elseif($esp-> room_id === $room->id && $esp->type === "Toggle")
                         <div class="w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
-                            <label for="toggle-{{$esp->ip_End}}" class="inline-flex relative items-center cursor-pointer">
-                                <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
-                                    <div class="">
+                            <label for="toggle-{{$esp->ip_End}}" class="w-full h-full inline-flex relative items-center cursor-pointer">
+                                <div class="">
                                         <input type="checkbox" value="" id="toggle-{{$esp->ip_End}}" class="sr-only peer" onclick='toggle(@json($esp))'>
-                                        <div class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                    </div>
+                                        <div class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                                        </div>
                                 <span id="device-{{$esp->ip_End}}-span" class="mt-0.5 text-xl text-gray-900 dark:text-gray-800"></span>
                                 </div>
                             </label>
@@ -59,7 +54,7 @@
                             });
                         </script>
                     @elseif($esp-> room_id === $room->id && $esp->type === "Camera")
-                        <a href="{{ asset('cam/'.$esp->ip_End) }}">
+                        <a class="w-full" id="camera-{{$esp->ip_End}}-link" href="{{ asset('cam/'.$esp->ip_End) }}">
                         <div class="w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
                             <span id="device-{{$esp->ip_End}}-span" class="font-semibold my-0.5 text-xl text-gray-900 dark:text-gray-800">
                                 {{$esp->name}} ({{$esp->ip_End}})
@@ -69,6 +64,13 @@
                             </label>
                         </div>
                         </a>
+                        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                        <script>
+                            $(document).ready(function(){
+                                document.getElementById("device-{{$esp->ip_End}}-span").innerHTML = "Connecting to <span class='font-semibold'>{{$esp->name}} ({{$esp->ip_End}})</span> ...";
+                                imageExists("http://192.168.200.{{$esp->ip_End}}/", @json($esp));
+                            });
+                        </script>
                     @endif
 
                 @empty
@@ -125,6 +127,14 @@
                 document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "<span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span> is currently unavailable";
                 document.getElementById("toggle-"+esp.ip_End).checked = false;
                 document.getElementById("toggle-"+esp.ip_End).disabled = true;
+            });
+        }
+
+        function imageExists(image_url,esp){
+            $.getJSON(image_url, function() {
+
+            }).fail(function(){
+                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "<span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span> is unavailable";
             });
         }
     </script>
