@@ -162,7 +162,6 @@ class EspController extends Controller
         if ($type == "Sensor"){
             $existing = DB::table("esp")->where("room_id","=", $request->get("room"))->where("type","=","Sensor")->first();
         }
-
         if ($existing !== null && $existing->id !== $device->id){
             return back()->with('error','Rooms can only have 1 Sensor!');
         }
@@ -187,6 +186,10 @@ class EspController extends Controller
             $esp ->room_id = $request->get("room");
 
             $esp->save();
+
+            if ($room->id !== $request->get('room')){
+                DB::delete("DELETE FROM esp_sensor_data WHERE room_id = ".$room->id.";");
+            }
             return redirect('/settings')->with("message","Successfully updated ". $esp ->name);
         }
     }

@@ -1,11 +1,11 @@
 #include "DHT.h"
 #include <WiFi.h>
 #include <HTTPClient.h>
-
+using namespace std;
 const char* ssid = "raspberrySmarthome";
 const char* password = "huu1vi9doL";
 
-IPAddress local_IP(192,168,200,5);
+IPAddress local_IP(192,168,200,5);//ip end is 5
 IPAddress gateway(192,168,200,1);
 IPAddress subnet(255,255,255,0);
 
@@ -14,7 +14,7 @@ IPAddress subnet(255,255,255,0);
 
 DHT dht(DHTPIN, DHTTYPE);
 
-const char *host = "http://192.168.200.1/api/esp";   // IP/web server address
+const char *host = "http://192.168.200.1/api/esp/5";//ip end is 5 -   // IP/web server address
 
 void setup() {
   Serial.begin(9600); 
@@ -57,7 +57,7 @@ void loop() {
     return;
   }
 
-  postData = "room=" + room + "&temp=" + temperature + "&hum=" + humidity ;
+  postData = "temp=" + temperature + "&hum=" + humidity ;
   http.begin(host);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   int httpCode = http.POST(postData);
