@@ -28,6 +28,10 @@
 const char* ssid = "raspberrySmarthome";
 const char* password = "huu1vi9doL";
 
+IPAddress local_IP(192,168,200,10);
+IPAddress gateway(192,168,200,1);
+IPAddress subnet(255,255,255,0);
+
 #define PART_BOUNDARY "123456789000000000000987654321"
 
 // This project was tested with the AI Thinker Model, M5STACK PSRAM Model and M5STACK WITHOUT PSRAM
@@ -204,6 +208,10 @@ void setup() {
  
   Serial.begin(115200);
   Serial.setDebugOutput(false);
+
+   if(!WiFi.config(local_IP,gateway,subnet)){
+    Serial.println("STA failed to configure");
+  }
   
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
