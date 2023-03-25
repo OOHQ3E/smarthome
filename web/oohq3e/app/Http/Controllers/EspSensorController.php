@@ -76,10 +76,10 @@ class EspSensorController extends Controller
      */
     public function store(Request $request)
     {
-        $roomID = DB::table('esp')->select('room_id')->where('ip_End','=',$request->get("ipEnd", "n/a"))->first();
-
+        $device = Esp::where('ip_End',"=",$request->get("ipEnd","n/a"))->first();
+	
         $esp = new EspSensorData();
-        $esp->room_id = $roomID;
+        $esp->room_id = $device->room_id;
         $esp->temperature = $request->get("temp", "n/a");
         $esp->humidity = $request->get("hum", "n/a");
         $esp->save();
