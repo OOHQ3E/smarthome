@@ -32,7 +32,7 @@
                         <div class="bg-gray-100 rounded-lg overflow-auto m-3 bg-opacity-90">
                             <div class="flex flex-wrap gap-2 justify-center m-5">
                                 <button onclick="location.href='{{ asset('create')}}/device/{{$room->id}}'">
-                                    <div class="my-1 bg-green-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-green-400 hover:text-white w-64 text-center">
+                                    <div class="my-1 bg-green-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-green-600 hover:text-white w-64 text-center">
                                         <i class="fa-solid fa-plus"></i><span> Add device</span>
                                     </div>
                                 </button>
@@ -44,7 +44,7 @@
                                 <form action="/delete/{{$room->id}}" method="POST">
                                     @csrf
                                     {{method_field('DELETE')}}
-                                    <button class="uppercase my-1 uppercase bg-red-500 text-white rounded-full py-3 px-6 transition hover:bg-red-400 hover:text-white w-64 text-center" name="id" type="submit" value="{{ $room -> id }}">
+                                    <button class="uppercase my-1 uppercase bg-red-500 text-white rounded-full py-3 px-6 transition hover:bg-red-800 hover:text-white w-64 text-center" name="id" type="submit" value="{{ $room -> id }}">
                                         <i class="fa-solid fa-trash-can"></i><span> Delete room</span>
                                     </button>
                                 </form>
@@ -81,7 +81,7 @@
                                                 <form action="device/delete/{{$esp->id}}" method="POST">
                                                     @csrf
                                                     {{method_field('DELETE')}}
-                                                    <button class="w-14 h-14 uppercase text-center rounded-lg bg-red-600 transition hover:bg-red-800" name="id" type="submit" value="{{ $esp -> id }}">
+                                                    <button class="w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{ $esp -> id }}">
                                                         <i class="fa-solid fa-trash-can"></i>
                                                     </button>
                                                 </form>

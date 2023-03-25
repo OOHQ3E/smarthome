@@ -56,19 +56,18 @@
                     @elseif($esp-> room_id === $room->id && $esp->type === "Camera")
                         <a class="w-full" id="camera-{{$esp->ip_End}}-link" href="{{ asset('cam/'.$esp->ip_End) }}">
                         <div class="w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
-                            <span id="device-{{$esp->ip_End}}-span" class="font-semibold my-0.5 text-xl text-gray-900 dark:text-gray-800">
-                                {{$esp->name}} ({{$esp->ip_End}})
-                            </span>
-                            <label for="camera-{{$esp->ip_End}}" class="inline-flex relative items-center cursor-pointer">
-                                    <img id="camera-{{$esp->ip_End}}" class="rounded-lg w-full m-auto" src="http://192.168.200.{{$esp->ip_End}}/" alt="">
-                            </label>
+                            <span id="device-{{$esp->ip_End}}-span" class="my-0.5 text-xl text-gray-900 dark:text-gray-800"></span>
+                             <img id="camera-{{$esp->ip_End}}" onload='success(@json($esp))' class="rounded-lg w-full m-auto" src="http://192.168.200.{{$esp->ip_End}}/">
                         </div>
                         </a>
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                         <script>
                             $(document).ready(function(){
                                 document.getElementById("device-{{$esp->ip_End}}-span").innerHTML = "Connecting to <span class='font-semibold'>{{$esp->name}} ({{$esp->ip_End}})</span> ...";
-                                imageExists("http://192.168.200.{{$esp->ip_End}}/", @json($esp));
+
+                                //document.getElementById("camera-{{$esp->ip_End}}").addEventListener("load",success(@json($esp),"http://192.168.200.{{$esp->ip_End}}"));
+                                document.getElementById("camera-{{$esp->ip_End}}").addEventListener("error",error(@json($esp),"http://192.168.200.{{$esp->ip_End}}"));
+                                setInterval(imageExists.bind('esp',@json($esp),"http://192.168.200.{{$esp->ip_End}}"), 15000);
                             });
                         </script>
                     @endif
@@ -130,13 +129,22 @@
             });
         }
 
-        function imageExists(image_url,esp){
-            $.getJSON(image_url, function() {
-
-            }).fail(function(){
-                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "<span class='font-semibold'>"+esp.name+" ("+esp.ip_End+")</span> is unavailable";
-            });
-        }
+        //Camera feed
+            function success(esp){
+                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "<span class='font-semibold'>"+esp.name +" ("+esp.ip_End+")</span>";
+            }
+            function error(esp, url){
+                //console.log("error occured")
+                document.getElementById("device-"+esp.ip_End+"-span").innerHTML = "An error occured with <span class='font-semibold'>"+esp.name+" ("+esp.ip_End+").</span> Trying to reconnect...";
+                document.getElementById("camera-"+esp.ip_End).src = url;
+            }
+            function imageExists(esp,url){
+                //console.log("checking availability")
+                $.getJSON(url, function() {
+                }).fail(function(){
+                    error(esp, url);
+                });
+            }
     </script>
 
 
