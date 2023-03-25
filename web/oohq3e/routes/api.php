@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/esp/{ip_End}', [EspSensorController::class,'store']);
+Route::post('/esp/', [EspSensorController::class,'store']);

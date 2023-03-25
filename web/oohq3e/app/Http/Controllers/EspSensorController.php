@@ -74,9 +74,9 @@ class EspSensorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $ip_End)
+    public function store(Request $request)
     {
-        $roomID = DB::table('esp')->select('room_id')->where('ip_End','=',$ip_End);
+        $roomID = DB::table('esp')->select('room_id')->where('ip_End','=',$request->get("ipEnd", "n/a"))->first();
 
         $esp = new EspSensorData();
         $esp->room_id = $roomID;
