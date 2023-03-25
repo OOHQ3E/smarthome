@@ -15,7 +15,7 @@
         </div>
 
     @if(session()->has('error') || $errors->any())
-        <ul class="bg-red-600 rounded-lg w-1/3 m-auto text-xl text-center text-white font-sans py-2 my-2 font-light">
+        <ul class="shadow-2xl bg-red-600 rounded-lg w-1/3 m-auto text-xl text-center text-white font-sans py-2 my-2 font-light">
                 <li>
                     {{ session()->get('error') }}
                 </li>
@@ -26,7 +26,7 @@
     @endif
 
         <div class="m-auto text-center">
-            <form action="/create/device/{{$room->id}}" method="POST" class="lg:w-2/3 m-auto px-10 py-5 bg-gray-100 rounded-lg form-input">
+            <form action="/create/device/{{$room->id}}" method="POST" class="shadow-2xl lg:w-2/3 m-auto px-10 py-5 bg-gray-100 rounded-lg form-input">
                 @csrf
                 <input type="hidden" id="roomId" name="roomId" value="{{$room->id}}">
                 <div class="text-left w-11/12 m-auto">
@@ -55,15 +55,15 @@
                 </div>
 
                 <div class="text-gray-50 flex flex-wrap justify-center gap-2">
-                    <button type="submit" class="truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
+                    <button type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
                         <i class="fa-solid fa-plus"></i><span> Add Device</span>
                     </button>
 
-                    <button type="reset" class="text-black truncate uppercase bg-orange-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-orange-400">
+                    <button type="reset" class="shadow-xl text-black truncate uppercase bg-orange-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-orange-400">
                         <i class="fa-solid fa-rotate-right"></i><span> Reset Data</span>
                     </button>
 
-                    <button onclick="location.href='{{ asset('settings') }}'" type="button" class="truncate text-white uppercase bg-red-500 hover:bg-red-400 lg:w-64 md:w-64 w-11/12 rounded-full text-center p-3 my-2">
+                    <button onclick="location.href='{{ asset('settings') }}'" type="button" class="shadow-xl truncate text-white uppercase bg-red-500 hover:bg-red-400 lg:w-64 md:w-64 w-11/12 rounded-full text-center p-3 my-2">
                         <i class="fa-solid fa-ban"></i><span> Cancel</span>
                     </button>
                 </div>

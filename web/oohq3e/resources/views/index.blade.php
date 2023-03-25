@@ -6,7 +6,7 @@
 
 
     <div class="m-auto p-4 lg:text-left md:text-center sm:text-center">
-        <button class="lg:w-16 md:w-11/12 w-full h-16 text-3xl text-gray-700 transition hover:text-gray-800 rounded-full bg-gray-400 rounded-full hover:bg-gray-500" onclick="location.href='{{ asset('settings') }}'">
+        <button class="shadow-2xl lg:w-16 md:w-11/12 w-full h-16 text-3xl text-gray-700 transition hover:text-gray-800 rounded-full bg-gray-400 rounded-full hover:bg-gray-500" onclick="location.href='{{ asset('settings') }}'">
             <i class="fa-solid fa-gear"></i>
         </button>
     </div>
@@ -19,7 +19,7 @@
             <div class="flex flex-wrap gap-4 justify-center">
                 @forelse($esps as $esp)
                     @if($esp-> room_id === $room->id && $esp->type === "Sensor")
-                        <div onclick="location.href='{{ asset('chart/'.$esp->room_id) }}'" class="hover:cursor-pointer w-full text-xl justify-center">
+                        <div onclick="location.href='{{ asset('chart/'.$esp->room_id) }}'" class="shadow-xl hover:cursor-pointer w-full text-xl justify-center">
                             <div class="h-min-24 bg-opacity-75 bg-gray-400 hover:bg-gray-500 p-4 rounded-lg">
                                 <p id="espData-{{$esp->room_id}}" class="">
                                     <!--Temperature: 30°C<br> Humidity: 70% -->
@@ -35,7 +35,7 @@
                         </script>
 
                     @elseif($esp-> room_id === $room->id && $esp->type === "Toggle")
-                        <div class="w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
+                        <div class="w-full shadow-xl h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
                             <label for="toggle-{{$esp->ip_End}}" class="w-full h-full inline-flex relative items-center cursor-pointer">
                                 <div class="">
                                         <input type="checkbox" value="" id="toggle-{{$esp->ip_End}}" class="sr-only peer" onclick='toggle(@json($esp))'>
@@ -55,9 +55,11 @@
                         </script>
                     @elseif($esp-> room_id === $room->id && $esp->type === "Camera")
                         <a class="w-full" id="camera-{{$esp->ip_End}}-link" href="{{ asset('cam/'.$esp->ip_End) }}">
-                        <div class="w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
+                        <div class="shadow-xl w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
                             <span id="device-{{$esp->ip_End}}-span" class="my-0.5 text-xl text-gray-900 dark:text-gray-800"></span>
-                             <img id="camera-{{$esp->ip_End}}" onload='success(@json($esp))' class="rounded-lg w-full m-auto" src="http://192.168.200.{{$esp->ip_End}}/">
+                            <div class="h-max">
+                                <img class="rounded-lg w-full m-auto" id="camera-{{$esp->ip_End}}" onload='success(@json($esp))'  src="http://192.168.200.{{$esp->ip_End}}/" alt="{{$esp->name}} ({{$esp->ip_End}})">
+                            </div>
                         </div>
                         </a>
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

@@ -9,7 +9,7 @@
 </head>
 <html>
 <div class="p-5 text-center m-auto w-full flex flex-wrap gap-4">
-    <button class="lg:w-16 text-3xl md:w-full w-full h-16 text-gray-700 transition hover:text-gray-800 rounded-full font-black bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/') }}'">
+    <button class="shadow-2xl lg:w-16 text-3xl md:w-full w-full h-16 text-gray-700 transition hover:text-gray-800 rounded-full font-black bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/') }}'">
         <i class="fa-solid fa-arrow-left"></i>
     </button>
 
@@ -20,7 +20,7 @@
     </div>
 
 </div>
-<div class="m-auto bg-opacity-75 bg-white rounded-md w-10/12 my-3 p-3 w-10/12 text-center">
+<div class="m-auto bg-opacity-75 shadow-2xl bg-white rounded-md w-10/12 my-3 p-3 w-10/12 text-center">
     <span id="device-{{$device->ip_End}}-span" class="my-0.5 text-xl text-gray-900 dark:text-gray-800 ">
     </span>
     <img src="http://192.168.200.{{$device->ip_End}}/" onload='success(@json($device))' id="camera-{{$device->ip_End}}" class="rounded-lg w-10/12 m-auto"  alt="">
