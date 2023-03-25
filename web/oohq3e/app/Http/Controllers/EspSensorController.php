@@ -77,7 +77,7 @@ class EspSensorController extends Controller
     public function store(Request $request)
     {
         $device = Esp::where('ip_End',"=",$request->get("ipEnd","n/a"))->first();
-	
+
         $esp = new EspSensorData();
         $esp->room_id = $device->room_id;
         $esp->temperature = $request->get("temp", "n/a");
@@ -90,9 +90,9 @@ class EspSensorController extends Controller
      * @param  \App\Models\EspSensorData  $EspSensorData
      * @return \Illuminate\Http\Response
      */
-    public function show(EspSensorData $EspSensorData)
+    public function show()
     {
-        //
+        return view('RFIDsettings');
     }
 
     /**

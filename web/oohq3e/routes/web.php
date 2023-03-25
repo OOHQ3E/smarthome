@@ -15,7 +15,8 @@ use \App\Http\Controllers\EspSensorController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/settings', [EspController::class, 'index'])->name('settings');
+Route::get('/settings', [EspController::class, 'index'])->name('Settings');
+Route::get('/settings/RFID', [EspSensorController::class, 'show'])->name('RFID settings');
 Route::get('/chart/{room}', [EspSensorController::class, 'index']);
 Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest']);
 
@@ -27,7 +28,7 @@ Route::delete('/device/delete/{device}', [EspController::class,'destroy']);
 Route::get("/modify/device/{room}/{device}",[EspController::class,'edit']);
 Route::post("/modify/device/{room}/{device}",[EspController::class,'update']);
 
-Route::get('/', [RoomController::class, 'index'])->name('index');
+Route::get('/', [RoomController::class, 'index'])->name('Main Page');
 Route::get("/create/room", [RoomController::class,'create']);
 Route::post("/create/room", [RoomController::class,'store']);
 Route::delete("/delete/{room}", [RoomController::class,'destroy']);

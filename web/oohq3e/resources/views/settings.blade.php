@@ -4,16 +4,18 @@
 
 @section('content')
 
-        <div class="m-auto flex gap-3 p-4 text-center">
-            <button class="shadow-2xl w-16 h-16 text-3xl text-white rounded-full text-gray-700 transition hover:text-gray-800 bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/') }}'">
+        <div class="m-auto flex md:flex-nowrap sm:flex-nowrap flex-wrap gap-3 p-4 text-center justify-center">
+            <button class="shadow-2xl lg:w-16 md:w-16 w-full h-16 text-3xl text-white rounded-full text-gray-700 transition hover:text-gray-800 bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/') }}'">
                 <i class="fa-solid fa-arrow-left"></i>
             </button>
-
-            <button onclick="location.href='{{ asset('create')}}/room'" class="text-2xl text-black m-auto w-full rounded-full shadow-2xl">
-                <div class="bg-green-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-green-400 hover:text-white ">
-                    <i class="fa-solid fa-plus"></i><span> Add Room</span>
-                </div>
+            <button onclick="location.href='{{ asset('create')}}/room'" class="text-xl m-auto lg:w-64 md:w-64 w-full rounded-full shadow-2xl bg-green-500 text-white uppercase rounded-full py-3 px-6 h-16 transition hover:bg-green-600 hover:text-black ">
+                <i class="fa-solid fa-plus"></i><span> Add Room</span>
             </button>
+            <button class="shadow-2xl  h-16 text-xl text-white rounded-full text-gray-700 lg:w-3/4 md:w-96 w-full transition hover:text-gray-800 bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('settings/RFID') }}'">
+                <i class="fa-solid fa-key"></i> <span>RFID settings</span>
+            </button>
+
+
         </div>
         @if (Session::has('message'))
             <div class="flex justify-center font-sans text-center my-2">
