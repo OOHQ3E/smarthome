@@ -11,7 +11,7 @@
         <button onclick="location.href='{{ asset('create')}}/RFID'" class="text-xl m-auto text-center lg:w-2/5 md:w-2/5 w-full rounded-full shadow-2xl bg-green-500 text-white uppercase rounded-full h-16 transition hover:bg-green-600 hover:text-black ">
             <i class="fa-solid fa-plus"></i><span> Add RFID tag</span>
         </button>
-        <button class="m-auto text-xl shadow-xl bg-orange-500 text-white uppercase rounded-full transition hover:bg-orange-600 hover:text-black hover:text-white h-16 lg:w-2/5 md:w-2/5 w-full text-center" onclick="location.href='/settings/{{ asset('state')}}/RFID/security'">
+        <button class="m-auto text-xl shadow-xl bg-orange-500 text-white uppercase rounded-full transition hover:bg-orange-600 hover:text-black h-16 lg:w-2/5 md:w-2/5 w-full text-center" onclick="location.href='/settings/{{ asset('state')}}/RFID/security'">
             <i class="fa-solid fa-clock-rotate-left"></i> Use History</span>
         </button>
     </div>
