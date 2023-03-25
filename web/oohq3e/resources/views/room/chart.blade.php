@@ -14,7 +14,7 @@
 
     <body>
     <div class="p-5 text-center m-auto w-full flex flex-wrap gap-4">
-        <button class="lg:w-16 text-3xl md:w-full w-full h-16 text-gray-700 transition hover:text-gray-800 rounded-full font-black bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/') }}'">
+        <button class="shadow-2xl lg:w-16 text-3xl md:w-full w-full h-16 text-gray-700 transition hover:text-gray-800 rounded-full font-black bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/') }}'">
             <i class="fa-solid fa-arrow-left"></i>
         </button>
 

@@ -128,10 +128,12 @@ class EspController extends Controller
      */
     public function edit(Room $room, Esp $device){
         $types = ["Sensor","Toggle","Camera"];
+        $rooms = Room::all();
         return view('device.modify',[
             'types' => $types,
             'room'=>$room,
-            'device'=>$device
+            'device'=>$device,
+            'rooms'=>$rooms
         ]);
     }
 
@@ -158,7 +160,7 @@ class EspController extends Controller
         }
         $existing = null;
         if ($type == "Sensor"){
-            $existing = DB::table("esp")->where("room_id","=", $request->get("roomId"))->where("type","=","Sensor")->first();
+            $existing = DB::table("esp")->where("room_id","=", $request->get("room"))->where("type","=","Sensor")->first();
         }
 
         if ($existing !== null && $existing->id !== $device->id){
@@ -182,10 +184,10 @@ class EspController extends Controller
             $esp ->type = $type;
             $esp ->name = $request->get("deviceName");
             $esp ->ip_End = $request->get("ip_End");
-            $esp ->room_id = $request->get("roomId");
+            $esp ->room_id = $request->get("room");
 
             $esp->save();
-            return redirect('/settings')->with("message","Successfully updated ". $esp ->name." in ".$room->name);
+            return redirect('/settings')->with("message","Successfully updated ". $esp ->name);
         }
     }
 

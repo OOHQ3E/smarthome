@@ -30,6 +30,18 @@
             @csrf
             <input type="hidden" id="roomId" name="roomId" value="{{$room->id}}">
             <div class="text-left w-11/12 m-auto">
+                <label for="room" class="my-6 font-semibold">Room:</label>
+                <select name="room" id="room" class="my-5 text-xl w-full m-auto rounded-md">
+                    @foreach($rooms as $room)
+                        @if($room->id == $device->room_id)
+                            <option selected value="{{$room->id}}">{{$room->name}}</option>
+                        @else
+                            <option  value="{{$room->id}}">{{$room->name}}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+            <div class="text-left w-11/12 m-auto">
                 <label for="type" class="my-6 font-semibold">Device type:</label>
 
                 <select name="type" id="type" class="my-5 text-xl w-full m-auto rounded-md">
@@ -46,6 +58,7 @@
                     @endforeach
                 </select>
             </div>
+
             <div class="text-left w-11/12 m-auto">
                 <label for="device-name" class="my-6 font-semibold text-left">Device name:</label>
                 <input type="text" value="{{$device->name}}" class="truncate ... my-5 w-full text-xl rounded-md" id="deviceName" name="deviceName" class="rounded" required>
