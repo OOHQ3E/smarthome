@@ -10,8 +10,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "php-mqtt/client": "^1.6",
-        "php-mqtt/laravel-client": "^1.0"
+        "php-mqtt/client": "^1.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

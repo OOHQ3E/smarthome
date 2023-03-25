@@ -203,7 +203,7 @@ class EspController extends Controller
     public function destroy(Esp $device){
         $room = DB::table('room')->select("name")->where('id',"=",$device->room_id)->first();
         $device->delete();
-        return redirect('/settings')->with("message","Successfully deleted ".$device->name." from ".$room->name);
+        return redirect()->back()->with("message","Successfully deleted ".$device->name." from ".$room->name);
     }
 
     public function getStatus($esp){
