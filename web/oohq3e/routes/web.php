@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EspController;
+use App\Http\Controllers\RfidTagController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\EspSensorController;
@@ -16,23 +17,28 @@ use \App\Http\Controllers\EspSensorController;
 |
 */
 Route::get('/settings', [EspController::class, 'index'])->name('Settings');
-Route::get('/settings/RFID', [EspSensorController::class, 'show'])->name('RFID settings');
-Route::get('/chart/{room}', [EspSensorController::class, 'index']);
-Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest']);
+Route::get('/chart/{room}', [EspSensorController::class, 'index'])->name('Sensor Data Chart');
+Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest'])->name('Get Latest Sensor Data');
+Route::get('/cam/{ip_End}',[EspController::class,'show'])->name('Show Camera Feed');
 
-Route::get('/getStatus/{esp}',[EspController::class,'getStatus']);
-Route::get('/esp/toggle/{esp}/{status}',[EspController::class,'Toggle']);
-Route::get("/create/device/{room}", [EspController::class,'create']);
-Route::post("/create/device/{room}", [EspController::class,'store']);
-Route::delete('/device/delete/{device}', [EspController::class,'destroy']);
-Route::get("/modify/device/{room}/{device}",[EspController::class,'edit']);
-Route::post("/modify/device/{room}/{device}",[EspController::class,'update']);
+Route::get('/getStatus/{esp}',[EspController::class,'getStatus'])->name('Request Status of Toggle (esp)');
+
+Route::get('/getTag/{esp}',[EspController::class,'getTag'])->name('Request Tag uid From RFID Reader');
+
+Route::get('/esp/toggle/{esp}/{status}',[EspController::class,'Toggle'])->name('Get Status of Toggle (esp)');
+Route::get("/create/device/{room}", [EspController::class,'create'])->name('Create New Device Form');
+Route::post("/create/device/{room}", [EspController::class,'store'])->name('Store New Device (esp)');
+Route::get("/modify/device/{room}/{device}",[EspController::class,'edit'])->name('Modify Device (esp) Form');
+Route::post("/modify/device/{room}/{device}",[EspController::class,'update'])->name('Update Device (esp)');
+Route::delete('/device/delete/{device}', [EspController::class,'destroy'])->name('Delete Device (esp)');
 
 Route::get('/', [RoomController::class, 'index'])->name('Main Page');
-Route::get("/create/room", [RoomController::class,'create']);
-Route::post("/create/room", [RoomController::class,'store']);
-Route::delete("/delete/{room}", [RoomController::class,'destroy']);
-Route::get("/modify/room/{room}",[RoomController::class,'edit']);
-Route::post("/modify/room/{room}",[RoomController::class,'update']);
+Route::get("/create/room", [RoomController::class,'create'])->name('Create Room Form');
+Route::post("/create/room", [RoomController::class,'store'])->name('Store New Room');
+Route::get("/modify/room/{room}",[RoomController::class,'edit'])->name('Modify Room Form');
+Route::post("/modify/room/{room}",[RoomController::class,'update'])->name('Update Room');
+Route::delete("/delete/{room}", [RoomController::class,'destroy'])->name('Delete Room');
 
-Route::get('/cam/{ip_End}',[EspController::class,'show']);
+Route::get('/settings/RFID', [RfidTagController::class, 'index'])->name('RFID settings');
+Route::get('/create/RFID',[RfidTagController::class,'create'])->name("Create New RFID Tag Form");
+Route::post('/create/RFID',[RfidTagController::class,'store'])->name('Store New RFID Tag');

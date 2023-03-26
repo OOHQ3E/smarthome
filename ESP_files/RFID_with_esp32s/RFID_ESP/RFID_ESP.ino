@@ -23,6 +23,7 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);  //--> Create MFRC522 instance.
 AsyncWebServer webserver(80);  //--> Server on port 80
 
 int readsuccess;
+int state = 0; // 0 = continous reading 1 = add tag to text field
 byte readcard[4];
 char str[32] = "";
 String StrUID;
@@ -35,15 +36,18 @@ void setup() {
 
   delay(500);
 
-  WiFi.begin(ssid, password); //--> Connect to your WiFi router
-  Serial.println("");
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH); //--> Turn off Led On Board
 
     if(!WiFi.config(local_IP,gateway,subnet)){
     Serial.println("STA failed to configure");
   }
-
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH); //--> Turn off Led On Board
+    WiFi.mode(WIFI_OFF);        
+    delay(1000);
+    WiFi.mode(WIFI_STA);
+    
+    WiFi.begin(ssid, password); //--> Connect to your WiFi router
+    Serial.println("");
 
   //----------------------------------------Wait for connection
   Serial.print("Connecting");
@@ -65,11 +69,40 @@ void setup() {
 
   Serial.println("Please tag a card or keychain to see the UID !");
   Serial.println("");
+
+  webserver.on("/read",HTTP_GET, [](AsyncWebServerRequest * request) {
+    state = 1;
+    while(StrUID == ""){
+      read();
+    }
+    String temp_res ="{\"uid\":";
+    temp_res += StrUID;
+    temp_res += "}";
+
+    request->send(200, "application/json", temp_res);
+    StrUID = "";
+    state = 0;
+  });
+  webserver.on("/state/0",HTTP_GET, [](AsyncWebServerRequest * request) {
+    state = 0;
+  });
+  webserver.begin();
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------------------------------LOOP---------------------------------------------------------------------------------------//
 void loop() {
+ switch(state){
+   case 0: 
+      read();
+      break;    
+ }
+}
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+//----------------------------------------Procedure for reading and obtaining a UID from a card or keychain---------------------------------------------------------------------------------//
+
+void read(){
   readsuccess = getid();
 
   if (readsuccess) {
@@ -80,10 +113,10 @@ void loop() {
     UIDresultSend = StrUID;
 
     //Post Data
-    postData = "UIDresult=" + UIDresultSend;
+    //postData = "UIDresult=" + UIDresultSend;
 
-    http.begin("http://192.168.200.7/NodeMCU-and-RFID-RC522-IoT-Projects/getUID.php");  //Specify request destination
-    http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Specify content-type header
+    //http.begin("http://192.168.200.7/NodeMCU-and-RFID-RC522-IoT-Projects/getUID.php");  //Specify request destination
+    //http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Specify content-type header
 
     int httpCode = http.POST(postData);   //Send the request
     String payload = http.getString();    //Get the response payload
@@ -97,9 +130,8 @@ void loop() {
     digitalWrite(LED_BUILTIN, HIGH);
   }
 }
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-//----------------------------------------Procedure for reading and obtaining a UID from a card or keychain---------------------------------------------------------------------------------//
+
 int getid() {
   if (!mfrc522.PICC_IsNewCardPresent()) {
     return 0;
@@ -107,7 +139,6 @@ int getid() {
   if (!mfrc522.PICC_ReadCardSerial()) {
     return 0;
   }
-
 
   Serial.print("THE UID OF THE SCANNED CARD IS : ");
 

@@ -92,7 +92,7 @@ class EspSensorController extends Controller
      */
     public function show()
     {
-        return view('RFIDsettings');
+
     }
 
     /**

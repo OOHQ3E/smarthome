@@ -38,7 +38,7 @@ class EspController extends Controller
         $esps = Esp::all();
         $Room = Room::find($room);
         if ($Room !== null){
-            $types = ["Sensor","Toggle","Camera"];
+            $types = ["Sensor","Toggle","Camera","RFID Reader"];
             return view("device.create",[
                 'types' => $types,
                 'room' => $Room
@@ -68,6 +68,9 @@ class EspController extends Controller
                 break;
             case 2:
                 $type = "Camera";
+                break;
+            case 3:
+                $type = "RFID Reader";
                 break;
         }
         $existing = null;
@@ -208,6 +211,11 @@ class EspController extends Controller
 
     public function getStatus($esp){
         $response = json_decode(Http::get("http://192.168.200.".$esp."/status"));
+        return response()->json($response);
+    }
+
+    public function getTag(Esp $esp){
+        $response = json_decode(Http::get("http://192.168.200.".$esp->ip_End."/read"));
         return response()->json($response);
     }
 
