@@ -74,10 +74,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
         var selected = document.getElementById('reader');
-        var selectedIndex = selected.options[selected.selectedIndex].value;
+        var selectedIndex = selected.options[selected.selectedIndex].text;
 
         function changeSelected(){
-            selectedIndex = selected.options[selected.selectedIndex].value;
+            selectedIndex = selected.options[selected.selectedIndex].text;
         }
         async function GetUID(){
             console.log(selected);
