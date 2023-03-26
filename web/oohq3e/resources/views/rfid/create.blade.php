@@ -74,17 +74,19 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
         var selected = document.getElementById('reader');
-        var selectedIndex = selected.options[selected.selectedIndex].text;
+        var selectedIndex = selected.options[selected.selectedIndex];
 
         function changeSelected(){
-            selectedIndex = selected.options[selected.selectedIndex].text;
+            selectedIndex = selected.options[selected.selectedIndex];
         }
         async function GetUID(){
             console.log(selected);
             console.log(selectedIndex)
             changeSelected()
-            $.getJSON('http://192.168.200.1/getTag/'+selectedIndex, function(data) {
+            $.getJSON('http://192.168.200.7/read', function(data) {
                 var uid = `${data.uid}`
+                console.log(uid);
+                
                 document.getElementById("uid").text = uid;
             });
         }

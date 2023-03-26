@@ -215,7 +215,11 @@ class EspController extends Controller
     }
 
     public function getTag(Esp $esp){
-        $response = json_decode(Http::get("http://192.168.200.".$esp->ip_End."/read"));
+        $res = "";
+        while(Http::get("http://192.168.200.".$esp->ip_End."/read") != "{}"){
+            $res = Http::get("http://192.168.200.".$esp."/read");
+        }
+        $response = json_decode($res);
         return response()->json($response);
     }
 
