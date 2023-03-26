@@ -38,7 +38,7 @@
                 <div class="text-center flex lg:flex-nowrap md:flex-nowrap flex-wrap w-11/12 m-auto">
                     <label for="uid" class="lg:my-6 md:my-3 my-1 p-2 font-semibold text-left">UID: </label>
 
-                    <input type="text" class="truncate ... pl-2 lg:my-6 md:my-3 my-1 w-full text-xl rounded-md" id="uid_i" name="uid" class="rounded" required>
+                    <input disabled type="text" class="truncate ... pl-2 lg:my-6 md:my-3 my-1 w-full text-xl rounded-md" id="uid_i" name="uid" class="rounded" required>
 
                     <button type="button" onclick="GetUID()" id="tagRead" class="shadow-xl truncate m-auto uppercase bg-cyan-600 lg:ml-2 md:ml-2 m-auto rounded-full lg:w-64 my-6 md:w-64 w-11/12 text-center lg:my-3 md:my-3 my-1 p-3 hover:bg-cyan-500">
                         <i class="fa-solid fa-id-card-clip"></i><span> Read Tag</span>
@@ -74,21 +74,23 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
         var selected = document.getElementById('reader');
-        var selectedIndex = selected.options[selected.selectedIndex];
+        var selectedIndex = selected.options[selected.selectedIndex].value;
 
         function changeSelected(){
-            selectedIndex = selected.options[selected.selectedIndex];
+            selectedIndex = selected.options[selected.selectedIndex].value;
         }
-        async function GetUID(){
-            console.log(selected);
-            console.log(selectedIndex)
+        function GetUID(){
+            //console.log(selected);
+            //console.log(selectedIndex)
             changeSelected()
-            $.getJSON('http://192.168.200.7/read', function(data) {
+            $.getJSON('http://192.168.200.1/getTag/'+selectedIndex, function(data) {
                 var uid = `${data.uid}`
-                console.log(uid);
-                
-                document.getElementById("uid").text = uid;
-            });
+                //console.log(uid);
+                document.getElementById("uid_i").value = uid;
+            }).fail(function(){
+
+alert("reading was unsuccessful, please try again")
+});
         }
     </script>
 
