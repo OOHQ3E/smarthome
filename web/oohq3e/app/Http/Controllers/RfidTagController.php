@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\RfidTag;
@@ -58,18 +57,27 @@ class RfidTagController extends Controller
     {
         $request->validate([
                 'name' => 'required|max:50',
-                'uid_i'=> 'required|max:20',
+                'uid'=> 'required|max:20',
                 'reader' => "required|integer"
             ]
         );
+	$existing = null;
+        $existing = DB::table("rfid_tag")
+                ->where("esp_id","=", $request->get("reader"))
+                ->where("uid","=",$request->get("uid"))
+                ->first();
+        if ($existing!==null){
+            return back()
+                ->with('error','This reader already has this uid!');
+        }else{
         $tag = new RfidTag();
         $tag -> name = $request->get("name");
-        $tag -> uid = $request->get("uid_i");
+        $tag -> uid = $request->get("uid");
         $tag -> esp_id = $request->get("reader");
-        dd($tag);
+        //dd($tag);
         $tag->save();
-        return redirect('/settings')
-            ->with("message","Successfully added ". $esp -> name." to ".$room -> name);
+        $message = 'Succesfully added a new tag';
+         return redirect('/settings/RFID')->with(['message'=> $message]);}
     }
 
     /**

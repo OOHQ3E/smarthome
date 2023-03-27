@@ -22,7 +22,14 @@
                 <span class="px-5 text-2xl text-gray-100 font-semibold">{{Session::get('error')}}</span>
         </div>
     @endif
-
+	
+    @if (Session::has('message'))
+          <div class="flex justify-center font-sans text-center my-2">
+                <div class="w-full">
+                    <div class="px-5 text-2xl text-gray-100 font-light">{{ Session::get('message')}}</div>
+                </div>
+            </div>
+    @endif
     <div class="p-2">
         <div class="p-3 w-11/12 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 inline-block m-auto">
 {{--           @forelse ($RFIDs as $rfid)--}}
