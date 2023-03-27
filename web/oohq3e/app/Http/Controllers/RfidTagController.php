@@ -18,11 +18,11 @@ class RfidTagController extends Controller
      */
     public function index()
     {
-        $esps = Esp::where('type','RFID Reader')->get();
+        $readers = Esp::where('type','RFID Reader')->get();
         $tags = RfidTag::all();
 
         return view('RFIDsettings',[
-            'esps' => $esps,
+            'readers' => $readers,
             'tags' => $tags
            ]);
     }
@@ -61,7 +61,7 @@ class RfidTagController extends Controller
                 'reader' => "required|integer"
             ]
         );
-	$existing = null;
+	    $existing = null;
         $existing = DB::table("rfid_tag")
                 ->where("esp_id","=", $request->get("reader"))
                 ->where("uid","=",$request->get("uid"))

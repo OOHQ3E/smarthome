@@ -22,7 +22,7 @@
                 <span class="px-5 text-2xl text-gray-100 font-semibold">{{Session::get('error')}}</span>
         </div>
     @endif
-	
+
     @if (Session::has('message'))
           <div class="flex justify-center font-sans text-center my-2">
                 <div class="w-full">
@@ -31,46 +31,42 @@
             </div>
     @endif
     <div class="p-2">
-        <div class="p-3 w-11/12 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 inline-block m-auto">
-{{--           @forelse ($RFIDs as $rfid)--}}
+        <div class="p-3 lg:max-w-3/12 md:max-w-10/12 sm:max-w-11/12 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 inline-block">
+            @forelse ($readers as $reader)
                 <div>
-                    <p class="text-left text-3xl font-semibold text-gray-100 py-3">{{--{{$rfid->name}}--}}</p>
-
-                    <div class="bg-gray-100 shadow-2xl rounded-lg overflow-auto m-3 bg-opacity-90">
-                        <div class="flex flex-wrap gap-2 justify-center m-5">
-                        </div>
-
+                    <p class="text-left text-3xl font-semibold text-gray-100 py-3">{{$reader->name}}</p>
                         <!--------------------------->
-{{--                        @forelse ($esps as $esp)--}}
-{{--                            @if($esp->room_id === $room-> id)--}}
+                        @forelse ($tags as $tag)
+                            @if($tag->esp_id === $device-> id)
                                 <table class="shadow-xl m-5 p-2 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 bg-opacity-75 hover:bg-opacity-95 rounded-lg">
-
+                                    <thead class="text-center">
                                     <td class="w-5/6"></td>
                                     <td class="w-1/3"></td>
                                     <td class="w-1/3"></td>
+                                    </thead>
 
                                     <tbody>
                                     <tr>
                                         <td class="p-3 m-1/3">
                                             <ul class="m-1">
-                                                <li class="leading-normal"><span class=" font-bold">Name:</span> Ms. Kayla Smith {{--{{ $esp->name }}--}} </li>
+                                                <li class="leading-normal"><span class=" font-bold">Name:</span> {{ $tag->name }} </li>
                                                 <br>
-                                                <li class="leading-normal"><span class="font-bold">Date Added:</span> 2023.02.23 13:15 {{--{{ $esp->type }}--}} </li>
+                                                <li class="leading-normal"><span class="font-bold">UID:</span> {{ $tag->uid }} </li>
                                                 <br>
-                                                <li class="leading-normal"><span class="font-bold">ID:</span> <span class="">asddy316asd{{--{{ $esp->ip_End }}--}}</span></li>
+                                                <li class="leading-normal"><span class="font-bold">Date Added:</span><span class="font-semibold">{{ $tag->created_at }}</span></li>
                                             </ul>
                                         </td>
 
                                         <td class="p-2 m-1/3">
-                                            <button class="shadow-xl w-14 h-14 rounded-lg bg-yellow-300 transition hover:bg-yellow-400 uppercase" onclick="location.href='/modify/device/{{--{{$room->id}}/{{ $esp -> id }}--}}'">
+                                            <button class="shadow-xl w-14 h-14 rounded-lg bg-yellow-300 transition hover:bg-yellow-400 uppercase" onclick="location.href='/modify/device/{{$reader->id}}/{{ $tag -> id }}'">
                                                 <i class="fa-regular fa-pen-to-square"></i>
                                             </button>
                                         </td>
                                         <td class="p-2 m-1/3 text-white">
-                                            <form action="device/delete/{{--{{$esp->id}}--}}" method="POST">
+                                            <form action="device/delete/{{$tag->id}}" method="POST">
                                                 @csrf
                                                 {{method_field('DELETE')}}
-                                                <button class="shadow-xl w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{--{{ $esp -> id }}--}}">
+                                                <button class="shadow-xl w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{ $tag -> id }}">
                                                     <i class="fa-solid fa-trash-can"></i>
                                                 </button>
                                             </form>
@@ -78,128 +74,20 @@
                                     </tr>
                                     </tbody>
                                 </table>
-{{--                            @endif--}}
-{{--                        @empty--}}
-{{--                        @endforelse--}}
-                    </div>
+                            @endif
+                        @empty
+                        @endforelse
+                    </div></div>
+            @empty
+
+                <div class="flex justify-center font-sans font-bold text-2xl text-black">
+                    <h1>No room in the database!</h1>
                 </div>
-{{--            --}}
 
-            <div>
-                <p class="text-left text-3xl font-semibold text-gray-100 py-3">{{--{{$rfid->name}}--}}</p>
-
-                <div class="bg-gray-100 shadow-2xl rounded-lg overflow-auto m-3 bg-opacity-90">
-                    <div class="flex flex-wrap gap-2 justify-center m-5">
-                    </div>
-
-                    <!--------------------------->
-                    {{--                        @forelse ($esps as $esp)--}}
-                    {{--                            @if($esp->room_id === $room-> id)--}}
-                    <table class="shadow-xl m-5 p-2 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 bg-opacity-75 hover:bg-opacity-95 rounded-lg">
-
-                        <td class="w-5/6"></td>
-                        <td class="w-1/3"></td>
-                        <td class="w-1/3"></td>
-
-                        <tbody>
-                        <tr>
-                            <td class="p-3 m-1/3">
-                                <ul class="m-1">
-                                    <li class="leading-normal"><span class=" font-bold">Name:</span> Mr. Paul Saint {{--{{ $esp->name }}--}} </li>
-                                    <br>
-                                    <li class="leading-normal"><span class="font-bold">Date Added:</span> 2023.02.23 13:19{{--{{ $esp->type }}--}} </li>
-                                    <br>
-                                    <li class="leading-normal"><span class="font-bold">ID:</span> <span class="">sdgsdg562{{--{{ $esp->ip_End }}--}}</span></li>
-                                </ul>
-                            </td>
-
-                            <td class="p-2 m-1/3">
-                                <button class="shadow-xl w-14 h-14 rounded-lg bg-yellow-300 transition hover:bg-yellow-400 uppercase" onclick="location.href='/modify/device/{{--{{$room->id}}/{{ $esp -> id }}--}}'">
-                                    <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
-                            </td>
-                            <td class="p-2 m-1/3 text-white">
-                                <form action="device/delete/{{--{{$esp->id}}--}}" method="POST">
-                                    @csrf
-                                    {{method_field('DELETE')}}
-                                    <button class="shadow-xl w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{--{{ $esp -> id }}--}}">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    {{--                            @endif--}}
-                    {{--                        @empty--}}
-                    {{--                        @endforelse--}}
-                </div>
-            </div>
-            <div>
-                <p class="text-left text-3xl font-semibold text-gray-100 py-3">{{--{{$rfid->name}}--}}</p>
-
-                <div class="bg-gray-100 shadow-2xl rounded-lg overflow-auto m-3 bg-opacity-90">
-                    <div class="flex flex-wrap gap-2 justify-center m-5">
-                    </div>
-
-                    <!--------------------------->
-                    {{--                        @forelse ($esps as $esp)--}}
-                    {{--                            @if($esp->room_id === $room-> id)--}}
-                    <table class="shadow-xl m-5 p-2 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 bg-opacity-75 hover:bg-opacity-95 rounded-lg">
-
-                        <td class="w-5/6"></td>
-                        <td class="w-1/3"></td>
-                        <td class="w-1/3"></td>
-
-                        <tbody>
-                        <tr>
-                            <td class="p-3 m-1/3">
-                                <ul class="m-1">
-                                    <li class="leading-normal"><span class=" font-bold">Name:</span> Ms. Rhoda Smith {{--{{ $esp->name }}--}} </li>
-                                    <br>
-                                    <li class="leading-normal"><span class="font-bold">Date Added:</span>  2023.02.23 13:20{{--{{ $esp->type }}--}} </li>
-                                    <br>
-                                    <li class="leading-normal"><span class="font-bold">ID:</span> <span class="">9746s1dgsdg{{--{{ $esp->ip_End }}--}}</span></li>
-                                </ul>
-                            </td>
-
-                            <td class="p-2 m-1/3">
-                                <button class="shadow-xl w-14 h-14 rounded-lg bg-yellow-300 transition hover:bg-yellow-400 uppercase" onclick="location.href='/modify/device/{{--{{$room->id}}/{{ $esp -> id }}--}}'">
-                                    <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
-                            </td>
-                            <td class="p-2 m-1/3 text-white">
-                                <form action="device/delete/{{--{{$esp->id}}--}}" method="POST">
-                                    @csrf
-                                    {{method_field('DELETE')}}
-                                    <button class="shadow-xl w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{--{{ $esp -> id }}--}}">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    {{--                            @endif--}}
-                    {{--                        @empty--}}
-                    {{--                        @endforelse--}}
-                </div>
-            </div>
-
-{{--            --}}
-{{--            @empty--}}
-
-
-{{--                <div class="flex justify-center font-sans font-bold text-2xl text-black">--}}
-{{--                    <h1>No room in the database!</h1>--}}
-{{--                </div>--}}
-
-
-{{--            @endforelse--}}
+            @endforelse
 
 
         </div>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
