@@ -56,7 +56,7 @@
             </div>
             <div class="text-gray-50 flex flex-wrap justify-center gap-2">
                 <button type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
-                    <i class="fa-solid fa-plus"></i><span> Add RFID Tag</span>
+                    <i class="fa-solid fa-plus"></i><span> Apply Changes</span>
                 </button>
 
                 <button type="reset" class="shadow-xl text-black truncate uppercase bg-orange-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-orange-400">

@@ -43,7 +43,7 @@
                         <i class="fa-solid fa-id-card-clip"></i><span> Read Tag</span>
                     </button>
                 </div>
-                <input name="reader" name="reader" hidden type="text" value="{{$reader->id}}">
+                <input id="reader_id" name="reader" name="reader" hidden type="text" value="{{$reader->id}}">
                 <div class="text-gray-50 flex flex-wrap justify-center gap-2">
                     <button type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
                         <i class="fa-solid fa-plus"></i><span> Add RFID Tag</span>
@@ -62,17 +62,16 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
-        var selected = document.getElementById('reader');
-        var ReaderID = selected.options[selected.selectedIndex].value;
-
+        var ReaderID = document.getElementById('reader_id').value;
+	console.log(ReaderID);
         function changeSelected(){
-            ReaderID = selected.options[selected.selectedIndex].value;
+            ReaderID = document.getElementById('reader_id').value;
         }
         function GetUID(){
             changeSelected()
             $.getJSON('http://192.168.200.1/getTag/'+ReaderID, function(data) {
                 var uid = `${data.uid}`
-                document.getElementById("uid_i").value = uid;
+                	document.getElementById("uid_i").value = uid;
 		        document.getElementById("uid").value = uid;
             }).fail(function(){
                 alert("reading was unsuccessful, please try again")

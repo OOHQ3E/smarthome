@@ -144,7 +144,7 @@ class RfidTagController extends Controller
             if ($reader->id !== $request->get('reader') && $oldData !== null){
                 DB::delete("DELETE FROM rfid_use_data WHERE tag_id = ".$tag->id.";");
             }
-            $message = 'Succesfully modified tag with uid('. $ModifyTag ->name.")";
+            $message = 'Succesfully modified tag with uid('. $ModifyTag ->uid.")";
             return redirect('/settings/RFID')->with(['message'=> $message]);}
     }
 
@@ -163,7 +163,7 @@ class RfidTagController extends Controller
         if ($oldData !== null){
             DB::delete("DELETE FROM rfid_use_data WHERE tag_id = ".$tag->id.";");
         }
-        $message = 'Succesfully deleted tag: '. $tag ->uid. ", from: ".$reader->name;
+        $message = 'Succesfully deleted tag with uid('. $tag ->uid. "), from: ".$reader->name;
         return redirect('/settings/RFID')->with(['message'=> $message]);
     }
 }
