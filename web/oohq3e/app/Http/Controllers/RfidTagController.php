@@ -36,7 +36,7 @@ class RfidTagController extends Controller
     public function create()
     {
         $CardReaders = DB::table('esp')->select('*')->where('type','=','RFID Reader')->get();
-      
+
         if (count($CardReaders) == 0){
             $error = 'You need to add an RFID reader first!';
             return redirect()->back()->with(['error'=> $error]);
@@ -56,7 +56,20 @@ class RfidTagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+                'name' => 'required|max:50',
+                'uid_i'=> 'required|max:20',
+                'reader' => "required|integer"
+            ]
+        );
+        $tag = new RfidTag();
+        $tag -> name = $request->get("name");
+        $tag -> uid = $request->get("uid_i");
+        $tag -> esp_id = $request->get("reader");
+        dd($tag);
+        $tag->save();
+        return redirect('/settings')
+            ->with("message","Successfully added ". $esp -> name." to ".$room -> name);
     }
 
     /**
