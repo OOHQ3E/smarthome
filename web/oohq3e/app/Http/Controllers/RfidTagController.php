@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use App\Models\RfidTag;
 use App\Models\Esp;
+use App\Models\RfidUseData;
+use Carbon\Carbon;
 use Egulias\EmailValidator\Result\SpoofEmail;
 use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
@@ -32,18 +34,15 @@ class RfidTagController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function create()
+    public function create(Esp $reader)
     {
-        $CardReaders = DB::table('esp')->select('*')->where('type','=','RFID Reader')->get();
-
-        if (count($CardReaders) == 0){
+        if ($reader !== null){
+            return view('rfid.create',[
+                'reader' => $reader
+            ]);
+        }else{
             $error = 'You need to add an RFID reader first!';
             return redirect()->back()->with(['error'=> $error]);
-        }
-        else{
-            return view('rfid.create',[
-                'CardReaders' => $CardReaders
-            ]);
         }
     }
 
@@ -53,7 +52,7 @@ class RfidTagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Esp $reader)
     {
         $request->validate([
                 'name' => 'required|max:50',
@@ -61,9 +60,8 @@ class RfidTagController extends Controller
                 'reader' => "required|integer"
             ]
         );
-	    $existing = null;
         $existing = DB::table("rfid_tag")
-                ->where("esp_id","=", $request->get("reader"))
+                ->where("esp_id","=", $reader->id)
                 ->where("uid","=",$request->get("uid"))
                 ->first();
         if ($existing!==null){
@@ -73,10 +71,10 @@ class RfidTagController extends Controller
         $tag = new RfidTag();
         $tag -> name = $request->get("name");
         $tag -> uid = $request->get("uid");
-        $tag -> esp_id = $request->get("reader");
+        $tag -> esp_id = $reader->id;
         //dd($tag);
         $tag->save();
-        $message = 'Succesfully added a new tag';
+        $message = 'Succesfully added a new tag uid('.$tag->uid.') to reader: '.$reader->name;
          return redirect('/settings/RFID')->with(['message'=> $message]);}
     }
 
@@ -97,9 +95,19 @@ class RfidTagController extends Controller
      * @param  \App\Models\RfidTag  $rfidTag
      * @return \Illuminate\Http\Response
      */
-    public function edit(RfidTag $rfidTag)
+    public function edit(Esp $reader, RfidTag $tag)
     {
-        //
+        $readers = Esp::where('type','RFID Reader')->get();
+        if ($reader !== null && $tag !== null){
+            return view('rfid.modify',[
+                'reader' => $reader,
+                'tag'=> $tag,
+                'readers' => $readers
+            ]);
+        }else{
+            $error = 'This RFID tag does not exist!';
+            return redirect()->back()->with(['error'=> $error]);
+        }
     }
 
     /**
@@ -109,9 +117,35 @@ class RfidTagController extends Controller
      * @param  \App\Models\RfidTag  $rfidTag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RfidTag $rfidTag)
+    public function update(Request $request, Esp $reader,RfidTag $tag,)
     {
-        //
+        $request->validate([
+                'name' => 'required|max:50',
+                'uid'=> 'required|max:20',
+                'reader' => "required|integer"
+            ]
+        );
+        $existing = DB::table("rfid_tag")
+            ->where("esp_id","=", $reader)
+            ->where("uid","=",$request->get('uid'))
+            ->first();
+
+        if ($existing !== null){
+            return back()
+                ->with('error','This reader already has this uid!');
+        }else{
+            $ModifyTag = $tag;
+            $ModifyTag -> name = $request->get("name");
+            $ModifyTag -> uid = $request->get("uid");
+            $ModifyTag -> esp_id = $request->get("reader");
+            $ModifyTag -> updated_at = Carbon::now();
+            $ModifyTag->save();
+            $oldData = RfidUseData::where('tag_id',$tag->id)->get();
+            if ($reader->id !== $request->get('reader') && $oldData !== null){
+                DB::delete("DELETE FROM rfid_use_data WHERE tag_id = ".$tag->id.";");
+            }
+            $message = 'Succesfully modified tag with uid('. $ModifyTag ->name.")";
+            return redirect('/settings/RFID')->with(['message'=> $message]);}
     }
 
     /**
@@ -120,8 +154,16 @@ class RfidTagController extends Controller
      * @param  \App\Models\RfidTag  $rfidTag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RfidTag $rfidTag)
-    {
-        //
+    public function destroy(RfidTag $tag){
+        $oldData = RfidUseData::where("tag_id",$tag->id)->get();
+        $reader = Esp::where('id',$tag->esp_id)->first();
+
+        $tag->delete();
+
+        if ($oldData !== null){
+            DB::delete("DELETE FROM rfid_use_data WHERE tag_id = ".$tag->id.";");
+        }
+        $message = 'Succesfully deleted tag: '. $tag ->uid. ", from: ".$reader->name;
+        return redirect('/settings/RFID')->with(['message'=> $message]);
     }
 }

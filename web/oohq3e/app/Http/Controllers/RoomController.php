@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Esp;
+use App\Models\EspSensorData;
 use App\Models\Room;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -95,7 +97,8 @@ class RoomController extends Controller
             ]
         );
         $Room = $room;
-        $Room ->name = $request->get("name");
+        $Room -> name = $request->get("name");
+        $Room -> updated_at = Carbon::now();
 
         $Room->save();
         return redirect('/settings')->with("message","Successfully updated room: ". $Room ->name);
@@ -107,8 +110,11 @@ class RoomController extends Controller
      * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
-    {
+    public function destroy(Room $room){
+        $oldData = EspSensorData::where("room_id",$room->id)->get();
+        if ($oldData !== null){
+            DB::delete("DELETE FROM esp_sensor_data WHERE room_id = ".$room->id.";");
+        }
         $room->delete();
         return redirect('/settings')->with("message","Successfully deleted room: ".$room->name);
     }

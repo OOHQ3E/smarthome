@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Esp;
 use App\Models\Room;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
@@ -190,6 +191,7 @@ class EspController extends Controller
             $esp ->name = $request->get("deviceName");
             $esp ->ip_End = $request->get("ip_End");
             $esp ->room_id = $request->get("room");
+            $esp ->updated_at = Carbon::now();
 
             $esp->save();
 

@@ -8,10 +8,7 @@
         <button class="shadow-2xl lg:w-16 md:w-16 w-full h-16 text-3xl text-white rounded-full text-gray-700 transition hover:text-gray-800 bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/settings/') }}'">
             <i class="fa-solid fa-arrow-left"></i>
         </button>
-        <button onclick="location.href='{{ asset('create')}}/RFID'" class="text-xl m-auto text-center lg:w-2/5 md:w-2/5 w-full rounded-full shadow-2xl bg-green-500 text-white uppercase rounded-full h-16 transition hover:bg-green-600 hover:text-black ">
-            <i class="fa-solid fa-plus"></i><span> Add RFID tag</span>
-        </button>
-        <button class="m-auto text-xl shadow-xl bg-orange-500 text-white uppercase rounded-full transition hover:bg-orange-600 hover:text-black h-16 lg:w-2/5 md:w-2/5 w-full text-center" onclick="location.href='/settings/{{ asset('state')}}/RFID/security'">
+        <button class="m-auto text-xl shadow-xl bg-orange-500 text-white uppercase rounded-full transition hover:bg-orange-600 hover:text-black h-16 lg:w-11/12 md:w-4/5 w-full text-center" onclick="location.href='/settings/{{ asset('state')}}/RFID/security'">
             <i class="fa-solid fa-clock-rotate-left"></i> Use History</span>
         </button>
     </div>
@@ -35,9 +32,16 @@
             @forelse ($readers as $reader)
                 <div>
                     <p class="text-left text-3xl font-semibold text-gray-100 py-3">{{$reader->name}}</p>
+                    <div class="bg-gray-100 shadow-2xl rounded-lg overflow-auto m-3 bg-opacity-90">
+
+                   <div class="flex flex-wrap gap-2 justify-center m-5">
+                       <button onclick="location.href='{{ asset('create')}}/RFID/{{$reader->id}}'" class="shadow-xl my-1 bg-green-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-green-600 hover:text-black w-64 text-center">
+                           <i class="fa-solid fa-plus"></i><span> Add RFID tag</span>
+                       </button>
+                   </div>
                         <!--------------------------->
                         @forelse ($tags as $tag)
-                            @if($tag->esp_id === $device-> id)
+                            @if($tag->esp_id === $reader-> id)
                                 <table class="shadow-xl m-5 p-2 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 bg-opacity-75 hover:bg-opacity-95 rounded-lg">
                                     <thead class="text-center">
                                     <td class="w-5/6"></td>
@@ -53,17 +57,19 @@
                                                 <br>
                                                 <li class="leading-normal"><span class="font-bold">UID:</span> {{ $tag->uid }} </li>
                                                 <br>
-                                                <li class="leading-normal"><span class="font-bold">Date Added:</span><span class="font-semibold">{{ $tag->created_at }}</span></li>
+                                                <li class="leading-normal"><span class="font-bold">Date Added: </span><span class="font-semibold">{{ $tag->created_at }}</span></li>
+                                                <br>
+                                                <li class="leading-normal"><span class="font-bold">Date Last modified: </span><span class="font-semibold">{{ $tag->updated_at }}</span></li>
                                             </ul>
                                         </td>
 
                                         <td class="p-2 m-1/3">
-                                            <button class="shadow-xl w-14 h-14 rounded-lg bg-yellow-300 transition hover:bg-yellow-400 uppercase" onclick="location.href='/modify/device/{{$reader->id}}/{{ $tag -> id }}'">
+                                            <button class="shadow-xl w-14 h-14 rounded-lg bg-yellow-300 transition hover:bg-yellow-400 uppercase" onclick="location.href='/modify/RFID/{{$reader->id}}/{{$tag->id}}'">
                                                 <i class="fa-regular fa-pen-to-square"></i>
                                             </button>
                                         </td>
                                         <td class="p-2 m-1/3 text-white">
-                                            <form action="device/delete/{{$tag->id}}" method="POST">
+                                            <form action="/delete/tag/{{$tag->id}}" method="POST">
                                                 @csrf
                                                 {{method_field('DELETE')}}
                                                 <button class="shadow-xl w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{ $tag -> id }}">
@@ -81,7 +87,7 @@
             @empty
 
                 <div class="flex justify-center font-sans font-bold text-2xl text-black">
-                    <h1>No room in the database!</h1>
+                    <h1>No RFID reader in the database!</h1>
                 </div>
 
             @endforelse

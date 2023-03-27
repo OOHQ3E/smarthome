@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') {{'Add device to Room'}} @endsection
+@section('title') {{'Add RFID Tag'}} @endsection
 
 @section('content')
     <head>
@@ -9,7 +9,7 @@
         <div class="m-auto w-1/2 py-2">
             <div class="text-center">
                 <h1 class="text-3xl text-white font-sans pb-2 mt-2 uppercase font-light">
-                   Add RFID Tag
+                   Add RFID Tag to <span class="font-semibold">{{$reader->name}}</span>
                 </h1>
             </div>
         </div>
@@ -26,33 +26,24 @@
     @endif
 
         <div class="m-auto text-center">
-            <form action="/create/RFID" method="POST" class="shadow-2xl lg:w-2/3 m-auto px-10 py-5 bg-gray-100 rounded-lg form-input">
+            <form action="/create/RFID/{{$reader->id}}" method="POST" class="shadow-2xl lg:w-2/3 m-auto px-10 py-5 bg-gray-100 rounded-lg form-input">
                 @csrf
 
                 <div class="text-left w-11/12 m-auto">
                     <label for="name" class="lg:my-3 md:my-3 my-1 font-semibold text-left">Tag name:</label>
                     <input type="text" class="truncate ... pl-2 my-6 w-full text-xl rounded-md" id="name" name="name" class="rounded" required>
-
                 </div>
 
                 <div class="text-center flex lg:flex-nowrap md:flex-nowrap flex-wrap w-11/12 m-auto">
                     <label for="uid" class="lg:my-6 md:my-3 my-1 p-2 font-semibold text-left">UID: </label>
-			<input type="hidden" name="uid" id="uid">
+			        <input type="hidden" name="uid" id="uid">
                     <input disabled type="text" class="truncate ... pl-2 lg:my-6 md:my-3 my-1 w-full text-xl rounded-md" id="uid_i" name="uid_i" class="rounded" required>
 
                     <button type="button" onclick="GetUID()" id="tagRead" class="shadow-xl truncate m-auto uppercase bg-cyan-600 lg:ml-2 md:ml-2 m-auto rounded-full lg:w-64 my-6 md:w-64 w-11/12 text-center lg:my-3 md:my-3 my-1 p-3 hover:bg-cyan-500">
                         <i class="fa-solid fa-id-card-clip"></i><span> Read Tag</span>
                     </button>
                 </div>
-                <div class="text-center flex w-11/12 m-auto">
-                    <label for="name" class="lg:my-3 md:my-3 my-1 w-full text-left"><span class="font-semibold">Card Reader:</span>
-                    <select onchange="changeSelected()" name="reader" id="reader" class="truncate ...  my-5 text-xl w-full m-auto rounded-md">
-                        @foreach($CardReaders as $reader)
-                            <option value="{{$reader->id}}">{{$reader->name}}</option>
-                        @endforeach
-                    </select>
-                    </label>
-                </div>
+                <input name="reader" name="reader" hidden type="text" value="{{$reader->id}}">
                 <div class="text-gray-50 flex flex-wrap justify-center gap-2">
                     <button type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
                         <i class="fa-solid fa-plus"></i><span> Add RFID Tag</span>
@@ -72,17 +63,17 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
         var selected = document.getElementById('reader');
-        var selectedIndex = selected.options[selected.selectedIndex].value;
+        var ReaderID = selected.options[selected.selectedIndex].value;
 
         function changeSelected(){
-            selectedIndex = selected.options[selected.selectedIndex].value;
+            ReaderID = selected.options[selected.selectedIndex].value;
         }
         function GetUID(){
             changeSelected()
-            $.getJSON('http://192.168.200.1/getTag/'+selectedIndex, function(data) {
+            $.getJSON('http://192.168.200.1/getTag/'+ReaderID, function(data) {
                 var uid = `${data.uid}`
                 document.getElementById("uid_i").value = uid;
-		 document.getElementById("uid").value = uid;
+		        document.getElementById("uid").value = uid;
             }).fail(function(){
                 alert("reading was unsuccessful, please try again")
             });

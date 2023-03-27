@@ -22,7 +22,6 @@ Route::get('/esp/getLatest/{room}',[EspSensorController::class,'getLatest'])->na
 Route::get('/cam/{ip_End}',[EspController::class,'show'])->name('Show Camera Feed');
 
 Route::get('/getStatus/{esp}',[EspController::class,'getStatus'])->name('Request Status of Toggle (esp)');
-
 Route::get('/getTag/{esp}',[EspController::class,'getTag'])->name('Request Tag uid From RFID Reader');
 
 Route::get('/esp/toggle/{esp}/{status}',[EspController::class,'Toggle'])->name('Get Status of Toggle (esp)');
@@ -40,5 +39,8 @@ Route::post("/modify/room/{room}",[RoomController::class,'update'])->name('Updat
 Route::delete("/delete/{room}", [RoomController::class,'destroy'])->name('Delete Room');
 
 Route::get('/settings/RFID', [RfidTagController::class, 'index'])->name('RFID settings');
-Route::get('/create/RFID',[RfidTagController::class,'create'])->name("Create New RFID Tag Form");
-Route::post('/create/RFID',[RfidTagController::class,'store'])->name('Store New RFID Tag');
+Route::get('/create/RFID/{reader}',[RfidTagController::class,'create'])->name("Create New RFID Tag Form");
+Route::post('/create/RFID/{reader}',[RfidTagController::class,'store'])->name('Store New RFID Tag');
+Route::get("/modify/RFID/{reader}/{tag}",[RfidTagController::class,'edit'])->name('Modify RFID tag Form');
+Route::post("/modify/RFID/{reader}/{tag}",[RfidTagController::class,'update'])->name('Update RFID tag Form');
+Route::delete("/delete/tag/{tag}", [RfidTagController::class,'destroy'])->name('Delete RFID tag');
