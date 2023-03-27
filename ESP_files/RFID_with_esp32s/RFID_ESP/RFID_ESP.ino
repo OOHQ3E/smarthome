@@ -15,6 +15,8 @@ IPAddress local_IP(192,168,200,7);
 IPAddress gateway(192,168,200,1);
 IPAddress subnet(255,255,255,0);
 
+const char *host = "http://192.168.200.1/api/rfid";
+
 #define SS_PIN 5
 #define RST_PIN 27
 
@@ -27,6 +29,7 @@ int state = 0; // 0 = continous reading 1 = add tag to text field
 byte readcard[4];
 char str[32] = "";
 String StrUID;
+String StrUIDforReg;
 
 //-----------------------------------------------------------------------------------------------SETUP--------------------------------------------------------------------------------------//
 void setup() {
@@ -72,15 +75,15 @@ void setup() {
 
   webserver.on("/read",HTTP_GET, [](AsyncWebServerRequest * request) {
     state = 1;
-    while(StrUID == ""){
+    while(StrUIDforReg == ""){
       read();
     }
-    String temp_res ="{\"uid\":";
-    temp_res += StrUID;
-    temp_res += "}";
+    String temp_res ="{\"uid\":\"";
+    temp_res += StrUIDforReg;
+    temp_res += "\"}";
 
     request->send(200, "application/json", temp_res);
-    StrUID = "";
+    StrUIDforReg = "";
     state = 0;
   });
   webserver.on("/state/0",HTTP_GET, [](AsyncWebServerRequest * request) {
@@ -92,11 +95,8 @@ void setup() {
 
 //-----------------------------------------------------------------------------------------------LOOP---------------------------------------------------------------------------------------//
 void loop() {
- /*switch(state){
-   case 0: 
       read();
-      break;    
- }*/
+ }
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
@@ -107,25 +107,36 @@ void read(){
 
   if (readsuccess) {
     digitalWrite(LED_BUILTIN, LOW);
-    HTTPClient http;    //Declare object of class HTTPClient
 
     String UIDresultSend, postData;
-    UIDresultSend = StrUID;
+     switch(state){
+      case 0:
+        UIDresultSend = StrUID;
+        break;
+      case 1:
+        UIDresultSend = StrUIDforReg;
+        break;
+    }
 
-    //Post Data
-    //postData = "UIDresult=" + UIDresultSend;
+  HTTPClient http;
+  delay(1000);
+  //Prepare data
+  String postData;
 
-    //http.begin("http://192.168.200.7/NodeMCU-and-RFID-RC522-IoT-Projects/getUID.php");  //Specify request destination
-    //http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Specify content-type header
+  String ipEnd = "7";
 
-    int httpCode = http.POST(postData);   //Send the request
-    String payload = http.getString();    //Get the response payload
+  postData =  "ipEnd=" + ipEnd + "&uid=" + StrUID;
+  http.begin(host);
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  int httpCode = http.POST(postData);
+  String payload = http.getString();
+  Serial.println(postData);
+  Serial.println(httpCode);
+  Serial.println(payload);
+  http.end();
 
     Serial.println(UIDresultSend);
-    Serial.println(httpCode);   //Print HTTP return code
-    Serial.println(payload);    //Print request response payload
 
-    http.end();  //Close connection
     delay(1000);
     digitalWrite(LED_BUILTIN, HIGH);
   }
@@ -145,7 +156,15 @@ int getid() {
   for (int i = 0; i < 4; i++) {
     readcard[i] = mfrc522.uid.uidByte[i]; //storing the UID of the tag in readcard
     array_to_string(readcard, 4, str);
-    StrUID = str;
+    switch(state){
+      case 0:
+        StrUID = str;
+        break;
+      case 1:
+        StrUIDforReg = str;
+        break;
+    }
+    
   }
   mfrc522.PICC_HaltA();
   return 1;

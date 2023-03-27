@@ -8,7 +8,7 @@ class RfidUseData extends Model
 {
 
     protected $table = 'rfid_use_data';
-    protected $fillable = array('tag_id');
+    protected $fillable = array('tag_id','esp_id');
     public $timestamps = true;
 
 }

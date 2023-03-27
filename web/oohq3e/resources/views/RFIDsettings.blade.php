@@ -8,8 +8,8 @@
         <button class="shadow-2xl lg:w-16 md:w-16 w-full h-16 text-3xl text-white rounded-full text-gray-700 transition hover:text-gray-800 bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/settings/') }}'">
             <i class="fa-solid fa-arrow-left"></i>
         </button>
-        <button class="m-auto text-xl shadow-xl bg-orange-500 text-white uppercase rounded-full transition hover:bg-orange-600 hover:text-black h-16 lg:w-11/12 md:w-4/5 w-full text-center" onclick="location.href='/settings/{{ asset('state')}}/RFID/security'">
-            <i class="fa-solid fa-clock-rotate-left"></i> Use History</span>
+        <button class="m-auto text-xl shadow-xl bg-orange-500 text-white uppercase rounded-full transition hover:bg-orange-600 hover:text-black h-16 lg:w-11/12 md:w-4/5 w-full text-center" onclick="location.href='/RFID/history'">
+            <i class="fa-solid fa-clock-rotate-left"></i> RFID Use History</span>
         </button>
     </div>
 

@@ -21,6 +21,8 @@ class CreateForeignKeys extends Migration {
         Schema::table('rfid_use_data', function(Blueprint $table) {
             $table->foreign('tag_id')->references('id')->on('rfid_tag')
                 ->onDelete('cascade');
+            $table->foreign('esp_id')->references('id')->on('esp')
+                ->onDelete('cascade');
         });
 
         Schema::table('rfid_tag', function(Blueprint $table) {

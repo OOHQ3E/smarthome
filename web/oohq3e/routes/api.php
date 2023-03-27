@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RfidUseDataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -23,3 +24,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/esp/', [EspSensorController::class,'store']);
+Route::post('/rfid/', [RfidUseDataController::class,'store']);

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EspController;
 use App\Http\Controllers\RfidTagController;
+use App\Http\Controllers\RfidUseDataController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\EspSensorController;
@@ -44,3 +45,4 @@ Route::post('/create/RFID/{reader}',[RfidTagController::class,'store'])->name('S
 Route::get("/modify/RFID/{reader}/{tag}",[RfidTagController::class,'edit'])->name('Modify RFID tag Form');
 Route::post("/modify/RFID/{reader}/{tag}",[RfidTagController::class,'update'])->name('Update RFID tag Form');
 Route::delete("/delete/tag/{tag}", [RfidTagController::class,'destroy'])->name('Delete RFID tag');
+Route::get("/RFID/history/",[RfidUseDataController::class,'index'])->name("RFID Use data logs page");

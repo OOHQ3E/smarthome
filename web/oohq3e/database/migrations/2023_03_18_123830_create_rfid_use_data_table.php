@@ -11,6 +11,7 @@ class CreateRfidUseDataTable extends Migration {
 		Schema::create('rfid_use_data', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('tag_id')->unsigned();
+            $table->integer('esp_id')->unsigned();
 			$table->timestamps();
 		});
 	}
