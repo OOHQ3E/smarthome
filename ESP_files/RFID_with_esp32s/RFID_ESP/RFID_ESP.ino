@@ -10,7 +10,7 @@ const char* password = "huu1vi9doL";
 //#define RED 23
 //#define GREEN 22
 //#define BLUE 21
-
+String ipEnd = "7";
 IPAddress local_IP(192,168,200,7);
 IPAddress gateway(192,168,200,1);
 IPAddress subnet(255,255,255,0);
@@ -76,7 +76,7 @@ void setup() {
   webserver.on("/read",HTTP_GET, [](AsyncWebServerRequest * request) {
     state = 1;
     while(StrUIDforReg == ""){
-      read();
+      readData();
     }
     String temp_res ="{\"uid\":\"";
     temp_res += StrUIDforReg;
@@ -95,14 +95,13 @@ void setup() {
 
 //-----------------------------------------------------------------------------------------------LOOP---------------------------------------------------------------------------------------//
 void loop() {
-      read();
- }
+      readData();
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 //----------------------------------------Procedure for reading and obtaining a UID from a card or keychain---------------------------------------------------------------------------------//
 
-void read(){
+void readData(){
   readsuccess = getid();
 
   if (readsuccess) {
@@ -118,12 +117,9 @@ void read(){
         break;
     }
 
+if(state == 0){
   HTTPClient http;
-  delay(1000);
   //Prepare data
-  String postData;
-
-  String ipEnd = "7";
 
   postData =  "ipEnd=" + ipEnd + "&uid=" + StrUID;
   http.begin(host);
@@ -134,6 +130,8 @@ void read(){
   Serial.println(httpCode);
   Serial.println(payload);
   http.end();
+  delay(1000);
+}
 
     Serial.println(UIDresultSend);
 
@@ -164,7 +162,6 @@ int getid() {
         StrUIDforReg = str;
         break;
     }
-    
   }
   mfrc522.PICC_HaltA();
   return 1;

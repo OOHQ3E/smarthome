@@ -40,7 +40,7 @@
                     <?php $uid = ""; $name = ""; ?>
                        @foreach($tags as $tag)
                             @if($reader->id == $data->esp_id && $tag->id == $data->tag_id)
-                                <?php $uid = $tag-> uid; $tag->name;?>
+                                <?php $uid = $tag-> uid;$name = $tag->name;?>
                                 @break
                             @endif
                         @endforeach
