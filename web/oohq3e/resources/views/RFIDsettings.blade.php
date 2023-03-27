@@ -17,11 +17,9 @@
     </div>
 
 
-    @if (Session::has('message'))
-        <div class="flex justify-center font-sans text-center my-2">
-            <div class="w-full">
-                <div class="px-5 text-2xl text-gray-100 font-light">{{ Session::get('message') }}</div>
-            </div>
+    @if (Session::has('error'))
+        <div class="shadow-2xl bg-red-600 rounded-lg w-2/3 m-auto text-xl text-center font-sans py-2 my-2">
+                <span class="px-5 text-2xl text-gray-100 font-semibold">{{Session::get('error')}}</span>
         </div>
     @endif
 

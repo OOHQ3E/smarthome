@@ -130,7 +130,7 @@ class EspController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Room $room, Esp $device){
-        $types = ["Sensor","Toggle","Camera"];
+        $types = ["Sensor","Toggle","Camera","RFID Reader"];
         $rooms = Room::all();
         return view('device.modify',[
             'types' => $types,
@@ -159,6 +159,9 @@ class EspController extends Controller
                 break;
             case 2:
                 $type = "Camera";
+                break;
+            case 3:
+                $type = "RFID Reader";
                 break;
         }
         $existing = null;
@@ -215,8 +218,8 @@ class EspController extends Controller
     }
 
     public function getTag(Esp $esp){
-        
-	$response = json_decode(Http::timeout(5)->get("http://192.168.200.".$esp->ip_End."/read"));	
+
+	$response = json_decode(Http::timeout(5)->get("http://192.168.200.".$esp->ip_End."/read"));
 	//dd($response);
 //$response = json_decode($res);
         return response()->json($response);

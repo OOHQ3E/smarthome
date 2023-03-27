@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\RfidTag;
 use App\Models\Esp;
 use Egulias\EmailValidator\Result\SpoofEmail;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use function PHPUnit\Framework\isEmpty;
 
 class RfidTagController extends Controller
 {
@@ -16,20 +19,33 @@ class RfidTagController extends Controller
      */
     public function index()
     {
-        return view('RFIDsettings');
+        $esps = Esp::where('type','RFID Reader')->get();
+        $tags = RfidTag::all();
+
+        return view('RFIDsettings',[
+            'esps' => $esps,
+            'tags' => $tags
+           ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function create()
     {
-        $CardReaders = Esp::where('type','RFID Reader')->get();
-        return view('rfid.create',[
-            'CardReaders'=>$CardReaders
-        ]);
+        $CardReaders = DB::table('esp')->select('*')->where('type','=','RFID Reader')->get();
+      
+        if (count($CardReaders) == 0){
+            $error = 'You need to add an RFID reader first!';
+            return redirect()->back()->with(['error'=> $error]);
+        }
+        else{
+            return view('rfid.create',[
+                'CardReaders' => $CardReaders
+            ]);
+        }
     }
 
     /**

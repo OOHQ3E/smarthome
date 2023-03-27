@@ -66,9 +66,7 @@
                         <i class="fa-solid fa-ban"></i><span> Cancel</span>
                     </button>
                 </div>
-
             </form>
-
         </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -80,17 +78,13 @@
             selectedIndex = selected.options[selected.selectedIndex].value;
         }
         function GetUID(){
-            //console.log(selected);
-            //console.log(selectedIndex)
             changeSelected()
             $.getJSON('http://192.168.200.1/getTag/'+selectedIndex, function(data) {
                 var uid = `${data.uid}`
-                //console.log(uid);
                 document.getElementById("uid_i").value = uid;
             }).fail(function(){
-
-alert("reading was unsuccessful, please try again")
-});
+                alert("reading was unsuccessful, please try again")
+            });
         }
     </script>
 
