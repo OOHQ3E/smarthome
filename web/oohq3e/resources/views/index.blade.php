@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title') {{'Index Page'}} @endsection
+@section('title') {{'Home Page'}} @endsection
 
 @section('content')
 
 
     <div class="m-auto p-4 lg:text-left md:text-center sm:text-center">
-        <button class="shadow-2xl lg:w-16 md:w-11/12 w-full h-16 text-3xl text-gray-700 transition hover:text-gray-800 rounded-full bg-gray-400 rounded-full hover:bg-gray-500" onclick="location.href='{{ asset('settings') }}'">
+        <button id="settings" class="shadow-2xl lg:w-16 md:w-11/12 w-full h-16 text-3xl text-gray-700 transition hover:text-gray-800 rounded-full bg-gray-400 rounded-full hover:bg-gray-500" onclick="location.href='{{ asset('settings') }}'">
             <i class="fa-solid fa-gear"></i>
         </button>
     </div>
@@ -15,7 +15,7 @@
 
     @forelse($rooms as $room)
         <div class="bg-white bg-opacity-75 shadow-2xl p-4 rounded-lg m-auto lg:w-10/12 md:w-10/12 w-full my-2">
-            <p class="text-left font-bold m-2 text-2xl">{{$room->name}}</p>
+            <p id="room_name_{{$room->name}}" class="text-left font-bold m-2 text-2xl">{{$room->name}}</p>
             <div class="flex flex-wrap gap-4 justify-center">
                 @forelse($esps as $esp)
                     @if($esp-> room_id === $room->id && $esp->type === "Sensor")
@@ -81,7 +81,7 @@
         </div>
             @empty
         <div class="bg-white bg-opacity-75 shadow-2xl p-4 rounded-lg m-auto lg:w-3/4 sm:w-10/12 my-4">
-            <p class="text-left font-bold m-2 text-xl">There are no rooms added to the database!</p>
+            <p id="no_room_message" class="text-left font-bold m-2 text-xl">There are no rooms added to the database!</p>
         </div>
     @endforelse
    </div>

@@ -9,7 +9,7 @@
     <div class="m-auto w-1/2 py-2">
         <div class="text-center">
             <h1 class="text-3xl text-white font-sans pb-2 mt-2 uppercase font-light">
-                Add a new room
+                Add a New Room
             </h1>
         </div>
     </div>
@@ -20,7 +20,7 @@
                 {{ session()->get('error') }}
             </li>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li id="error_message">{{ $error }}</li>
             @endforeach
         </ul>
     @endif
@@ -35,15 +35,15 @@
             </div>
 
             <div class="text-gray-50 flex flex-wrap justify-center gap-2">
-                <button type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
+                <button id="submit" type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
                     <i class="fa-solid fa-plus"></i><span> Add Room</span>
                 </button>
 
-                <button type="reset" class="shadow-xl text-black truncate uppercase bg-orange-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-orange-400">
+                <button id="reset" type="reset" class="shadow-xl text-black truncate uppercase bg-orange-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-orange-400">
                     <i class="fa-solid fa-rotate-right"></i><span> Reset Data</span>
                 </button>
 
-                <button onclick="location.href='{{ asset('settings') }}'" type="button" class="shadow-xl truncate text-white uppercase bg-red-500 hover:bg-red-400 lg:w-64 md:w-64 w-11/12 rounded-full text-center p-3 my-2">
+                <button id="cancel" onclick="location.href='{{ asset('settings') }}'" type="button" class="shadow-xl truncate text-white uppercase bg-red-500 hover:bg-red-400 lg:w-64 md:w-64 w-11/12 rounded-full text-center p-3 my-2">
                     <i class="fa-solid fa-ban"></i><span> Cancel</span>
                 </button>
             </div>

@@ -3,19 +3,18 @@
 @section('title') {{'RFID use history'}} @endsection
 
 @section('content')
-    <!DOCTYPE html>
 <head>
-    <title>RFID use history</title>
+    <title>RFID Use History</title>
 </head>
 <html>
-<div class="p-5 text-center m-auto w-full flex flex-wrap gap-4">
-    <button class="shadow-2xl lg:w-16 text-3xl md:w-full w-full h-16 text-gray-700 transition hover:text-gray-800 rounded-full font-black bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/') }}'">
+<div class="m-auto flex lg:flex-nowrap md:flex-nowrap flex-wrap gap-3 p-4 text-center w-full">
+    <button id="back_to_rfid_settings" class="shadow-2xl lg:w-16 text-3xl md:w-full w-full h-16 text-gray-700 transition hover:text-gray-800 rounded-full font-black bg-gray-400 rounded-full hover:bg-gray-500"  onclick="location.href='{{ asset('/settings/RFID/') }}'">
         <i class="fa-solid fa-arrow-left"></i>
     </button>
 
     <div class="my-4 text-center w-11/12 m-auto">
         <h1 class="text-3xl text-white font-sans py-2 uppercase font-light">
-            RFID use history
+            RFID Use History
         </h1>
     </div>
 
@@ -25,9 +24,9 @@
             <div class="w-11/12 m-2 p-2 text-left">
                 <span class="text-black font-semibold text-xl">{{$reader->name}}'s read history</span>
             </div>
-                <table class="w-11/12 m-auto text-left bg-white rounded-lg overflow-hidden shadow-2xl my-5 ">
+                <table class="w-11/12 m-auto text-left bg-white rounded-lg overflow-hidden shadow-2xl my-5">
                     <thead>
-                    <tr class="bg-cyan-600 text-black  rounded-lg mb-2 lg:mb-0">
+                    <tr class="bg-cyan-600 text-black mb-2 lg:mb-0">
                         <th class="p-2 text-left break-words w-3 text-center">Ordinal number</th>
                         <th class="p-2 text-left break-words w-3">Tag uid</th>
                         <th class="p-2 text-left break-words">Tag name</th>

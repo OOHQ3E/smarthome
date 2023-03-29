@@ -20,7 +20,7 @@
                     {{ session()->get('error') }}
                 </li>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li id="error_message">{{ $error }}</li>
             @endforeach
         </ul>
     @endif
@@ -45,15 +45,15 @@
                 </div>
                 <input id="reader_id" name="reader" name="reader" hidden type="text" value="{{$reader->id}}">
                 <div class="text-gray-50 flex flex-wrap justify-center gap-2">
-                    <button type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
+                    <button id="submit" type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
                         <i class="fa-solid fa-plus"></i><span> Add RFID Tag</span>
                     </button>
 
-                    <button type="reset" class="shadow-xl text-black truncate uppercase bg-orange-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-orange-400">
+                    <button id="reset" type="reset" class="shadow-xl text-black truncate uppercase bg-orange-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-orange-400">
                         <i class="fa-solid fa-rotate-right"></i><span> Reset Data</span>
                     </button>
 
-                    <button onclick="location.href='{{ asset('settings/RFID') }}'" type="button" class="shadow-xl truncate text-white uppercase bg-red-500 hover:bg-red-400 lg:w-64 md:w-64 w-11/12 rounded-full text-center p-3 my-2">
+                    <button id="cancel" onclick="location.href='{{ asset('settings/RFID') }}'" type="button" class="shadow-xl truncate text-white uppercase bg-red-500 hover:bg-red-400 lg:w-64 md:w-64 w-11/12 rounded-full text-center p-3 my-2">
                         <i class="fa-solid fa-ban"></i><span> Cancel</span>
                     </button>
                 </div>

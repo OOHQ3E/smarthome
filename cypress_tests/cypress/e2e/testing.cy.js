@@ -1,0 +1,98 @@
+xdescribe('Main pages are openable, and they exist', () => {
+  it('Opens main page', () => {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.title().should('eq',"Home Page")
+    cy.get('#no_room_message').contains('There are no rooms added to the database!')
+    //cy.screenshot()
+  })
+  it('Opens Settings Page ', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.title().should('eq',"Settings")
+    cy.get('#no_room_message').contains('No room in the database!')
+    //cy.screenshot()
+  });
+  it('Opens RFID Settings Page ', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.get('#rfid_settings').click()
+    cy.title().should('eq',"RFID Settings")
+    cy.get('#no_rfid_message').contains('No RFID reader in the database!')
+    //cy.screenshot()
+  });
+  it('Opens RFID Use History Page ', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.get('#rfid_settings').click()
+    cy.get('#rfid_use_history').click()
+    cy.contains('RFID Use History').should('be.visible')
+    cy.title().should('eq',"RFID Use History")
+    //cy.screenshot()
+  });
+})
+xdescribe('Add, Modify, Delete - Room', () => {
+  it('Adds a new room and deletes it, shows every function working (reset, cancel, submit) also shows room on main page', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.contains('Add Room')
+    cy.get('#add_room').click()
+    cy.contains('Add a New Room').should('be.visible')
+    cy.get('#name').type('Test Room - Cypress')
+    cy.get('#name').should('have.value','Test Room - Cypress')
+    cy.get('#reset').click()
+    cy.get('#name').should('have.value','')
+    cy.get('#name').type('Test Room - Cypress')
+    cy.get('#cancel').click()
+    cy.title().should('eq',"Settings")
+    cy.get('#add_room').click()
+    cy.get('#name').type('TestRoom-Cypress')
+    cy.get('#submit').click()
+    cy.get('#message').contains('Successfully added a new room: TestRoom-Cypress')
+    //----------------------------------------------------------------------------
+    cy.get('#back_to_main').click()
+    cy.get('#room_name_TestRoom-Cypress').contains('TestRoom-Cypress')
+    cy.get('#settings').click()
+    //----------------------------------------------------------------------------
+    //cy.screenshot()
+    cy.get('#delete_room_TestRoom-Cypress').click()
+    cy.get('#message').contains('Successfully deleted room: TestRoom-Cypress')
+    //cy.screenshot()
+  });
+  it('Adds a room, modifies it,then deletes it.', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.title().should('eq',"Settings")
+    cy.get('#add_room').click()
+    cy.get('#name').type('TestRoom-Cypress')
+    cy.get('#submit').click()
+    cy.get('#message').contains('Successfully added a new room: TestRoom-Cypress')
+    //cy.screenshot()
+    //---------------------------------------------------------------------------
+    cy.contains('TestRoom-Cypress')
+    cy.get('#modify_room_TestRoom-Cypress').click()
+    cy.contains('Modify room: TestRoom-Cypress').should('be.visible')
+    //cy.screenshot()
+    cy.get('#name').clear()
+    cy.get('#name').type('TestRoom-Cypress-Modified')
+    cy.get('#submit').click()
+    cy.get('#message').contains('Successfully updated room: TestRoom-Cypress-Modified')
+    cy.contains('TestRoom-Cypress-Modified')
+    //cy.screenshot()
+    cy.get('#delete_room_TestRoom-Cypress-Modified').click()
+    cy.get('#message').contains('Successfully deleted room: TestRoom-Cypress-Modified')
+    //cy.screenshot()
+  });
+
+
+})
+xdescribe('Add, Modify, Delete - Device (esp)', function () {
+  it('Adds a room for later use', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.title().should('eq',"Settings")
+    cy.get('#add_room').click()
+    cy.get('#name').type('TestRoom-Cypress-forDevices')
+    cy.get('#submit').click()
+    cy.get('#message').contains('Successfully added a new room: TestRoom-Cypress')
+  });
+});
