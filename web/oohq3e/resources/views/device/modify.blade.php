@@ -15,7 +15,7 @@
     </div>
 
     @if(session()->has('error') || $errors->any())
-        <ul class="shadow-2xl bg-red-600 rounded-lg w-1/3 m-auto text-xl text-center text-white font-sans py-2 my-2 font-light">
+        <ul id="error_message" class="shadow-2xl bg-red-600 rounded-lg w-1/3 m-auto text-xl text-center text-white font-sans py-2 my-2 font-light">
             <li>
                 {{ session()->get('error') }}
             </li>

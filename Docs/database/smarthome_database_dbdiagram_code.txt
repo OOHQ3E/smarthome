@@ -1,4 +1,3 @@
-
 Table "esp" {
   "id" int(10) [pk, not null, increment]
   "room_id" int(10) [not null]
@@ -26,6 +25,32 @@ Indexes {
 }
 }
 
+Table "rfid_tag" {
+  "id" int(10) [pk, not null, increment]
+  "name" varchar(50) [not null]
+  "uid" varchar(20) [not null]
+  "esp_id" int(10) [not null]
+  "created_at" timestamp [default: NULL]
+  "updated_at" timestamp [default: NULL]
+
+Indexes {
+  esp_id [name: "rfid_tag_esp_id_foreign"]
+}
+}
+
+Table "rfid_use_data" {
+  "id" int(10) [pk, not null, increment]
+  "tag_id" int(10) [not null]
+  "esp_id" int(10) [not null]
+  "created_at" timestamp [default: NULL]
+  "updated_at" timestamp [default: NULL]
+
+Indexes {
+  tag_id [name: "rfid_use_data_tag_id_foreign"]
+  esp_id [name: "rfid_use_data_esp_id_foreign"]
+}
+}
+
 Table "room" {
   "id" int(10) [pk, not null, increment]
   "name" varchar(255) [not null]
@@ -33,7 +58,12 @@ Table "room" {
   "updated_at" timestamp [default: NULL]
 }
 
-
 Ref "esp_room_id_foreign":"room"."id" < "esp"."room_id" [delete: cascade]
 
 Ref "esp_sensor_data_room_id_foreign":"room"."id" < "esp_sensor_data"."room_id" [delete: cascade]
+
+Ref "rfid_tag_esp_id_foreign":"esp"."id" < "rfid_tag"."esp_id" [delete: cascade]
+
+Ref "rfid_use_data_esp_id_foreign":"esp"."id" < "rfid_use_data"."esp_id" [delete: cascade]
+
+Ref "rfid_use_data_tag_id_foreign":"rfid_tag"."id" < "rfid_use_data"."tag_id" [delete: cascade]

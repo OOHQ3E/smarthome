@@ -35,7 +35,7 @@
                     <div class="bg-gray-100 shadow-2xl rounded-lg overflow-auto m-3 bg-opacity-90">
 
                    <div class="flex flex-wrap gap-2 justify-center m-5">
-                       <button id="add_tag_{{$reader->id}}" onclick="location.href='{{ asset('create')}}/RFID/{{$reader->id}}'" class="shadow-xl my-1 bg-green-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-green-600 hover:text-black w-64 text-center">
+                       <button id="add_tag_{{$reader->name}}" onclick="location.href='{{ asset('create')}}/RFID/{{$reader->id}}'" class="shadow-xl my-1 bg-green-500 text-white uppercase rounded-full py-3 px-6 transition hover:bg-green-600 hover:text-black w-64 text-center">
                            <i class="fa-solid fa-plus"></i><span> Add RFID tag</span>
                        </button>
                    </div>
@@ -53,26 +53,26 @@
                                     <tr>
                                         <td class="p-3 m-1/3">
                                             <ul class="m-1">
-                                                <li id="tag_name_{{$tag->id}}" class="leading-normal"><span class=" font-bold">Name:</span> {{ $tag->name }} </li>
+                                                <li id="tag_name_{{$tag->name}}" class="leading-normal"><span class=" font-bold">Name:</span> {{ $tag->name }} </li>
                                                 <br>
-                                                <li id="tag_uid_{{$tag->id}}" class="leading-normal"><span class="font-bold">UID:</span> {{ $tag->uid }} </li>
+                                                <li id="tag_uid_{{$tag->name}}" class="leading-normal"><span class="font-bold">UID:</span> {{ $tag->uid }} </li>
                                                 <br>
-                                                <li id="tag_date_add_{{$tag->id}}" class="leading-normal"><span class="font-bold">Date Added: </span><span class="font-semibold">{{ $tag->created_at }}</span></li>
+                                                <li id="tag_date_add_{{$tag->name}}" class="leading-normal"><span class="font-bold">Date Added: </span><span class="font-semibold">{{ $tag->created_at }}</span></li>
                                                 <br>
-                                                <li id="tag_date_mod_{{$tag->id}}"  class="leading-normal"><span class="font-bold">Date Last modified: </span><span class="font-semibold">{{ $tag->updated_at }}</span></li>
+                                                <li id="tag_date_mod_{{$tag->name}}"  class="leading-normal"><span class="font-bold">Date Last modified: </span><span class="font-semibold">{{ $tag->updated_at }}</span></li>
                                             </ul>
                                         </td>
 
                                         <td class="p-2 m-1/3">
-                                            <button id="modify_tag_{{$tag->id}}" class="shadow-xl w-14 h-14 rounded-lg bg-yellow-300 transition hover:bg-yellow-400 uppercase" onclick="location.href='/modify/RFID/{{$reader->id}}/{{$tag->id}}'">
+                                            <button id="modify_tag_{{$tag->name}}" class="shadow-xl w-14 h-14 rounded-lg bg-yellow-300 transition hover:bg-yellow-400 uppercase" onclick="location.href='/modify/RFID/{{$reader->id}}/{{$tag->id}}'">
                                                 <i class="fa-regular fa-pen-to-square"></i>
                                             </button>
                                         </td>
                                         <td class="p-2 m-1/3 text-white">
-                                            <form action="/delete/tag/{{$tag->id}}" method="POST">
+                                            <form action="/delete/tag/{{$tag->name}}" method="POST">
                                                 @csrf
                                                 {{method_field('DELETE')}}
-                                                <button id="delete_tag_{{$tag->id}}" class="shadow-xl w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{ $tag -> id }}">
+                                                <button id="delete_tag_{{$tag->name}}" class="shadow-xl w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{ $tag -> id }}">
                                                     <i class="fa-solid fa-trash-can"></i>
                                                 </button>
                                             </form>

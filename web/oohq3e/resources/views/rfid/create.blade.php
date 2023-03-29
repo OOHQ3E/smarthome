@@ -62,13 +62,12 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
-        var ReaderID = document.getElementById('reader_id').value;
-	console.log(ReaderID);
-        function changeSelected(){
+        let ReaderID;
+        function ReadSelected(){
             ReaderID = document.getElementById('reader_id').value;
         }
         function GetUID(){
-            changeSelected()
+            ReadSelected()
             $.getJSON('http://192.168.200.1/getTag/'+ReaderID, function(data) {
                 var uid = `${data.uid}`
                 	document.getElementById("uid_i").value = uid;
