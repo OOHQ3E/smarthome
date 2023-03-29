@@ -31,13 +31,13 @@
 
                 <div class="text-left w-11/12 m-auto">
                     <label for="name" class="lg:my-3 md:my-3 my-1 font-semibold text-left">Tag name:</label>
-                    <input type="text" class="truncate ... pl-2 my-6 w-full text-xl rounded-md" id="name" name="name" class="rounded" required>
+                    <input type="text" class="truncate ... pl-2 my-6 w-full text-xl rounded-md" id="name" name="name" class="rounded" required max="50">
                 </div>
 
                 <div class="text-center flex lg:flex-nowrap md:flex-nowrap flex-wrap w-11/12 m-auto">
                     <label for="uid" class="lg:my-6 md:my-3 my-1 p-2 font-semibold text-left">UID: </label>
 			        <input type="hidden" name="uid" id="uid">
-                    <input disabled type="text" class="truncate ... pl-2 lg:my-6 md:my-3 my-1 w-full text-xl rounded-md" id="uid_i" name="uid_i" class="rounded" required>
+                    <input disabled type="text" class="truncate ... pl-2 lg:my-6 md:my-3 my-1 w-full text-xl rounded-md" id="uid_i" name="uid_i" class="rounded" required max="20">
 
                     <button type="button" onclick="GetUID()" id="tagRead" class="shadow-xl truncate m-auto uppercase bg-cyan-600 lg:ml-2 md:ml-2 m-auto rounded-full lg:w-64 my-6 md:w-64 w-11/12 text-center lg:my-3 md:my-3 my-1 p-3 hover:bg-cyan-500">
                         <i class="fa-solid fa-id-card-clip"></i><span> Read Tag</span>

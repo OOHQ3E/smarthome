@@ -31,7 +31,7 @@ xdescribe('Main pages are openable, and they exist', () => {
   });
 })
 xdescribe('Add, Modify, Delete - Room', () => {
-  it('Adds a new room and deletes it, shows every function working (reset, cancel, submit) also shows room on main page', function () {
+  it('Adds a new room and deletes it, shows every function working (reset, cancel, submit) also checks room on main page', function () {
     cy.visit('http://127.0.0.1:8000/')
     cy.get('#settings').click()
     cy.contains('Add Room')
@@ -82,6 +82,23 @@ xdescribe('Add, Modify, Delete - Room', () => {
     cy.get('#message').contains('Successfully deleted room: TestRoom-Cypress-Modified')
     //cy.screenshot()
   });
+  it('Adds a room, then adds another with the same name -> should get error message (The name has already been taken.)', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.title().should('eq',"Settings")
+    cy.get('#add_room').click()
+    cy.get('#name').type('TestRoom-Cypress-same')
+    cy.get('#submit').click()
+    cy.get('#message').contains('Successfully added a new room: TestRoom-Cypress-same')
+    //cy.screenshot()
+    cy.get('#add_room').click()
+    cy.get('#name').type('TestRoom-Cypress-same')
+    cy.get('#submit').click()
+    cy.get('#error_message').contains('The name has already been taken.')
+    cy.get('#cancel').click()
+    cy.get('#delete_room_TestRoom-Cypress-same').click()
+    cy.get('#message').contains('Successfully deleted room: TestRoom-Cypress-same')
+  });
 
 
 })
@@ -91,8 +108,66 @@ xdescribe('Add, Modify, Delete - Device (esp)', function () {
     cy.get('#settings').click()
     cy.title().should('eq',"Settings")
     cy.get('#add_room').click()
-    cy.get('#name').type('TestRoom-Cypress-forDevices')
+    cy.get('#name').type('TestRoom-Cypress-for-Devices')
     cy.get('#submit').click()
-    cy.get('#message').contains('Successfully added a new room: TestRoom-Cypress')
+    cy.get('#message').contains('Successfully added a new room: TestRoom-Cypress-for-Devices')
+  });
+  it('Adds a sensor to an added room, deletes it after', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.title().should('eq','Settings')
+    cy.get('#add_device_TestRoom-Cypress-for-Devices').click()
+    cy.get('#name').type('Test-Device')
+    cy.get('#type').select('Sensor')
+    cy.get('#ip_End').type('100')
+    cy.get('#submit').click()
+    cy.get('#message').contains('Successfully added Test-Device to TestRoom-Cypress-for-Devices')
+    cy.get('#device_name_Test-Device').contains('Test-Device')
+    cy.get('#device_type_Test-Device').contains('Sensor')
+    cy.get('#device_ip_Test-Device').contains('100')
+    cy.get('#delete_device_Test-Device').click()
+    cy.get('#message').contains('Successfully deleted Test-Device from TestRoom-Cypress-for-Devices')
+  });
+  it('Tries to add 2 sensors to the same room -> should get error message (Rooms can only have 1 Sensor!)', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.title().should('eq','Settings')
+    cy.get('#add_device_TestRoom-Cypress-for-Devices').click()
+    cy.get('#name').type('Test-Device')
+    cy.get('#type').select('Sensor')
+    cy.get('#ip_End').type('100')
+    cy.get('#submit').click()
+    cy.get('#message').contains('Successfully added Test-Device to TestRoom-Cypress-for-Devices')
+    cy.get('#add_device_TestRoom-Cypress-for-Devices').click()
+    cy.get('#name').type('Test-Device')
+    cy.get('#type').select('Sensor')
+    cy.get('#ip_End').type('100')
+    cy.get('#submit').click()
+    cy.get('#error_message').contains('Rooms can only have 1 Sensor!')
+    cy.get('#cancel').click()
+    cy.get('#delete_device_Test-Device').click()
+  });
+  it('Tries to add 2 devices with same ip address -> should get error (This ip end has been taken.) ', function () {
+    cy.visit('http://127.0.0.1:8000/')
+    cy.get('#settings').click()
+    cy.title().should('eq','Settings')
+    cy.get('#add_device_TestRoom-Cypress-for-Devices').click()
+    cy.contains(' Add device to TestRoom-Cypress-for-Devices').should('be.visible')
+    cy.get('#name').type('Test-Device')
+    cy.get('#type').select('Toggle')
+    cy.get('#ip_End').type('100')
+    cy.get('#submit').click()
+    cy.get('#add_device_TestRoom-Cypress-for-Devices').click()
+    cy.contains(' Add device to TestRoom-Cypress-for-Devices').should('be.visible')
+    cy.get('#name').type('Test-Device')
+    cy.get('#type').select('Toggle')
+    cy.get('#ip_End').type('100')
+    cy.get('#submit').click()
+    cy.get('#error_message').contains('The ip end has already been taken.')
+    cy.get('#cancel').click()
+    cy.get('#delete_device_Test-Device').click()
+  });
+  it('Adds a device, modifies, then deletes it', function () {
+      /*TODO: do modify device*/
   });
 });
