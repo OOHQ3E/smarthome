@@ -7,22 +7,22 @@
 const char* ssid = "raspberrySmarthome";
 const char* password = "huu1vi9doL";
 
-//#define RED 23
-//#define GREEN 22
-//#define BLUE 21
+#define led_r 26
+#define led_g 33
+#define led_b 25
+#define SS_PIN 5
+#define RST_PIN 27
+
 String ipEnd = "7";
 IPAddress local_IP(192,168,200,7);
 IPAddress gateway(192,168,200,1);
 IPAddress subnet(255,255,255,0);
 
-const char *host = "http://192.168.200.1/api/rfid";
-
-#define SS_PIN 5
-#define RST_PIN 27
+const char *host = "http://192.168.200.1/api/rfid"; //api route for data sending to the Laravel app
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);  //--> Create MFRC522 instance.
 
-AsyncWebServer webserver(80);  //--> Server on port 80
+AsyncWebServer webserver(80);  
 
 int readsuccess;
 int state = 0; // 0 = continous reading 1 = add tag to text field
@@ -33,14 +33,15 @@ String StrUIDforReg;
 
 //-----------------------------------------------------------------------------------------------SETUP--------------------------------------------------------------------------------------//
 void setup() {
-  Serial.begin(9600); //--> Initialize serial communications with the PC
-  SPI.begin();      //--> Init SPI bus
+  Serial.begin(9600); 
+  SPI.begin();        //--> Init SPI bus
   mfrc522.PCD_Init(); //--> Init MFRC522 card
 
   delay(500);
-
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH); //--> Turn off Led On Board
+  pinMode(led_r,OUTPUT);
+  pinMode(led_g,OUTPUT);
+  pinMode(led_b,OUTPUT);
+  RGB_color(0,0,50);
 
     if(!WiFi.config(local_IP,gateway,subnet)){
     Serial.println("STA failed to configure");
@@ -57,12 +58,12 @@ void setup() {
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
     //----------------------------------------Make the On Board Flashing LED on the process of connecting to the wifi router.
-    digitalWrite(LED_BUILTIN, LOW);
+    RGB_color(0,0,10);
     delay(250);
-    digitalWrite(LED_BUILTIN, HIGH);
+    RGB_color(0,0,50);
     delay(250);
   }
-  digitalWrite(LED_BUILTIN, HIGH); //--> Turn off the On Board LED when it is connected to the wifi router.
+   RGB_color(0,0,0); 
   //----------------------------------------If successfully connected to the wifi router, the IP Address that will be visited is displayed in the serial monitor
   Serial.println("");
   Serial.print("Successfully connected to : ");
@@ -91,11 +92,17 @@ void setup() {
   });
   webserver.begin();
 }
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-//-----------------------------------------------------------------------------------------------LOOP---------------------------------------------------------------------------------------//
+
 void loop() {
       readData();
+}
+
+void RGB_color(int R, int G, int B)
+ {
+  analogWrite(led_r, R);
+  analogWrite(led_g, G);
+  analogWrite(led_b, B);
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
@@ -105,7 +112,7 @@ void readData(){
   readsuccess = getid();
 
   if (readsuccess) {
-    digitalWrite(LED_BUILTIN, LOW);
+    RGB_color(0, 50, 50);
 
     String UIDresultSend, postData;
      switch(state){
@@ -126,18 +133,63 @@ if(state == 0){
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   int httpCode = http.POST(postData);
   String payload = http.getString();
-  Serial.println(postData);
-  Serial.println(httpCode);
-  Serial.println(payload);
+  //Serial.println(postData);
+  //Serial.println(httpCode);
+  //Serial.println(payload);
   http.end();
   delay(1000);
-}
-
-    Serial.println(UIDresultSend);
-
-    delay(1000);
-    digitalWrite(LED_BUILTIN, HIGH);
+  if(payload == "OK" && httpCode == 200){
+    responseBlink(0);
   }
+  else if(payload == "FAIL" && httpCode == 200){
+    responseBlink(1);
+  }
+  else{
+    Serial.println(httpCode);
+    Serial.println(payload);
+  }
+  RGB_color(0,0,0);
+}
+    Serial.println(UIDresultSend);
+    delay(1000);
+    RGB_color(0,0,0);
+  }
+}
+void responseBlink(int res){   
+  int del = 300; 
+  if(res == 0){
+      RGB_color(0,200,0);
+      delay(del);
+      RGB_color(0,20,0);
+      delay(del);
+      RGB_color(0,200,0);
+      delay(del);
+      RGB_color(0,20,0);
+      delay(del);
+      RGB_color(0,200,0);
+      delay(del);
+      RGB_color(0,20,0);
+      delay(del);
+      RGB_color(0,200,0);
+      delay(del);
+  }
+  else if(res == 1){
+      RGB_color(200,0,0);
+      delay(del);
+      RGB_color(20,0,0);
+      delay(del);
+      RGB_color(200,0,0);
+      delay(del);
+      RGB_color(20,0,0);
+      delay(del);
+      RGB_color(200,0,0);
+      delay(del);
+      RGB_color(20,0,0);
+      delay(del);
+      RGB_color(200,0,0);
+      delay(del);
+  }
+      
 }
 
 
