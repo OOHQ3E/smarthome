@@ -53,6 +53,7 @@
                 <button type="button" onclick="GetUID()" id="tagRead" class="shadow-xl truncate m-auto uppercase bg-cyan-600 lg:ml-2 md:ml-2 m-auto rounded-full lg:w-64 my-6 md:w-64 w-11/12 text-center lg:my-3 md:my-3 my-1 p-3 hover:bg-cyan-500">
                     <i class="fa-solid fa-id-card-clip"></i><span> Read Tag</span>
                 </button>
+                <span hidden id="notice" class="font-semibold m-1 m-auto text-left py-3" >Please touch tag on reader!</span>
             </div>
             <div class="text-gray-50 flex flex-wrap justify-center gap-2">
                 <button id="submit" type="submit" class="shadow-xl truncate uppercase bg-green-500 rounded-full lg:w-64 md:w-64 w-11/12 text-center p-3 my-2 hover:bg-green-400">
@@ -80,13 +81,16 @@
             console.log(ReaderID);
         }
         function GetUID(){
+            document.getElementById("notice").hidden = false;
             changeSelected()
             $.getJSON('http://192.168.200.1/getTag/'+ReaderID, function(data) {
                 var uid = `${data.uid}`
                 document.getElementById("uid_i").value = uid;
                 document.getElementById("uid").value = uid;
+                document.getElementById("notice").hidden = true;
             }).fail(function(){
                 alert("reading was unsuccessful, please try again")
+                document.getElementById("notice").hidden = true;
             });
         }
     </script>

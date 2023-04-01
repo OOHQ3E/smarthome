@@ -42,7 +42,7 @@
                     <button type="button" onclick="GetUID()" id="tagRead" class="shadow-xl truncate m-auto uppercase bg-cyan-600 lg:ml-2 md:ml-2 m-auto rounded-full lg:w-64 my-6 md:w-64 w-11/12 text-center lg:my-3 md:my-3 my-1 p-3 hover:bg-cyan-500">
                         <i class="fa-solid fa-id-card-clip"></i><span> Read Tag</span>
                     </button>
-                    <span id="notice" class="font-semibold" hidden>Please touch tag on reader!</span>
+                    <span hidden id="notice" class="font-semibold m-1 m-auto text-left py-3" >Please touch tag on reader!</span>
                 </div>
                 <input id="reader_id" name="reader" name="reader" hidden type="text" value="{{$reader->id}}">
                 <div class="text-gray-50 flex flex-wrap justify-center gap-2">
@@ -72,12 +72,14 @@
             ReadSelected()
             $.getJSON('http://192.168.200.1/getTag/'+ReaderID, function(data) {
                 var uid = `${data.uid}`
-                	document.getElementById("uid_i").value = uid;
+                document.getElementById("uid_i").value = uid;
 		        document.getElementById("uid").value = uid;
+                document.getElementById("notice").hidden = true;
             }).fail(function(){
                 alert("reading was unsuccessful, please try again")
+                document.getElementById("notice").hidden = true;
             });
-            document.getElementById("notice").hidden = true;
+
         }
     </script>
 
