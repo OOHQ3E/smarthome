@@ -19,12 +19,12 @@
             <div class="flex flex-wrap gap-4 justify-center">
                 @forelse($esps as $esp)
                     @if($esp-> room_id === $room->id && $esp->type === "Sensor")
-                        <div onclick="location.href='{{ asset('chart/'.$esp->room_id) }}'" class="shadow-xl hover:cursor-pointer w-full text-xl justify-center">
-                            <div class="h-min-24 bg-opacity-75 bg-gray-400 hover:bg-gray-500 p-4 rounded-lg">
+                        <div onclick="location.href='{{ asset('chart/'.$esp->room_id) }}'" class="shadow-xl hover:cursor-pointer w-full text-xl justify-center h-min-24 bg-opacity-75 bg-gray-100 hover:bg-gray-200 p-4 rounded-lg">
+
                                 <p id="espData-{{$esp->room_id}}" class="">
                                     <!--Temperature: 30°C<br> Humidity: 70% -->
                                 </p>
-                            </div>
+
                         </div>
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                         <script>
@@ -35,7 +35,7 @@
                         </script>
 
                     @elseif($esp-> room_id === $room->id && $esp->type === "Toggle")
-                        <div class="w-full shadow-xl h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
+                        <div class="w-full shadow-xl h-min-24 bg-opacity-75 bg-gray-100 hover:bg-gray-200 p-4 rounded-lg">
                             <label for="toggle-{{$esp->ip_End}}" class="w-full h-full inline-flex relative items-center cursor-pointer">
                                 <div class="">
                                         <input type="checkbox" value="" id="toggle-{{$esp->ip_End}}" class="sr-only peer" onclick='toggle(@json($esp))'>
@@ -55,7 +55,7 @@
                         </script>
                     @elseif($esp-> room_id === $room->id && $esp->type === "Camera")
                         <a class="w-full" id="camera-{{$esp->ip_End}}-link" href="{{ asset('cam/'.$esp->ip_End) }}">
-                        <div class="shadow-xl w-full h-min-24 bg-opacity-75 bg-gray-400 p-4 rounded-lg">
+                        <div class="shadow-xl w-full h-min-24 bg-opacity-75 bg-gray-100 hover:bg-gray-200 p-4 rounded-lg">
                             <span id="device-{{$esp->ip_End}}-span" class="my-0.5 text-xl text-gray-900 dark:text-gray-800"></span>
                             <div class="h-max">
                                 <img class="rounded-lg w-full m-auto" id="camera-{{$esp->ip_End}}" onload='success(@json($esp))'  src="http://192.168.200.{{$esp->ip_End}}/" alt="{{$esp->name}} ({{$esp->ip_End}})">
@@ -72,7 +72,12 @@
                                 setInterval(imageExists.bind('esp',@json($esp),"http://192.168.200.{{$esp->ip_End}}"), 15000);
                             });
                         </script>
-                    @endif
+                        @elseif($esp-> room_id === $room->id && $esp->type === "RFID Reader")
+                            <div class="shadow-xl w-full text-xl justify-center bg-opacity-75 bg-gray-100 hover:bg-gray-200 h-min-24 p-4 rounded-lg">
+                                    <span class="font-semibold">{{$esp->name}} ({{$esp->ip_End}})</span>
+                            </div>
+                        @endif
+
 
                 @empty
                 @endforelse
