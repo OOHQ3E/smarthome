@@ -196,7 +196,7 @@ describe('Devices (esp) - Add/Modify - with expected errors', function () {
     cy.get('#error_message').contains('Rooms can only have 1 Sensor!')
   });
 });
-xdescribe('Deteles 2 unused rooms after testing Device (esp) CRUD', function () {
+describe('Deteles 2 unused rooms after testing Device (esp) CRUD', function () {
   it('Deletes 2 unused rooms', function () {
     cy.visit('http://127.0.0.1:8000/settings')
     cy.get('#delete_room_TestRoom-Cypress-for-Devices').click()
