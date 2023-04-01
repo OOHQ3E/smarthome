@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  15 NOV 2022 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  1 APR 2023 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -623,7 +623,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 LaTeX Info: Redefining \cal on input line 577.
 LaTeX Info: Redefining \mit on input line 578.
 )
-<eszterhazy-logo-hu.pdf, id=33, 256.07971pt x 88.04292pt>
+<eszterhazy-logo-hu.pdf, id=177, 256.07971pt x 88.04292pt>
 File: eszterhazy-logo-hu.pdf Graphic file (type pdf)
 <use eszterhazy-logo-hu.pdf>
 Package pdftex.def Info: eszterhazy-logo-hu.pdf  used on input line 31.
@@ -632,74 +632,209 @@ Package pdftex.def Info: eszterhazy-logo-hu.pdf  used on input line 31.
 
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/texlive/2022
-/texmf-dist/tex/latex/thesis-ekf/eszterhazy-logo-hu.pdf>] (./thesis-oohq3e.toc)
+/texmf-dist/tex/latex/thesis-ekf/eszterhazy-logo-hu.pdf>] (./thesis-oohq3e.toc 
+[2
+
+])
 \tf@toc=\write4
 \openout4 = `thesis-oohq3e.toc'.
 
- [2
+ [3] [4
 
-] [3
-
-]
+] [5]
 1. fejezet.
-[4
 
-] [5
+Overfull \hbox (8.2475pt too wide) in paragraph at lines 71--71
+[]\T1/lmr/bx/n/17.28 Nyílt for-rá-sú, sza-ba-don sze-mély-re szab-ha-tó rend-
+ []
 
-]
-<nyilatkozat.pdf, id=80, 597.50829pt x 845.0471pt>
-File: nyilatkozat.pdf Graphic file (type pdf)
-<use nyilatkozat.pdf>
-Package pdftex.def Info: nyilatkozat.pdf  used on input line 77.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-File: nyilatkozat.pdf Graphic file (type pdf)
-<use nyilatkozat.pdf>
-Package pdftex.def Info: nyilatkozat.pdf  used on input line 77.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<nyilatkozat.pdf, id=83, page=1, 597.50829pt x 845.0471pt>
-File: nyilatkozat.pdf Graphic file (type pdf)
-<use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 77.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-File: nyilatkozat.pdf Graphic file (type pdf)
-<use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 77.
-(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [6
+[6
+
+] [7]
+2. fejezet.
+[8
 
 ]
+Overfull \vbox (5.61656pt too high) has occurred while \output is active []
+
+
+[9]
+3. fejezet.
+[10
+
+]
+4. fejezet.
+
+Underfull \hbox (badness 3189) in paragraph at lines 131--132
+[]\T1/lmr/m/n/12 The test was succ-
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 135--136
+[]\T1/lmr/m/n/12 The test was par-ti-
+ []
+
+
+Underfull \hbox (badness 2707) in paragraph at lines 135--136
+\T1/lmr/m/n/12 ally succ-ess-ful, with
+ []
+
+
+Underfull \hbox (badness 2302) in paragraph at lines 139--140
+\T1/lmr/m/n/12 ful, with the RFID
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 139--140
+\T1/lmr/m/n/12 tags re-main-ing fully
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+\T1/lmr/m/n/12 func-ti-o-nal and re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+\T1/lmr/m/n/12 adab-le even with
+ []
+
+
+Overfull \hbox (50.22633pt too wide) in paragraph at lines 125--146
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11
+
+] [12]
+5. fejezet.
+[13
+
+] [14
+
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+62.
+ (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . ncbi . nlm . nih . 
+gov / pmc / articles / PMC7285766 /
+ []
+
+
+Overfull \hbox (28.52281pt too wide) in paragraph at lines 172--173
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / fixthephoto . com / best-
+[]open-[]source-[]home-[]automation-[]software .
+ []
+
+
+Overfull \hbox (98.22688pt too wide) in paragraph at lines 182--183
+[]\T1/lmr/m/sc/12 URL\T1/lmr/m/n/12 : []$\T1/lmtt/m/n/12 https : / / ubuntu . c
+om / blog / the-[]evolution-[]of-[]the-[]smart-[]home-[]how-[]it-[]started-[]pa
+rt-[]1$[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . sciencedirect . com
+ / science / article / pii /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . raspberrypi . com /
+ documentation / computers /
+ []
+
+
+Overfull \hbox (15.6728pt too wide) in paragraph at lines 207--208
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . instructables . com
+ / ESP32-[]Internal-[]Details-[]and-[]Pinout/$[] 
+ []
+
+[15
+
+]
+Overfull \hbox (147.33386pt too wide) in paragraph at lines 212--213
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / iotprojectsideas . com / 
+connect-[]rfid-[]to-[]php-[]mysql-[]database-[]with-[]nodemcu-[]esp8266/$[] 
+ []
+
+
+Overfull \hbox (53.20882pt too wide) in paragraph at lines 217--218
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / randomnerdtutorials . com
+ / esp8266-[]nodemcu-[]http-[]get-[]post-[]arduino /
+ []
+
+
+Overfull \hbox (8.9978pt too wide) in paragraph at lines 222--223
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . instructables . com
+ / Arduino-[]to-[]Laravel-[]Communication/$[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+[]\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . raspberrypi . com /
+ documentation / /computers /
+ []
+
+<nyilatkozat.pdf, id=339, 597.50829pt x 845.0471pt>
+File: nyilatkozat.pdf Graphic file (type pdf)
+<use nyilatkozat.pdf>
+Package pdftex.def Info: nyilatkozat.pdf  used on input line 257.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: nyilatkozat.pdf Graphic file (type pdf)
+<use nyilatkozat.pdf>
+Package pdftex.def Info: nyilatkozat.pdf  used on input line 257.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+<nyilatkozat.pdf, id=342, page=1, 597.50829pt x 845.0471pt>
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 77.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 257.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: nyilatkozat.pdf Graphic file (type pdf)
+<use nyilatkozat.pdf, page 1>
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 257.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+[16]
+File: nyilatkozat.pdf Graphic file (type pdf)
+<use nyilatkozat.pdf, page 1>
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 257.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 77.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 257.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 77.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 257.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [7 <./nyilatkozat.pdf>] (./thesis-oohq3e.aux)
+ [17 <./nyilatkozat.pdf>] (./thesis-oohq3e.aux)
 Package rerunfilecheck Info: File `thesis-oohq3e.out' has not changed.
-(rerunfilecheck)             Checksum: 5A5336DC9AA4D150A3ECE0C12285146E;759.
+(rerunfilecheck)             Checksum: BB0C4CDA7B28448037CEDE32C610E7A6;9231.
  ) 
 Here is how much of TeX's memory you used:
- 15171 strings out of 475075
- 244454 string characters out of 5783001
- 764333 words of memory out of 5000000
- 36256 multiletter control sequences out of 15000+600000
- 528863 words of font info for 76 fonts, out of 8000000 for 9000
+ 15346 strings out of 475075
+ 247153 string characters out of 5783001
+ 770109 words of memory out of 5000000
+ 36354 multiletter control sequences out of 15000+600000
+ 529181 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,17n,81p,1905b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,17n,81p,1905b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/texlive/2022/tex
 mf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type
 1/public/lm/lmcsc10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12
-.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on thesis-oohq3e.pdf (7 pages, 135285 bytes).
+.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2
+022/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on thesis-oohq3e.pdf (17 pages, 197266 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
- 94 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 419 PDF objects out of 1000 (max. 8388607)
+ 379 compressed objects within 4 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 382 words of extra memory for PDF output out of 10000 (max. 10000000)
 
