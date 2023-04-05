@@ -48,7 +48,7 @@
 
 	Célom az lenne ezzel, hogy belelássak egy ilyen rendszer működésébe, különböző programozható eszközök alkalmazását jobban megismerjem, és, hogy egy olyan általános kezelőfelületet tudjak létrehozni, amit könnyen tud a felhasználó alkalmazni.
 	
-	\chapter{Piacon lévő okos otthon rendszerek}
+	\chapter{Piacon lévő nagyobb okos otthon rendszerek}
 	\section{Nagyobb cégek által létrehozott ökoszisztémák}
 	Az okos otthon rendszerek széles választéka áll rendelkezésre a piacon felhasználók számára, amelyek között egyszerű rendszerektől kezdve a biztonsági kamerák, ajtózárak és akár a háztartási készülékek is alkalmazhatóak. Amikor az okos otthon rendszer kiválasztására kerül sor, fontos figyelembe venni az eszközök kiválasztását is.
 	
@@ -103,7 +103,7 @@
 	\section{Nyílt forrású, szabadon személyre szabható rendszerek}
 	\subsection*{Mit jelent az, hogy open source?}
 	
-	Open source, azaz nyílt forráskódú szoftver az olyan, aminek a forráskódját szabadon lehet vizsgálni, módosítani, és akár ki is egészíteni. A kód az a része egy szoftvernek amit a legtöbb felhasználó bizonyára soha nem fog látni. Ez az a kód, amit a programozók változtathatnak hogy megváltozzon a program vagy alkalmazás működése. Azok a programozók, akik hozzáférhetnek egy szoftver forráskódjához, azokat feljeszthetik, és javíthatják azzal hogy például új funkciót adnak hozzá, vagy kijavítanak egy olyan részt, ami nem minden esetben működik helyesen.\footnote{\label{open-source-fn}A nyílt forráskódú szoftverről az irodalomjegyzék \cite{what-is-open-source}-es részeként található}
+	Open source, azaz nyílt forráskódú szoftver az olyan, aminek a forráskódját szabadon lehet vizsgálni, módosítani, és akár ki is egészíteni. A kód az a része egy szoftvernek amit a legtöbb felhasználó bizonyára soha nem fog látni. Ez az a kód, amit a programozók változtathatnak hogy megváltozzon a program vagy alkalmazás működése. Azok a programozók, akik hozzáférhetnek egy szoftver forráskódjához, azokat feljeszthetik, és javíthatják azzal hogy például új funkciót adnak hozzá, vagy kijavítanak egy olyan részt, ami nem minden esetben működik helyesen.\footnote{\label{open-source-fn}A nyílt forráskódú szoftverről az irodalomjegyzék \cite{what-is-open-source}. részén található}
 	
 	Azonban azt, hogy egy szoftver nyílt forráskódú, nem feltétlenül jelenti azt, hogy az adott szoftver ingyenes használatban áll. Nyílt forráskódot fejlesztő programozók kérhetnek pénzt azért a nyílt forrású szoftverért, hogy ha ők alkották meg, vagy hozzájárulásukkal készült el. 
 	
@@ -111,13 +111,27 @@
 	
 	\subsection*{Home Assistant}
 	
-	A Home Assistant 2013 ... folyt köv
+	A Home Assistant 2013 novemberére került publikálásra \emph{GitHub.com}-on \textsc{Paulus Schoutsen} által. Ez ekkor még egy Python programozási nyelven megírt alkalmazás volt. Ekkor még ez egy egyszerű program volt, ami napnyugtakor felkapcsolta a lámpát. Azóta a szoftver elég érett lett, és körülbelül 20 aktív hozzájáruló dolgozik a projekten, ennek köszönhetően kéthetente érkezik frissítés a rendszerre.\footnote{\label{history-of-home-assistant}A történet bővebben az irodalomjegyzék  \cite{creation-of-home-assistant}. részén megtalálható.}
+	
+	Ez a szoftver bármely olyan rendszeren működik, ami a Python 3 programozási nyelvet tudja futtatni. Biztosít mobil és számítógép alkalmazást is, mellyel több ezer támogatott eszközt tudunk irányítani. Annyi a különbség ez a rendszer és a nagyobb cégek által biztosított között, hogy ez teljesen lokálisan fut, és hogy ha esetleg internet kimaradás lenne, még akkor is tudjuk ugyan úgy irányítani eszközeinket. A rendszer által számos ismert okos eszköz támogatott, mint például a Philips Hue, IKEA TRÅDFRI, és akár az Amazon Echo, Google Home, és a Xiaomi Mi Home által támogatott eszközök, és még a virtuális asszisztensük is.\footnote{A támogatott rendszerek a weboldalukon elérhető, ami az irodalomjegyzék \cite{home-assistance-itegrations}. részén megtalálható} Mindez annak köszönhető, mert Z-Wave és a Zigbee protokoll is támogatott a rendszer által, és mivel nyílt forráskódú a szoftver, ezért bármikor lehet az hogy valamelyik felhasználó vagy esetleg fejlesztő hozzáadja bizonyos termékeket kiegészítésként. 
+
+	A rendszerrel háztartásunk energiafelhasználását is nyilván lehet tartani. Szabadon testre szabható a felület kinézete a felhasználók ízlése szerint. Szintén pozitívum lehet, hogy az szoftver támogatja a magyar nyelvet is.
+	
+	Ámbár ez a rendszer azoknak ajánlott jobban, akik informatika terén ismertek.
 	
 	\subsection*{OpenHAB}
 	
-	\subsection*{Domoticz}
+	OpenHAB, azaz Open Home Automation Bus\footnote{Magyarul: Nyílt Otthon Automatizációs Busz} fejlesztése 2010-ben kezdődött, és Java programozási nyelvben lett megírva. 2013-ban került elérhetővé az első stabil verziója a szoftvernek. 
 	
-	\subsection*{Calaos}
+	Az OpenHAB legelső körben azon a személyek számára ajánlott, akik jól ismertek informatika, és robotika terén. Ez azért szükséges, mert nekünk kell összeállítanunk, hogy mit szeretnénk elérni az okos otthon rendszerünkben. Az alkalmazás rendkívül rugalmas és testre szabható, és nagy a támogatottsága. Ez az egyik legelterjedtebb nyílt forráskódú okos otthon rendszer, és folyamatos fejlesztés alatt áll egy nonprofit szervezet által, aminek a fejlesztésébe bárki beállhat.
+	
+	Ez a rendszer képes integrálni a piac különböző eszközeit, mint ahogyan azt a Home Assitant rendszernél is említettem. Szintén egy fontos tényezője, hogy lokálisan működik, ezért egy internet kimaradásnál az okos otthonunk ugyan úgy működni fog. 
+	
+	A szoftvernek hivatalos oldalon megtalálható a teljes dokumentációja, hogy mit hogyan kell összeállítani és használni, ezért lehet kedvelt olyan személyek számára, akik szeretik a dolgokat maguknak összeállítani. A rendszer nagy támogatást és közösséget élvez, így ha felmerülne bármilyen kérdés, biztosan választ kapunk rá.
+	
+	Az ezzel létrehozott otthonunkat a legtöbb felületen el tudjuk érni, legyen az MacOS, Windows, Linux, Android vagy iOS.
+	\footnote{Az OpenHAB hivatalos oldala megtalálható a az irodalomjegyzék \cite{openhab}. részén, ahol olvasható a dokumentációjuk, a céljaik, és egyéb blogjaik.}
+	
 	%----------
 	\chapter{Alkalmazott eszközök}
 	\section{Hardver}
@@ -199,88 +213,108 @@
 		
 		\bibitem{amazon-api}
 		\textsc{Jeff Blankenburg}: \emph{Define Your Appliance Category for a Better Customer Experience}\\
-		\textsc{URL:} \url{https://developer.amazon.com/blogs/alexa/post/a89f7243-08a0-4c73-8fc5-eb604a93f437/define-your-appliance-category-for-a-better-customer-experience}
+		\textsc{URL:} \url{https://developer.amazon.com/blogs/alexa/post/a89f7243-08a0-4c73-8fc5-eb604a93f437/define-your-appliance-category-for-a-better-customer-experience}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{amazon-stats}
-		\textsc{Jason Wise}: \emph{How Many People Use Alexa in 2023? (U.S. Amazon Statistics)} 
-		\textsc{URL:} \url{https://earthweb.com/alexa-users/}
+		\textsc{Jason Wise}: \emph{How Many People Use Alexa in 2023? (U.S. Amazon Statistics)} \\
+		\textsc{URL:} \url{https://earthweb.com/alexa-users/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{xiaomi-home}
 		\textsc{HandWiki}: \emph{Engineering:Xiaomi Smart Home}
-		\textsc{URL:} \url{https://handwiki.org/wiki/Engineering:Xiaomi_Smart_Home}
+		\textsc{URL:} \url{https://handwiki.org/wiki/Engineering:Xiaomi_Smart_Home}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{what-is-open-source}
 		\textsc{What is open source}\\
-		\textsc{URL:} \url{https://opensource.com/resources/what-open-source}
+		\textsc{URL:} \url{https://opensource.com/resources/what-open-source}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
-		\bibitem{top7-opensource-homes}
-		\textsc{Top 7 Open Source Home Automation Software}\\
-		\textsc{URL:} \url{https://fixthephoto.com/best-open-source-home-automation-software.html}
+		\bibitem{creation-of-home-assistant}
+		\textsc{Eric Brown}: \emph{Home Assistant: The Python Approach to Home Automation}\\
+		\textsc{URL:} \url{https://www.linux.com/topic/embedded-iot/home-assistant-python-approach-home-automation/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{home-assistance-itegrations}
+		\textsc{Home Assistant - Integrations}\\
+		\textsc{URL:} \url{https://www.home-assistant.io/integrations/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{openhab}
+		\textsc{OpenHAB hivatalos oldala}\\
+		\textsc{URL:} \url{https://www.openhab.org/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{what-is-smarthome}
 		\textsc{What is the Smart Home?}\\
-		\textsc{URL:} \url{https://shaba.eu/2020/11/03/what-is-the-smart-home/}
-		
-		\bibitem{evolution-of-smarthome}
-		\textsc{Nathan Hart}: \emph{The Evolution of the Smart Home: How it Started [Part 1]}\\
-		\textsc{URL}: \url{https://ubuntu.com/blog/the-evolution-of-the-smart-home-how-it-started-part-1}
-		
-		\bibitem{smart-home}
-		\textsc{Smart Home: Architecture, Technologies and Systems}: \emph{Min Li, Wenbin Gu, Wei Chen, Yeshen He, Yannian Wu, Yiying Zhang}\\
-		\textsc{URL:} \url{https://www.sciencedirect.com/science/article/pii/S1877050918305994?via%3Dihub}
+		\textsc{URL:} \url{https://shaba.eu/2020/11/03/what-is-the-smart-home/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{smart-home-definition}
 		\textsc{Forrest Stroud}: \emph{Smart Home}\\
-		\textsc{URL:} \url{https://www.webopedia.com/definitions/smart-home/}
+		\textsc{URL:} \url{https://www.webopedia.com/definitions/smart-home/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{raspberrypi-4b}
 		\textsc{Offical Raspberry Pi 4B dokumentation}\\
-		\textsc{URL:} \url{https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-4}
+		\textsc{URL:} \url{https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-4}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{ESP32-devices}
 		\textsc{Offical ESP32 devices documentation}\\
-		\textsc{URL:} \url{http://esp32.net/#Info}
+		\textsc{URL:} \url{http://esp32.net/#Info}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{esp32-wroom}
 		\textsc{NodeMCU ESP-WROOM-32 internal details and pinouts}\\
-		\textsc{URL:} \url{https://www.instructables.com/ESP32-Internal-Details-and-Pinout/}
+		\textsc{URL:} \url{https://www.instructables.com/ESP32-Internal-Details-and-Pinout/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{RFID-card-reader}
 		\textsc{Connect RFID to PHP \& MySQL Database with NodeMcu ESP8266}\\
-		\textsc{URL:} \url{https://iotprojectsideas.com/connect-rfid-to-php-mysql-database-with-nodemcu-esp8266/}
+		\textsc{URL:} \url{https://iotprojectsideas.com/connect-rfid-to-php-mysql-database-with-nodemcu-esp8266/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{node32-httpget}
 		\textsc{ESP8266 NodeMCU HTTP GET and HTTP POST with Arduino IDE (JSON, URL Encoded, Text)}\\
-		\textsc{URL:} \url{https://randomnerdtutorials.com/esp8266-nodemcu-http-get-post-arduino/#http-get-1}
+		\textsc{URL:} \url{https://randomnerdtutorials.com/esp8266-nodemcu-http-get-post-arduino/#http-get-1}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{arduino-to-laravel}
 		\textsc{Arduino to Laravel Communication}\\
-		\textsc{URL:} \url{https://www.instructables.com/Arduino-to-Laravel-Communication/}
+		\textsc{URL:} \url{https://www.instructables.com/Arduino-to-Laravel-Communication/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{raspberry-as-wifi}
 		\textsc{Raspberry configuration for Wi-Fi}\\
-		\textsc{URL:} \url{https://www.raspberrypi.com/documentation//computers/configuration.html#setting-up-a-routed-wireless-access-point}
+		\textsc{URL:} \url{https://www.raspberrypi.com/documentation//computers/configuration.html#setting-up-a-routed-wireless-access-point}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{laravel-docs}
 		\textsc{Offical Laravel Documentation}\\
-		\textsc{URL:} \url{https://laravel.com/docs/10.x}
+		\textsc{URL:} \url{https://laravel.com/docs/10.x}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{tailwind-docs}
 		\textsc{Offical Tailwind Documentation}\\
-		\textsc{URL:} \url{https://tailwindcss.com/docs}
+		\textsc{URL:} \url{https://tailwindcss.com/docs}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{chartjs-docs}
 		\textsc{Offical Chart.js Documentation}\\
-		\textsc{URL:} \url{https://www.chartjs.org/docs/latest/}
+		\textsc{URL:} \url{https://www.chartjs.org/docs/latest/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 			
 		\bibitem{cypress-docs}
 		\textsc{Offical Cypress Documentation}\\
-		\textsc{URL:} \url{https://docs.cypress.io/guides/overview/why-cypress}
+		\textsc{URL:} \url{https://docs.cypress.io/guides/overview/why-cypress}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{fontawesome}
 		\textsc{Fontawesome - Free Icons}\\
-		\textsc{URL:} \url{https://fontawesome.com/search?o=r&m=free}
+		\textsc{URL:} \url{https://fontawesome.com/search?o=r&m=free}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 				
 	\end{thebibliography}
 	
