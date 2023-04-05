@@ -12,5 +12,4 @@
 <body class="bg-gradient-to-b from-cyan-600 to-emerald-400  min-h-screen antialiased leading-none">
 @yield('content')
 </body>
-@yield('optioinal_style')
 </html>

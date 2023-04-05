@@ -195,9 +195,9 @@ class EspController extends Controller
 
             $esp->save();
 
-            if ($room->id !== $request->get('room')){
-                DB::delete("DELETE FROM esp_sensor_data WHERE room_id = ".$room->id.";");
-            }
+//            if ($room->id !== $request->get('room')){
+//                DB::delete("DELETE FROM esp_sensor_data WHERE room_id = ".$room->id.";");
+//            }
             return redirect('/settings')->with("message","Successfully updated ". $esp ->name);
         }
     }
