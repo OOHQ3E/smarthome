@@ -134,15 +134,42 @@
 	
 	%----------
 	\chapter{Alkalmazott eszközök}
+	
+	Ebben a fejezetben azt fogom taglalni, hogy milyen eszközöket is használtam az okos otthon rendszerem létrehozása során. Legyenek ezek hardveres vagy szoftveres komponensek. 
+	
+	Mindezek közben fogok csatolni kötési rajzokat, amik arra tesznek betekintést, hogy hogyan is kell összekötni ezeket az eszközöket, hogy a rendszerben működjenek.
+	
+	Szoftveres komponensek közé tartoznak azok a szoftverek, amik a projekt létrehozása közben fel voltak használva: legyen az keretrendszer, programozási nyelv, stílus megírásra használt külső komponens, vagy olyan programkód, amik a programozható eszközök működését és kommunikációját valósította meg a webalkalmazással.
+	
 	\section{Hardver}
 	\subsection{Raspberry Pi 4B}
+	A projektnek szíve-lelke egy bankkártya méretű mini számítógép, ami szolgáltatja a vezeték nélküli internetet az otthoni eszközök számára, ezzel megvalósítva a később említett programozható elektronikáknak is a kommunikációt.
+	
+	A Raspberry-n dolgozódnak fel az adatok, és ez által szolgáltatott a webalkalmazás is. Felettébb sokoldalú a használata, és előszeretettel van használva okos otthon projektek megvalósításában is, például hogy ha Home Assistant-el, vagy OpenHAB-bal szeretnénk azt megvalósítani.
+	
+	Eben Upton 2012-ben hozta létre az első ilyen kis számítógépet, a Raspberry Pi 1 Model B-t. Raspberry magyarul azt jelenti, hogy málna mivel, ebben az időben többen is hoztak létre elektronikai termékeket gyümölcs nevekkel felruházva: legyen az Apple (alma), Acorn (makk), Apricot (sárgabarack).
+	
+	Elsődleges célja az volt Eben Upton-nak hogy olcsó és könnyen elérhető számítógépeket juttassanak el fiatalok számára.
+	
+	A Raspberry számítógépeknek elsődlegesen két fajtája volt: az A Model, ami olcsóbb, és a B Model, ami gyorsabb volt. \footnote{Az irodalomjegyzék \cite{raspberrypi-history}. részén megtalálható a bővebb története a Raspberry Pi-nak}
+	
+	Rendkívül sokoldalú ez a kis számítógép, és ezért is ennyire előszeretett a használata a programozók körében.\\
+	\textbf{Az általam használt Raspberry Pi 4B specifikációi:}
+	\begin{itemize}
+		\item \textbf{Processzor:} 64-bites Cortex-A72
+		\item \textbf{RAM:} 2GB
+		\item \textbf{Tárhely:} 16GB-os microSD memória kártya
+		\item \textbf{Operációs rendszer:} Raspbian, ami egy Debian alapú Linux operációs rendszer
+	\end{itemize}
+	
+	
 	\subsection{ESP-Wroom-32 - Wi-Fi-s Mikrokontroller}
 	\subsection{ESP32-CAM - Wi-Fi-s kamera modul}
 	\subsection{DHT22 - hőmérséklet és páratartalom szenzor}
 	\subsection{RFID-RC522 - RFID olvasó + RFID technológia összefoglaló}
 	\subsection{Szolidtest relé}
 	\subsection{Eszközök bekötése - Fritzing}
-	
+	%----------
 	\section{Szoftver - Programozási nyelvek}
 	\subsection{C++ - Arduino IDE}
 	\subsection{HTML - PHP Storm}
@@ -153,6 +180,7 @@
 	\subsection{font-awesome}
 	\subsection{MySQL}
 	\subsection{plantUML}
+	%----------
 	\section{Laravel}
 	\subsection{Laravel működése}
 	%----------
@@ -160,15 +188,22 @@
 	\chapter{A web alkalmazás felépítése és működése}
 	\section{Raspberry PI4B alkalmazása, mint Wi-Fi, és hub}
 	\section{Adatbázis felépítése}
+	%----------
 	\section{Kezelő felület bemutatása és működése}
 	\subsection{Főoldal}
 	\subsection{Beállítások}
 	\subsection{RFID beállítások}
 	\subsection{RFID használati táblázat}
 	\subsection{Hőmérsékleti és páratartalom előzmények - ChartJS}
+	%----------
 	\section{Eszközök kommunikációja a webszerverrel}
+	\subsection{Hőmérséklet és Páratartalom szenzor}
+	\subsection{Eszköz kapcsoló}
+	\subsection{Kamera}
+	\subsection{RFID kártya olvasó}
 	
 	%----------
+	
 	\chapter{Tesztelések}
 	\section{Tesztelések módjai és fontossága}
 	
@@ -246,14 +281,9 @@
 		\textsc{URL:} \url{https://www.openhab.org/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
-		\bibitem{what-is-smarthome}
-		\textsc{What is the Smart Home?}\\
-		\textsc{URL:} \url{https://shaba.eu/2020/11/03/what-is-the-smart-home/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-		
-		\bibitem{smart-home-definition}
-		\textsc{Forrest Stroud}: \emph{Smart Home}\\
-		\textsc{URL:} \url{https://www.webopedia.com/definitions/smart-home/}\\
+		\bibitem{raspberrypi-history}
+		\textsc{The Epic Story of the Raspberry Pi}\\
+		\textsc{URL:} \url{https://raspberrytips.com/raspberry-pi-history/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{raspberrypi-4b}
