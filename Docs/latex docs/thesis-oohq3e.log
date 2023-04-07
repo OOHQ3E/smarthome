@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  7 APR 2023 19:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  7 APR 2023 22:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -712,102 +712,103 @@ Overfull \hbox (14.22635pt too wide) in paragraph at lines 237--238
 <./img/arrow-left-solid.png, id=658, 450.7239pt x 386.6445pt>
 File: ./img/arrow-left-solid.png Graphic file (type png)
 <use ./img/arrow-left-solid.png>
-Package pdftex.def Info: ./img/arrow-left-solid.png  used on input line 302.
+Package pdftex.def Info: ./img/arrow-left-solid.png  used on input line 301.
 (pdftex.def)             Requested size: 14.22636pt x 12.20059pt.
 <./img/clock-rotate-left-solid.png, id=660, 515.0442pt x 515.0442pt>
 File: ./img/clock-rotate-left-solid.png Graphic file (type png)
 <use ./img/clock-rotate-left-solid.png>
 Package pdftex.def Info: ./img/clock-rotate-left-solid.png  used on input line 
-305.
+304.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
 <./img/plus-solid.png, id=661, 418.6842pt x 418.6842pt>
 File: ./img/plus-solid.png Graphic file (type png)
 <use ./img/plus-solid.png>
-Package pdftex.def Info: ./img/plus-solid.png  used on input line 308.
+Package pdftex.def Info: ./img/plus-solid.png  used on input line 307.
 (pdftex.def)             Requested size: 14.22636pt x 14.22101pt.
- [19 <./img/arrow-left-solid.png> <./img/clock-rotate-left-solid.png>]
-<./img/pen-to-square-regular.png, id=674, 510.9489pt x 510.9489pt>
+<./img/pen-to-square-regular.png, id=662, 510.9489pt x 510.9489pt>
 File: ./img/pen-to-square-regular.png Graphic file (type png)
 <use ./img/pen-to-square-regular.png>
 Package pdftex.def Info: ./img/pen-to-square-regular.png  used on input line 31
-1.
+0.
 (pdftex.def)             Requested size: 14.22636pt x 14.2207pt.
-<./img/trash-can-solid.png, id=675, 450.7239pt x 515.0442pt>
+<./img/trash-can-solid.png, id=663, 450.7239pt x 515.0442pt>
 File: ./img/trash-can-solid.png Graphic file (type png)
 <use ./img/trash-can-solid.png>
-Package pdftex.def Info: ./img/trash-can-solid.png  used on input line 314.
+Package pdftex.def Info: ./img/trash-can-solid.png  used on input line 313.
 (pdftex.def)             Requested size: 14.22636pt x 16.25226pt.
-<./img/arrow-rotate-right-solid.png, id=676, 466.8642pt x 450.7239pt>
+ [19 <./img/arrow-left-solid.png> <./img/clock-rotate-left-solid.png> <./img/pl
+us-solid.png>]
+<./img/arrow-rotate-right-solid.png, id=677, 466.8642pt x 450.7239pt>
 File: ./img/arrow-rotate-right-solid.png Graphic file (type png)
 <use ./img/arrow-rotate-right-solid.png>
 Package pdftex.def Info: ./img/arrow-rotate-right-solid.png  used on input line
- 317.
+ 316.
 (pdftex.def)             Requested size: 14.22636pt x 13.73433pt.
-<./img/ban-solid.png, id=677, 515.0442pt x 515.0442pt>
+<./img/ban-solid.png, id=678, 515.0442pt x 515.0442pt>
 File: ./img/ban-solid.png Graphic file (type png)
 <use ./img/ban-solid.png>
-Package pdftex.def Info: ./img/ban-solid.png  used on input line 320.
+Package pdftex.def Info: ./img/ban-solid.png  used on input line 319.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
-<./img/gear-solid.png, id=678, 485.4135pt x 514.8033pt>
+<./img/gear-solid.png, id=679, 485.4135pt x 514.8033pt>
 File: ./img/gear-solid.png Graphic file (type png)
 <use ./img/gear-solid.png>
-Package pdftex.def Info: ./img/gear-solid.png  used on input line 323.
+Package pdftex.def Info: ./img/gear-solid.png  used on input line 322.
 (pdftex.def)             Requested size: 14.22636pt x 15.08208pt.
-<./img/key-solid.png, id=679, 515.0442pt x 515.0442pt>
+<./img/key-solid.png, id=680, 515.0442pt x 515.0442pt>
 File: ./img/key-solid.png Graphic file (type png)
 <use ./img/key-solid.png>
-Package pdftex.def Info: ./img/key-solid.png  used on input line 326.
+Package pdftex.def Info: ./img/key-solid.png  used on input line 325.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
-<./img/id-card-clip-solid.png, id=680, 579.1236pt x 515.0442pt>
+<./img/id-card-clip-solid.png, id=681, 579.1236pt x 515.0442pt>
 File: ./img/id-card-clip-solid.png Graphic file (type png)
 <use ./img/id-card-clip-solid.png>
-Package pdftex.def Info: ./img/id-card-clip-solid.png  used on input line 329.
+Package pdftex.def Info: ./img/id-card-clip-solid.png  used on input line 328.
 (pdftex.def)             Requested size: 14.22636pt x 12.64502pt.
- [20 <./img/plus-solid.png> <./img/pen-to-square-regular.png> <./img/trash-can-
-solid.png> <./img/arrow-rotate-right-solid.png> <./img/ban-solid.png> <./img/ge
-ar-solid.png> <./img/key-solid.png> <./img/id-card-clip-solid.png>] [21]
+ [20 <./img/pen-to-square-regular.png> <./img/trash-can-solid.png> <./img/arrow
+-rotate-right-solid.png> <./img/ban-solid.png> <./img/gear-solid.png> <./img/ke
+y-solid.png> <./img/id-card-clip-solid.png>] [21]
 3. fejezet.
 [22
 
 ]
 4. fejezet.
 
-Underfull \hbox (badness 3189) in paragraph at lines 397--398
+Underfull \hbox (badness 3189) in paragraph at lines 396--397
 []\T1/lmr/m/n/12 The test was succ-
  []
 
 
-Underfull \hbox (badness 1810) in paragraph at lines 401--402
+Underfull \hbox (badness 1810) in paragraph at lines 400--401
 []\T1/lmr/m/n/12 The test was par-ti-
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 401--402
+Underfull \hbox (badness 2707) in paragraph at lines 400--401
 \T1/lmr/m/n/12 ally succ-ess-ful, with
  []
 
 
-Underfull \hbox (badness 2302) in paragraph at lines 405--406
+Underfull \hbox (badness 2302) in paragraph at lines 404--405
 \T1/lmr/m/n/12 ful, with the RFID
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 405--406
+Underfull \hbox (badness 2368) in paragraph at lines 404--405
 \T1/lmr/m/n/12 tags re-main-ing fully
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 \T1/lmr/m/n/12 func-ti-o-nal and re-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 \T1/lmr/m/n/12 adab-le even with
  []
 
 
-Overfull \hbox (50.22633pt too wide) in paragraph at lines 391--412
+Overfull \hbox (50.22633pt too wide) in paragraph at lines 390--411
  [][] 
  []
 
@@ -820,13 +821,13 @@ Overfull \hbox (50.22633pt too wide) in paragraph at lines 391--412
 ] [26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 427--430
-\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / developer . amazon . com / 
-blogs / alexa / post /
+Underfull \hbox (badness 10000) in paragraph at lines 426--430
+\T1/lmr/m/sc/12 URL:[]$\T1/lmtt/m/n/12 https : / / developer . amazon . com / b
+logs / alexa / post /
  []
 
 
-Overfull \hbox (206.61446pt too wide) in paragraph at lines 427--430
+Overfull \hbox (206.61446pt too wide) in paragraph at lines 426--430
 \T1/lmtt/m/n/12 a89f7243-[]08a0-[]4c73-[]8fc5-[]eb604a93f437 / define-[]your-[]
 appliance-[]category-[]for-[]a-[]better-[]customer-[]experience$[] 
  []
@@ -917,44 +918,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 592--595
 ocumentation / /computers /
  []
 
-<nyilatkozat.pdf, id=806, 597.50829pt x 845.0471pt>
+
+
+pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
+ version <1.6>, but at most version <1.5> allowed
+<nyilatkozat.pdf, id=806, 597.432pt x 845.07718pt>
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf>
 Package pdftex.def Info: nyilatkozat.pdf  used on input line 604.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+(pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
+ version <1.6>, but at most version <1.5> allowed
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf>
 Package pdftex.def Info: nyilatkozat.pdf  used on input line 604.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<nyilatkozat.pdf, id=809, page=1, 597.50829pt x 845.0471pt>
+(pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
+ version <1.6>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
+ version <1.6>, but at most version <1.5> allowed
+<nyilatkozat.pdf, id=809, page=1, 597.432pt x 845.07718pt>
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+(pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
-(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+(pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
 [30]
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
-(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+(pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
-(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+(pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
 Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
-(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+(pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
  [31 <./nyilatkozat.pdf>] (./thesis-oohq3e.aux)
 Package rerunfilecheck Info: File `thesis-oohq3e.out' has not changed.
-(rerunfilecheck)             Checksum: EEE291F886486DD6E423D1958AC1F976;11605.
+(rerunfilecheck)             Checksum: 4AED4EEC7826EF96FAA41E21D8F473E7;11628.
  ) 
 Here is how much of TeX's memory you used:
  15634 strings out of 475075
- 253788 string characters out of 5783001
+ 253800 string characters out of 5783001
  771460 words of memory out of 5000000
  36542 multiletter control sequences out of 15000+600000
  546971 words of font info for 88 fonts, out of 8000000 for 9000
@@ -969,10 +986,10 @@ ts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/l
 mr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texliv
 e/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2022/texmf-dist/
 fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis-oohq3e.pdf (31 pages, 2691731 bytes).
+Output written on thesis-oohq3e.pdf (31 pages, 2816453 bytes).
 PDF statistics:
- 910 PDF objects out of 1000 (max. 8388607)
- 757 compressed objects within 8 object streams
+ 918 PDF objects out of 1000 (max. 8388607)
+ 761 compressed objects within 8 object streams
  156 named destinations out of 1000 (max. 500000)
  564 words of extra memory for PDF output out of 10000 (max. 10000000)
 

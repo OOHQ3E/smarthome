@@ -137,7 +137,7 @@
 	
 	Mindezek közben fogok csatolni kötési rajzokat, amik arra tesznek betekintést, hogy hogyan is kell összekötni ezeket az eszközöket, hogy a rendszerben működjenek.
 	
-	Szoftveres komponensek közé tartoznak azok a szoftverek, amik a projekt létrehozása közben fel voltak használva: legyen az keretrendszer, programozási nyelv, stílus megírásra használt külső komponens.
+	Szoftveres komponensek közé tartoznak azok a szoftverek, amik a projekt létrehozása közben fel voltak használva: legyen az keretrendszer, programozási nyelv, vagy stílus megírásra használt külső komponens.
 	
 	\section{Hardver}\label{hardware-sec}
 	\subsection{Mi is az hogy IoT?}
@@ -286,17 +286,16 @@
 	
 	Az egyik fő előnye a Tailwindnek a rugalmasság és testreszabhatóság. Konfigurációs fájlt biztosít a fejlesztőknek, amely lehetővé teszi a beépített osztályok testreszabását és saját egyedi osztályok létrehozását az alkalmazás egészében való használatra.
 	\subsection{dbDiagram.io}
-	A dbDiagram.io szoftverkomponens a projekt adatbázis séma tervezéséhez és megjelenítéséhez volt használva. A dbdiagram.io egy webes eszköz, amely lehetővé teszi a felhasználók számára az adatbázis séma létrehozását egy intuitív vizuális felületen keresztül. 
+	A dbdiagram.io egy webes eszköz, amely lehetővé teszi a felhasználók számára az adatbázis tervek létrehozását egy letisztult vizuális felületen keresztül. 
 	
-	Az eszköz támogatja különböző adatbázis rendszereket, mint például a MySQL-t, a PostgreSQL-t és a MongoDB-t. Szintén hasznos funkciókat kínál, mint például automatikus SQL kódgenerálás, verziókezelés és a diagramok importálása és exportálása különböző formátumokban.\cite{dbdiagram-io}
+	Az eszköz támogatja különböző adatbázis rendszereket, mint például a MySQL-t, a PostgreSQL-t és a MongoDB-t. Szintén hasznos funkciókat kínál, mint például automatikus SQL kódgenerálás, és a diagramok importálása vagy exportálása különböző formátumokban.\cite{dbdiagram-io}
 	
 	Szakdolgozatom során ez volt használva arra, hogy elkészítsem az adatbázis tervét, és majd \aref{database} szakaszon lesz róla egy mellékelt kép is, hogy hogyan is lett mindez kialakítva.
 	
 	\subsection{Font Awesome}
-	
 	A Font Awesome egy elég népszerű nyílt forráskódú ikon könyvtár, amely skálázható vektor ikonokat kínál\footnote{Ez azt jelenti, hogy egy algoritmus segítségével mindig ugyan olyan minőségű lesz a kép, bármekkorára is nagyítjuk.}, amelyek testreszabhatóak és stílusosak CSS segítségével. A könyvtár több ezer ikont tartalmaz, amelyek széles körű kategóriákat fednek le, például webalkalmazásokat, márka- és közösségi média ikonokat. Lehetőség van fizetős és ingyenes ikonok használatára is.
 	
-	A Font Awesome egy rugalmas és könnyen használható megoldást kínál az ikonok hozzáadásához weboldalakhoz vagy alkalmazásokhoz, lehetővé téve a fejlesztőknek, hogy javítsák projektjeik kinézetét. A könyvtár folyamatosan frissül új ikonokkal és funkciókkal.\cite{fontawesome}\\
+	A Font Awesome egy rugalmas és könnyen használható megoldást kínál az ikonok hozzáadásához weboldalakhoz vagy alkalmazásokhoz, lehetővé téve a fejlesztőknek, hogy feldobják projektjeik kinézetét. A könyvtár folyamatosan frissül új ikonokkal és funkciókkal.\cite{fontawesome}\\
 	\textbf{Az általam használt ikonok, a rendszerben:}
 	\begin{itemize}
 		\item \includegraphics[width=0.5cm]{./img/arrow-left-solid}
@@ -353,7 +352,7 @@
 		\item \Aref{rfid-schematics}.~ábrán az ESP-WROOM-32\cite{fritzing-library} és az RFID-RC522\cite{fritzing-rfid}
 		\item \Aref{toggle-schematics}.~ábrán az ESP-WROOM-32\cite{fritzing-library} az izzó\cite{fritzing-light} és a szilárdtest relé\cite{fritzing-SSR}
 	\end{itemize}
-	\section{Laravel}
+	\subsection{Laravel}
 	A Laravel egy ingyenes és nyílt forrású PHP webalkalmazás-keretrendszer, amelyet skálázható és nagy méretű webalkalmazások építésére használnak. Egy elegáns szintaxist, erős eszközöket és moduláris csomagolási rendszert biztosít, hogy a fejlesztők tiszta és karbantartható kódot írhassanak. A Laravel követi az MVC\footnote{Model-View-Controller: magyarul Modell-Nézet-Vezérlő} architekturális mintát, és beépített funkciókkal rendelkezik, mint például az azonosítás, a route-olás és gyorsítótár.\cite{laravel-intro}
 	A fejlesztők dolgát azzal könnyítik meg leginkább, hogy hivatalos dokumentációja van, ahol minden kis részletre adnak példát és leírást.\cite{laravel-docs}\\
 	\textbf{MVC Keretrendszer}:\\
@@ -425,7 +424,8 @@
 		
 		\bibitem{amazon-api}
 		\textsc{Jeff Blankenburg}: \emph{Define Your Appliance Category for a Better Customer Experience}\\
-		\textsc{URL:} \url{https://developer.amazon.com/blogs/alexa/post/a89f7243-08a0-4c73-8fc5-eb604a93f437/define-your-appliance-category-for-a-better-customer-experience}\\
+		\textsc{URL:}%
+		 \url{https://developer.amazon.com/blogs/alexa/post/a89f7243-08a0-4c73-8fc5-eb604a93f437/define-your-appliance-category-for-a-better-customer-experience}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{amazon-stats}
