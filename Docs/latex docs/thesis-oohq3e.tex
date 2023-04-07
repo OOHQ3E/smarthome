@@ -157,7 +157,6 @@
 	Rendkívül sokoldalú ez a kis számítógép, és ezért is ennyire előszeretett a használata a programozók körében.\\
 	\textbf{Az általam használt Raspberry Pi 4B specifikációi:}
 	\begin{itemize}
-		\item \textbf{Processzor:} 64-bites Cortex-A72
 		\item \textbf{RAM:} 2GB
 		\item \textbf{Tárhely:} 16GB-os microSD memória kártya
 		\item \textbf{Operációs rendszer:} Raspbian, ami egy Debian alapú Linux operációs rendszer
@@ -221,9 +220,20 @@
 		\label{rfid-schematics}
 	\end{figure}	
 	
-	\subsection{Szolidtest relé}
+	\subsection{Szilárdtest relé}
 	
+	A szilárdtest relé, egy elektronikus kapcsolóeszköz. Az elektromechanikus reléhez hasonlóan képes be- vagy kikapcsolni a terhelést, ha külső vezérlőjelet adnak át a vezérlőkapcsolón. A szilárdtest relék azonban nem tartalmaznak mozgó alkatrészeket, ezért nem hangosak és hosszabb életűek az elektromechanikus reléhez képest. 
 	
+	A félvezetők elektromos és optikai tulajdonságait használják fel a kapcsolás végrehajtására, és teljes leválasztást biztosítanak a vezérlőáramkör és a terhelési áramkör között.\cite{solid-state-relay}
+	
+	Ebben a rendszerben úgy lett alkalmazva ez, hogy egy ESP-WROOM-32 és egy izzó van csatlakoztatva egy szilárdtest reléhez. Az ESP-WROOM-32 rákapcsolódva a Raspberry Pi-ra képes azt a felhasználó a felületen keresztül ki- vagy bekapcsolni.\footref{later-expl-fn}
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=16cm]{./img/ESP32 toggle schematics_bb}
+		\caption{\Az{\textsc{ESP-WROOM-32}} bekötése, szolidtest-relével és egy izzóval}
+		\label{toggle-schematics}
+	\end{figure}	
 	
 	%----------
 	\section{Szoftverek és Programozási nyelvek}
@@ -376,6 +386,11 @@
 		\bibitem{rfid-datasheet}
 		\textsc{Handson Technology:} \emph{RC522 RFID Development Kit}\\
 		\textsc{URL:} \url{http://www.handsontec.com/dataspecs/RC522.pdf}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{solid-state-relay}
+		\textsc{Jayesh Upadhyay:} \emph{How do Solid State Relays work?}\\
+		\textsc{URL:} \url{https://www.circuitbread.com/ee-faq/how-do-solid-state-relays-work}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{RFID-card-reader}

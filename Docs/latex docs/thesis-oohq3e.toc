@@ -18,38 +18,38 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {2.1.5}DHT22 - hőmérséklet és páratartalom szenzor}{14}{subsection.2.1.5}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.1.6}Mi is az RFID?}{14}{subsection.2.1.6}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.1.7}RFID-RC522 - RFID olvasó}{15}{subsection.2.1.7}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.1.8}Szolidtest relé}{16}{subsection.2.1.8}%
-\select@language {magyar} \contentsline {section}{\numberline {2.2}Szoftverek és Programozási nyelvek}{16}{section.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.1}C++ - Arduino IDE}{16}{subsection.2.2.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.2}HTML}{16}{subsection.2.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.3}PHP}{16}{subsection.2.2.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.4}JavaScript, ChartJS, jQuery}{16}{subsection.2.2.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.5}Tailwind}{16}{subsection.2.2.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.6}dbDiagram}{16}{subsection.2.2.6}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.7}Font Awesome}{16}{subsection.2.2.7}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.8}MySQL}{16}{subsection.2.2.8}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.9}plantUML}{16}{subsection.2.2.9}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.10}Fritzing}{16}{subsection.2.2.10}%
-\select@language {magyar} \contentsline {section}{\numberline {2.3}Laravel}{16}{section.2.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.1}Laravel működése}{16}{subsection.2.3.1}%
-\select@language {magyar} \contentsline {chapter}{\numberline {3}A web alkalmazás felépítése és működése}{17}{chapter.3}%
-\select@language {magyar} \contentsline {section}{\numberline {3.1}Raspberry PI4B alkalmazása, mint Wi-Fi, és hub}{17}{section.3.1}%
-\select@language {magyar} \contentsline {section}{\numberline {3.2}Adatbázis felépítése}{17}{section.3.2}%
-\select@language {magyar} \contentsline {section}{\numberline {3.3}Kezelő felület bemutatása és működése}{17}{section.3.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.3.1}Főoldal}{17}{subsection.3.3.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.3.2}Beállítások}{17}{subsection.3.3.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.3.3}RFID beállítások}{17}{subsection.3.3.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.3.4}RFID használati táblázat}{17}{subsection.3.3.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.3.5}Hőmérsékleti és páratartalom előzmények - ChartJS}{17}{subsection.3.3.5}%
-\select@language {magyar} \contentsline {section}{\numberline {3.4}Eszközök kommunikációja a webszerverrel}{17}{section.3.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.1}Hőmérséklet és Páratartalom szenzor}{17}{subsection.3.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.2}Eszköz kapcsoló}{17}{subsection.3.4.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.3}Kamera}{17}{subsection.3.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.4}RFID kártya olvasó}{17}{subsection.3.4.4}%
-\select@language {magyar} \contentsline {chapter}{\numberline {4}Tesztelések}{18}{chapter.4}%
-\select@language {magyar} \contentsline {section}{\numberline {4.1}Tesztelések módjai és fontossága}{18}{section.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}Cypress automatizált tesztelések}{18}{subsection.4.1.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Manuális tesztelések}{18}{subsection.4.1.2}%
-\select@language {magyar} \contentsline {chapter}{\numberline {5}Rendszer telepítése}{20}{chapter.5}%
-\select@language {magyar} \contentsline {chapter}{Összegzés}{21}{chapter*.3}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{22}{chapter*.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.1.8}Szilárdtest relé}{15}{subsection.2.1.8}%
+\select@language {magyar} \contentsline {section}{\numberline {2.2}Szoftverek és Programozási nyelvek}{17}{section.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.1}C++ - Arduino IDE}{17}{subsection.2.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.2}HTML}{17}{subsection.2.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.3}PHP}{17}{subsection.2.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.4}JavaScript, ChartJS, jQuery}{17}{subsection.2.2.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.5}Tailwind}{17}{subsection.2.2.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.6}dbDiagram}{17}{subsection.2.2.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.7}Font Awesome}{17}{subsection.2.2.7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.8}MySQL}{17}{subsection.2.2.8}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.9}plantUML}{17}{subsection.2.2.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.10}Fritzing}{17}{subsection.2.2.10}%
+\select@language {magyar} \contentsline {section}{\numberline {2.3}Laravel}{17}{section.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.1}Laravel működése}{17}{subsection.2.3.1}%
+\select@language {magyar} \contentsline {chapter}{\numberline {3}A web alkalmazás felépítése és működése}{18}{chapter.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Raspberry PI4B alkalmazása, mint Wi-Fi, és hub}{18}{section.3.1}%
+\select@language {magyar} \contentsline {section}{\numberline {3.2}Adatbázis felépítése}{18}{section.3.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3.3}Kezelő felület bemutatása és működése}{18}{section.3.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3.1}Főoldal}{18}{subsection.3.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3.2}Beállítások}{18}{subsection.3.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3.3}RFID beállítások}{18}{subsection.3.3.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3.4}RFID használati táblázat}{18}{subsection.3.3.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3.5}Hőmérsékleti és páratartalom előzmények - ChartJS}{18}{subsection.3.3.5}%
+\select@language {magyar} \contentsline {section}{\numberline {3.4}Eszközök kommunikációja a webszerverrel}{18}{section.3.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.1}Hőmérséklet és Páratartalom szenzor}{18}{subsection.3.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.2}Eszköz kapcsoló}{18}{subsection.3.4.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.3}Kamera}{18}{subsection.3.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.4}RFID kártya olvasó}{18}{subsection.3.4.4}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Tesztelések}{19}{chapter.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.1}Tesztelések módjai és fontossága}{19}{section.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}Cypress automatizált tesztelések}{19}{subsection.4.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Manuális tesztelések}{19}{subsection.4.1.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Rendszer telepítése}{21}{chapter.5}%
+\select@language {magyar} \contentsline {chapter}{Összegzés}{22}{chapter*.3}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{23}{chapter*.4}%
