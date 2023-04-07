@@ -21,11 +21,12 @@
 \theoremstyle{remark}
 \newtheorem{megjegyzes}[tetel]{Megjegyzés}
 
+
 \begin{document}
 	\institute{Matematikai és Informatikai Intézet}
 	\title{Programozható elektronikák alkalmazásai}
-	\author{Bagoly Gábor\\programtervező informatikus}
-	\supervisor{Dr. Geda Gábor\\egyetemi docens}
+	\author{Bagoly Gábor\\Programtervező informatikus}
+	\supervisor{Dr. Geda Gábor\\Egyetemi docens}
 	\city{Eger}
 	\date{2023}
 	\maketitle
@@ -107,7 +108,8 @@
 	Bizonyos esetekben azonban, mivel a nyílt forráskódú licenc megkövetelheti a program forráskódjának kiadását amikor szoftvert adnak el másoknak, egyes programozók úgy találják, hogy jövedelmezőbb pénzt kérni a felhasználóktól a szoftverszolgáltatásokért és - támogatásért (nem feltétlenül magáért a szoftverért). Így a szoftvereik ingyenesek maradnak, és pénzt keresnek azzal, hogy másoknak segítenek telepíteni, használni és hibaelhárítást végezni.\footref{open-source-fn}
 	
 	\subsection{Home Assistant}
-	A Home Assistant 2013 novemberére került publikálásra \emph{GitHub.com}-on \textsc{Paulus Schoutsen} által. Ez ekkor még egy Python programozási nyelven megírt alkalmazás volt. Ekkor még ez egy egyszerű program volt, ami napnyugtakor felkapcsolta a lámpát. Azóta a szoftver elég érett lett, és körülbelül 20 aktív hozzájáruló dolgozik a projekten, ennek köszönhetően kéthetente érkezik frissítés a rendszerre.\footnote{\label{history-of-home-assistant}A történet bővebben az irodalomjegyzék  \cite{creation-of-home-assistant}. részén megtalálható.}
+	A Home Assistant 2013 novemberére került publikálásra \emph{GitHub.com}-on \textsc{Paulus Schoutsen} által. Ez ekkor még egy Python programozási nyelven megírt alkalmazás volt.
+	Ekkor még ez egy egyszerű program volt, ami napnyugtakor felkapcsolta a lámpát. Azóta a szoftver elég érett lett, és körülbelül 20 aktív hozzájáruló dolgozik a projekten, ennek köszönhetően kéthetente érkezik frissítés a rendszerre.\footnote{\label{history-of-home-assistant}A történet bővebben az irodalomjegyzék  \cite{creation-of-home-assistant}. részén megtalálható.}
 	
 	Ez a szoftver bármely olyan rendszeren működik, ami a Python 3 programozási nyelvet tudja futtatni. Biztosít mobil és számítógép alkalmazást is, mellyel több ezer támogatott eszközt tudunk irányítani. Annyi a különbség ez a rendszer és a nagyobb cégek által biztosított között, hogy ez teljesen lokálisan fut, és hogy ha esetleg internet kimaradás lenne, még akkor is tudjuk ugyan úgy irányítani eszközeinket. A rendszer által számos ismert okos eszköz támogatott, mint például a Philips Hue, IKEA TRÅDFRI, és akár az Amazon Echo, Google Home, és a Xiaomi Mi Home által támogatott eszközök, és még a virtuális asszisztensük is.\footnote{A támogatott rendszerek a weboldalukon elérhető, ami az irodalomjegyzék \cite{home-assistance-itegrations}. részén megtalálható} Mindez annak köszönhető, mert Z-Wave és a Zigbee protokoll is támogatott a rendszer által, és mivel nyílt forráskódú a szoftver, ezért bármikor lehet az hogy valamelyik felhasználó vagy esetleg fejlesztő hozzáadja bizonyos termékeket kiegészítésként. 
 
@@ -135,9 +137,9 @@
 	
 	Mindezek közben fogok csatolni kötési rajzokat, amik arra tesznek betekintést, hogy hogyan is kell összekötni ezeket az eszközöket, hogy a rendszerben működjenek.
 	
-	Szoftveres komponensek közé tartoznak azok a szoftverek, amik a projekt létrehozása közben fel voltak használva: legyen az keretrendszer, programozási nyelv, stílus megírásra használt külső komponens, vagy olyan programkód, amik a programozható eszközök működését és kommunikációját valósította meg a webalkalmazással.
+	Szoftveres komponensek közé tartoznak azok a szoftverek, amik a projekt létrehozása közben fel voltak használva: legyen az keretrendszer, programozási nyelv, stílus megírásra használt külső komponens.
 	
-	\section{Hardver}
+	\section{Hardver}\label{hardware-sec}
 	\subsection{Mi is az hogy IoT?}
 	IoT\footnote{(Internet of Things) - magyarul: Internet dolgai}-k azok olyan eszközök, melyek Wi-Fi hálózaton keresztül párosíthatóak, és irányíthatóak. Ilyenek lehetnek a háztartásunkban levő olyan eszközök, melyeket távolról is tudunk irányítani interneten keresztül. Legyen ez például a Xiaomi forrólevegős sütője, vagy egy okos izzó. 
 	
@@ -222,39 +224,148 @@
 	
 	\subsection{Szilárdtest relé}
 	
-	A szilárdtest relé, egy elektronikus kapcsolóeszköz. Az elektromechanikus reléhez hasonlóan képes be- vagy kikapcsolni a terhelést, ha külső vezérlőjelet adnak át a vezérlőkapcsolón. A szilárdtest relék azonban nem tartalmaznak mozgó alkatrészeket, ezért nem hangosak és hosszabb életűek az elektromechanikus reléhez képest. 
+	A szilárdtest relé az egy elektronikus kapcsolóeszköz. Az elektromechanikus reléhez hasonlóan képes be- vagy kikapcsolni a terhelést, ha külső vezérlőjelet adnak át a vezérlőkapcsolón. A szilárdtest relék azonban nem tartalmaznak mozgó alkatrészeket, ezért nem hangosak és hosszabb életűek az elektromechanikus reléhez képest. 
 	
 	A félvezetők elektromos és optikai tulajdonságait használják fel a kapcsolás végrehajtására, és teljes leválasztást biztosítanak a vezérlőáramkör és a terhelési áramkör között.\cite{solid-state-relay}
 	
 	Ebben a rendszerben úgy lett alkalmazva ez, hogy egy ESP-WROOM-32 és egy izzó van csatlakoztatva egy szilárdtest reléhez. Az ESP-WROOM-32 rákapcsolódva a Raspberry Pi-ra képes azt a felhasználó a felületen keresztül ki- vagy bekapcsolni.\footref{later-expl-fn}
 	
+	De akár számos más olyan eszközt lehet ezzel alkalmazni, amit ki- vagy be lehetne kapcsolni: mint például egy ventilátor.
+	
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=16cm]{./img/ESP32 toggle schematics_bb}
-		\caption{\Az{\textsc{ESP-WROOM-32}} bekötése, szolidtest-relével és egy izzóval}
+		\caption{\Az{\textsc{ESP-WROOM-32}} bekötése szolidtest-relével és egy izzóval}
 		\label{toggle-schematics}
 	\end{figure}	
 	
 	%----------
 	\section{Szoftverek és Programozási nyelvek}
-	\subsection{C++ - Arduino IDE}
-	\subsection{HTML}
+	\subsection{C++ és Arduino IDE}
+	A Bjarne Stroustrup és a Bell Laboratories csapata által 1979-ben kifejlesztett C++ egy általános célú programozási nyelv, és ami lényegében a C programozási nyelv továbbfejlesztett változata. A főbb kiegészítések közé tartozott az objektumorientált programozás, és a hiba- és végrehajtás kezelés.\cite{cpp}
+	
+	A mikrokontrollerek legtöbbjét C++-al szokták programozni, amihez az Arduino IDE az egyik legnépszerűbb választás, ami számos kiegészítőkkel, és mikrokontrollerek programozásához használatos funkciókkal rendelkezik, legyen ez a kód feltöltése, vagy a soros monitorra kiírt információk kiírása. Külső könyvtárak is hozzáadhatóak a különböző eszközök támogatása érdekében. 
+	
+	\subsection{HTML és CSS}
+	Hyper Text Markup Language,\footnote{Magyarul: Hiper Szöveg Leíró Nyelv} azaz HTML egy leírónyelv, amely szövegek leírására szolgál. Számos funkciója van ennek, mint a bekezdések, táblázatok, vagy képek beszúrása. Ezt legtöbbnyire weboldalak elkészítésénél használják. Mezőket ,,<>''-en belül határozzuk meg és lezárni ehhez hasonlóan ,,</>''-el kell. Mindezt annak megfelelően kell párosítani, hogy mit is írunk: legyez ez például egy bekezdés, ami ,,<p>\footnote{azért ,,p'' a bekezdés, mert angolul ez a szó úgy van, hogy paragraph} </p>'' aminek a két tag közé kell beírni a szöveget.
+	
+	Mindez kevés arra, hogy a szöveg kinézetét változtassuk, ezért is társítják melléje a CSS-t, azaz Cascading Style Sheet-et\footnote{Magyarul: Kaszkádolt Stílus Lap}, ami HTML vagy XML nyelvek által meghatározott megjelenés formázására szolgál. Ezeket a stílus leírásokat ,,<style></style>'' tag-ek közé szoktuk leírni. Megvan ennek is a sajátos meghatározási módja, hogy mit- és hogyan alkalmazunk.
+	
+	A webalkalmazásnál máshogyan állítom be a kinézetet, amit \aref{tailwind} részen említek, hogy hogyan is működik a Tailwind.
+	
 	\subsection{PHP}
-	\subsection{JavaScript, ChartJS, jQuery}
-	\subsection{Tailwind}
-	\subsection{dbDiagram}
+	A PHP, azaz PHP: Hypertext Preprocessor\footnote{Magyarul: PHP: hiperszöveg előfeldolgozó} egy általános felhasználású szkriptnyelv, és fordító, amely szabadon elérhető és széles körben használt webfejlesztésnél. A nyelvet elsősorban szerveroldali szkriptek készítésére használják, bár használható parancssori szkriptekre is, és korlátozott mértékben alkalmazásokra.\cite{php}
+	
+	C programozási nyelv jellegű a szintaxisa, és rendkívül engedékeny programozási nyelv. Amikor PHP-ban akarunk valamit írni, akkor azt .php-re végződő fájlban írjuk, aminek a belső tartalma ,,<?php''-vel kezdődik, és ,,?>''-vel végződik. Ezek között írható le a kódunk. Legtöbb esetben HTML-el van társítva.
+	
+	\subsection{JavaScript}
+	JavaScript egy objektum orientált programozási nyelv, elsősorban interaktív elemek létrehozására egy weboldalon és alkalmazásokon. Kezdetekben ez csak böngészőkön és weboldalakon volt használva, azonban ez átterjedt sok más környezetre és használati területre.
+	
+	A JavaScript előnyeihez tartoznak, hogy reszponzív és interaktív elemeket tudunk létrehozni, a megtanulása és futtatása felettébb egyszerű, és rendkívül híres és gyakran használt programozási nyelv.\cite{javascript}
+	
+	A webalkalmazásomban is a felületen sok helyen JavaScript-et, azon belül is a jQuery-t használom funkciók kezelésére, legyen az például egy lámpa felkapcsolásának kezdeményezése.\footref{later-expl-fn}
+	
+	\subsection{jQuery}
+	A jQuery egy gyors, kisméretű és funkciókban gazdag JavaScript könyvtár. Sokkal egyszerűbbé teszi az olyan dolgokat, mint a HTML-dokumentumok bejárása és kezelése, az eseménykezelés, és az animáció egy könnyen használható API-val, amely számos böngészőben működik. A sokoldalúság és a bővíthetőség kombinációjával a jQuery emberek millióinak JavaScript-írási módját változtatta meg. \cite{jquery}
+	
+	\subsection{Chart.js}
+	Chart.js egy népszerű, nyílt forráskódú JavaScript könyvtár, amely lehetővé teszi a fejlesztők számára, hogy könnyen létrehozzanak reszponzív és testre szabható diagramokat vagy grafikonokat a weben. Többféle diagram típust támogat.
+	
+	A könyvtár a HTML5-ös vászonra épül, amely lehetővé teszi a sima animációkat és az interaktivitást. A Chart.js egyszerű és intuitív API-t kínál, amely lehetővé teszi a fejlesztők számára a diagramok egyszerű beállítását és stílusának testreszabását. Több beépített testreszabási lehetőséget is biztosít, mint például a diagramszínek, címkék, jelmagyarázatok, és eszköztipp.\cite{chartJS}
+	
+	Chart.js nagy előnye, hogy a hivatalos oldalukon részletesen le van dokumentálva, hogy hogyan kell telepíteni, és mit hogyan is lehet használni.
+	
+	A Chart.js a egy adott szobában lévő hőmérséklet és páratartalom szenzor adatok grafikonon való megjelenítésére volt használva a weboldalon.
+	
+	\subsection{Tailwind CSS}\label{tailwind}
+	A Tailwind CSS egy népszerű CSS keretrendszer, amely előre definiált osztályokat biztosít a webalkalmazások stílusának egyszerűsítéséhez és optimalizálásához. A keretrendszer funkcionális megközelítést alkalmaz a CSS stílusok alkalmazásában, amelyek osztályok formájában vannak meghatározva, és leírják a kívánt vizuális hatást, ahelyett, hogy egyedi CSS stílusokat írnának az egyes elemekre.
+	
+	Például egy bekezdéshez így tudjuk azt megadni azt, hogy a szövege jobbra zárt és félkövér legyen: \emph{<p \textbf{class="text-right font-bold"}>\footnote{text-right, azaz szöveg-jobb, font-bold, azaz szöveg-félkövér} ez egy bekezdés </p>}
+	
+	A Tailwind stílus alkalmazása lehetővé teszi a fejlesztők számára a gyors, összehangolt és egységes megjelenések létrehozását, miközben javítja a kód alakíthatóságát és skálázhatóságát, azonban ezzel rontva a HTML fájl átláthatóságán. Széles választékban kínál előre elkészített osztályokat a közös UI\footnote{User Inerface: azaz Felhasználói Felület} komponensekhez, mint például gombok, űrlapok, grid rendszerek és tipográfiák, valamint a bonyolultabb elrendezésekhez és pozicionálási feladatokhoz is.\cite{tailwind-docs}
+	
+	Az egyik fő előnye a Tailwindnek a rugalmasság és testreszabhatóság. Konfigurációs fájlt biztosít a fejlesztőknek, amely lehetővé teszi a beépített osztályok testreszabását és saját egyedi osztályok létrehozását az alkalmazás egészében való használatra.
+	\subsection{dbDiagram.io}
+	A dbDiagram.io szoftverkomponens a projekt adatbázis séma tervezéséhez és megjelenítéséhez volt használva. A dbdiagram.io egy webes eszköz, amely lehetővé teszi a felhasználók számára az adatbázis séma létrehozását egy intuitív vizuális felületen keresztül. 
+	
+	Az eszköz támogatja különböző adatbázis rendszereket, mint például a MySQL-t, a PostgreSQL-t és a MongoDB-t. Szintén hasznos funkciókat kínál, mint például automatikus SQL kódgenerálás, verziókezelés és a diagramok importálása és exportálása különböző formátumokban.\cite{dbdiagram-io}
+	
+	Szakdolgozatom során ez volt használva arra, hogy elkészítsem az adatbázis tervét, és majd \aref{database} szakaszon lesz róla egy mellékelt kép is, hogy hogyan is lett mindez kialakítva.
+	
 	\subsection{Font Awesome}
+	
+	A Font Awesome egy elég népszerű nyílt forráskódú ikon könyvtár, amely skálázható vektor ikonokat kínál\footnote{Ez azt jelenti, hogy egy algoritmus segítségével mindig ugyan olyan minőségű lesz a kép, bármekkorára is nagyítjuk.}, amelyek testreszabhatóak és stílusosak CSS segítségével. A könyvtár több ezer ikont tartalmaz, amelyek széles körű kategóriákat fednek le, például webalkalmazásokat, márka- és közösségi média ikonokat. Lehetőség van fizetős és ingyenes ikonok használatára is.
+	
+	A Font Awesome egy rugalmas és könnyen használható megoldást kínál az ikonok hozzáadásához weboldalakhoz vagy alkalmazásokhoz, lehetővé téve a fejlesztőknek, hogy javítsák projektjeik kinézetét. A könyvtár folyamatosan frissül új ikonokkal és funkciókkal.\cite{fontawesome}
+	
+	\textbf{Az általam használt ikonok, a rendszerben:}
+	\begin{itemize}
+		\item \includegraphics[width=0.5cm]{./img/arrow-left-solid}
+		 	\emph{,,<i class="fa-solid fa-arrow-left"></i>''}
+		
+		\item \includegraphics[width=0.5cm]{./img/clock-rotate-left-solid} 
+			\emph{,,<i class="fa-solid fa-clock-rotate-left"></i>''}
+			
+		\item \includegraphics[width=0.5cm]{./img/plus-solid} 
+			\emph{,,<i class="fa-solid fa-plus"></i>''}
+		
+		\item \includegraphics[width=0.5cm]{./img/pen-to-square-regular}
+			\emph{,,<i class="fa-regular fa-pen-to-square"></i>''}
+			
+		\item \includegraphics[width=0.5cm]{./img/trash-can-solid}
+			\emph{,,<i class="fa-solid fa-trash-can"></i>''}
+			
+		\item \includegraphics[width=0.5cm]{./img/arrow-rotate-right-solid}
+			\emph{,,<i class="fa-solid fa-rotate-right"></i>''}
+		
+		\item \includegraphics[width=0.5cm]{./img/ban-solid}
+		 	\emph{,,<i class="fa-solid fa-ban"></i>''}
+			
+		\item \includegraphics[width=0.5cm]{./img/gear-solid}
+			\emph{,,<i class="fa-solid fa-gear"></i>''}
+			
+		\item \includegraphics[width=0.5cm]{./img/key-solid}
+			\emph{,,<i class="fa-solid fa-key"></i>''}
+			
+		\item \includegraphics[width=0.5cm]{./img/id-card-clip-solid}
+			\emph{,,<i class="fa-solid fa-id-card-clip"></i>''}
+			
+	\end{itemize}
 	\subsection{MySQL}
-	\subsection{plantUML}
+	A MySQL egy nyílt forráskódú adatbázis-kezelő rendszer, amelyet széles körben használnak webalkalmazásokhoz. Lehetővé teszi a felhasználók számára, hogy relációs adatbázisokat hozzanak létre, kezeljenek és karbantartsanak az SQL használatával. 
+	
+	A MySQL megbízhatóságáról, és hatékonyságáról ismert, és sok nagy webhely és alkalmazás használja. Több platformmal és programozási nyelvvel is kompatibilis, ami rugalmas választást kínál az adatkezeléshez.
+	
+	A XAMPP egy webszerver szoftver, amely tartalmazza a MySQL adatbázis-kezelő rendszert, és a PHP-t is, és telepíthető a helyi számítógépre webfejlesztéshez és teszteléshez, mint ahogyan én is alkalmaztam lokális fejlesztés során.
+	\subsection{PlantUML}
+	A PlantUML egy ingyenes és nyílt forráskódú eszköz, amely egyszerű szövegszintaxist használ a különböző formátumokban létrehozott UML\footnote{Unified Modeling Language, magyarul Egységesített Modellező Nyelv} diagramok készítéséhez. Többféle diagramtípus támogatása mellett használható szoftverfejlesztéshez és rendszertervezéshez.
+
+	Ennek segítségével rajzoltam le azt, hogy NodeMCU és a Raspberry Pi hogyan is kommunikál a rendszeren belül.\ref{later-expl-fn}
 	\subsection{Fritzing}
-	%----------
+	A Fritzing az egy nyílt forráskódú szoftver, aminek a segítségével elektronikai eszközök kötési és sematikus rajzait, de akár szimulációt is lehet benne készíteni.
+	
+	Ez egy olyan program, aminek a letöltéséért cserébe fizetni kell, ezzel is támogatva a program fejlesztését és karbantartását. Letölthetőek hozzá külső könyvtárak, ezzel is növelve a lehetőségeket ilyen rajzok létrehozásában.
+	
+	Ennek használatával hoztam létre \aref{hardware-sec}~.szakaszban a kötési rajzokat.\\
+	\textbf{Külső könyvtárak, amik voltak használva a rajzokban:}
+	\begin{itemize}
+		\item \Aref{esp32-cam-schematics}.~ábrán az ESP-WROOM-32, az ESP32-CAM, és az FTDI Adapter\cite{fritzing-library}
+		\item \Aref{dht22-schematics}.~ábrán az ESP-WROOM-32 és a DHT22 szenzor \cite{fritzing-library}
+		\item \Aref{rfid-schematics}.~ábrán az ESP-WROOM-32\cite{fritzing-library} és az RFID-RC522\cite{fritzing-rfid}
+		\item \Aref{toggle-schematics}.~ábrán az ESP-WROOM-32\cite{fritzing-library} az izzó\cite{fritzing-light} és a szilárdtest relé\cite{fritzing-SSR}
+	\end{itemize}
 	\section{Laravel}
-	\subsection{Laravel működése}
-	%----------
+	A Laravel egy ingyenes és nyílt forrású PHP webalkalmazás-keretrendszer, amelyet skálázható és nagy méretű webalkalmazások építésére használnak. Egy elegáns szintaxist, erős eszközöket és moduláris csomagolási rendszert biztosít, hogy a fejlesztők tiszta és karbantartható kódot írhassanak. A Laravel követi az MVC\footnote{Model-View-Controller: magyarul Modell-Nézet-Vezérlő} architekturális mintát, és beépített funkciókkal rendelkezik, mint például az azonosítás, a route-olás és gyorsítótár.\cite{laravel-intro}
+	A fejlesztők dolgát azzal könnyítik meg leginkább, hogy hivatalos dokumentációja van, ahol minden kis részletre adnak példát és leírást.\cite{laravel-docs}\\
+	\textbf{MVC Keretrendszer}:\\
+	Az MVC az egy szoftvertervezési minta, amelyet a felhasználói felületek fejlesztéséhez használnak. \\
+	\textbf{Az alkalmazást három összekapcsolt komponensre bontja}:\\A \textbf{modell}, amely az adatokat és a logikát képviseli, a \textbf{nézet}, amely megjeleníti az adatokat a felhasználónak, és a \textbf{vezérlő}, amely kezeli a felhasználói bemenetet és kapcsolatban áll a modellel és a nézettel. Az MVC keretrendszerek, mint például a Laravel, strukturált megközelítést biztosítanak a webalkalmazások fejlesztéséhez, és segítik a fejlesztőket a moduláris és karbantartható kód írásában.
+	
+	Éppen ezért is esett a választásom a projekt tervezési fázisában a Laravel keretrendszerre. Ez a webalkalmazás még Laravel 9-nél indult el.
 	
 	\chapter{A web alkalmazás felépítése és működése}
 	\section{Raspberry PI4B alkalmazása, mint Wi-Fi, és hub}
-	\section{Adatbázis felépítése}
+	\section{Adatbázis felépítése}\label{database}
 	%----------
 	\section{Kezelő felület bemutatása és működése}
 	\subsection{Főoldal}
@@ -393,6 +504,76 @@
 		\textsc{URL:} \url{https://www.circuitbread.com/ee-faq/how-do-solid-state-relays-work}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
+		\bibitem{cpp}
+		\textsc{Romain Juillet:} \emph{Essentials of Programming in C++}\\
+		\textsc{URL:} \url{https://www.bocasay.com/essentials-programming-c/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{php}
+		\textsc{Robert Sheldon:} \emph{DEFINITION: PHP (Hypertext Preprocessor)}\\
+		\textsc{URL:} \url{https://www.techtarget.com/whatis/definition/PHP-Hypertext-Preprocessor}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{javascript}
+		\textsc{Susan Simkins:} \emph{Quick Start to JavaScript: Volume 1}\\
+		\textsc{URL:} \url{https://www.pluralsight.com/courses/quick-start-javascript-1-1870}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{jquery}
+		\textsc{jQuery}\\
+		\textsc{URL:} \url{https://jquery.com/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{chartJS}
+		\textsc{Chart.js hivatalos dokumentáció oldala}\\
+		\textsc{URL:} \url{https://www.chartjs.org/docs/latest/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{tailwind-docs}
+		\textsc{Tailwind CSS hivatalos dokumentáció oldala}\\
+		\textsc{URL:} \url{https://tailwindcss.com/docs}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{dbdiagram-io}
+		\textsc{dbDiagram.io oldala}\\
+		\textsc{URL:} \url{https://dbdiagram.io/home}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{fontawesome}
+		\textsc{Fontawesome - Free Icons}\\
+		\textsc{URL:} \url{https://fontawesome.com/search?o=r&m=free}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{fritzing-library}
+		\textsc{Achim Pieters} \emph{Fritzing – New Parts}\\
+		\textsc{URL:} \url{https://www.studiopieters.nl/fritzing/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{fritzing-light}
+		\textsc{Alfred Dagenais} \emph{Fritzing Components - Light bulb}\\
+		\textsc{URL:} \url{https://github.com/alfreddagenais/fritzing-components/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{fritzing-SSR}
+		\textsc{Fritzing Forum} \emph{SSR-40va solid state relay}\\
+		\textsc{URL:} \url{https://forum.fritzing.org/t/ssr-40va-solid-state-relay/16832}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{fritzing-rfid}
+		\textsc{amontanes} \emph{RFID-RC522}\\
+		\textsc{URL:} \url{https://fritzing.org/projects/mfrc522}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{laravel-intro}
+		\textsc{Laravel - Overview}\\
+		\textsc{URL:} \url{https://www.tutorialspoint.com/laravel/laravel_overview.htm}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{laravel-docs}
+		\textsc{Offical Laravel Documentation}\\
+		\textsc{URL:} \url{https://laravel.com/docs/10.x}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
 		\bibitem{RFID-card-reader}
 		\textsc{Connect RFID to PHP \& MySQL Database with NodeMcu ESP8266}\\
 		\textsc{URL:} \url{https://iotprojectsideas.com/connect-rfid-to-php-mysql-database-with-nodemcu-esp8266/}\\
@@ -412,30 +593,10 @@
 		\textsc{Raspberry configuration for Wi-Fi}\\
 		\textsc{URL:} \url{https://www.raspberrypi.com/documentation//computers/configuration.html#setting-up-a-routed-wireless-access-point}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-		
-		\bibitem{laravel-docs}
-		\textsc{Offical Laravel Documentation}\\
-		\textsc{URL:} \url{https://laravel.com/docs/10.x}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-		
-		\bibitem{tailwind-docs}
-		\textsc{Offical Tailwind Documentation}\\
-		\textsc{URL:} \url{https://tailwindcss.com/docs}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-		
-		\bibitem{chartjs-docs}
-		\textsc{Offical Chart.js Documentation}\\
-		\textsc{URL:} \url{https://www.chartjs.org/docs/latest/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-			
+	
 		\bibitem{cypress-docs}
 		\textsc{Offical Cypress Documentation}\\
 		\textsc{URL:} \url{https://docs.cypress.io/guides/overview/why-cypress}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-		
-		\bibitem{fontawesome}
-		\textsc{Fontawesome - Free Icons}\\
-		\textsc{URL:} \url{https://fontawesome.com/search?o=r&m=free}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 				
 	\end{thebibliography}
