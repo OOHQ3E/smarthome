@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  7 APR 2023 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  8 APR 2023 14:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -647,11 +647,11 @@ Package pdftex.def Info: eszterhazy-logo-hu.pdf  used on input line 32.
 
 ] [6]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
-1.
+5.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [7] [8]
-Overfull \hbox (2.17653pt too wide) in paragraph at lines 111--113
+Overfull \hbox (2.17653pt too wide) in paragraph at lines 115--117
 \T1/lmr/m/n/12 A Ho-me As-sis-tant 2013 no-vem-be-ré-re ke-rült pub-li-ká-lás-r
 a \T1/lmr/m/it/12 Git-Hub.com\T1/lmr/m/n/12 -on \T1/lmr/m/sc/12 Pa-u-lus Scho-
  []
@@ -661,154 +661,155 @@ a \T1/lmr/m/it/12 Git-Hub.com\T1/lmr/m/n/12 -on \T1/lmr/m/sc/12 Pa-u-lus Scho-
 [11
 
 ] [12]
-<./img/ESP32 CAM schematics.pdf, id=411, 526.96875pt x 276.03125pt>
+<./img/ESP32 CAM schematics.pdf, id=413, 526.96875pt x 276.03125pt>
 File: ./img/ESP32 CAM schematics.pdf Graphic file (type pdf)
 <use ./img/ESP32 CAM schematics.pdf>
-Package pdftex.def Info: ./img/ESP32 CAM schematics.pdf  used on input line 191
+Package pdftex.def Info: ./img/ESP32 CAM schematics.pdf  used on input line 195
 .
 (pdftex.def)             Requested size: 455.24408pt x 238.47311pt.
 
-Overfull \hbox (14.22635pt too wide) in paragraph at lines 191--192
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 195--196
  [][] 
  []
 
 [13 <./img/ESP32 CAM schematics.pdf>]
-<./img/temperature and humidity sensor_bb.pdf, id=446, 658.46pt x 214.8025pt>
+<./img/temperature and humidity sensor_bb.pdf, id=448, 658.46pt x 214.8025pt>
 File: ./img/temperature and humidity sensor_bb.pdf Graphic file (type pdf)
 <use ./img/temperature and humidity sensor_bb.pdf>
 Package pdftex.def Info: ./img/temperature and humidity sensor_bb.pdf  used on 
-input line 203.
+input line 207.
 (pdftex.def)             Requested size: 455.24408pt x 148.51215pt.
 
-Overfull \hbox (14.22635pt too wide) in paragraph at lines 203--204
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 207--208
  [][] 
  []
 
 [14 <./img/temperature and humidity sensor_bb.pdf>]
-<./img/RFID reader schematics_bb.pdf, id=512, 658.46pt x 304.13625pt>
+<./img/RFID reader schematics_bb.pdf, id=515, 658.46pt x 304.13625pt>
 File: ./img/RFID reader schematics_bb.pdf Graphic file (type pdf)
 <use ./img/RFID reader schematics_bb.pdf>
 Package pdftex.def Info: ./img/RFID reader schematics_bb.pdf  used on input lin
-e 220.
+e 224.
 (pdftex.def)             Requested size: 455.24408pt x 210.27654pt.
 
-Overfull \hbox (14.22635pt too wide) in paragraph at lines 220--221
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 224--225
  [][] 
  []
 
-[15 <./img/RFID reader schematics_bb.pdf>]
-<./img/ESP32 toggle schematics_bb.pdf, id=561, 472.76625pt x 307.1475pt>
+<./img/ESP32 toggle schematics_bb.pdf, id=518, 472.76625pt x 307.1475pt>
 File: ./img/ESP32 toggle schematics_bb.pdf Graphic file (type pdf)
 <use ./img/ESP32 toggle schematics_bb.pdf>
 Package pdftex.def Info: ./img/ESP32 toggle schematics_bb.pdf  used on input li
-ne 237.
+ne 241.
 (pdftex.def)             Requested size: 455.24408pt x 295.77214pt.
 
-Overfull \hbox (14.22635pt too wide) in paragraph at lines 237--238
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
-[16 <./img/ESP32 toggle schematics_bb.pdf>] [17] [18]
-<./img/arrow-left-solid.png, id=658, 450.7239pt x 386.6445pt>
+[15 <./img/RFID reader schematics_bb.pdf>] [16 <./img/ESP32 toggle schematics_b
+b.pdf>] [17] [18]
+<./img/arrow-left-solid.png, id=663, 450.7239pt x 386.6445pt>
 File: ./img/arrow-left-solid.png Graphic file (type png)
 <use ./img/arrow-left-solid.png>
-Package pdftex.def Info: ./img/arrow-left-solid.png  used on input line 301.
+Package pdftex.def Info: ./img/arrow-left-solid.png  used on input line 309.
 (pdftex.def)             Requested size: 14.22636pt x 12.20059pt.
-<./img/clock-rotate-left-solid.png, id=660, 515.0442pt x 515.0442pt>
+<./img/clock-rotate-left-solid.png, id=665, 515.0442pt x 515.0442pt>
 File: ./img/clock-rotate-left-solid.png Graphic file (type png)
 <use ./img/clock-rotate-left-solid.png>
 Package pdftex.def Info: ./img/clock-rotate-left-solid.png  used on input line 
-304.
+312.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
-<./img/plus-solid.png, id=661, 418.6842pt x 418.6842pt>
+<./img/plus-solid.png, id=666, 418.6842pt x 418.6842pt>
 File: ./img/plus-solid.png Graphic file (type png)
 <use ./img/plus-solid.png>
-Package pdftex.def Info: ./img/plus-solid.png  used on input line 307.
+Package pdftex.def Info: ./img/plus-solid.png  used on input line 315.
 (pdftex.def)             Requested size: 14.22636pt x 14.22101pt.
-<./img/pen-to-square-regular.png, id=662, 510.9489pt x 510.9489pt>
+<./img/pen-to-square-regular.png, id=667, 510.9489pt x 510.9489pt>
 File: ./img/pen-to-square-regular.png Graphic file (type png)
 <use ./img/pen-to-square-regular.png>
 Package pdftex.def Info: ./img/pen-to-square-regular.png  used on input line 31
-0.
+8.
 (pdftex.def)             Requested size: 14.22636pt x 14.2207pt.
-<./img/trash-can-solid.png, id=663, 450.7239pt x 515.0442pt>
+<./img/trash-can-solid.png, id=668, 450.7239pt x 515.0442pt>
 File: ./img/trash-can-solid.png Graphic file (type png)
 <use ./img/trash-can-solid.png>
-Package pdftex.def Info: ./img/trash-can-solid.png  used on input line 313.
+Package pdftex.def Info: ./img/trash-can-solid.png  used on input line 321.
 (pdftex.def)             Requested size: 14.22636pt x 16.25226pt.
- [19 <./img/arrow-left-solid.png> <./img/clock-rotate-left-solid.png> <./img/pl
-us-solid.png>]
-<./img/arrow-rotate-right-solid.png, id=677, 466.8642pt x 450.7239pt>
+<./img/arrow-rotate-right-solid.png, id=669, 466.8642pt x 450.7239pt>
 File: ./img/arrow-rotate-right-solid.png Graphic file (type png)
 <use ./img/arrow-rotate-right-solid.png>
 Package pdftex.def Info: ./img/arrow-rotate-right-solid.png  used on input line
- 316.
+ 324.
 (pdftex.def)             Requested size: 14.22636pt x 13.73433pt.
-<./img/ban-solid.png, id=678, 515.0442pt x 515.0442pt>
+<./img/ban-solid.png, id=670, 515.0442pt x 515.0442pt>
 File: ./img/ban-solid.png Graphic file (type png)
 <use ./img/ban-solid.png>
-Package pdftex.def Info: ./img/ban-solid.png  used on input line 319.
+Package pdftex.def Info: ./img/ban-solid.png  used on input line 327.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
-<./img/gear-solid.png, id=679, 485.4135pt x 514.8033pt>
+ [19 <./img/arrow-left-solid.png> <./img/clock-rotate-left-solid.png> <./img/pl
+us-solid.png> <./img/pen-to-square-regular.png> <./img/trash-can-solid.png> <./
+img/arrow-rotate-right-solid.png>]
+<./img/gear-solid.png, id=686, 485.4135pt x 514.8033pt>
 File: ./img/gear-solid.png Graphic file (type png)
 <use ./img/gear-solid.png>
-Package pdftex.def Info: ./img/gear-solid.png  used on input line 322.
+Package pdftex.def Info: ./img/gear-solid.png  used on input line 330.
 (pdftex.def)             Requested size: 14.22636pt x 15.08208pt.
-<./img/key-solid.png, id=680, 515.0442pt x 515.0442pt>
+<./img/key-solid.png, id=687, 515.0442pt x 515.0442pt>
 File: ./img/key-solid.png Graphic file (type png)
 <use ./img/key-solid.png>
-Package pdftex.def Info: ./img/key-solid.png  used on input line 325.
+Package pdftex.def Info: ./img/key-solid.png  used on input line 333.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
-<./img/id-card-clip-solid.png, id=681, 579.1236pt x 515.0442pt>
+<./img/id-card-clip-solid.png, id=688, 579.1236pt x 515.0442pt>
 File: ./img/id-card-clip-solid.png Graphic file (type png)
 <use ./img/id-card-clip-solid.png>
-Package pdftex.def Info: ./img/id-card-clip-solid.png  used on input line 328.
+Package pdftex.def Info: ./img/id-card-clip-solid.png  used on input line 336.
 (pdftex.def)             Requested size: 14.22636pt x 12.64502pt.
- [20 <./img/pen-to-square-regular.png> <./img/trash-can-solid.png> <./img/arrow
--rotate-right-solid.png> <./img/ban-solid.png> <./img/gear-solid.png> <./img/ke
-y-solid.png> <./img/id-card-clip-solid.png>] [21]
+ [20 <./img/ban-solid.png> <./img/gear-solid.png> <./img/key-solid.png> <./img/
+id-card-clip-solid.png>]
+[21]
 3. fejezet.
 [22
 
 ]
 4. fejezet.
 
-Underfull \hbox (badness 3189) in paragraph at lines 396--397
+Underfull \hbox (badness 3189) in paragraph at lines 402--403
 []\T1/lmr/m/n/12 The test was succ-
  []
 
 
-Underfull \hbox (badness 1810) in paragraph at lines 400--401
+Underfull \hbox (badness 1810) in paragraph at lines 406--407
 []\T1/lmr/m/n/12 The test was par-ti-
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 400--401
+Underfull \hbox (badness 2707) in paragraph at lines 406--407
 \T1/lmr/m/n/12 ally succ-ess-ful, with
  []
 
 
-Underfull \hbox (badness 2302) in paragraph at lines 404--405
+Underfull \hbox (badness 2302) in paragraph at lines 410--411
 \T1/lmr/m/n/12 ful, with the RFID
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 404--405
+Underfull \hbox (badness 2368) in paragraph at lines 410--411
 \T1/lmr/m/n/12 tags re-main-ing fully
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 \T1/lmr/m/n/12 func-ti-o-nal and re-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 \T1/lmr/m/n/12 adab-le even with
  []
 
 
-Overfull \hbox (50.22633pt too wide) in paragraph at lines 390--411
+Overfull \hbox (50.22633pt too wide) in paragraph at lines 396--417
  [][] 
  []
 
@@ -821,25 +822,25 @@ Overfull \hbox (50.22633pt too wide) in paragraph at lines 390--411
 ] [26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 426--430
+Underfull \hbox (badness 10000) in paragraph at lines 432--436
 \T1/lmr/m/sc/12 URL:[]$\T1/lmtt/m/n/12 https : / / developer . amazon . com / b
 logs / alexa / post /
  []
 
 
-Overfull \hbox (206.61446pt too wide) in paragraph at lines 426--430
+Overfull \hbox (206.61446pt too wide) in paragraph at lines 432--436
 \T1/lmtt/m/n/12 a89f7243-[]08a0-[]4c73-[]8fc5-[]eb604a93f437 / define-[]your-[]
 appliance-[]category-[]for-[]a-[]better-[]customer-[]experience$[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--450
+Underfull \hbox (badness 10000) in paragraph at lines 453--456
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . linux . com / topic /
  embedded-[]iot /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--470
+Underfull \hbox (badness 10000) in paragraph at lines 473--476
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . raspberrypi . com / d
 ocumentation / computers /
  []
@@ -847,73 +848,73 @@ ocumentation / computers /
 [27
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 472--475
+Underfull \hbox (badness 10000) in paragraph at lines 478--481
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . espressif . com / sit
 es / default / files / documentation /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--490
+Underfull \hbox (badness 10000) in paragraph at lines 493--496
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . sparkfun . com / data
 sheets / Sensors / Temperature /
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 492--495
+Underfull \hbox (badness 1057) in paragraph at lines 498--501
 []\T1/lmr/m/sc/12 U.S. Fo-od and Drug Ad-mi-nistra-ti-on: \T1/lmr/m/it/12 Ra-di
 o Fre-qu-ency Iden-ti-fi-ca-ti-on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--495
+Underfull \hbox (badness 10000) in paragraph at lines 498--501
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . fda . gov / radiation
 -[]emitting-[]products /
  []
 
 
-Overfull \hbox (11.71037pt too wide) in paragraph at lines 492--495
+Overfull \hbox (11.71037pt too wide) in paragraph at lines 498--501
 \T1/lmtt/m/n/12 electromagnetic-[]compatibility-[]emc / radio-[]frequency-[]ide
 ntification-[]rfid$[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--505
+Underfull \hbox (badness 10000) in paragraph at lines 508--511
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . circuitbread . com / 
 ee-[]faq /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--515
+Underfull \hbox (badness 10000) in paragraph at lines 518--521
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . techtarget . com / wh
 atis / definition /
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 517--520
+Underfull \hbox (badness 10000) in paragraph at lines 523--526
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . pluralsight . com / c
 ourses /
  []
 
 [29]
-Overfull \hbox (147.33386pt too wide) in paragraph at lines 577--580
+Overfull \hbox (147.33386pt too wide) in paragraph at lines 583--586
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / iotprojectsideas . com / co
 nnect-[]rfid-[]to-[]php-[]mysql-[]database-[]with-[]nodemcu-[]esp8266/$[] 
  []
 
 
-Overfull \hbox (53.20882pt too wide) in paragraph at lines 582--585
+Overfull \hbox (53.20882pt too wide) in paragraph at lines 588--591
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / randomnerdtutorials . com /
  esp8266-[]nodemcu-[]http-[]get-[]post-[]arduino /
  []
 
 
-Overfull \hbox (8.9978pt too wide) in paragraph at lines 587--590
+Overfull \hbox (8.9978pt too wide) in paragraph at lines 593--596
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . instructables . com /
  Arduino-[]to-[]Laravel-[]Communication/$[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--595
+Underfull \hbox (badness 10000) in paragraph at lines 598--601
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . raspberrypi . com / d
 ocumentation / /computers /
  []
@@ -922,10 +923,10 @@ ocumentation / /computers /
 
 pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
  version <1.6>, but at most version <1.5> allowed
-<nyilatkozat.pdf, id=806, 597.432pt x 845.07718pt>
+<nyilatkozat.pdf, id=810, 597.432pt x 845.07718pt>
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf>
-Package pdftex.def Info: nyilatkozat.pdf  used on input line 604.
+Package pdftex.def Info: nyilatkozat.pdf  used on input line 610.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 
 
@@ -933,7 +934,7 @@ pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
  version <1.6>, but at most version <1.5> allowed
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf>
-Package pdftex.def Info: nyilatkozat.pdf  used on input line 604.
+Package pdftex.def Info: nyilatkozat.pdf  used on input line 610.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 
 
@@ -943,35 +944,35 @@ pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
 
 pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
  version <1.6>, but at most version <1.5> allowed
-<nyilatkozat.pdf, id=809, page=1, 597.432pt x 845.07718pt>
+<nyilatkozat.pdf, id=813, page=1, 597.432pt x 845.07718pt>
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 610.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 610.
 (pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
 [30]
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 610.
 (pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 610.
 (pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 604.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 610.
 (pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
  [31 <./nyilatkozat.pdf>] (./thesis-oohq3e.aux)
 Package rerunfilecheck Info: File `thesis-oohq3e.out' has not changed.
 (rerunfilecheck)             Checksum: 4AED4EEC7826EF96FAA41E21D8F473E7;11628.
  ) 
 Here is how much of TeX's memory you used:
- 15634 strings out of 475075
- 253800 string characters out of 5783001
+ 15636 strings out of 475075
+ 253824 string characters out of 5783001
  771460 words of memory out of 5000000
  36542 multiletter control sequences out of 15000+600000
  546971 words of font info for 88 fonts, out of 8000000 for 9000
@@ -986,10 +987,10 @@ ts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/l
 mr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texliv
 e/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2022/texmf-dist/
 fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis-oohq3e.pdf (31 pages, 2816453 bytes).
+Output written on thesis-oohq3e.pdf (31 pages, 2815521 bytes).
 PDF statistics:
- 918 PDF objects out of 1000 (max. 8388607)
- 761 compressed objects within 8 object streams
- 156 named destinations out of 1000 (max. 500000)
+ 923 PDF objects out of 1000 (max. 8388607)
+ 766 compressed objects within 8 object streams
+ 158 named destinations out of 1000 (max. 500000)
  564 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -35,15 +35,11 @@
 	\chapter*{Bevezetés}
 	\addcontentsline{toc}{chapter}{Bevezetés}
 	
-	A mai világunkban az okos otthonok és az okos eszközök rendkívül népszerűek és elterjedtek lettek. Általában, hogy ha megkérdezünk valakit ezzel a témával kapcsolatban, akkor nagy valószínűséggel azt tudják elmondani, hogy rendelkeznek legalább egy okos otthonban alkalmazható eszközzel.
+	Mai világunkban az okos otthonok és az okos eszközök rendkívül népszerűek és elterjedtek lettek. Általában, hogy ha megkérdezünk valakit ezzel a témával kapcsolatban, akkor nagy valószínűséggel azt tudják mondani, hogy rendelkeznek legalább egy okos otthonban alkalmazható eszközzel. Ezek az eszközök lehetővé tehetik a kényelmesebb és hatékonyabb életmódot. 
 	
-	Az okos otthonok és az okos eszközök lehetővé teszik a tulajdonosaik számára, hogy akár távolról is vezéreljék és felügyeljék az otthonukat. Ezek az eszközök lehetővé tehetik a kényelmesebb és hatékonyabb életmód megvalósítását.
+	De mi is tesz egy eszközt okossá? Feltételezhetjük azt, hogy ha valamelyik eszköz internetre kapcsolódik, esetleg távolról beállíthatjuk, vagy automatizálhatjuk előre meghatározott dolgokra, akkor azt az eszközt ,,okosnak'' tudjuk mondani.
 	
-	Manapság már ha valaki az interneten rákeres valamilyen otthoni eszközre, és eléje írja azt hogy ,,okos'', akkor bizonyára léteznek már erre megoldások. - például okos WC-k, okos kenyérpirítók, még akár okos szőnyegek is, és még sorolhatnám ezt a listát tovább. 
-	
-	De mi is tesz egy eszközt okossá? Feltételezhetjük azt, hogy ha valami internetre kapcsolódik, esetleg távolról beállíthatjuk, vagy automatizálhatjuk előre meghatározott dolgokra, akkor azt az eszközt ,,okosnak'' tudjuk mondani.
-	
-	Hogy ha valaki már rendelkezik több ilyen eszközzel, akkor bizonyára találkoztak már azzal a problémával, hogy az egy bizonyos ökoszisztémában használatos eszközök nem feltétlenül tudnak működni egy másikban. Minderre próbáltam egy olyan megoldást kitalálni, ami abból a szempontból közelíti meg, hogy még egy 'nem okos' eszközt (például egy izzót) integrálok bele úgy a rendszerbe, hogy ezt egyszerűen tudjunk kezelni bárhonnan az otthonunkból, ehhez társulva különböző programozható elektronikák. Mindehhez egy olyan webes alkalmazást hoztam létre, amely felelős a háttérben lévő folyamatok lebonyolítására, és az általunk ismert legtöbb eszközön alkalmazható, amin internetezni is tudunk: legyen az számítógép, Androidos, vagy iOS-es telefon, tablet, vagy akár okos óra is.
+	Hogy ha valaki már rendelkezik több ilyen eszközzel, akkor bizonyára találkoztak már azzal a problémával, hogy egy bizonyos ökoszisztémában használatos eszköz nem feltétlenül tud működni egy másikban. Minderre próbáltam egy olyan megoldást kitalálni, ami abból a szempontból közelíti meg mindezt, hogy még egy 'nem okos' eszközt (például egy izzót) integrálok bele úgy a rendszerbe, hogy azt egyszerűen tudjunk kezelni bárhonnan az otthonunkból, ehhez társulva különböző programozható elektronikák. Mindehhez egy olyan rendszert hoztam létre, amelynek a háttérben lévő folyamatok lebonyolítását egy webes alkalmazás végzi el, és az általunk ismert legtöbb eszközön használható, amin internetezni is tudunk: legyen az számítógép, Androidos, vagy iOS-es telefon, tablet, vagy akár okos óra is.
 	
 	Azért került erre a témára a választásom, mivel számomra felettébb érdekes az, hogy egy ilyen okos otthonban az eszközök hogyan is kommunikálnak, és szeretnék ebbe egy belátást nyerni, hogy hogyan is épül össze mindez.
 
@@ -51,53 +47,61 @@
 	
 	\chapter{Piacon lévő jelentősebb okos otthon rendszerek}
 	\section{Nagyobb cégek által létrehozott ökoszisztémák}
-	Az okos otthon rendszerek széles választéka áll rendelkezésre a piacon felhasználók számára, amelyek között egyszerű rendszerektől kezdve a biztonsági kamerák, ajtózárak és akár a háztartási készülékek is alkalmazhatóak. Amikor az okos otthon rendszer kiválasztására kerül sor, fontos figyelembe venni az eszközök kiválasztását is.
+	Amikor arra jut a sor, hogy okos otthont szeretnénk összeállítani, akkor ahhoz egy széles palettából tudunk választani eszközöket, legyen az biztonsági kamera, ajtózár vagy akár háztartási eszközök, mint például egy mosógép vagy robot porszívó. Amikor az okos otthon rendszer kiválasztására kerül sor, fontos figyelembe venni az ehhez alkalmazandó eszközök kiválasztását is.
 	
-	Van néhány olyan eszköz, - például okos izzók vagy okos dugaljak -, amelyek több okos otthon rendszerrel is szabadon használhatóak, így könnyen integrálhatóak a választott rendszerbe. Ezek az eszközök általában ipari szabványokat használnak, mint például a Wi-Fi, Bluetooth LE vagy a Zigbee\footnote{Zigbee-t használ például az Amazon Echo, az IKEA okos otthon termékei, és a Philips Hue}, ami lehetővé teszi számukra, hogy kommunikáljanak a különböző okos otthon rendszerekkel. 
+	Van néhány olyan eszköz, -- például az okos izzók -- amelyek szerencsére több okos otthon rendszerben is könnyen alkalmazhatóak. Ezek az eszközök általában ipari szabványokat használnak, mint például a Zigbee\footnote{Zigbee-t használ például az Amazon Echo, a Google, az IKEA okos otthon termékei, és a Philips Hue}, ami lehetővé teszi számukra, hogy működjenek a különböző okos otthon rendszerekkel. 
 	
-	Azonban vannak olyan eszközök is, amelyek kifejezetten egyetlen rendszerrel működnek együtt. Ezek az eszközök saját protokollokat vagy szoftvereket használhatnak, amelyek nem kompatibilisek más rendszerekkel, ami korlátozhatja az okos otthon rendszerünk rugalmasságát. Vegyük példának azt, hogy ha olyan okos ajtózárat vásárlunk, amely csak egy meghatározott okos otthon rendszerrel működik együtt, akkor az eszközt később nem tudjuk használni egy másik rendszerrel. Vagy hogy ha veszünk egy adott típusú eszközt, akkor azt későbbiekben nem tudjuk kombinálni egy másik rendszer eszközével.
+	Azonban vannak olyan eszközök is, amelyek csak egyetlen rendszerrel használhatóak. Ezek az eszközök saját szabványokat alkalmaznak, amelyek nem kompatibilisek más rendszerekkel. Vegyük például azt, hogy ha egy olyan okos eszközt veszünk, ami csak egy meghatározott okos otthon rendszerrel működik együtt, akkor az eszközt később nem tudjuk használni egy másik rendszerben.
 	
-	Összességében az okos otthon eszközök kiválasztásakor fontos figyelembe venni a kompatibilitást választott okos otthon rendszerünkkel. Az iparági szabványokat támogató eszközök általában rugalmasabbak és szélesebb körű rendszerekkel használhatóak, míg a saját protokollokat használó eszközök korlátozottabbak lehetnek a kompatibilitás terén.
-		
+	Mindezek alapján amikor okos eszközt vásárlunk, akkor nagyon oda kell figyelni, hogy kompatibilis-e a választott okos otthon rendszerünkkel, amit általában fel szoktak tüntetni az eszközök leírásában, vagy, hogy ha utána keresünk mindennek.
+			
 	\subsection{Mik is a virtuális asszisztensek?}
-	Virtuális asszisztensek olyan szoftver programok, amik különböző feladatokat tudnak elvégezni számunkra, amit például egy elő segéd is képes lenne. Annyi különbséggel, hogy ezek az asszisztensek online, vagy az eszközeinken léteznek. 
+	A virtuális asszisztensek olyan szoftveres programok, amik különböző feladatokat tudnak elvégezni felhasználó kérésére. Ezek persze mindezeknek korlátjainak megfelelően.
 	
-	Úgy lettek megalkotva, hogy a felhasználó hang vagy chat alapon tudjanak szimpla kérdésekkel kommunikálni és utasításokat adni. A virtuális asszisztensek olyan feladatokban tudnak segíteni, mint emlékeztetők létrehozása, üzenetek küldése, hívások indítása, internetes keresés, időjárás előrejelzések felolvasása, okos otthoni eszközök irányítása, és egyéb más dolgok. 
+	Úgy lettek megalkotva, hogy a felhasználó hang vagy esetleg chat alapon tudjanak egyszerű kérdéseken keresztül kommunikálni vagy utasításokat adni. A virtuális asszisztensek olyan feladatokban tudnak segíteni, mint emlékeztetők létrehozása, üzenetek küldése, hívások indítása, interneten való keresés, időjárás előrejelzések felolvasása, okos otthoni eszközök irányítása, és egyéb más dolgok. 
 	
 	Számos cég hozott már létre magának virtuális asszisztenst, amik közül a legismertebbek lehetnek a Google által létrehozott Google Asszisztens, Apple-nek Siri, Amazon-nak Alexa, Samsung Bixby-je, és Microsoft Cortana-ja.
 	
+	Hogy ha például egy újabb Samsung telefonja van az embernek, akkor azon két virtuális asszisztens is jelen van (Google Assistant és Bixby), de letölthető akár mellé harmadiknak az Amazon Alexa is.
+	
 	\subsection{Amazon rendszere - Alexa Smart Home}
-	2014-ben lépett be be a piacra az Amazon - \emph{az akkor még újdonságnak számító} - okos hangszórójukkal, az Amazon Echo-val. Ekkor még leginkább csak annyira volt képes, hogy a felhasználó zenét tudja irányítani hang utasításokkal. Ez az eszköz úgy működik, hogy ebbe bele van integrálva az Amazon sajátos virtuális asszisztense, amit Alexának hívnak. Ugye mint kezdetleges szoftver, neki sem voltak a képességei túl szerteágazóak. Leginkább arra tudta az ember használni, hogy egyszerű kérdéseket tegyen fel az ember, és zenét tudjon elindítani, leállítani átugrani.
+	2014-ben lépett be be a piacra az Amazon -- \emph{az akkor még újdonságnak számító} -- okos hangszórójukkal, az Amazon Echo-val. Ekkor még leginkább csak annyira volt képes, hogy a felhasználó zenét tudja irányítani hang utasításokkal. Ez az eszköz úgy működik, hogy ebbe bele van integrálva az Amazon sajátos virtuális asszisztense, amit Alexának hívnak. Ugye mint kezdetleges szoftver, neki sem voltak a képességei túl szerteágazóak. Leginkább arra tudta az ember használni, hogy egyszerű kérdéseket tegyen fel az ember, és zenét tudjon elindítani, leállítani átugrani.
 	
 	Nem is annyira később, amikor elkezdett egyre jobban fejlődni Alexa, úgy egyre több mindenre kezdhette el használni az ember: termosztátok beállítása, izzók ki- és bekapcsolására is már lehetett használni. Miután az Amazon egyre többet fektetett bele a rendszerükbe felettébb szerteágazó lett annak a használata az otthonokban. Még arra is volt lehetőség már ekkor, hogy akár bevásárló listát készítsen, és azokat meg is tudja rendelni a felhasználó az Amazonról, mindezt Alexa használatával. A cég 2017 május 23-án jelentette be, hogy a \emph{Smart Home Skill API}-jukba\footnote{A blog poszt amiben bejelentették a Smart Home Skill API bővítését\cite{amazon-api}} innentől kezdve megadható, hogy milyen eszközöket is csatlakoztatunk a rendszerükbe, ami kitárta a lehetőségeket az otthoni okos készülékek automatizációjára. Mindez vezetett az okos otthon piac és a virtuális asszisztensek szerepének növekedéséhez.
 	
 	Eszközök leginkább hangvezérléssel irányíthatóak, miután követtük az általuk biztosított használati útmutatót. Néhány esetben az Amazon Alexa alkalmazás elegendő lehet, de ha olyan eszközt szeretnénk használni, amelyhez saját alkalmazás tartozik, akkor azt is le kell töltenünk.
 	
-	Az Amazon által szolgáltatott okos otthon rendszer 2023-ra olyan népszerűségi szintre jutott, hogy az Amerikai Egyesült Államokban az ilyen hang vezérelt hangszórók 68.2\%-a az Amazon Echo.\footnote{Statisztikai adatokat az Earthweb: ,,How Many People Use Alexa in 2023? (U.S. Amazon Statistics)'' cikkjéből \cite{amazon-stats}} Mindezzel napjainkban több ezer eszköz használható már ezen a rendszeren belül: legyen az biztonsági rendszer, háztartási gépek, vagy esetleg szórakoztató rendszerek. Érthető is, hogy sokan miért is szeretik ezt a rendszert használni.
+	Az Amazon által szolgáltatott okos otthon rendszer 2023-ra olyan népszerűségi szintre jutott, hogy az Amerikai Egyesült Államokban az ilyen hang vezérelt hangszórók 68.2\%-a az Amazon Echo.\footnote{Statisztikai adatokat az Earthweb: ,,How Many People Use Alexa in 2023? (U.S. Amazon Statistics)'' cikkjéből \cite{amazon-stats}} 
 	
-	Azonban ennek a rendszernek is megvannak azok a hátulütői, hogy nem minden eszközt tudjunk beintegrálni az adott okos otthon rendszerünkbe, amik nem támogatottak az Amazon által. Érdemes arra odafigyelni, hogy amikor egy okos eszközt veszünk, hogy arra fel-e van tüntetve, hogy kompatibilis az Amazon rendszerével. Másik ilyen negatív tényező lehet számunkra az is, hogy az Amazon Alexa nem használható magyar nyelvvel.
+	Mindezzel napjainkban több ezer eszköz használható már ezen a rendszeren belül: legyen az biztonsági rendszer, háztartási gépek, vagy esetleg szórakoztató rendszerek. Érthető is, hogy sokan miért is szeretik ezt a rendszert használni.
+	
+	Azonban ennek a rendszernek is megvannak azok a hátulütői, mint például az, hogy nem tudunk felhasználni benne olyan eszközöket, amik nem támogatottak az Amazon által. Érdemes arra odafigyelni, hogy amikor egy okos eszközt veszünk, hogy arra fel-e van tüntetve, hogy kompatibilis az Amazon rendszerével. Másik ilyen negatív tényező lehet számunkra az is, hogy az Amazon Alexa nem használható magyar nyelven még.
 	
 	\subsection{Google rendszere - Google Home és Google Nest}
-	Az Amazon Echo sikere után a Google is részesülni akart az okos otthon piacának sikereivel. Az akkor még Nest Labs által készült termékek olyanok voltak mint az alkalmazkodó termosztát - amit 2011-ben hoztak létre ,,Nest Learning Thermostat''\footnote{Magyarul: Nest Tanuló Termosztát} néven, ami Wi-Fi-re kapcsolható volt, és szenzorok segítségével alkalmazkodhatott a beltéri hőmérsékleti körülményekre. Ezt követte a következő termékük, a füst és szén-monoxid érzékelő, aminek a neve ,,Nest Protect'' volt. 2014-ben felvásárolták a Dropcam nevezetű céget ami biztonsági kamerákat készítettek, amik után a Nest Labs ezt követő terméke a Nest Cam volt 2015-ben. A Nest Labs egyre jobban látszódó sikerének köszönhetően a Google felvásárolta 2014 januárjában. 2018-ig még önállóan működött a Nest, ami után beolvasztották a Google otthoni termék családba, ezzel létre hozva a Google Nest termékcsaládot, ami számos termékekkel rendelkezik mostanára: termosztát, ajtócsengő, ajtózár, biztonsági kamera, virtuális asszisztenssel integrált érintőképernyős központi egység.\footnote{\label{google-store} További jelenleg elérhető Google Nest családba tartozó termékek: \url{https://store.google.com/gb/category/connected_home} oldalon megtalálható}
+	Az Amazon Echo sikere után a Google is részesülni akart az okos otthon piacának sikereivel. 
+	
+	Az akkor még Nest Labs által készült termékek olyanok voltak mint az öntanuló termosztát -- amit 2011-ben hoztak létre ,,Nest Learning Thermostat''\footnote{Magyarul: Nest Tanuló Termosztát} néven, ami Wi-Fi-re kapcsolható volt, és szenzorok segítségével alkalmazkodhatott a beltéri hőmérsékleti körülményekre. Ezt követte a következő termékük, a füst és szén-monoxid érzékelő, aminek a neve ,,Nest Protect'' volt. 2014-ben felvásárolták a Dropcam nevezetű céget ami biztonsági kamerákat készítettek, amik után a Nest Labs ezt követő terméke a Nest Cam volt 2015-ben.
+	
+	A Nest Labs egyre jobban látszódó sikerének köszönhetően a Google felvásárolta 2014 januárjában. 2018-ig még önállóan működött a Nest, ami után beolvasztották a Google otthoni termékcsaládba, ezzel létre hozva a Google Nest termékcsaládot, ami számos termékekkel rendelkezik mostanára: termosztát, ajtócsengő, ajtózár, biztonsági kamera, virtuális asszisztenssel integrált érintőképernyős központi egység.\footnote{\label{google-store} További jelenleg elérhető Google Nest családba tartozó termékek: \url{https://store.google.com/gb/category/connected_home} oldalon megtalálható}
 	
 	Az Amazon Echo-hoz hasonló első terméke a Google-nek a Google Home volt, amit 2016 októberében jelentettek be. Ez a cég sajátos virtuális asszisztensével a Google Assistant-tel volt felszerelve, és ugyan úgy lehetett neki utasításokat adni, és kérdéseket feltenni. Azóta már több otthonon belül alkalmazható eszköz elérhető egyenesen a Google Store-ból.\footref{google-store} Vagy egyéb támogatott harmadik felek által készített ilyen eszközökkel.
 	
-	Az egyik legnagyobb előnye a Google Home rendszernek az integrációja más Google szolgáltatásokkal, mint például a Google Térkép, a Google Naptár és a Google Fotók. Ez azt jelenti, hogy a felhasználók kéz nélkül is hozzáférhetnek személyes információikhoz és ütemtervükhöz, egyszerűen csak a Google Asszisztensnek kérdést feltéve.
+	Az egyik legnagyobb előnye a Google Home rendszernek az integrációja más Google szolgáltatásokkal, mint például a Google Térkép, a Google Naptár és a Google Fotók. Ez azt jelenti, hogy a felhasználók kéz nélkül is hozzáférhetnek személyes információikhoz és ütemtervükhöz, szimplán csak a Google Asszisztensnek feltéve a kérdést.
 	
-	A Google Home rendszer másik erőssége az, hogy képes felismerni a különböző hangokat, amely lehetővé teszi a személyre szabott válaszokat és információkat minden háztartási tag számára. Ez különösen hasznos lehet több személyes háztartásokban, ahol több ember is használja a rendszert.
+	A Google Home rendszer másik erőssége az, hogy képes felismerni a különböző hangokat, amely lehetővé teszi a személyre szabott válaszokat és információkat minden háztartási tag számára. Ez különösen hasznos lehet több személyes háztartásokban, ahol több ember is használja a rendszert.\footnote{Erre ugyan úgy betanítható az Amazon Alexa is.}
 	
-	Összességében a Google Home rendszer egy erős és rugalmas okos otthoni megoldás, amely számos funkciót és lehetőséget kínál. Az integrációja más Google szolgáltatásokkal és a széles körű, kompatibilis eszközökkel rendelkezése miatt a Google Home rendszer erős versenytársa a okos otthoni piacnak.
+ 	Mindezek által a Google Home rendszer erős versenytárs az okos otthon piacon.
 	
-	Viszont a Google Home-nak is meg vannak azok a hátrányai mint az Amazon rendszerének. Sajnos inkább csak akkor tudjuk kihasználni ennek a rendszernek az előnyét, ha angolul vagy más támogatott nyelven beszélünk vele, amibe nem tartozik bele a magyar.
+	Viszont a Google Home-nak is meg vannak azok a hátrányai mint az Amazon rendszerének. Sajnos inkább csak akkor tudjuk kihasználni ennek a rendszernek az előnyét, ha angolul vagy más támogatott nyelven beszélünk vele, amibe még nem tartozik bele a magyar.
 	
 	\subsection{Xiaomi rendszere - Mi Home}
-	A Xiaomi 2015 júniusában dobta piacra első okos otthon termékcsomagját, a ,,Smart Home Kit''-et, amely mozgásérzékelőt, lámpát és kapacitív kapcsolót tartalmazott. Ezeket az eszközöket egy alkalmazás segítségével lehetett vezérelni, ami lehetővé tette a felhasználók számára, hogy testre szabott utasításokat állítsanak be, például hogy a mozgásérzékelő észlelésekor a lámpa felkapcsoljon, vagy értesítést küldjön a felhasználónak, illetve a csomag támogatta a Xiaomi biztonsági kameráját is. \cite{xiaomi-home}
+	A Xiaomi 2015 júniusában dobta piacra első okos otthon termékcsomagját, a ,,Smart Home Kit''-et, amely mozgásérzékelőt, lámpát és kapacitív kapcsolót tartalmazott. Ezeket az eszközöket egy alkalmazás segítségével lehetett vezérelni, ami lehetővé tette a felhasználók számára, hogy különböző utasításokat állítsanak be, például hogy a mozgásérzékelő észlelésekor a lámpa felkapcsoljon, vagy értesítést küldjön a felhasználónak, illetve a csomag támogatta a Xiaomi biztonsági kameráját is. \cite{xiaomi-home}
 	
-	Ma a Xiaomi okos otthon termékpalettája rendkívül sokrétű, a forrólevegős sütőktől, a robotporszívókon, és a szobamérlegeken át a hőmérséklet- és páratartalom-szenzorokig. Az összes termékük integrálható a Mi Home alkalmazásba, és a felhasználók harmadik féltől származó eszközöket is csatlakoztathatnak hozzájuk. A Xiaomi termékeivel akár komplett otthoni biztonsági rendszert is létre lehet hozni.
+	Ma a Xiaomi okos otthon termékpalettája rendkívül sokrétű, a forrólevegős sütőktől, a robotporszívókon, és a szobamérlegeken át a hőmérséklet- és páratartalom-szenzorokig. Az összes termékük integrálható a Mi Home alkalmazásba, és a felhasználók harmadik féltől származó eszközöket is csatlakoztathatnak hozzájuk.
 	
-	Nagy előnye a Xiaomi okos otthon termékeknek az, hogy viszonylag olcsóbb a konkurenciától, és fel is használható például a Google Home, és az Amazon Alexa Smart Home rendszeren belül is, és használata felettébb felhasználó barát.
+	Nagy előnye a Xiaomi okos otthon termékeknek az, hogy viszonylag olcsóbb a konkurens termékektől, és fel is használható például a Google Home, és az Amazon Alexa Smart Home rendszeren belül is, és használata felettébb felhasználó barát.
 	
-	Kisebb hátránya lehet neki az, hogy ezeket az eszközöket nem lehet asztali alkalmazáson keresztül irányítani, csak is az Androidos és iOS-es alkalmazáson keresztül, vagy esetleg a Google Home vagy Alexa Smart Home-on belül. Amazon Alexával a párosítás mostanában sajnos nehézkesebb, mivel valamilyen oknál fogva nagy százalékban nem tud csatlakozni valami hibánál fogva. Még olyan is megesik, hogy nem minden eszköz érhető el például a Google Home felületen, ilyen lehet példának a biztonsági kamerájuk, ami csak a saját alkalmazásukon érhető el. És mint az előző kettő rendszernél, ez sem használható magyar nyelven.
+	Kisebb hátránya lehet neki az, hogy ezeket az eszközöket nem lehet asztali alkalmazáson keresztül irányítani, csak is az Androidos és iOS-es alkalmazáson keresztül, vagy esetleg a Google Home vagy Alexa Smart Home-on belül. Amazon Alexával a párosítás mostanában sajnos nehézkesebb, mivel valamilyen oknál fogva nagy százalékban nem tud csatlakozni valami hibánál fogva. Még olyan is megesik, hogy nem minden eszköz érhető el például a Google Home felületen, ilyen lehet példának a biztonsági kamerájuk, ami csak a saját alkalmazásukon érhető el. És mint az előző kettő rendszernél, ez sem használható még magyar nyelven.
 	
 	\section{Nyílt forráskódú rendszerek}
 	\subsection{Mit is az, hogy open source?}
@@ -148,7 +152,7 @@
 	\subsection{Raspberry Pi 4B}
 	A projektnek szíve-lelke egy bankkártya méretű mini számítógép, ami szolgáltatja a vezeték nélküli internetet az otthoni eszközök számára, ezzel megvalósítva a később említett programozható elektronikáknak is a kommunikációt.
 	
-	A Raspberry-n dolgozódnak fel az adatok, és ez által szolgáltatott a webalkalmazás is. Felettébb sokoldalú a használata, és előszeretettel van használva okos otthon projektek megvalósításában is, például hogy ha Home Assistant-el, vagy OpenHAB-bal szeretnénk azt megvalósítani.
+	A Raspberry-n dolgozódnak fel az adatok, és ez általa szolgáltatott a webalkalmazás is. Felettébb sokoldalú a használata, és előszeretettel van használva okos otthon projektek megvalósításában is, például hogy ha Home Assistant-el, vagy OpenHAB-bal szeretnénk azt megvalósítani.
 	
 	Eben Upton 2012-ben hozta létre az első ilyen kis számítógépet, a Raspberry Pi 1 Model B-t. Raspberry magyarul azt jelenti, hogy málna mivel, ebben az időben többen is hoztak létre elektronikai termékeket gyümölcs nevekkel felruházva: legyen az Apple (alma), Acorn (makk), Apricot (sárgabarack).
 	
@@ -195,7 +199,7 @@
 	
 	\subsection{DHT22 - hőmérséklet és páratartalom szenzor}
 	
-	Az DHT22 érzékelő egy olyan eszköz, amely méri a levegő hőmérsékletét és a relatív  páratartalmát. Az összegyűjtött adatokat fejlett digitális technológiával dolgozza fel és továbbítja, ami megbízható és stabil működést biztosít. Minden érzékelőt gondosan kalibrálnak egy speciális kamrában annak érdekében, hogy pontos eredményeket kapjunk, és a kalibrációs információk a készülék memóriájában tárolódnak. Az DHT22 kis mérete, alacsony energiafogyasztása és hosszú adatátviteli távolsága miatt széles körben használható különböző alkalmazásokban.\cite{dht22}
+	Az DHT22 érzékelő egy olyan eszköz, amely méri a levegő hőmérsékletét és a relatív  páratartalmát. Az összegyűjtött adatokat feldolgozza és továbbítja. A DHT22 kis mérete, alacsony energiafogyasztása miatt széles körben használható különböző alkalmazásokban.\cite{dht22}
 	
 	Ebben a rendszerben úgy van alkalmazva, hogy egy ESP-WROOM-32-höz van kapcsolva, és ez 10 másodpercenként elküldi az adatokat a webalkalmazásnak, mely eltárolja az adott pillanatban mért adatokat az alkalmazott szobában, és jeleníti meg a főoldalon, mely alapján meg lehet tekinteni az elmúlt 24 órai adatokat egy grafikonon is.\footref{later-expl-fn}
 		\begin{figure}[ht!]
@@ -206,9 +210,9 @@
 	\end{figure}	
 	
 	\subsection{Mi is az RFID?}\label{what-is-rfid}
-	A Radio Frequency Identification\footnote{Magyarul: rádiófrekvenciás azonosítás} (RFID) olyan vezeték nélküli rendszer, amely két összetevőből áll: tag-ekből\footnote{Magyarul: címkékből} és olvasókból. Az olvasó olyan eszköz, amely egy vagy több antennával rendelkezik, amelyek rádióhullámokat bocsátanak ki, és jeleket fogadnak vissza az RFID-tag-ről. A tag-ek, amelyek rádióhullámokat használnak személyazonosságuk és egyéb információk közlésére a közeli olvasókkal, lehetnek passzívak vagy aktívak. A passzív RFID-címkéket az olvasó táplálja, és nincs akkumulátoruk. Az aktív RFID címkék akkumulátorral, vagy hálózatról működnek.
+	A Radio Frequency Identification\footnote{Magyarul: rádiófrekvenciás azonosítás} (RFID) olyan vezeték nélküli rendszer, amely két összetevőből áll: tag-ekből\footnote{Magyarul: címkékből} és olvasókból. Az olvasó egy olyan eszköz, amely olyan antennával rendelkezik, ami rádióhullámokat bocsát ki, és jeleket fogad vissza az RFID-tag-ről. A tag-ek lehetnek passzívak vagy aktívak. A passzív RFID-címkéket az olvasó táplálja, és nincs sajét áramforrásuk. Az aktív RFID címkék akkumulátorral, vagy hálózatról működnek.
 	
-	Az RFID-címkék számos információt tárolhatnak egy sorozatszámtól több oldalnyi adatig. Az olvasók lehetnek mozgathatóak, így kézben is hordhatók, vagy oszlopra vagy fej fölött rögzíthetők. Az olvasórendszerek egy szekrény, szoba vagy épület architektúrájába is beépíthetők.\cite{rfid-desc}
+	Az RFID-címkék számos információt tárolhatnak egy azonosítótól több oldalnyi adatig. Az olvasók lehetnek mozgathatóak, így kézben is hordhatók, vagy oszlopra vagy falra is rögzíthetőek. Egy olvasó egy szekrény, szoba vagy épület architektúrájába is beépíthető.\cite{rfid-desc}
 	
 	\subsection{RFID-RC522 - RFID olvasó}
 	Mint ahogyan \aref{what-is-rfid}~. szakaszban említve lett, ez egy RFID olvasó, amely képes RFID tag-eknek az azonosítójukat, és egyéb adatait beolvasni rádióhullámok alkalmazásával.
@@ -224,7 +228,7 @@
 	
 	\subsection{Szilárdtest relé}
 	
-	A szilárdtest relé az egy elektronikus kapcsolóeszköz. Az elektromechanikus reléhez hasonlóan képes be- vagy kikapcsolni a terhelést, ha külső vezérlőjelet adnak át a vezérlőkapcsolón. A szilárdtest relék azonban nem tartalmaznak mozgó alkatrészeket, ezért nem hangosak és hosszabb életűek az elektromechanikus reléhez képest. 
+	A szilárdtest relé az egy elektronikus kapcsolóeszköz. Az elektromechanikus reléhez hasonlóan képes be- vagy kikapcsolni az átfolyó áramot, ha külső vezérlőjelet adnak át a vezérlőn. Az elektromechanikus reléhez képest a szilárdtest relék azonban nem tartalmaznak mozgó alkatrészeket, ezért nem hangosak és hosszabb életűek. 
 	
 	A félvezetők elektromos és optikai tulajdonságait használják fel a kapcsolás végrehajtására, és teljes leválasztást biztosítanak a vezérlőáramkör és a terhelési áramkör között.\cite{solid-state-relay}
 	
@@ -242,58 +246,62 @@
 	%----------
 	\section{Szoftverek és Programozási nyelvek}
 	\subsection{C++ és Arduino IDE}
-	A Bjarne Stroustrup és a Bell Laboratories csapata által 1979-ben kifejlesztett C++ egy általános célú programozási nyelv, és ami lényegében a C programozási nyelv továbbfejlesztett változata. A főbb kiegészítések közé tartozott az objektumorientált programozás, és a hiba- és végrehajtás kezelés.\cite{cpp}
+	A Bjarne Stroustrup által 1979-ben lett kifejlesztve a C++, ami egy általános célú programozási nyelv, ami lényegében a C programozási nyelv továbbfejlesztett változata. A főbb kiegészítések közé tartozott az objektumorientált programozás, és a hiba- és végrehajtás kezelés.\cite{cpp}
 	
 	A mikrokontrollerek legtöbbjét C++-al szokták programozni, amihez az Arduino IDE az egyik legnépszerűbb választás, ami számos kiegészítőkkel, és mikrokontrollerek programozásához használatos funkciókkal rendelkezik, legyen ez a kód feltöltése, vagy a soros monitorra kiírt információk kiírása. Külső könyvtárak is hozzáadhatóak a különböző eszközök támogatása érdekében. 
 	
 	\subsection{HTML és CSS}
-	Hyper Text Markup Language,\footnote{Magyarul: Hiper Szöveg Leíró Nyelv} azaz HTML egy leírónyelv, amely szövegek leírására szolgál. Számos funkciója van ennek, mint a bekezdések, táblázatok, vagy képek beszúrása. Ezt legtöbbnyire weboldalak elkészítésénél használják. Mezőket ,,<>''-en belül határozzuk meg és lezárni ehhez hasonlóan ,,</>''-el kell. Mindezt annak megfelelően kell párosítani, hogy mit is írunk: legyez ez például egy bekezdés, ami ,,<p>\footnote{azért ,,p'' a bekezdés, mert angolul ez a szó úgy van, hogy paragraph} </p>'' aminek a két tag közé kell beírni a szöveget.
+	A HTML\footnote{Azaz Hyper Text Markup Language ami magyarul Hiper Szöveg Leíró Nyelv}  egy leírónyelv, amely szövegek leírására és megjelenítésére szolgál. Számos funkciója van ennek, mint a bekezdések, táblázatok, vagy képek beszúrása. Ezt legtöbbnyire weboldalak elkészítésénél használják. Mezőket ,,<>''-en belül határozzuk meg és lezárni ehhez hasonlóan ,,</>''-el kell. Mindezt annak megfelelően kell párosítani, hogy mit is írunk: legyez ez például egy bekezdés, ami ,,<p>\footnote{azért ,,p'' a bekezdés, mert angolul ez a szó úgy van, hogy paragraph} </p>'' aminek a két tag közé kell beírni a szöveget.
 	
 	Mindez kevés arra, hogy a szöveg kinézetét változtassuk, ezért is társítják melléje a CSS-t, azaz Cascading Style Sheet-et\footnote{Magyarul: Kaszkádolt Stílus Lap}, ami HTML vagy XML nyelvek által meghatározott megjelenés formázására szolgál. Ezeket a stílus leírásokat ,,<style></style>'' tag-ek közé szoktuk leírni. Megvan ennek is a sajátos meghatározási módja, hogy mit- és hogyan alkalmazunk.
 	
 	A webalkalmazásnál máshogyan állítom be a kinézetet, amit \aref{tailwind} részen említek, hogy hogyan is működik a Tailwind.
 	
 	\subsection{PHP}
-	A PHP, azaz PHP: Hypertext Preprocessor\footnote{Magyarul: PHP: hiperszöveg előfeldolgozó} egy általános felhasználású szkriptnyelv, és fordító, amely szabadon elérhető és széles körben használt webfejlesztésnél. A nyelvet elsősorban szerveroldali szkriptek készítésére használják, bár használható parancssori szkriptekre is, és korlátozott mértékben alkalmazásokra.\cite{php}
+	A PHP \footnote{PHP: Hypertext Preprocessor, magyarul: PHP: hiperszöveg előfeldolgozó} egy általános felhasználású szkriptnyelv, és fordító, amely szabadon elérhető és széles körben használt webfejlesztés során. A nyelvet elsősorban szerveroldali szkriptek készítésére használják, bár használható parancssori szkriptekre is, és korlátozott mértékben alkalmazásokra.\cite{php}
 	
 	C programozási nyelv jellegű a szintaxisa, és rendkívül engedékeny programozási nyelv. Amikor PHP-ban akarunk valamit írni, akkor azt .php-re végződő fájlban írjuk, aminek a belső tartalma ,,<?php''-vel kezdődik, és ,,?>''-vel végződik. Ezek között írható le a kódunk. Legtöbb esetben HTML-el van társítva.
 	
 	\subsection{JavaScript}
-	JavaScript egy objektum orientált programozási nyelv, elsősorban interaktív elemek létrehozására egy weboldalon és alkalmazásokon. Kezdetekben ez csak böngészőkön és weboldalakon volt használva, azonban ez átterjedt sok más környezetre és használati területre.
+	A JavaScript az egy objektum orientált programozási nyelv, ami elsősorban interaktív elemek létrehozására van használva weboldalakon vagy alkalmazásokon, azonban ez átterjedt sok más környezetre és használati területre is.
 	
-	A JavaScript előnyeihez tartoznak, hogy reszponzív és interaktív elemeket tudunk létrehozni, a megtanulása és futtatása felettébb egyszerű, és rendkívül híres és gyakran használt programozási nyelv.\cite{javascript}
+	A JavaScript megtanulása és futtatása felettébb egyszerű, és rendkívül híres és gyakran használt programozási nyelv.\cite{javascript}
 	
 	A webalkalmazásomban is a felületen sok helyen JavaScript-et, azon belül is a jQuery-t használom funkciók kezelésére, legyen az például egy lámpa felkapcsolásának kezdeményezése.\footref{later-expl-fn}
 	
 	\subsection{jQuery}
-	A jQuery egy gyors, kisméretű és funkciókban gazdag JavaScript könyvtár. Sokkal egyszerűbbé teszi az olyan dolgokat, mint a HTML-dokumentumok bejárása és kezelése, az eseménykezelés, és az animáció egy könnyen használható API-val, amely számos böngészőben működik. A sokoldalúság és a bővíthetőség kombinációjával a jQuery emberek millióinak JavaScript-írási módját változtatta meg. \cite{jquery}
+	A jQuery az egy ingyenes és nyílt forráskódú, gyors, kisméretű és funkciókban gazdag JavaScript könyvtár. Sokkal egyszerűbbé teszi az olyan dolgokat, mint a HTML elemek elérése és kezelése, az eseménykezelés, és az animáció egy könnyen használható API-val, amely számos böngészőben működik. A sokoldalúság és a bővíthetőség kombinációjával a jQuery emberek millióinak JavaScript-írási módját változtatta meg. \cite{jquery}
 	
 	\subsection{Chart.js}
 	Chart.js egy népszerű, nyílt forráskódú JavaScript könyvtár, amely lehetővé teszi a fejlesztők számára, hogy könnyen létrehozzanak reszponzív és testre szabható diagramokat vagy grafikonokat a weben. Többféle diagram típust támogat.
 	
-	A könyvtár a HTML5-ös vászonra épül, amely lehetővé teszi a gördülékeny animációkat és az interaktivitást. A Chart.js egyszerű és intuitív API-t kínál, amely lehetővé teszi a fejlesztők számára a diagramok egyszerű beállítását és stílusának testreszabását. Több beépített testreszabási lehetőséget is biztosít, mint például a diagramszínek, címkék, jelmagyarázatok, és eszköztipp.\cite{chartJS}
+	A könyvtár a HTML5-re épül, amely lehetővé teszi a gördülékeny animációkat és az interaktivitást. A Chart.js egy egyszerű API-t kínál, amely lehetővé teszi a fejlesztők számára a diagramok egyszerű beállítását és stílusának testreszabását. Több beépített testreszabási lehetőséget is biztosít, mint például a diagramszínek, címkék, és jelmagyarázatok.\cite{chartJS}
 	
 	Chart.js nagy előnye, hogy a hivatalos oldalukon részletesen le van dokumentálva, hogy hogyan kell telepíteni, és mit hogyan is lehet használni, példákon keresztül.
 	
 	A Chart.js a egy adott szobában lévő hőmérséklet és páratartalom szenzor adatok grafikonon való megjelenítésére volt használva a weboldalon.
 	
 	\subsection{Tailwind CSS}\label{tailwind}
-	A Tailwind CSS egy népszerű CSS keretrendszer, amely előre definiált osztályokat biztosít a webalkalmazások stílusának egyszerűsítéséhez és optimalizálásához. A keretrendszer funkcionális megközelítést alkalmaz a CSS stílusok alkalmazásában, amelyek osztályok formájában vannak meghatározva, és leírják a kívánt vizuális hatást, ahelyett, hogy egyedi CSS stílusokat írnának az egyes elemekre.
+	A Tailwind CSS egy népszerű CSS keretrendszer, amely előre definiált osztályokat biztosít a webalkalmazások stílusának egyszerűsítéséhez és optimalizálásához. Ezek olyan osztályok formájában vannak meghatározva, amik leírják a kívánt vizuális hatást, ahelyett, hogy egyedi CSS stílusokat írnának az egyes elemekre.\footnote{Mindezt build-elés, azaz felépítés idejében átalakítja CSS kóddá, és a felesleges elemeket kihagyja.}
 	
 	Például egy bekezdéshez így tudjuk azt megadni azt, hogy a szövege jobbra zárt és félkövér legyen: \emph{<p \textbf{class="text-right font-bold"}\footnote{text-right, azaz szöveg-jobb, font-bold, azaz szöveg-félkövér}> ez egy bekezdés </p>}
 	
-	A Tailwind stílus alkalmazása lehetővé teszi a fejlesztők számára a gyors, összehangolt és egységes megjelenések létrehozását, miközben javítja a kód alakíthatóságát és skálázhatóságát, azonban ezzel rontva a HTML fájl átláthatóságát. Széles választékban kínál előre elkészített osztályokat a közös UI\footnote{User Inerface: azaz Felhasználói Felület} komponensekhez, mint például gombok, űrlapok, grid rendszerek és tipográfiák, valamint a bonyolultabb elrendezésekhez és pozicionálási feladatokhoz is. Fejlesztést pedig hivatalos dokumentációval segítik, mivel mindenre van nekik példa és leírás.\cite{tailwind-docs}
+	A Tailwind stílus alkalmazása lehetővé teszi a fejlesztők számára a gyors, összehangolt és egységes felület létrehozását, miközben javítja a kinézet gyors alakíthatóságát és skálázhatóságát, azonban ezzel rontva a HTML fájl átláthatóságát.
 	
-	Az egyik fő előnye a Tailwindnek a rugalmasság és testreszabhatóság. Konfigurációs fájlt biztosít a fejlesztőknek, amely lehetővé teszi a beépített osztályok testreszabását és saját egyedi osztályok létrehozását az alkalmazás egészében való használatra.
+	Széles választékban kínál előre elkészített osztályokat a közös UI\footnote{User Inerface: azaz Felhasználói Felület} komponensekhez egy konfigurációs fájlban, mint például gombok, űrlapok, grid rendszerek és tipográfiák, valamint a bonyolultabb elrendezésekhez és pozicionálási feladatokhoz is. Ezzel a konfigurációs fájlal biztosítja a fejlesztőknek, hogy a beépített osztályokat testre szabhassák és, hogy saját egyedi osztályokat is létre hozhassanak. 
+	
+	Fejlesztést pedig hivatalos dokumentációval segítik, mivel mindenre van nekik példa és leírás.\cite{tailwind-docs}
+	
+	
 	\subsection{dbDiagram.io}
 	A dbdiagram.io egy webes eszköz, amely lehetővé teszi a felhasználók számára az adatbázis tervek létrehozását egy letisztult vizuális felületen keresztül. 
 	
-	Az eszköz támogatja különböző adatbázis rendszereket, mint például a MySQL-t, a PostgreSQL-t és a MongoDB-t. Szintén hasznos funkciókat kínál, mint például automatikus SQL kódgenerálás, és a diagramok importálása vagy exportálása különböző formátumokban.\cite{dbdiagram-io}
+	Az eszköz támogatja különböző adatbázis rendszereket, mint például a MySQL. Hasznos funkciókat kínál, mint például az automatikus SQL kódgenerálás, és a diagramok importálása vagy exportálása különböző formátumokba.\cite{dbdiagram-io}
 	
 	Szakdolgozatom során ez volt használva arra, hogy elkészítsem az adatbázis tervét, és majd \aref{database} szakaszon lesz róla egy mellékelt kép is, hogy hogyan is lett mindez kialakítva.
 	
 	\subsection{Font Awesome}
-	A Font Awesome egy elég népszerű nyílt forráskódú ikon könyvtár, amely skálázható vektor ikonokat kínál\footnote{Ez azt jelenti, hogy egy algoritmus segítségével mindig ugyan olyan minőségű lesz a kép, bármekkorára is nagyítjuk.}, amelyek testreszabhatóak és stílusosak CSS segítségével. A könyvtár több ezer ikont tartalmaz, amelyek széles körű kategóriákat fednek le, például webalkalmazásokat, márka- és közösségi média ikonokat. Lehetőség van fizetős és ingyenes ikonok használatára is.
+	A Font Awesome egy népszerű nyílt forráskódú ikon könyvtár, amely skálázható vektor ikonokat\footnote{Ez azt jelenti, hogy egy algoritmus segítségével mindig ugyan olyan minőségű lesz a kép, bármekkorára is nagyítjuk.}kínál, amelyek testre szabhatóak az oldalukon, és CSS alkalmazásával is. A könyvtár több ezer ikont tartalmaz, amik széles körű kategóriákat fednek le, például márka vagy közösségi média ikonokat. Lehetőség van fizetős és ingyenes ikonok használatára is.
 	
 	A Font Awesome egy rugalmas és könnyen használható megoldást kínál az ikonok hozzáadásához weboldalakhoz vagy alkalmazásokhoz, lehetővé téve a fejlesztőknek, hogy feldobják projektjeik kinézetét. A könyvtár folyamatosan frissül új ikonokkal és funkciókkal.\cite{fontawesome}\\
 	\textbf{Az általam használt ikonok, a rendszerben:}
@@ -330,15 +338,13 @@
 			
 	\end{itemize}
 	\subsection{MySQL}
-	A MySQL egy nyílt forráskódú adatbázis-kezelő rendszer, amelyet széles körben használnak webalkalmazásokhoz. Lehetővé teszi a felhasználók számára, hogy relációs adatbázisokat hozzanak létre, kezeljenek és karbantartsanak az SQL használatával. 
+	A MySQL egy nyílt forráskódú adatbázis-kezelő rendszer, amelyet széles körben használnak webalkalmazásokhoz. Lehetővé teszi a felhasználók számára, hogy relációs adatbázisokat hozzanak létre, kezeljenek és tartsanak karban. Több platformon is működik és sok programozási nyelvvel is kompatibilis.
 	
-	A MySQL megbízhatóságáról, és hatékonyságáról ismert, és sok nagy webhely és alkalmazás használja. Több platformmal és programozási nyelvvel is kompatibilis, ami rugalmas választást kínál az adatkezeléshez.
-	
-	A XAMPP egy webszerver szoftver, amely tartalmazza a MySQL adatbázis-kezelő rendszert, és a PHP-t is, és telepíthető a helyi számítógépre webfejlesztéshez és teszteléshez, mint ahogyan én is alkalmaztam lokális fejlesztés során.
+	A XAMPP egy webszerver szoftver, amely tartalmazza a MySQL adatbázis-kezelő rendszert, és a PHP-t is, a,o telepíthető a helyi számítógépre webfejlesztéshez és teszteléshez, mint ahogyan én is alkalmaztam lokális fejlesztés során.
 	\subsection{PlantUML}
 	A PlantUML egy ingyenes és nyílt forráskódú eszköz, amely egyszerű szövegszintaxist használ a különböző formátumokban létrehozott UML\footnote{Unified Modeling Language, magyarul Egységesített Modellező Nyelv} diagramok készítéséhez. Többféle diagramtípus támogatása mellett használható szoftverfejlesztéshez és rendszertervezéshez.
 
-	Ennek segítségével rajzoltam le azt, hogy NodeMCU és a Raspberry Pi hogyan is kommunikál a rendszeren belül.\ref{later-expl-fn}
+	Ennek segítségével rajzoltam le azt, hogy NodeMCU és a Raspberry Pi hogyan is kommunikál a rendszeren belül.\footref{later-expl-fn}
 	\subsection{Fritzing}
 	A Fritzing az egy nyílt forráskódú szoftver, aminek a segítségével elektronikai eszközök kötési és sematikus rajzait, de akár szimulációt is lehet benne készíteni.
 	
