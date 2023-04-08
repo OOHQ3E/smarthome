@@ -14,14 +14,12 @@ class RoomController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
         $rooms = Room::all();
         $esps = Esp::all();
-
-        //dd($esps,$rooms);
 
         return view('index',[
             'rooms' => $rooms,

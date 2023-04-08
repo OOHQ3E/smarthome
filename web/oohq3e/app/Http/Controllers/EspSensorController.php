@@ -16,10 +16,10 @@ class EspSensorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($room)
+    public function index(Room $room)
     {
-        $roomData = Room::find($room);
-        $esps = DB::table('esp')->where("room_id","=", $room)->where("type","=","Sensor")->first();
+        //$roomData = Room::find($room);
+        $esps = DB::table('esp')->where("room_id","=", $room->id)->where("type","=","Sensor")->first();
 
         if ($esps == null){
             return app(RoomController::class)->index();
@@ -32,7 +32,7 @@ class EspSensorController extends Controller
                 DB::raw("DAY(created_at) as day"),
                 DB::raw("HOUR(created_at) as hour"),
                 DB::raw("AVG(temperature) as avgTemp")
-            )->where("room_id",$room)->groupBy(DB::raw("1,2,3,4"))
+            )->where("room_id",$room->id)->groupBy(DB::raw("1,2,3,4"))
                 ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
                 ->limit(24)
                 ->pluck('avgTemp','hour')->reverse();
@@ -43,7 +43,7 @@ class EspSensorController extends Controller
                 DB::raw("DAY(created_at) as day"),
                 DB::raw("HOUR(created_at) as hour"),
                 DB::raw("AVG(humidity) as avgHum")
-            ) ->where("room_id",$room)->groupBy(DB::raw("1,2,3,4"))
+            ) ->where("room_id",$room->id)->groupBy(DB::raw("1,2,3,4"))
                 ->orderBy('year','desc')->orderBy('month','desc')->orderBy('day','desc')->orderBy('hour','desc')
                 ->limit(24)
                 ->pluck('avgHum','hour')->reverse();
@@ -54,7 +54,7 @@ class EspSensorController extends Controller
             $humlabels = $humData->keys();
             $humData = $humData->values();
 
-            return view('room.chart',compact('templabels', 'tempData','humlabels','humData','roomData', 'esps'));
+            return view('room.chart',compact('templabels', 'tempData','humlabels','humData','room', 'esps'));
         }
     }
 

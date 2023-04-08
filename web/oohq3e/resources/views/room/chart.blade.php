@@ -9,7 +9,7 @@
 <html>
 @if(!empty($esps) )
     <head>
-        <title>{{$roomData->name}}'s Sensor data chart</title>
+        <title>{{$room->name}}'s Sensor data chart</title>
     </head>
 
     <body>
@@ -20,7 +20,7 @@
 
         <div class="my-4 text-center w-11/12 m-auto">
             <span class="text-3xl text-white font-sans py-2 uppercase font-light">
-                {{$roomData->name}}'s temperature and humidity chart
+                {{$room->name}}'s temperature and humidity chart
             </span>
         </div>
 
@@ -128,6 +128,6 @@
 
     </script>
 @else
-    <h2>FUCK</h2>
+    <h2>No Sensor Data available to show!</h2>
 @endif
 </html>

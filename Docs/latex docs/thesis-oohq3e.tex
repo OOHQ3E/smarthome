@@ -10,6 +10,7 @@
 ]{thesis-ekf}
 \usepackage[T1]{fontenc}
 \usepackage{hulipsum}
+\usepackage{listings}
 \PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
 \usepackage[magyar]{babel}
 \usepackage{mathtools,amssymb,amsthm,pdfpages}
@@ -20,6 +21,25 @@
 \newtheorem{definicio}[tetel]{Definíció}
 \theoremstyle{remark}
 \newtheorem{megjegyzes}[tetel]{Megjegyzés}
+\renewcommand{\lstlistingname}{Programkód}
+\lstset{
+	inputencoding=utf8/latin2,
+	language=PHP,
+	basicstyle=\footnotesize,
+	numbers=left,
+	breaklines,
+	postbreak=\hbox{$\color{red}\hookrightarrow\ $},
+	xleftmargin=1cm,
+	xrightmargin=1cm,
+	backgroundcolor=\color{gray!10},
+	frame=tlbr,
+	morekeywords={protected,class,extends,namespace,public,use,down,up,increments,integer,string,tinyInteger,unsigned,dropIfExists,create},
+	morecomment=[l][\color{green!30!black}]{\/\/},
+	moredelim=*[s][\color{purple}]{\$}{\ },
+	keywordstyle=\bfseries\color{orange},
+	stringstyle=\bfseries\color{teal},
+	showstringspaces=false
+}
 
 
 \begin{document}
@@ -192,7 +212,7 @@
 	
 	\begin{figure}[ht!]
 		\centering
-		\includegraphics[width=16cm]{./img/ESP32 CAM schematics}
+		\includegraphics[width=1\textwidth]{./src/schematics/ESP32 CAM schematics}
 		\caption{\Az{\textsc{ESP32-CAM}} bekötése}
 		\label{esp32-cam-schematics}
 	\end{figure}	
@@ -204,7 +224,7 @@
 	Ebben a rendszerben úgy van alkalmazva, hogy egy ESP-WROOM-32-höz van kapcsolva, és ez 10 másodpercenként elküldi az adatokat a webalkalmazásnak, mely eltárolja az adott pillanatban mért adatokat az alkalmazott szobában, és jeleníti meg a főoldalon, mely alapján meg lehet tekinteni az elmúlt 24 órai adatokat egy grafikonon is.\footref{later-expl-fn}
 		\begin{figure}[ht!]
 		\centering
-		\includegraphics[width=16cm]{./img/temperature and humidity sensor_bb}
+		\includegraphics[width=1\textwidth]{./src/schematics/temperature and humidity sensor_bb}
 		\caption{\Az{\textsc{ESP-WROOM-32}} bekötése DHT22 hőmérséklet és páratartalom szenzorral}
 		\label{dht22-schematics}
 	\end{figure}	
@@ -221,7 +241,7 @@
 	
 	\begin{figure}[ht!]
 		\centering
-		\includegraphics[width=16cm]{./img/RFID reader schematics_bb}
+		\includegraphics[width=1\textwidth]{./src/schematics/RFID reader schematics_bb}
 		\caption{\Az{\textsc{ESP-WROOM-32}} bekötése, RFID-RC522 olvasóval és egy RGB LED-del}
 		\label{rfid-schematics}
 	\end{figure}	
@@ -238,7 +258,7 @@
 	
 	\begin{figure}[ht!]
 		\centering
-		\includegraphics[width=16cm]{./img/ESP32 toggle schematics_bb}
+		\includegraphics[width=1\textwidth]{./src/schematics/ESP32 toggle schematics_bb}
 		\caption{\Az{\textsc{ESP-WROOM-32}} bekötése szolidtest-relével és egy izzóval}
 		\label{toggle-schematics}
 	\end{figure}	
@@ -306,34 +326,34 @@
 	A Font Awesome egy rugalmas és könnyen használható megoldást kínál az ikonok hozzáadásához weboldalakhoz vagy alkalmazásokhoz, lehetővé téve a fejlesztőknek, hogy feldobják projektjeik kinézetét. A könyvtár folyamatosan frissül új ikonokkal és funkciókkal.\cite{fontawesome}\\
 	\textbf{Az általam használt ikonok, a rendszerben:}
 	\begin{itemize}
-		\item \includegraphics[width=0.5cm]{./img/arrow-left-solid}
+		\item \includegraphics[width=0.5cm]{./src/icons/arrow-left-solid}
 		 	\emph{,,<i class="fa-solid fa-arrow-left"></i>''}
 		
-		\item \includegraphics[width=0.5cm]{./img/clock-rotate-left-solid} 
+		\item \includegraphics[width=0.5cm]{./src/icons/clock-rotate-left-solid} 
 			\emph{,,<i class="fa-solid fa-clock-rotate-left"></i>''}
 			
-		\item \includegraphics[width=0.5cm]{./img/plus-solid} 
+		\item \includegraphics[width=0.5cm]{./src/icons/plus-solid} 
 			\emph{,,<i class="fa-solid fa-plus"></i>''}
 		
-		\item \includegraphics[width=0.5cm]{./img/pen-to-square-regular}
+		\item \includegraphics[width=0.5cm]{./src/icons/pen-to-square-regular}
 			\emph{,,<i class="fa-regular fa-pen-to-square"></i>''}
 			
-		\item \includegraphics[width=0.5cm]{./img/trash-can-solid}
+		\item \includegraphics[width=0.5cm]{./src/icons/trash-can-solid}
 			\emph{,,<i class="fa-solid fa-trash-can"></i>''}
 			
-		\item \includegraphics[width=0.5cm]{./img/arrow-rotate-right-solid}
+		\item \includegraphics[width=0.5cm]{./src/icons/arrow-rotate-right-solid}
 			\emph{,,<i class="fa-solid fa-rotate-right"></i>''}
 		
-		\item \includegraphics[width=0.5cm]{./img/ban-solid}
+		\item \includegraphics[width=0.5cm]{./src/icons/ban-solid}
 		 	\emph{,,<i class="fa-solid fa-ban"></i>''}
 			
-		\item \includegraphics[width=0.5cm]{./img/gear-solid}
+		\item \includegraphics[width=0.5cm]{./src/icons/gear-solid}
 			\emph{,,<i class="fa-solid fa-gear"></i>''}
 			
-		\item \includegraphics[width=0.5cm]{./img/key-solid}
+		\item \includegraphics[width=0.5cm]{./src/icons/key-solid}
 			\emph{,,<i class="fa-solid fa-key"></i>''}
 			
-		\item \includegraphics[width=0.5cm]{./img/id-card-clip-solid}
+		\item \includegraphics[width=0.5cm]{./src/icons/id-card-clip-solid}
 			\emph{,,<i class="fa-solid fa-id-card-clip"></i>''}
 			
 	\end{itemize}
@@ -368,19 +388,193 @@
 	Éppen ezért is esett a választásom a projekt tervezési fázisában a Laravel keretrendszerre. Ez a webalkalmazás még Laravel 9-nél indult el.
 	
 	\chapter{A web alkalmazás felépítése és működése}
-	\section{Raspberry PI4B alkalmazása, mint Wi-Fi, és hub}
+	\section{Raspberry PI 4B alkalmazása, mint Wi-Fi, és hub}
+	\hulipsum[1-2]
 	\section{Adatbázis felépítése}\label{database}
+	
+	Miután meg volt ez ötlet és átestem pár tervezési fázison, hogy hogyan is álljon össze a rendszer, jöhetett az egyik legfontosabb feladat: hogy hogyan is álljon össze mindennek az adatbázisa. Ezen belül is az, hogy milyen kapcsolatok és táblák szerepeljenek mindebben.
+	
+	Mindegyik táblában van plusz két -- \emph{a Laravel által automatikus létrehozott} -- mező: a \emph{,,created\_at''} azaz létrehozás dátuma, és az \emph{,,updated\_at''}, ami az utolsó módosítás dátuma.
+	
+	A táblázatban az idegen kulcsok azért is lettek így kialakítva, hogy a későbbiekben könnyebben lehessen kezelni, és azért is, hogy, ha például egy szobát töröl a felhasználó, amihez tartozik különböző adat akkor azt is törölje vele együtt, ezt nevezzük kaszkádolt törlésnek.
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/database}
+		\caption{Az rendszer adatbázisa, amit dbDiagram.io segítségével készítettem el}
+		\label{database-fig}
+	\end{figure}	
+
+	\subsection*{room, azaz szoba}
+	Mivel egy otthon szobákból áll, ezért létre hoztam ehhez egy táblát, amikhez tudunk csatolni más adattáblát is. Szobáknak van egy olyan mezője, amit a felhasználó adhat meg, az pedig a \emph{,,name''}, azaz a szoba neve. Egy szobához tartozhat bármennyi ESP-WROOM-32\footnote{Későbbiekben: ESP}, azaz eszköz, vagy szobához tartozó szenzoros adat.
+	
+	\subsection*{esp\_sensor\_data, azaz ESP szenzoros adatok}
+	Amikor a szobához hozzáadunk egy olyan ESP-t, ami szenzoros adatokat továbbít, akkor az ebben a táblában lesz letárolva. Ez olyan mezőket tartalmaz, mint a \emph{,,room\_id''}, azaz az adathoz hozzá tartozó szoba id-je, \emph{,,humidity''}, azaz relatív páratartalom, és \emph{,,temperature''}, azaz hőmérséklet.
+	
+	\subsection*{esp}
+	A rendszerben ESP-ket használok arra, hogy különböző eszközként működjenek, ezért is lett felvéve külön táblaként. Egy ESP-nek olyan mezői vannak, mint a \emph{,,room\_id''}, azaz az a szoba id-je, amelyikhez tartozik, \emph{,,type''}, azaz a szenzornak a típusa, ami az alábbi lehet a jelenlegi rendszerben: szenzor, kapcsoló, RFID olvasó, vagy kamera.  \emph{,,ip\_End''} az az IP cím utolsó része\footnote{Ez majd a későbbiekben több értelmet fog nyerni \aref{csatlakozas-a-webszerverre}.~szakasz során}, és a \emph{,,name''}, azaz az ESP neve.
+	
+	\subsection*{rfid\_tag, azaz RFID címke}
+	Mivel egy ESP használható RFID kártyaolvasóként, ezért nyilván kell tartani azt is, hogy mely címkék lettek eddig felvéve a rendszerbe. Egy RFID címke az alábbi mezőket tartalmazza: \emph{,,name''}, azaz egy név, \emph{,,uid''}, ami az RFID címének az az adata, amit az olvasó kap, és egy \emph{,,esp\_id''}, azaz annak az olvasónak az azonosítója, amihez tartozik egy címke.
+	
+	\subsection*{esp\_use\_data, azaz RFID címkéknek az előzmény adatai}
+	A rendszerben úgy lettek alkalmazva az RFID-k, hogy amikor benne van a rendszerben egy adott címke, és az használatra kerül, akkor annak a időpontja rögzítésre kerül. Ennek az alábbi mezői vannak: 
+	
+	\section{Laravel működése}
+	
+	\subsection{Modellek és migrációk}
+	Mivel a Laravel az adatbázis adatokat Model\footnote{Magyarul: modell}-ekkel és Migration\footnote{Magyarul: migrációk}-ök segítségével dolgozik, ezért létre kellett hozni ezeket. 
+	Model az, amit a vezérlőben alkalmazok, a Migration pedig az adatbázis létrehozásában segít.\cite{laravel-model}
+	
+	Ahhoz hogy a Laravel backend-jében könnyen tudjam kezelni az adatbázisan lévő adatokat, azért létre kell hozni egy modellt, és a hozzá tartozó migrációt amit a terminálban az adott paranccsal lehet létrehozni: \emph{,,php artisan make:\textbf{model} \textbf{ModellNeve} \--\--migration''}, ezzel létre jön a migráció és a modell saját fájlja.
+	\lstinputlisting[caption=Esp.php kódja - ami az ESP modellje]{./src/codes/model.php}
+	\lstinputlisting[caption=Az ESP migrációs kódja]{./src/codes/migration.php}
+	Hogy ha lefutattjuk ezek után azt a terminálban, hogy \emph{,,php artisan migrate:fresh''}, akkor ez alapján a .env fájlon belül megadott adatbázisban létrehozza a migrációkban leírt táblákat.
+	
+	\subsection{Route-olás}
+	A Route\footnote{Magyarul: útvonal} azt adja meg, hogy milyen útvonalon mit tegyen a vezérlő. Erre egy példát úgy tudnék mondani, hogy ha a böngészőbe beírjuk a címét egy oldalnak utána /-jellel hozzáírunk valamit, akkor az azt az útvonalat követné.
+	
+	Négy féle HTTP kérés típus van az ilyen útvonalaknál: \textbf{get}, \textbf{post}, \textbf{put}, és \textbf{delete}.\\
+	A \emph{,,\textbf{get}''} általában akkor használatos, amikor szeretnénk egy (vagy több) rekordot visszakapni, a \emph{,,\textbf{post}''}-ot általában akkor szoktuk használni, amikor valamilyen rekordot szeretnénk létrehozni, a \emph{,,\textbf{put}''}-ot általában egy létező rekord módosítás kérésnél szokás\footnote{De ez helyettesíthető egyszerűen \emph{,,\textbf{post}''}-tal is} és a \emph{,,\textbf{delete}''}-et amikor rekord törlést szeretnénk kérni.
+	
+	Például a projektben a \emph{,,http://192.168.200.1\textbf{/settings\footnote{Magyarul beállítások}}''} megmondja a vezérlőnek, hogy ilyenkor irányítsa át a felhasználót a beállítások oldalra.
+	
+	A \emph{,,web.php''}-ban a beállítás oldalra való irányítás így néz ki:
+	\\
+	\includegraphics[width=1\textwidth]{./src/codes/route}
+	\\
+	Ezen a kódsoron az látszik, hogy egy \emph{,,\textbf{get}''} HTTP kérést kapunk a \emph{,,\textbf{/settings}''} útvonalon, és ezzel az \emph{,,\textbf{EspController}''} vezérlőnek az \emph{,,\textbf{index}''} függvényét hívjuk meg. A \emph{,,\textbf{->name()}''}-en pedig meg lett adva egy név, amire hivatkozva tudunk egyszerűbben akár hosszabb útvonalakat is meghívni.
+	\\
+	Hogy ha a vezérlőnek változót szeretnénk átadni, akkor azt pedig így tudjuk megadni:
+	\\
+	\includegraphics[width=1\textwidth]{./src/codes/route_with_var}
+	Ezen a kódsoron is látszik, hogy úgy kell megadni egy változót, amit a vezérlőnek adunk át, hogy \emph{,,\textbf{\{\}}''}-k közé beírjuk azt a változó nevet. Ez az útvonal azért felelős, hogy a hőmérséklet és páratartalom szenzor által mért adatoknak külön oldalát nyissa meg, a \emph{,,\textbf{room}''} pedig azt adja meg, hogy mi a szoba azonosítója. Modell nevét át lehet átadni útvonal paraméterként, hogyha azonosítót -- \emph{ezáltal egy modellt} -- szeretnénk kinyerni.
+	Itt pedig az látható, amikor a vezérlőben hogyan érjük el az ez által megadott modellt.
+	\\
+	\includegraphics[width=1\textwidth]{./src/codes/controller_func}
+	
+	\subsection{Controller}
+	A Controller, más néven vezérlő felelős a háttérben lévő folyamatok lebonyolításáért, és kezeli a felhasználói bemenetet és kapcsolatban áll a modellel és nézettel.
+	
+	Érdemes minden osztálynak külön vezérlőt készíteni, mert ezzel átláthatóbb lesz a kód. Ha már létezik egy modellünk, és ehhez szeretnénk egy vezérlőt létrehozni, akkor azt az alábbi terminálba beírt utasítással tudjuk: \emph{,,php artisan make:\textbf{controller} \textbf{ControllerNeve} \--\--model=ModelNeve''}\cite{laravel-controller}
+	
+	A vezérlőkben ezek a metódusok szoktak létrejönni, amikor legeneráljuk.
+	\begin{itemize}
+		\item \textbf{index()}: rekordok kilistázására 
+		\item \textbf{create()} rekord létrehozás form megjelenítésére 
+		\item \textbf{store(Request \$request)} új rekord eltárolására 
+		\item \textbf{show(ModelNev \$modelnev)} megadott rekord megjelenítésére 
+		\item \textbf{edit(ModelNev \$model)} megadott rekordnak a módosító form megjelenítésére
+		\item \textbf{update(Request \$request, ModelNev \$modelnev)} a megadott rekord módosítása az adatbázisban
+		\item \textbf{destroy(ModelNev \$modelnev)} adott rekord törlése az adatbázisból
+	\end{itemize}
+	Ezeken kívül más metódusokat is szabadon létrehozhatunk. Én is például ezt tettem az eszköz kapcsoláshoz, az \emph{,,EspController''}-en belül a \emph{,,Toggle(\$esp,\$status)''} metódussal. amit majd \aref{csatlakozas-a-webszerverre}.~szakaszon kifejtek.
+	\\
+	Ezen a képen pedig egy példa látható, hogy hogyan is adhatunk vissza egy adott rekordot egy adott nézetbe.
+	\\
+	\label{return-room}\includegraphics[width=1\textwidth]{./src/codes/return_view}
+	\\
+	Ezen a képen is látható, hogy azt a nézetet adja vissza, ami egy szoba módosítására való, egy adott szoba rekorddal. Amikor visszaadunk egy nézetet lehetőség van arra, hogy ne csak egy adott rekordot adjunk vissza, hanem több rekordot, vagy rekord listákat is. Arra pedig itt egy példa kód.
+	\\
+	\includegraphics[width=1\textwidth]{./src/codes/return_lists}
+	
+	Ez a \emph{,,RoomController''}-nek az \emph{index()} metódusa, ami azért felelős, hogy a főoldalon meg lehessen jeleníteni az összes szobát és eszközt. Szintén a \emph{,,Room::all();''} az összes szoba rekordot az adatbázisban egy listába gyűjti össze, ami a Laravel Eloquent\cite{laravel-eloquent} egyik tulajdonsága közé tartozik, ami egy ORM\footnote{Object-Relational Mapper, azaz Objektum-relációs leképező}, ami könnyebbé teszi az adatbázisban elérhető rekordok elérését Model-ekkel és rajtuk végrehajtható műveletekkel.
+	\subsection{Blade}
+	A Laravelnek az egyik sajátossága a ,,\emph{nezetNeve.\textbf{blade}.php}'' típusú fájloknak elnevezett nézetek, amik lehetővé  teszik azt, hogy ilyen blade utasításokat tudjuk végrehajtani. \textbf{,,\{\{\}\}''} -- ilyen dupla kapcsos zárójelek között tudunk például a nézetben megjeleníteni egy rekordot.
+	
+	Másik ilyen sajátossága a PHP utasítások megadása \textbf{@}-jel leírásával. Például egy ,,ha'' kérdés így néz ki Laravel blade utasítással: \emph{,,@if() @endif''}. 
+	
+	Pédlául \aref{return-room}.~szakaszban annál a kódnál, ahol egy szobát adunk vissza a módosítás nézetbe, és annak szobának a nevét így érhetjük el: \emph{\textbf{,,\{\{\$room->name\}\}''}}
+	
 	%----------
 	\section{Kezelő felület bemutatása és működése}
+	Az alábbi szakaszokon az kezelő felület megjelenését, és működését fogom taglalni. Igyekeztem letisztult design kialakítására. Az összes lap úgy van megoldva, hogy a lehető legtöbb képernyőfajtán megfelelően nézzen ki, azaz mindegyik oldal reszponzív. MindeztS a Tailwind CSS reszponzivitási eszközeit használva.\cite{tailwind-responsive}
 	\subsection{Főoldal}
+	A főoldal az akkor jelenik meg, hogy ha a Raspberry Pi által szolgáltatott Wi-Fi-re felcsatlakozunk, és hogy ha böngészőnek a kereső sávjába azt írjuk, hogy:\\
+	\textbf{\emph{,,192.168.200.1''}}.
+	
+	Hogy ha nincs még se szoba, se ezen belül eszköz az adatbázisba felvéve, akkor az a szöveg fogad minket, hogy \emph{,,There are no rooms added to the database!''}, ami magyarul azt jeleni, hogy \emph{,,Nincsen szoba az adatbázisba felvéve!''}.
+	
+	Hogy ha már van adat az adatbázison belül, akkor az oldal az alábbi módon néz ki:
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/index}
+		\caption{A főoldal}
+		\label{index-page}
+	\end{figure}	
+
+	Az adatok úgy jelennek meg, hogy a \emph{,,RoomController''} \emph{,,index()''} metódusából visszakapja a nézet a szobákat és az eszközöket külön listában. A Laravel Blade-nek van egy olyan utasítása, hogy \emph{,,@forelse(\$rekordok as \$rekord) @empty @endforelse''}. Ez a hármas egy olyan módosított \emph{,,@foreach''}, ami rendelkezik egy olyan utasítás résszel, (\emph{,,@empty''}) hogy mi a teendő, hogy ha a végig iterálandó lista üres.
+	Ezért is van, az hogy figyelmeztető felirat jelenik meg, hogy ha nincs szoba az adatbázisban.
+	
+	Ezen az iteráláson belül van még egy ilyen iterálás ami az eszközökön megy végig, amiben pedig egy olyan \emph{,,@if()''}, azaz ,,ha'' utasítás van, ami leelenőrzi, hogy az adott eszköz az adott szobához tartozik-e és azon belül az is, hogy milyen az eszköz típusa. Ezért van az, hogy például egy hőmérséklet és páratartalom adatokat megjelenítő panel máshogyan néz ki, mint egy eszköz kapcsolásra használatos panel.
+	\\
+	\textbf{Toggle, azaz kapcsoló panel:}
+	\\
+	Mindegyik kapcsoló típusú panelhez tartozik egy \emph{,,onClick()''} metódus ami azt nézi, hogy rá lett-e kattintva a gombra. Melléje még dinamikusan párosul egy jQuery kód, ami kiírja az oldal betöltésekor\footnote{\label{document-ready} Amit a \emph{,,\$(document).ready(function()\{...\}''} mond meg, hogy betöltött-e az oldal}, hogy csatlakozni próbál az adott ESP eszközhöz.\footnote{Ez később majd \aref{toggle} részen lesz elmagyarázva.} Ha nem sikerül választ kapni az adott ESP eszköztől, akkor átállítja a kapcsoló feliratát arra, hogy jelenleg nem elérhető, és a kattinthatósági funkciót is elveszi a gombról.
+	\\
+	\textbf{Hőmérséklet és páratartalom panel:}
+	\\
+	Mindegyik szenzor panelhez tartozik két dinamikusan hozzárendelt metódus. Az egyik legelőször is lekéri a szobához tartozó legutóbbi adatot az adatbázisból, majd a második azt végzi el, hogy 10 másodpercenként lekérje a legújabb szenzor adatot. Hogy ha sikerül ez, akkor azokat az adatokat megjeleníti, mint ahogyan azt \aref{index-page}.~képen is láthatjuk. Hogy ha nincs szenzor adat, akkor kiírja, hogy nincs jelenleg nem elérhető adat az adott szenzor által.
+	
+	Hogy ha rákattintunk a szenzor panelre, akkor átvisz minket egy másik oldalra, ahol az elmúlt 24 órában rögzített óránkénti átlagos hőmérséklet és páratartalom adatokat nézhetjük meg.
+	\\
+	\textbf{Kamera panel:}
+	A főoldalon élőben lehet látni az adott kamerának a közvetítését. Ehhez a panelhez több dolog is társul: vagy egy \emph{,,onLoad()''} metódus, ami azt nézi, hogy a kép betöltött-e, ami annyit tesz hogy a kapcsolódási kísérlet feliratot átállítja a szenzor nevére és az IP végződésére. Amikor betöltődik az oldal\footref{document-ready}, akkor a panelra kiíródik, hogy kapcsolódni próbál az adott kamerához. Ezt egy olyan \emph{,,EventListener''}, azaz esemény hallgató tartozik, ami azt nézi, hogy a kapcsolódási kísérlet sikertelen volt-e. Ilyenkor a felirat visszaállítódik arra, hogy kapcsolódni próbál, és meg is ismétli a kapcsolódást. Ezek után beállítódik az, hogy ez a kapcsolódási kísérlet 15 másodpercenként megismétlődjön. 
+	
+	Hogy ha rákattintunk a kamera képére, akkor átvisz minket egy másik oldalra, ahol nagyobban láthatjuk annak az egy kamerának a közvetítését. Ennek a jQuery logikája ugyan az, mint a főoldalon.\\
+	\textbf{Átjutás a beállításokra:}
+	Az oldalon, hogy, ha a bal felső sarokban rákattintunk a fogaskerék ikonra, akkor átjutunk a beállítások oldalra.
 	\subsection{Beállítások}
+	A beállítások oldal a főoldalon már alkalmazott módon listázza ki a szobákat és a hozzá tartozó eszközöket: egymásba ágazott \emph{,,@forelse''} utasítás-sal és egy \emph{,,@if''}, ami leellenőrzi, hogy az adott eszköz az adott szobához tartozik-e. 
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/settings}
+		\caption{Beállítások oldal}
+		\label{settings}
+	\end{figure}\\
+	Alapvetően minden szobához tartozik három gomb: \emph{,,Add Device''}, azaz Eszköz Hozzáadása, \emph{,,Modify Room''}, azaz Szoba Módosítása, és \emph{,,Delete Room''}, azaz Szoba Törlése. 
+	
+	Legelőször is, amikor hozzá szeretnénk adni egy új eszközt egy adott szobához akkor \aref{add-sensor-error}.~képhez hasonló oldal fog minket fogadni.\footnote{A piros keretben lévő hiba üzenetet kivéve-- ez csak azért van így megjelenítve, hogy bemutassam, hogy ezt így jelzi az oldal, hogy ha egy oldalhoz több mint egy szenzort szeretnénk hozzáadni.}
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/sensor-error}
+		\caption{Eszköz hozzáadása oldal, ahol egy egy szobába akartunk adni egy második szenzort is}
+		\label{add-sensor-error}
+	\end{figure}
+	
+	Itt megadhatjuk az eszköz típusát,~--~amit \aref{database}.~szakaszban leírtam, hogy milyen típusú eszközöket adhatunk a rendszerbe,~--~egy tetszőleges nevet, és az ESP szenzornak az IP-jének az utolsó tagját. Hogy ha törölni szeretnénk eddig minden mezőbe bevitt adatot, akkor a \emph{,,Reset Data''}\footnote{Azaz Adatok Visszaállítása} gombra nyomhatunk, és akkor újból üres lesz minden mező. Hogy ha meggondoltuk magunkat, és mégsem akarunk egy új eszközt hozzáadni a szobához, akkor a \emph{,,Cancel''}, azaz Mégse gomb-ra kattintva visszakerülünk a beállítások panelre. Hogy ha minden szükséges adatot beírtunk a mezőkbe, akkor az \emph{,,Add Device''}, azaz Eszköz hozzáadása gombra kattintva megkezdődik az eszköz hozzáadásának kísérlete az adatbázisba. Mindezt a vezérlőben leellenőrzök, majd ennek megfelelően viselkedik az oldal. Ha hiba van akkor azt megjeleníti, hogy ha pedig sikerül a hozzáadás, akkor pedig visszairányít a beállítások panelre, és értesít az oldal, hogy sikeres volt az eszköz hozzáadása az adott szobába.
+	
+	 A határok ezekre az adatokra kliens és vezérlő oldalon is le vannak természetesen kezelve.\\
+	\textbf{Ezek az esetek az alábbiak:} 
+	\begin{itemize}
+		\item Minden mező megadása kötelező.
+		\item Egy szobába csak egy szenzort lehet felvenni.\footnote{Ennél a hibánál azt az üzenetet kapjuk, mint ahogyan \aref{add-sensor-error}.~képen is látható}
+		\item Az eszköz neve maximum 50 karakter lehet.
+		\item Az ESP IP végződése 2 és 149 között kell hogy legyen.
+	\end{itemize}
+		
+	Minden beállítások oldalon elérhető funkció véghezvitele után értesíti a felhasználót egy feliraton, hogy mit történt: legyen az például egy új szoba hozzáadásának, módosításának, vagy törlésének a sikeressége.
+	
+	Minden eszköznek az adatai megjelennek a paneljén, mint ahogyan az \aref{settings}.~képen is látható. Ehhez társul minden eszköznek a paneljén egy módosító és egy törlés gomb. Amikor a módosításra megyünk, akkor minden adatot meg tudunk egy adott eszköznek változtatni: legyen ez az eszköz típusa, neve, IP vége, vagy az, hogy melyik szobához tartozik.
+	
+	Hogy ha törölni szeretnénk szobát vagy eszközt, akkor legelőször is megkérdezi a felhasználót az oldal egy értesítésben, hogy biztos-e abban, hogy törölni akarja az adott rekordot. Mindezt \aref{database}.~szakaszban leírom, hogy miért is nagy döntés, hogy törölne a felhasználó egy szobát vagy eszközt.
+	
+	Az eszköz módosítási oldal \aref{modify}.~képen látható, hogy hogyan is néz ki.
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/modify-sensor-in-bedroom}
+		\caption{Eszköz módosítás oldal}
+		\label{modify}
+	\end{figure}\\
+	Ezen a részen ugyan úgy le vannak kezelve az esetek, mint a hozzáadásnál is. Itt a \emph{,,Reset Data''} gomb az eredeti adatokra állítja vissza a mezőkben lévő szöveget. És még annyi különbséggel, hogy itt már kiválaszthatjuk, hogy melyik szobába is szeretnénk átállítani az adott eszközt, már hogy ha a felhasználó akarja. Ha végeztünk a módosítással akkor az \emph{,,Apply Changes''}, azaz Módosítások Alkalmazása gombra kattintva az adatok ellenőrzésre kerülnek, mint ahogyan az eszköz hozzáadásnál történt.
+	
 	\subsection{RFID beállítások}
 	\subsection{RFID használati táblázat}
 	\subsection{Hőmérsékleti és páratartalom előzmények - ChartJS}
 	%----------
 	\section{Eszközök kommunikációja a webszerverrel}\label{csatlakozas-a-webszerverre}
 	\subsection{Hőmérséklet és Páratartalom szenzor}
-	\subsection{Eszköz kapcsoló}
+	\subsection{Eszköz kapcsoló}\label{toggle}
 	\subsection{Kamera}
 	\subsection{RFID kártya olvasó}
 	
@@ -577,6 +771,36 @@
 		\bibitem{laravel-docs}
 		\textsc{Offical Laravel Documentation}\\
 		\textsc{URL:} \url{https://laravel.com/docs/10.x}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{laravel-model}
+		\textsc{Eloquent: Getting Started}\\
+		\textsc{URL:} \url{https://laravel.com/docs/9.x/eloquent}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{laravel-route}
+		\textsc{Routing}\\
+		\textsc{URL:} \url{https://laravel.com/docs/9.x/routing}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{laravel-controller}
+		\textsc{Controllers}\\
+		\textsc{URL:} \url{https://laravel.com/docs/9.x/controllers}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{laravel-eloquent}
+		\textsc{Eloquent: Getting Started}\\
+		\textsc{URL:} \url{https://laravel.com/docs/9.x/eloquent}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{laravel-blade}
+		\textsc{Blade Templates}\\
+		\textsc{URL:} \url{https://laravel.com/docs/9.x/blade}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{tailwind-responsive}
+		\textsc{Core Concepts: Responsive Design}\\
+		\textsc{URL:} \url{https://tailwindcss.com/docs/responsive-design}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{RFID-card-reader}
