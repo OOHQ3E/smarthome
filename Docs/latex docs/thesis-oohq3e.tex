@@ -10,7 +10,7 @@
 ]{thesis-ekf}
 \usepackage[T1]{fontenc}
 \usepackage{hulipsum}
-\usepackage{listings}
+\usepackage{listingsutf8}
 \PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
 \usepackage[magyar]{babel}
 \usepackage{mathtools,amssymb,amsthm,pdfpages}
@@ -234,7 +234,7 @@
 	
 	Az RFID-címkék számos információt tárolhatnak egy azonosítótól több oldalnyi adatig. Az olvasók lehetnek mozgathatóak, így kézben is hordhatók, vagy oszlopra vagy falra is rögzíthetőek. Egy olvasó egy szekrény, szoba vagy épület architektúrájába is beépíthető.\cite{rfid-desc}
 	
-	\subsection{RFID-RC522 - RFID olvasó}
+	\subsection{RFID-RC522 - RFID olvasó}\label{rfid-esp-section}
 	Mint ahogyan \aref{what-is-rfid}~. szakaszban említve lett, ez egy RFID olvasó, amely képes RFID tag-eknek az azonosítójukat, és egyéb adatait beolvasni rádióhullámok alkalmazásával.
 	
 	A rendszerben úgy van jelen, mint egy kezdetleges ,,biztonsági rendszer'', amit például ajtóknak, vagy szekrényeknek zárására lehetne használni. Jelen esetben úgy van alkalmazva, hogy az RFID olvasót működtető ESP-WROOM-32 elküldi a Raspberry Pi számára az adott tag adatait: hogy, ha ez megegyezik az adatbázisban jelen levő azonosító egyikével, akkor -- jelenlegi rendszerben -- az RGB LED\footnote{\label{rgb-led}Red Green Blue Light Emitting Diode, magyarul Piros Zöld Kék Fényt Kibocsátó Dióda} zölden kezd villogni, ellenkező esetben pedig pirosan fog villogni.\footref{later-expl-fn}
@@ -318,7 +318,7 @@
 	
 	Az eszköz támogatja különböző adatbázis rendszereket, mint például a MySQL. Hasznos funkciókat kínál, mint például az automatikus SQL kódgenerálás, és a diagramok importálása vagy exportálása különböző formátumokba.\cite{dbdiagram-io}
 	
-	Szakdolgozatom során ez volt használva arra, hogy elkészítsem az adatbázis tervét, és majd \aref{database} szakaszon lesz róla egy mellékelt kép is, hogy hogyan is lett mindez kialakítva.
+	Szakdolgozatom során ez volt használva arra, hogy elkészítsem az adatbázis tervét, és majd \aref{database} szakaszon lesz róla egy mellékelt kép is ami \aref{database-fig}.~ábrán látható, hogy hogyan is lett mindez kialakítva.
 	
 	\subsection{Font Awesome}
 	A Font Awesome egy népszerű nyílt forráskódú ikon könyvtár, amely skálázható vektor ikonokat\footnote{Ez azt jelenti, hogy egy algoritmus segítségével mindig ugyan olyan minőségű lesz a kép, bármekkorára is nagyítjuk.}kínál, amelyek testre szabhatóak az oldalukon, és CSS alkalmazásával is. A könyvtár több ezer ikont tartalmaz, amik széles körű kategóriákat fednek le, például márka vagy közösségi média ikonokat. Lehetőség van fizetős és ingyenes ikonok használatára is.
@@ -360,7 +360,7 @@
 	\subsection{MySQL}
 	A MySQL egy nyílt forráskódú adatbázis-kezelő rendszer, amelyet széles körben használnak webalkalmazásokhoz. Lehetővé teszi a felhasználók számára, hogy relációs adatbázisokat hozzanak létre, kezeljenek és tartsanak karban. Több platformon is működik és sok programozási nyelvvel is kompatibilis.
 	
-	A XAMPP egy webszerver szoftver, amely tartalmazza a MySQL adatbázis-kezelő rendszert, és a PHP-t is, a,o telepíthető a helyi számítógépre webfejlesztéshez és teszteléshez, mint ahogyan én is alkalmaztam lokális fejlesztés során.
+	A XAMPP egy webszerver szoftver, amely tartalmazza a MySQL adatbázis-kezelő rendszert, és a PHP-t is, ami telepíthető a helyi számítógépre webfejlesztéshez és teszteléshez, mint ahogyan én is alkalmaztam lokális fejlesztés során.
 	\subsection{PlantUML}
 	A PlantUML egy ingyenes és nyílt forráskódú eszköz, amely egyszerű szövegszintaxist használ a különböző formátumokban létrehozott UML\footnote{Unified Modeling Language, magyarul Egységesített Modellező Nyelv} diagramok készítéséhez. Többféle diagramtípus támogatása mellett használható szoftverfejlesztéshez és rendszertervezéshez.
 
@@ -494,7 +494,7 @@
 	
 	Hogy ha nincs még se szoba, se ezen belül eszköz az adatbázisba felvéve, akkor az a szöveg fogad minket, hogy \emph{,,There are no rooms added to the database!''}, ami magyarul azt jeleni, hogy \emph{,,Nincsen szoba az adatbázisba felvéve!''}.
 	
-	Hogy ha már van adat az adatbázison belül, akkor az oldal az alábbi módon néz ki:
+	Hogy ha már van szoba, és ehhez eszközök felvéve az adatbázisba, akkor \aref{index-page}.~képhez hasonlóan néz majd ki a főoldal.
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=1\textwidth]{./src/pages_img/index}
@@ -524,7 +524,9 @@
 	\textbf{Átjutás a beállításokra:}
 	Az oldalon, hogy, ha a bal felső sarokban rákattintunk a fogaskerék ikonra, akkor átjutunk a beállítások oldalra.
 	\subsection{Beállítások}
-	A beállítások oldal a főoldalon már alkalmazott módon listázza ki a szobákat és a hozzá tartozó eszközöket: egymásba ágazott \emph{,,@forelse''} utasítás-sal és egy \emph{,,@if''}, ami leellenőrzi, hogy az adott eszköz az adott szobához tartozik-e. 
+	A beállítások oldal a főoldalon már alkalmazott módon listázza ki a szobákat és a hozzá tartozó eszközöket: egymásba ágazott \emph{,,@forelse''} utasítás-sal és egy \emph{,,@if''}, ami leellenőrzi, hogy az adott eszköz az adott szobához tartozik-e. Ahogyan \aref{settings}.~képen is látható.
+	
+	Tudni kell azt, hogy szobát kell hozzáadni az adatbázisba, hogy eszközt tudjunk felvenni hozzá. Ennek az az egyetlen kikötése, hogy két szoba ugyan azzal a névvel nem lehet létre hozni. Ha szobát akarunk hozzáadni a rendszerbe, akkor az oldal tetején található \emph{,,Add Room''}\footnote{Azaz Szoba Hozzáadása} gombra kell kattintani, ahol megadhatjuk, hogy a szobának mi legyen a neve.\footnote{Természetesen a vezérlőben le van kezelve, hogy nem lehet üresen hagyni az adott mezőt, vagy hogy már létezik egy ilyen szoba az adatbázisban. Mindez le van kezelve a szoba módosításnál is.}
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=1\textwidth]{./src/pages_img/settings}
@@ -533,7 +535,7 @@
 	\end{figure}\\
 	Alapvetően minden szobához tartozik három gomb: \emph{,,Add Device''}, azaz Eszköz Hozzáadása, \emph{,,Modify Room''}, azaz Szoba Módosítása, és \emph{,,Delete Room''}, azaz Szoba Törlése. 
 	
-	Legelőször is, amikor hozzá szeretnénk adni egy új eszközt egy adott szobához akkor \aref{add-sensor-error}.~képhez hasonló oldal fog minket fogadni.\footnote{A piros keretben lévő hiba üzenetet kivéve-- ez csak azért van így megjelenítve, hogy bemutassam, hogy ezt így jelzi az oldal, hogy ha egy oldalhoz több mint egy szenzort szeretnénk hozzáadni.}
+	Legelőször is, amikor hozzá szeretnénk adni egy új eszközt egy adott szobához, akkor \aref{add-sensor-error}.~képhez hasonló oldal fog minket fogadni.\footnote{A piros keretben lévő hiba üzenetet kivéve: -- ez csak azért van így megjelenítve, hogy bemutassam, hogy ezt így jelzi az oldal, hogy ha egy oldalhoz több mint egy szenzort szeretnénk hozzáadni.}
 	
 	\begin{figure}[ht!]
 		\centering
@@ -557,7 +559,7 @@
 	
 	Minden eszköznek az adatai megjelennek a paneljén, mint ahogyan az \aref{settings}.~képen is látható. Ehhez társul minden eszköznek a paneljén egy módosító és egy törlés gomb. Amikor a módosításra megyünk, akkor minden adatot meg tudunk egy adott eszköznek változtatni: legyen ez az eszköz típusa, neve, IP vége, vagy az, hogy melyik szobához tartozik.
 	
-	Hogy ha törölni szeretnénk szobát vagy eszközt, akkor legelőször is megkérdezi a felhasználót az oldal egy értesítésben, hogy biztos-e abban, hogy törölni akarja az adott rekordot. Mindezt \aref{database}.~szakaszban leírom, hogy miért is nagy döntés, hogy törölne a felhasználó egy szobát vagy eszközt.
+	Hogy ha törölni szeretnénk szobát vagy eszközt, akkor legelőször is megkérdezi a felhasználót az oldal egy értesítésben, hogy biztos-e abban, hogy törölni akarja az adott rekordot. Mindezt \aref{database}.~szakaszban leírtam, hogy miért is nagy döntés, hogy törölne a felhasználó egy szobát vagy eszközt.
 	
 	Az eszköz módosítási oldal \aref{modify}.~képen látható, hogy hogyan is néz ki.
 	\begin{figure}[ht!]
@@ -566,17 +568,133 @@
 		\caption{Eszköz módosítás oldal}
 		\label{modify}
 	\end{figure}\\
-	Ezen a részen ugyan úgy le vannak kezelve az esetek, mint a hozzáadásnál is. Itt a \emph{,,Reset Data''} gomb az eredeti adatokra állítja vissza a mezőkben lévő szöveget. És még annyi különbséggel, hogy itt már kiválaszthatjuk, hogy melyik szobába is szeretnénk átállítani az adott eszközt, már hogy ha a felhasználó akarja. Ha végeztünk a módosítással akkor az \emph{,,Apply Changes''}, azaz Módosítások Alkalmazása gombra kattintva az adatok ellenőrzésre kerülnek, mint ahogyan az eszköz hozzáadásnál történt.
+	Ezen a részen ugyan úgy le vannak kezelve az esetek, mint a hozzáadásnál is. Itt a \emph{,,Reset Data''} gomb az eredeti adatokra állítja vissza a mezőkben lévő adatokat. Még annyi különbséggel, hogy itt már kiválaszthatjuk, hogy melyik szobába is szeretnénk átállítani az adott eszközt, már ,hogy ha a felhasználó szeretné. Ha végeztünk a módosítással akkor az \emph{,,Apply Changes''}, azaz Módosítások Alkalmazása gombra kattintva az adatok ellenőrzésre kerülnek, mint ahogyan az eszköz hozzáadásnál történt.
+	
+	A beállítások fülből lehet átmenni az RFID beállítások oldalra, hogy ha rákattintunk az oldal tetején lévő \emph{,,RFID Settings''}\footnote{Azaz RFID beállítások} gombra.
 	
 	\subsection{RFID beállítások}
+	
+	Az RFID beállítások oldalon már a rendszerbe felvett RFID olvasókhoz tudunk felvenni RFID tag-eket, és ezen belül elérhető az RFID használati táblázat.\\
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/rfid-settings}
+		\caption{RFID beállítások oldal}
+		\label{rfid-settings}
+	\end{figure}
+	Ezen az oldalon a beállítások oldalhoz majdnem ugyan úgy van kilistázva, hogy milyen RFID olvasók és hozzá tartozó RFID címkék, és azok adatai, mint ahogyan \aref{rfid-settings}.~képen látható.\\
+	\textbf{Egy RFID tagnek az alábbi adatait lehet látni:}
+	\begin{itemize}
+		\item Name -- Taghez hozzáadott név
+		\item UID -- Az adat amit a tag tartalmaz
+		\item Date Added -- A tag az adatbázisba felvételének dátuma
+		\item Date last modified -- A tag utolsó módosításának dátuma
+	\end{itemize}
+	Hogy ha egy új tag-et szeretnénk hozzárendelni egy RFID olvasóhoz, akkor az annak megfelelő \emph{,,Add RFID Tag''}\footnote{Azaz RFID címke hozzáadása} gombra kell kattintani, ami átvisz minket az RFID oldal létrehozására alkalmas oldalra, amit \aref{add-rfid-tag}.~képen is láthatunk.\\
+	\textbf{Az alábbiak a feltételek egy RFID címke létrehozásakor és módosításakor:}
+	\begin{itemize}
+		\item Minden mező kitöltése kötelező.
+		\item Egy bizonyos UID-vel rendelkező tag-et csak egyszer lehet hozzárendelni egy adott olvasóhoz.
+		\item RFID tag neve maximum 50 karakter lehet.
+	\end{itemize}
+	
+	Mint ahogyan az alap beállítások oldalon, itt is visszajelzést kapunk vagy helyileg a form-on, hogy ha valami hiba adódik valamelyik adattal vagy az RFID beállítások beállítások oldalon kapunk visszajelzést a műveletről, és annak sikerességéről.
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/add-rfid-tag}
+		\caption{RFID tag hozzáadása oldal}
+		\label{add-rfid-tag}
+	\end{figure}
+
+	Ezen az oldalon azt láthatjuk, hogy van egy mező, amibe írhatunk, ami az RFID tag-hez tartozó név\footnote{Tag name}, és van egy másik mező, de abba nem tudunk írni. Ez azért van, mivel úgy lett megoldva a tag hozzárendelése az olvasóhoz, hogy rá kell kattintani a \emph{,,Read Tag''}\footnote{Azaz Címke beolvasása} gombra, és ezután van 8 másodpercünk\footnote{Azért adtam ennyi időt rá, mert ennyi idő alatt kellően van időnk ezt a műveletet elvégezni.}, hogy hozzáérintsük az RFID olvasóhoz az adott címkét, amit hozzá szeretnénk rendelni. 
+	
+	Ha sikerrel járunk, akkor a címke UID-je megjelenik a megfelelő szövegdobozban. Ellenkező esetben, hogy ha az RFID olvasó offline állapotban van, vagy nem lett tag hozzáérintve az olvasóhoz, akkor értesít az oldal, hogy a művelet sikertelen volt.
+	
+	Itt is ugyan úgy jelen van az a három gomb mint az eszköz, és a szoba hozzáadása oldalon, ami a mentés, az adatok visszaállítsa, és a mégse.
+	
+	Az RFID tag módosítására is van lehetőség, hogy ha az adott tag paneljén rákattintunk a módosítás gombra. Ilyenkor lehetőségünk van az RFID olvasó módosítására is\footnote{Természetesen akkor az annak megfelelő RFID olvasóhoz kell majd érinteni a címkét, hogy ha az uid-t szeretnénk megváltoztatni.}, amit láthatunk \aref{modify-rfid-tag}.~képen is. Amikor megváltoztatjuk az adott tag-et, akkor a módosítás dátuma annak megfelelő lesz.
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/modify-rfid-tag}
+		\caption{RFID tag módosítása oldal}
+		\label{modify-rfid-tag}
+	\end{figure}
+
+	Van lehetőségünk visszalépni a sima beállítások oldalra, hogy ha a bal felső sarokban a vissza nyílra kattintunk. Az \emph{,,RFID Use History''} gomb-ra kattintva pedig áttérünk az RFID használati táblázat oldalra.
+	
 	\subsection{RFID használati táblázat}
+	Az RFID-s rendszer úgy működik\footnote{Mint ahogy részben említve lett \aref{rfid-esp-section}.~szakaszon}, hogy ha fel van véve egy RFID tag az adatbázisba az adott olvasóhoz, akkor alap járaton olvasó állapotban\footnote{Ezt jobban majd \aref{rfid-working}.~szakaszon fogom kifejteni.} van, és amikor benne van az adatbázisban a beolvasott tag UID-je, akkor ugye zölden villog az ESP-hez kötött RGB LED, és felvételre kerül az rfid\_use\_history adatbázis táblába, hogy mikor, és melyik RFID tag volt beolvasva melyik olvasóval.
+
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/rfid-use-history}
+		\caption{RFID tag hozzáadása oldal}
+		\label{rfid-use-history}
+	\end{figure}
+	
+	Hogy ha erre az oldalra megyünk, akkor egy táblázat fog minket fogadni, -- mint ahogyan \aref{rfid-use-history}.~képen is látható -- vagy is inkább annyi táblázat, amennyi olvasót vettünk be a rendszerbe. Ezeknek a táblázatoknak 4 oszlopa van: \textbf{Ordinal number}, azaz sorszám, \textbf{Tag uid} azaz címke azonosító, \textbf{Tag name}, azaz a címkéhez hozzáadott név, és \textbf{Date used}, azaz a használat dátuma.
+	
+	Ezen a táblázaton nyomon tudjuk követni, hogy mikor is volt használva az adott RFID címkénk.
+	
+	A táblázatba az adatok úgy kerülnek hozzáadásra, hogy először végig iterálunk egy \emph{@foreach}-el az olvasókon, majd ezen belül végig iterálunk az összes használati alkalmon, és annak megfelelően le van ellenőrizve, hogy ahhoz az olvasóhoz tartozik-e az adott használati alkalom. Hogy ha hozzá tartozik, akkor pedig hozzáadja az adott táblázathoz egy sorban azt a rekordot és annak az adatait.
+	
+	Ez elsődlegesen nyomon követés céljából lett ez az oldal megvalósítva, hogy ha komolyabban meg tudnám oldani az RFID használatát, például, hogy ha egy zárhoz tudnám hozzácsatlakoztatni az RFID kártyaolvasós ESP-t, de ez anyagiak miatt nem került sajnos megvalósításra a zárszerkezet alkalmazása.
+	
+	Szintén van lehetőség visszalépni az RFID beállítások oldalra, hogy a bal felső sarokban rákattintunk a vissza nyíl ikonra.
 	\subsection{Hőmérsékleti és páratartalom előzmények - ChartJS}
+	
+	Amikor hozzáadásra kerül a rendszerbe egy hőmérséklet és páratartalom szenzor, akkor az az által olvasott adatokat meg tudjuk nézni egy gráfon. Ez akkor van, amikor egy szenzoros panelre kattintunk a főoldalon. Ha rákattintunk, akkor \aref{temp-hum-chart}.~képen látható oldalhoz hasonlót fogunk látni.
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/pages_img/humidity-chart}
+		\caption{Hőmérséklet és páratartalom szenzor által mért adatoknak gráf oldala}
+		\label{temp-hum-chart}
+	\end{figure}
+
+	Az oldal a Chart.js JavaScript könyvtárat használva lett megoldva. Ez mind úgy valósul meg, hogy a vezérlőben le van kérve az elmúlt 24 órányi adatnak az óránkénti átlag mennyisége, és az van továbbítva az oldalnak, és ezáltal lehet megjeleníteni a Chart.js használatával a gráf.
+	
+	A felső gráf az a hőmérséklet adatokat mutatja, míg az alsó gráf a relatív páratartalom adatokat mutatja meg. 
+	
+	Itt is szintén lehetőség van visszamenni a főoldalra a bal felső sarokban lévő vissza nyílra kattintva.
 	%----------
 	\section{Eszközök kommunikációja a webszerverrel}\label{csatlakozas-a-webszerverre}
+	Mivel az alkalmazott eszközök \emph{ESP-WROOM-32}-esekkel lett megoldva, ezért valahogyan ki kellett gondolni, hogy ezeket hogyan is alkalmazzam, és hogyan is működjenek. Itt ezen a részen ezt tagalom. Az eszközöknek az adat folyamata \aref{esp-laravel.communication}.~ábrán szemléltetem, amit plantUML-lel készítettem el.
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=1\textwidth]{./src/HU_sensor with webserver uml diagram}
+		\caption{Eszközök kommunikációja Laravellel}
+		\label{esp-laravel.communication}
+	\end{figure}
+	
 	\subsection{Hőmérséklet és Páratartalom szenzor}
+	Legelső eszköz, ami beintegrálásra került a rendszerbe az a hőmérséklet és páratartalom szenzor volt. Amikor az ember okos otthont képzel el magának, az első dolog ami eszébe jut ilyenkor az az, hogy az adott szoba hőmérsékletét nyilván tudjuk tartani. 
+	
+	Első probléma amibe ütköztem az az volt, hogy az ötlet az remek, de hogyan is fogom ezeket az adatokat elküldeni a Laravel oldalnak, hogy azt a vezérlőben el tudjam menteni adatbázisba.
+	
+	Először is kell egy külső könyvtár ahhoz, hogy a DHT22-es szenzort alkalmazni tudjuk.\cite{adafruit-dht-library} Utána pedig arra volt szükség, hogy hogyan is küldjünk Laravel számára adatokat ESP-ről.\cite{arduino-to-laravel}
+	
+	Ahogyan a leírásban néztem, szükséges lesz egy API\footnote{Application Programming Interface, azaz Alkalmazás Programozási Felület} útvonalra, amit a Laravel api.php fájljában található meg. Mivel tudom azt, hogy rekordot akarok elmenteni, ezért ennek a HTTP kérésnek POST-nak kell lennie. Ez az útvonal \emph{192.168.200\textbf{/esp}} lett. Ezen az útvonalon pedig az \emph{,,EspSensorController''} \emph{,,store''} metódusát fogom használni, hogy elmentse a szenzorok által érkező adatokat. 
+	
+	A leírás úgy alkalmazta az ESP-t hogy meg kellett neki adni azt, hogy rácsatlakozzon a RaspberryPi által szolgáltatott Wi-Fi-re. Ezért meg kell neki adni, hogy mi a Wi-Fi neve, és jelszava. Még a robotika órán tanultakból tudtam azt, hogy be lehet állítani azt, hogy mi legyen az ESP lokális statikus IP címe, mi legyen a gateway és a subnet mask. Mindez azérét volt szükséges, mivel az alkalmazás IP cím végződés alapján kommunikál az ESP-kel. (Például nekem a szenzoros ESP-nek az az IP címe, hogy \emph{192.168.200.5}.)
+	
+	Tudom azt a leírásból, hogy a Laravelnek a \emph{192.168.200.1\textbf{/api/}esp} címre kell küldeni az adatokat, hogy működjön azzal az útvonallal. 
+	
+	Ezután már csak annyi kell, hogy lemérje a DHT szenzor a hőmérséklet és páratartalom adatokat a \emph{,,dht.readHumidity()''} és \emph{,,dht.readTemperature()''} metódusokkal, majd ezt felkészítve HTTP kliens segítségével összeállítva elküldje a Laravel-nek.
+	
+	Amikor az ESP elküldi az adatotkat, akkor kap vissza egy payload-ot, vagyis csomagot, ami alapján lehet tudni, hogy a folyamat sikerrel járt-e.
+	
+	Legelső verziónál még statikusan be volt égetve a kódba, hogy az 1-es id-jű szobának küldi el az adatokat. Miután gondolkodtam ezen, hogy hogyan lehetne azt hogy dinamikusan annak a szobának legyenek elmentve azok az adatok, amihez fel van véve, ahhoz azt a megoldásra gondoltam, hogy a szoba id-je helyett azt küldi el, hogy mi az IP-jének az utolsó része. Itt a vezérlő lekérdezi, hogy akkor ennek alapján melyik szobához tartozik, majd ennek megfelelően kerülnek elmentésre az adatok. Ezek az adatküldések 10 másodpercenként történnek meg, hogy a lehető legfrissebb szenzor adatokat láthassuk.\footnote{Számítások alapján, hogy ha egy teljes éven keresztül működik a rendszer, akkor is 1 szenzornak az adatai az adatbázisban 70megabyte körüli, ami felettébb alacsony memória igényű}
+	
+	A főoldalon, hogy láthassuk ezeket az adatokat, ahhoz jQuery volt használva, ami azt végzi el, hogy egy \emph{,,\$.getJSON()''} metódussal eléri a Laravel web.php-jában az \emph{,,/esp/getLatest''} útvonalat, ami alapján a vezérlő visszaadja a legutóbbi adatot, ami az adatbázisban található. Ez a függvény első lefutása után beállítja azt, hogy 10 másodpercenként kérje le ezzel metódussal ugyan úgy az adatot, mindez a \emph{,,setInterval()''} metódus használatával.
+	
 	\subsection{Eszköz kapcsoló}\label{toggle}
+	
+	A fő céljaim között az volt, hogy eszközöket -- például világítást is -- tudjak kapcsolni a rendszerben. 
 	\subsection{Kamera}
-	\subsection{RFID kártya olvasó}
+	\subsection{RFID kártya olvasó}\label{rfid-working}
 	
 	%----------
 	
@@ -585,7 +703,7 @@
 	
 	\subsection{Cypress automatizált tesztelések}
 	\subsection{Manuális tesztelések}
-	\begin{table}[ht]
+	\begin{table}[ht!]
 		\centering
 		\begin{tabular}{|p{6cm}|p{6cm}|p{4cm}|}
 			\hline
@@ -808,12 +926,26 @@
 		\textsc{URL:} \url{https://iotprojectsideas.com/connect-rfid-to-php-mysql-database-with-nodemcu-esp8266/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
+		%--------------------------------------------------
+		% ez a bibitem még nincs használva
 		\bibitem{node32-httpget}
 		\textsc{ESP8266 NodeMCU HTTP GET and HTTP POST with Arduino IDE (JSON, URL Encoded, Text)}\\
 		\textsc{URL:} \url{https://randomnerdtutorials.com/esp8266-nodemcu-http-get-post-arduino/#http-get-1}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		%--------------------------------------------------
+		
+		
+		\bibitem{adafruit-dht-library}
+		\textsc{Arduino.cc} \emph{Adafruit: DHT sensor library}\\
+		\textsc{URL:} \url{https://www.arduino.cc/reference/en/libraries/dht-sensor-library/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{arduino-to-laravel}
+		\textsc{Arduino to Laravel Communication}\\
+		\textsc{URL:} \url{https://www.instructables.com/Arduino-to-Laravel-Communication/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{async-webserver}
 		\textsc{Arduino to Laravel Communication}\\
 		\textsc{URL:} \url{https://www.instructables.com/Arduino-to-Laravel-Communication/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.

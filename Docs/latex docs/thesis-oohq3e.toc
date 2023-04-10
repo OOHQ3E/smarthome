@@ -45,17 +45,17 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {3.4.1}Főoldal}{29}{subsection.3.4.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.4.2}Beállítások}{30}{subsection.3.4.2}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.4.3}RFID beállítások}{33}{subsection.3.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.4}RFID használati táblázat}{33}{subsection.3.4.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.5}Hőmérsékleti és páratartalom előzmények - ChartJS}{33}{subsection.3.4.5}%
-\select@language {magyar} \contentsline {section}{\numberline {3.5}Eszközök kommunikációja a webszerverrel}{33}{section.3.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.5.1}Hőmérséklet és Páratartalom szenzor}{33}{subsection.3.5.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.5.2}Eszköz kapcsoló}{33}{subsection.3.5.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.5.3}Kamera}{33}{subsection.3.5.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.5.4}RFID kártya olvasó}{33}{subsection.3.5.4}%
-\select@language {magyar} \contentsline {chapter}{\numberline {4}Tesztelések}{34}{chapter.4}%
-\select@language {magyar} \contentsline {section}{\numberline {4.1}Tesztelések módjai és fontossága}{34}{section.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}Cypress automatizált tesztelések}{34}{subsection.4.1.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Manuális tesztelések}{34}{subsection.4.1.2}%
-\select@language {magyar} \contentsline {chapter}{\numberline {5}Rendszer telepítése}{36}{chapter.5}%
-\select@language {magyar} \contentsline {chapter}{Összegzés}{37}{chapter*.8}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{38}{chapter*.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.4}RFID használati táblázat}{35}{subsection.3.4.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.5}Hőmérsékleti és páratartalom előzmények - ChartJS}{36}{subsection.3.4.5}%
+\select@language {magyar} \contentsline {section}{\numberline {3.5}Eszközök kommunikációja a webszerverrel}{37}{section.3.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5.1}Hőmérséklet és Páratartalom szenzor}{38}{subsection.3.5.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5.2}Eszköz kapcsoló}{39}{subsection.3.5.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5.3}Kamera}{39}{subsection.3.5.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5.4}RFID kártya olvasó}{39}{subsection.3.5.4}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Tesztelések}{40}{chapter.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.1}Tesztelések módjai és fontossága}{40}{section.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}Cypress automatizált tesztelések}{40}{subsection.4.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Manuális tesztelések}{40}{subsection.4.1.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Rendszer telepítése}{42}{chapter.5}%
+\select@language {magyar} \contentsline {chapter}{Összegzés}{43}{chapter*.8}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{44}{chapter*.9}%

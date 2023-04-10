@@ -4,26 +4,26 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateEspTable extends Migration {
-	// az up metodus akkor fut le amikor uj esp tablat general
+	// az up metódus akkor fut le amikor új esp táblát generál
 	public function up()
 	{
-			//itt megadjuk azt hogy az esp tablat szeretnenk beallitani
+			//itt megadjuk azt hogy az esp táblát szeretnénk beállítani
 		Schema::create('esp', function(Blueprint $table) {
-			// automatikusan novekvo azonosito
+			// automatikusan növekvő azonosító
 			$table -> increments('id');
-			// elojel nelkuli szoba azonosito
+			// előjel nélküli szoba azonosító
 			$table -> integer('room_id')->unsigned();
-			// esp tipusa ami szoveges
+			// esp típusa ami szöveges
 			$table -> string('type');
-			// tinyinteger az 0-255 ertekek kozott az ip vegzodesre
+			// tinyinteger az 0-255 értékek között az ip végrődésre
 			$table -> tinyInteger('ip_End')->unsigned();
-			// esp neve ami szoveges
+			// esp neve ami szöveges
 			$table -> string('name');
-			// 'created_at' es 'updated_at' mezok
+			// 'created_at' es 'updated_at' mezők
 			$table -> timestamps();
 		});
 	}
-	// a down metodus akkor fut le, hogy ha toroljuk az esp tablat
+	// a down metódus akkor fut le, hogy ha töröljük az esp táblát
 	public function down()
 	{
 		Schema::dropIfExists('esp');

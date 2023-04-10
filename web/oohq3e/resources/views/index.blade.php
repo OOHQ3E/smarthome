@@ -78,7 +78,6 @@
                             </div>
                         @endif
 
-
                 @empty
                 @endforelse
             </div>
