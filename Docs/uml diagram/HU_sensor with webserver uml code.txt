@@ -4,6 +4,8 @@ cloud "{}API" #lightblue
 actor Felhasználó
 node nodeMCU
 entity Szenzor
+entity "RFID olvasó"
+entity Eszköz
 
 frame WebSzerver#lightgrey;line.dashed{
 node RaspberryPi
@@ -19,9 +21,11 @@ WebSzerver -up-> "{}API" : JSON response a Laravel controllerből
 nodeMCU -up--> "{}API" : HTTP POST request
 "{}API" ---> nodeMCU : response status
 
-nodeMCU ----right-> WebSzerver : adat küldése
+nodeMCU -up-> WebSzerver : adat küldése
 
 Szenzor -up-> nodeMCU : adat küldés
+"RFID olvasó" -up-> nodeMCU : adat küldés
+nodeMCU -down-> Eszköz  : KI / BE
 
 RaspberryPi -down-> Laravel
 Laravel -up-> RaspberryPi

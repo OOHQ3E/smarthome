@@ -388,8 +388,19 @@
 	Éppen ezért is esett a választásom a projekt tervezési fázisában a Laravel keretrendszerre. Ez a webalkalmazás még Laravel 9-nél indult el.
 	
 	\chapter{A web alkalmazás felépítése és működése}
-	\section{Raspberry PI 4B alkalmazása, mint Wi-Fi, és hub}
-	\hulipsum[1-2]
+	\section{Raspberry Pi 4B alkalmazása}
+	
+	Legelőször, amikor a Raspberry Pi-t elkezdtem használni arra, hogy szolgáltassa a weboldalt, akkor úgy volt, hogy egy már megadott Wi-Fi-re csatlakozott rá -- Ez nem a legjobb megoldás volt, mivel szükséges volt beleégetni a Raspberry config fájljába, hogy mi annak a Wi-Finek az SSID-je és a jelszava.
+	
+	A Raspberry-t SSH\footnote{Secure Shell} használatával kapcsolódok fel rá, amit egy helyi és egy távoli számítógép közötti biztonságos csatorna kiépítésére fejlesztettek ki.
+	A projekt fel van töltve GitHub-ra\cite{github-repo}, ami egy verziókövető rendszer. Innen klónoztam le a Raspberry-re a projektet, és így tartom napra készen ezen.
+	
+	A projektet a \emph{/var/www/html/} mappán belülre kellett helyezni és apache2 könyvtár segítségével tudtam elérni a webalkalmazást host-olni, azaz szolgáltatni, és elérni is.
+	MySQL-el használom az adatbázist a Raspberry-n is.
+	Miután már többet foglalkoztam a projekttel, akkor rájöttem hogy a Wi-Fi-re való csatlakozás nem a legoptimálisabb, ezért jött az az ötlet, hogy maga a Raspberry vegye fel a Wi-Fi router szerepét. Ez úgy valósul meg, hogy először is Ethernet kábellel biztosítom a Raspberry számára az internetet. Utána pedig a Raspberry Pi hivatalos oldalán való leírás\cite{raspberry-as-wifi} segítségével teljesen be tudtam állítani Wi-Fi routerként.\\
+	\textbf{Fontosabb tudni valók ezzel:}
+	Az interface statikus felülete \emph{192.168.200.1}-re lett állítva, ez az első IP cím, ezért sem lehet az ESP-knek 1-re végződő IP véget adni. DHCP\footnote{Dynamic Host Configuration Protocol, azaz Dinamikus Gazdagép Konfigurációs Protokoll} szerver 150-es IP végtől dinamikusan állítja az IP címeket, ezért nem lehet az ESP-nek 149-től nagyobb IP véget adni, hogy statikusan és könnyen elérhetőek legyenek az eszközök.
+	
 	\section{Adatbázis felépítése}\label{database}
 	
 	Miután meg volt ez ötlet és átestem pár tervezési fázison, hogy hogyan is álljon össze a rendszer, jöhetett az egyik legfontosabb feladat: hogy hogyan is álljon össze mindennek az adatbázisa. Ezen belül is az, hogy milyen kapcsolatok és táblák szerepeljenek mindebben.
@@ -688,13 +699,47 @@
 	
 	Legelső verziónál még statikusan be volt égetve a kódba, hogy az 1-es id-jű szobának küldi el az adatokat. Miután gondolkodtam ezen, hogy hogyan lehetne azt hogy dinamikusan annak a szobának legyenek elmentve azok az adatok, amihez fel van véve, ahhoz azt a megoldásra gondoltam, hogy a szoba id-je helyett azt küldi el, hogy mi az IP-jének az utolsó része. Itt a vezérlő lekérdezi, hogy akkor ennek alapján melyik szobához tartozik, majd ennek megfelelően kerülnek elmentésre az adatok. Ezek az adatküldések 10 másodpercenként történnek meg, hogy a lehető legfrissebb szenzor adatokat láthassuk.\footnote{Számítások alapján, hogy ha egy teljes éven keresztül működik a rendszer, akkor is 1 szenzornak az adatai az adatbázisban 70megabyte körüli, ami felettébb alacsony memória igényű}
 	
-	A főoldalon, hogy láthassuk ezeket az adatokat, ahhoz jQuery volt használva, ami azt végzi el, hogy egy \emph{,,\$.getJSON()''} metódussal eléri a Laravel web.php-jában az \emph{,,/esp/getLatest''} útvonalat, ami alapján a vezérlő visszaadja a legutóbbi adatot, ami az adatbázisban található. Ez a függvény első lefutása után beállítja azt, hogy 10 másodpercenként kérje le ezzel metódussal ugyan úgy az adatot, mindez a \emph{,,setInterval()''} metódus használatával.
+	A főoldalon, hogy láthassuk ezeket az adatokat, ahhoz jQuery volt használva, ami azt végzi el, hogy egy \emph{,,\$.getJSON()''} metódussal eléri a Laravel web.php-jában az \emph{,,/esp/getLatest/szobaIDje''} útvonalat, ami alapján a vezérlő visszaadja a legutóbbi adatot, ami az adatbázisban található. Ez a függvény első lefutása után beállítja azt, hogy 10 másodpercenként kérje le ezzel metódussal ugyan úgy az adatot, mindez a \emph{,,setInterval()''} metódus használatával.
 	
 	\subsection{Eszköz kapcsoló}\label{toggle}
 	
-	A fő céljaim között az volt, hogy eszközöket -- például világítást is -- tudjak kapcsolni a rendszerben. 
+	A fő céljaim között az volt, hogy eszközöket -- például világítást is -- tudjak kapcsolni ki-- vagy be a rendszerben.  Ehhez kellett egy Async\footnote{Azaz Aszinkron} Webszerver\cite{async-webserver} használata.
+	
+	Az ESP működését úgy gondoltam ki az Async Webszerver leírása alapján, hogy legyen három kérés lehetőség az ESP felé: \emph{\textbf{,,status''}}, azaz állapot, \emph{\textbf{,,on''}} azaz be, és \emph{\textbf{,,off''}}, azaz ki. 
+	
+	Amikor kap egy kérést az ESP Async Webszerver, akkor mindig küld vissza egy állapotot, hogy milyen állapotban van -- legyen az \textbf{1}, azaz be--, vagy \textbf{0}, azaz kikapcsolt állapot JSON formátumban. Itt is természetesen ugyan úgy lett megadva a Raspberryre való csatlakozás, mint ahogyan a hőmérséklet-páratartalom szenzornál is.
+	
+	Ha azt a HTTP GET kérést kapja az Async Webserver, hogy \emph{\textbf{,,/status''}}, akkor csak visszaküldi, hogy jelenleg milyen állapotban van az eszköz, amit vezérel. (Bekapcsolás esetén mindig kikapcsolt állapottal kezd az ESP.) Amikor \emph{\textbf{,,/on''}} HTTP GET kérést kap az Async Webserver, akkor átváltja az állapot változót 1-re, a megadott jelnek az állapotát magas-ra állítja, -- ezzel jelet küldve a szilárdtest relének, hogy átfolyhat rajta az áram, ezzel bekapcsolva a hozzá csatolt eszköz -- és visszaküldi JSON formátumban, hogy az állapota \emph{\textbf{,,1''}}, azaz bekapcsolt állapotban van. JSON formátumban ez úgy néz ki, hogy \textbf{\emph{\{"status":1\}}}.
+	
+	Ehhez hasonlóan zajlik le, amikor azt a HTTP GET kérést kapja az Async Webszerver, hogy \emph{\textbf{,,/off''}}, annyi különbséggel, hogy az állapotot átállítja 0-ra, a szilárdtest relének a jelet alacsonyra állítja, -- ezzel kikapcsolva az eszközt -- és JSON formátumban azt küldi vissza, hogy \emph{\textbf{,,0''}}.
+	
+	Laravel oldalon jQuery használatával vannak a kérések megoldva. Mindegyik kapcsoló típusú elemhez dinamikusan hozzá van rendelve az \emph{,,onClick()''} metódussal, hogy hívja meg a \emph{,,toggle()''}, azaz kapcsolás metódust. Amikor betölt az oldal, akkor lefut egy \emph{,,getStatus()''}, azaz állapot ellenőrzés, ahol jQuery volt használva, ami azt végzi el, hogy egy \emph{,,\$.getJSON()''} metódussal eléri a Laravel web.php-jában a \emph{,,/getStatus/espIPvége''} útvonalat, ami vezérlőnek azt a feladatot adja, hogy küldjön HTTP GET kérést az adott ESP által szolgáltatott Async Webszerver felé. A kapott JSON válasz alapján pedig átállítja a kapcsolót be- vagy kikapcsolt állapotra a felületen, és a feliratát is annak megfelelően átírja, ha nem sikerül választ kapni valamilyen hiba miatt, vagy mert offline állapotban van az ESP, akkor letiltásra kerül a kapcsolható gomb a felületen és a feliraton az jelenik meg, hogy jelenleg nem elérhető az adott eszköz.
+	
+	A \emph{,,toggle()''} metódus azt nézi, hogy a felületen található kapcsolót be- vagy ki kapcsoltuk, ez alapján éri el a Laravel web.php-ban a \emph{,,/esp/toggle/espIPvége/állapot''} útvonalon keresztül a \emph{,,Toggle()''} metódust, ami annyit tesz, hogy HTTP GET kérést küld a megadott ESP-nek azzal, hogy be- vagy ki szeretnénk kapcsolni a rákapcsolt eszközt. Lekéri azért ilyenkor még egyszer biztonság kedvéért, hogy milyen állapotot is vett fel az eszköz.
+	
 	\subsection{Kamera}
+	
+	A kamera implementálásánál voltak problémák. Először is hogyan legyen megjelenítve a kamera által szolgáltatott videó? Erre az lett a megoldás, hogy egy HTML kép-en belül kapja folyamatosan az aktuális képet -- azaz <img>, aminek az src, azaz forrását a dinamikusan megadott IP vég által éri el az oldal.
+	
+	Azt, hogy hogyan szolgáltasson webszerverként élő képet az ESP32-CAM, az egy forrás-ból\cite{esp32-cam} származik, amibe annyi módosítást végeztem el, hogy az IP-je statikus legyen az ESP32-CAM-nek, hogy biztosítsam ezzel a könnyű elérést. 
+	
+	Második probléma az volt, hogy legelőször úgy volt megoldva az egész, hogy lekérdezi az oldal egy \emph{,,\$.getJSON()''} metódussal, hogy a kamera elérhető-e. Miközben csatlakozik, akkor pedig azt a feliratot jelenítené meg az oldal, hogy próbál csatlakozni az adott eszközre. Ebből az a probléma adódott, hogy amikor betölt a kép előbb, mint hogy választ kapjon a metódus, akkor megjelenik a szolgáltatott felvétel, de a csatlakozási kísérletnek a felirat is marad ilyenkor még.
+	
+	Ezekre az sikerült elterveznem egy olyan megoldást, ami megfelelően működik akkor is hogy ha később lesz online a kamera, vagy egyből csatlakozik, vagy ha menet közben megszakadna a kapcsolat a kamerával. 
+	
+	Így a kamerához több metódus tartozik a főoldalon a jól működő megoldáshoz: egy beépített jQuery \emph{,,onLoad()''} metódus, ami akkor fut le, hogy ha a kép betölt, egy beépített esemény hallgató, azaz \emph{,,EventListener''}, ami azt ellenőrzi, hogy hiba adódott-e a kép elérése közben, egy általam megírt \emph{,,imageExists()''} metódus, ami \emph{,,\$.getJSON()''} lekérdezéssel azt ellenőrzi, hogy elérhető-e a kamera, egy \emph{,,error()''} metódus, ami átállítja a feliratot arra, hogy hiba keletkezett, majd a képet újból beállítja, és egy \emph{,,success()''} metódus, ami átállítja a csatlakozási kérelemről a feliratot arra, hogy mi az eszköz neve és az IP végződése.
+	
+	Annyi az egy hátránya ennek az ESP32-CAM-nek a megoldásával, hogy egyszerre csak egy eszközről lehet megtekinteni a szolgáltatott felvételt.
+	 
 	\subsection{RFID kártya olvasó}\label{rfid-working}
+	
+	Az RFID kártya olvasó az egy forrás\cite{RFID-card-reader}, hogy hogyan is olvas egy RFID kártya olvasó, és az előző ESP eszközök beállításai alapján -- legyen az az Async Webszerver az állapot átállítás, és az adat átküldése Laravel API-ra alapján -- állítottam össze.
+	
+	Az RFID olvasónak két állapota van; -- Az egyik az, amikor figyeli, hogy hozzá van-e érintve egy RFID címke, akkor küldi a Laravel API-jára a beolvasott RFID UID-jét, és a vissza kapott payload alapján -- Ami vagy \emph{,,OK''}-ot, amikor szerepel az adatbázisban az adott UID, vagy \emph{,,FAIL''}-t, amikor nem szerepel az adott UID az adatbázisban -- menti el az adatbázisba az adatot. 
+	
+	Mint ahogyan a hőmérséklet-páratartalom szenzoros eszköznél van az API részt hívja meg csak itt a \emph{,,\textbf{/rfid/}''} útvonalon az \emph{,,RfidUseDataController''} \emph{,,store''} metódusát, ami legelőször lekérdezi, hogy van-e ilyen címke azzal az UID-vel, amit beolvasott, majd ha ez létezik, akkor elmenti az \emph{,,esp\_use\_data''} táblába, hogy mikor lett beolvasva az a címke, -- majd mint ahogyan már említettem -- \emph{,,OK''} válasz esetén zölden fog villogni a hozzá kötött RGB LED. Ha nem szerepel az adatbázisban az UID, akkor nem kerül lementésre semmi, hanem visszaküldi az ESP-nek hogy \emph{,,FAIL''}, és pirosan fog ebben az esetben villogni a rákötött RGB LED.
+	
+	A másik állapot az akkor van, amikor \aref{add-rfid-tag}.~képen vagy \aref{modify-rfid-tag}.~képen látható \emph{,,Read Tag''}-ra kattintunk. Ehhez a gombhoz van egy \emph{,,onClick()''} metódus, ami azt nézi, hogy rá lett-e kattintva, olyankor meghívja a \emph{,,GetUID()''} metódust, ami az alábbiakat végzi el: először is ellenőrzi, hogy az oldalon melyik olvasó lett kiválasztva, majd egy \emph{,,\$.getJSON()''} metódussal meghívja a web.php-n lévő \emph{/getTag/olvasóID/} útvonalon az \emph{,,EspController''}-ben lévő \emph{,,getTag()''} metódust, ami megkapja az adott olvasó ID-je alapján, hogy mi az IP végződése, ami alapján küld annak az ESP-nek az Acync Webszerverére azt a HTTP GET kérést, hogy \emph{,,/read''}, ami átállítja az ESP állapotát, hogy JSON formátumba küldje vissza a beolvasott UID-t. Erre be lett állítva, hogy 8 másodperc legyen arra, hogy ezt a műveletet elvégezze a felhasználó. Így az ESP-től kapott UID-t a vezérlő továbbítja vissza a \emph{,,getTag()''} metódus \emph{,,\$.getJSON()''}-be ezt. Ez alapján írja be az adott UID szöveges mezőbe az adott címke UID-jét.
 	
 	%----------
 	
@@ -926,15 +971,6 @@
 		\textsc{URL:} \url{https://iotprojectsideas.com/connect-rfid-to-php-mysql-database-with-nodemcu-esp8266/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
-		%--------------------------------------------------
-		% ez a bibitem még nincs használva
-		\bibitem{node32-httpget}
-		\textsc{ESP8266 NodeMCU HTTP GET and HTTP POST with Arduino IDE (JSON, URL Encoded, Text)}\\
-		\textsc{URL:} \url{https://randomnerdtutorials.com/esp8266-nodemcu-http-get-post-arduino/#http-get-1}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-		%--------------------------------------------------
-		
-		
 		\bibitem{adafruit-dht-library}
 		\textsc{Arduino.cc} \emph{Adafruit: DHT sensor library}\\
 		\textsc{URL:} \url{https://www.arduino.cc/reference/en/libraries/dht-sensor-library/}\\
@@ -946,8 +982,18 @@
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{async-webserver}
-		\textsc{Arduino to Laravel Communication}\\
-		\textsc{URL:} \url{https://www.instructables.com/Arduino-to-Laravel-Communication/}\\
+		\textsc{Async Web Server for ESP8266 and ESP32}\\
+		\textsc{URL:} \url{https://github.com/me-no-dev/ESPAsyncWebServer/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{esp32-cam}
+		\textsc{ESP32-CAM-Arduino-IDE}\\
+		\textsc{URL:} \url{https://github.com/RuiSantosdotme/ESP32-CAM-Arduino-IDE/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{github-repo}
+		\textsc{Szakdolgozat GitHub repository-ja}\\
+		\textsc{URL:} \url{https://github.com/OOHQ3E/smarthome/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
 		\bibitem{raspberry-as-wifi}

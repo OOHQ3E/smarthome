@@ -72,11 +72,11 @@
                                 setInterval(imageExists.bind('esp',@json($esp),"http://192.168.200.{{$esp->ip_End}}"), 15000);
                             });
                         </script>
-                        @elseif($esp-> room_id === $room->id && $esp->type === "RFID Reader")
+                    @elseif($esp-> room_id === $room->id && $esp->type === "RFID Reader")
                             <div class="shadow-xl w-full text-xl justify-center bg-opacity-75 bg-gray-100 hover:bg-gray-200 h-min-24 p-4 rounded-lg">
                                     <span class="font-semibold">{{$esp->name}} ({{$esp->ip_End}})</span>
                             </div>
-                        @endif
+                    @endif
 
                 @empty
                 @endforelse
