@@ -744,13 +744,36 @@
 	%----------
 	
 	\chapter{Tesztelések}
-	\section{Tesztelések módjai és fontossága}
+	Egy szoftver -- vagy bármilyen termék -- tesztelése az egyik legfontosabb dolog, hogy garantálni tudjuk a lehető legjobb működést. Minél több teszt van elvégezve, annál több hibát találunk meg. Ha tesztelés közben hiba jelentkezik, azt orvosolni kell minél előbb.
 	
-	\subsection{Cypress automatizált tesztelések}
-	\subsection{Manuális tesztelések}
+	\section{Cypress automatizált tesztelések}
+	
+	A Cypress az egy nyílt forráskódú JavaScript alapú feketedobozos -- vagy specifikáicó alapú -- tesztelő keretrendszer. A feketedobozos tesztelési forma az, ahol a forráskód nincs felhasználva tesztelés során. A Cypress lehetővé teszi azt, hogy egy webalkalmazás felületét gyorsan és konzisztensen le tudjuk tesztelni. 
+	
+	A Cypress használatát azzal könnyítik meg a fejlesztőknek, vagy tesztelőknek, hogy hivatalos dokumentációban biztosítanak használathoz példát és leírást.\cite{cypress-docs}
+	
+	A Cypress telepítéséhez az alábbi kódot kell a terminálon belül beírni: \emph{,,npm install cypress --save-dev''}, majd ha meg akarjuk nyitni a Cypress tesztelői felületet, akkor pedig \emph{,,npx cypress open''}-t kell beírni, ilyenkor ki kell választani azt, hogy \emph{,,E2E Testing''}, -- End-to-End Testing, ami olyan teszt, ami felhasználói viselkedést szimulál szoftveres környezetben --, majd hogy milyen böngészőben szeretnénk lefuttatni ezeket a teszteket. -- Google Chrome, Mozilla Firefox, Electron, vagy Microsoft Edge-et használva. Ha kiválasztottuk a böngészőt, akkor meg mutatja, hogy a \emph{/cypress/e2e} mappán belül milyen teszt fájlok találhatóak. Ha kiválasztjuk a kívánt tesztelési fájlt, -- ez esetben a \emph{,,testing.cy.js''}-t akkor a tesztek elkezdenek lefutni.\\
+	\textbf{Ezzel az alábbiakat teszteltem:}
+	\begin{itemize}
+		\item Üres az adatbázis, minden fő oldalt megnyit, és azok léteznek.
+		\item Szobákkal CRUD\footnote{Create Update Delete, azaz Létrehozás, Módosítás és Törlés} műveletek helyes adat megadásokkal és elvárt hibajelzésekkel.
+		\item Hozzáad 3 szobát és két szenzort későbbi használatra.
+		\item Eszköz hozzáadása és módosítása megfelelően.
+		\item Eszköz hozzáadása és módosítása elvárt hibajelzésekkel.
+		\item Majd a végén törli a használt szobákat -- ezzel az eszközöket is.
+	\end{itemize}
+	\section{Manuális tesztelések}
+	Olyan tesztelések lettek manuálisan elvégezve, amelyeket nem lehetséges automatizált teszteléssel elvégezni: ez például azok a részek lehetnek, ahol az RFID olvasó van használva.\\
+	\textbf{Tesztelési azonosítók jelentése:}
+	\begin{itemize}
+		\item \textbf{RFIDT}: RFID olvasóval kapcsolatos tesztelés
+		\item \textbf{KT}: Kapcsolóval kapcsolatos tesztelés
+		\item \textbf{KAMT}: Kamerával kapcsolatos tesztelés
+		\item \textbf{HPT}: Hőmérséklet-páratartalom szenzorral kapcsolatos teszt
+	\end{itemize}
 	\begin{table}[ht!]
 		\centering
-		\begin{tabular}{|p{6cm}|p{6cm}|p{4cm}|}
+		\begin{tabular}{|p{0.33\textwidth}|p{0.33\textwidth}|p{0.33\textwidth}|}
 			\hline
 			\textbf{Teszt leírása} & \textbf{Elvárt eredmények} & \textbf{Tapasztalatok} \\
 			\hline
