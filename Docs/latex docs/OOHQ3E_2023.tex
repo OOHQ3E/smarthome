@@ -13,6 +13,7 @@
 \usepackage{listingsutf8}
 \PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
 \usepackage[magyar]{babel}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{mathtools,amssymb,amsthm,pdfpages}
 \footnotestyle{rule=fourth}
 
@@ -752,8 +753,8 @@
 	
 	A Cypress használatát azzal könnyítik meg a fejlesztőknek, vagy tesztelőknek, hogy hivatalos dokumentációban biztosítanak használathoz példát és leírást.\cite{cypress-docs}
 	
-	A Cypress telepítéséhez az alábbi kódot kell a terminálon belül beírni: \emph{,,npm install cypress --save-dev''}, majd ha meg akarjuk nyitni a Cypress tesztelői felületet, akkor pedig \emph{,,npx cypress open''}-t kell beírni, ilyenkor ki kell választani azt, hogy \emph{,,E2E Testing''}, -- End-to-End Testing, ami olyan teszt, ami felhasználói viselkedést szimulál szoftveres környezetben --, majd hogy milyen böngészőben szeretnénk lefuttatni ezeket a teszteket. -- Google Chrome, Mozilla Firefox, Electron, vagy Microsoft Edge-et használva. Ha kiválasztottuk a böngészőt, akkor meg mutatja, hogy a \emph{/cypress/e2e} mappán belül milyen teszt fájlok találhatóak. Ha kiválasztjuk a kívánt tesztelési fájlt, -- ez esetben a \emph{,,testing.cy.js''}-t akkor a tesztek elkezdenek lefutni.\\
-	\textbf{Ezzel az alábbiakat teszteltem:}
+	A Cypress telepítéséhez az alábbi kódot kell a terminálon belül beírni: \emph{,,npm install cypress --save-dev''}, majd ha meg akarjuk nyitni a Cypress tesztelői felületet, akkor pedig \emph{,,npx cypress open''}-t kell beírni. Ilyenkor ki kell választani azt, hogy \emph{,,E2E Testing''}\footnote{End-to-End Testing, ami olyan teszt, ami felhasználói viselkedést szimulál szoftveres környezetben}, majd hogy milyen böngészőben szeretnénk lefuttatni ezeket a teszteket. -- Google Chrome, Mozilla Firefox, Electron, vagy Microsoft Edge-et használva. Ha kiválasztottuk a böngészőt, akkor meg mutatja, hogy a \emph{/cypress/e2e} mappán belül milyen teszt fájlok találhatóak. Ha kiválasztjuk a kívánt tesztelési fájlt, -- ez esetben a \emph{,,testing.cy.js''}-t akkor a tesztek elkezdenek lefutni.\\
+	\textbf{Ezzel az alábbiakat teszteltem:}\\
 	\begin{itemize}
 		\item Üres az adatbázis, minden fő oldalt megnyit, és azok léteznek.
 		\item Szobákkal CRUD\footnote{Create Update Delete, azaz Létrehozás, Módosítás és Törlés} műveletek helyes adat megadásokkal és elvárt hibajelzésekkel.
@@ -762,46 +763,247 @@
 		\item Eszköz hozzáadása és módosítása elvárt hibajelzésekkel.
 		\item Majd a végén törli a használt szobákat -- ezzel az eszközöket is.
 	\end{itemize}
-	\section{Manuális tesztelések}
-	Olyan tesztelések lettek manuálisan elvégezve, amelyeket nem lehetséges automatizált teszteléssel elvégezni: ez például azok a részek lehetnek, ahol az RFID olvasó van használva.\\
-	\textbf{Tesztelési azonosítók jelentése:}
-	\begin{itemize}
-		\item \textbf{RFIDT}: RFID olvasóval kapcsolatos tesztelés
-		\item \textbf{KT}: Kapcsolóval kapcsolatos tesztelés
-		\item \textbf{KAMT}: Kamerával kapcsolatos tesztelés
-		\item \textbf{HPT}: Hőmérséklet-páratartalom szenzorral kapcsolatos teszt
-	\end{itemize}
-	\begin{table}[ht!]
+	\Aref{cypress-test}.~képen pedig az látható, hogy lefutott az összes alábbi teszt sikeresen.
+	
+	\begin{figure}[ht!]
 		\centering
-		\begin{tabular}{|p{0.33\textwidth}|p{0.33\textwidth}|p{0.33\textwidth}|}
+		\includegraphics[width=1\textwidth]{./src/pages_img/cypress}
+		\caption{A lefutott Cypress tesztek}
+		\label{cypress-test}
+	\end{figure}
+	\section{Manuális tesztelések}
+	Olyan tesztelések lettek manuálisan elvégezve, amelyeket nem lehetséges automatizált teszteléssel elvégezni: \Aref{rfid-toggle-test-table}.~táblázatban az RFID olvasó és a kapcsoló eszköz teszteléseit, \aref{camera-test-table}.~táblázatban pedig a kamera teszteléseit jegyeztem fel.
+	\begin{table}
+		\begin{tabular}{|p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
 			\hline
-			\textbf{Teszt leírása} & \textbf{Elvárt eredmények} & \textbf{Tapasztalatok} \\
-			\hline
-			Access Control Test: RFID tags assigned to users &
-			 The system should recognize the RFID tags assigned to each user and grant or deny access to specific devices or areas of the home accordingly &
-			  The test was successful, with the system accurately recognizing and responding to each user's assigned RFID tag \\
-			\hline
-			Device Control Test: Using RFID tags to control devices &
-			 The system should allow users to control smart home devices (such as lights or locks) using RFID tags, without requiring additional input &
-			  The test was partially successful, with the system accurately recognizing the RFID tags but experiencing some delays in device response times \\
-			\hline
-			Durability Test: RFID tags in high traffic areas &
-			 The RFID tags should remain functional and readable even in high traffic areas, with no degradation in performance &
-			  The test was successful, with the RFID tags remaining fully functional and readable even with heavy usage \\
-			\hline
-			Security Test: Unauthorized access prevention &
-			 The system should be designed to prevent unauthorized access by detecting and alerting the user to the presence of unrecognized RFID tags & 
-			 The test was successful, with the system detecting and preventing access by an unrecognized RFID tag, and sending an alert to the user's mobile device \\
-			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			{\color[HTML]{333333} \textbf{Teszt leírása}} &
+			{\color[HTML]{333333} \textbf{Elvárt eredmények}} &
+			{\color[HTML]{333333} \textbf{Tapasztalatok}}
+			\\
+			\rowcolor[HTML]{EFEFEF} 
+				Az RFID címke hozzás és módosítás oldalon, ha \emph{,,Read Tag''}-re kattintunk és címkét nem érintünk az olvasóhoz, és letelik a 8 másodperc. &
+				 
+				Az oldal jelzi, hogy nem sikerült a beolvasás. &
+			
+				Az oldal egy értesítésben jelezte, hogy a beolvasás nem sikerült, és próbáljuk újra.
+				 \\
+				Az RFID címke hozzás és módosítás oldalon, ha \emph{,,Read Tag''}-re kattintunk és érintünk  címkét az olvasóhoz 8 másodpercen belül. &
+				
+				Az oldalon a UID mezőben megjelenik az adott címke UID-ja. &
+			
+				A UID mezőben sikeresen megjelenik a címkéhez hozzátartozó adat.
+				  \\
+			\rowcolor[HTML]{EFEFEF} 
+				RFID olvasóhoz hozzáérintünk egy olvasóhoz nem felvett
+				címkét. &
+			
+				Olvasóhoz kötött RGB LED pirosan kezd villogni. &
+			
+				Az olvasóhoz kötött RGB LED pirosan villog miután megkapta a választ. 
+				\\
+			
+				RFID olvasóhoz hozzáérintünk egy hozzátartozó címkét. &
+			
+				Olvasóhoz kötött RGB LED zölden villog, ehhez tartozó adatok láthatóak az RFID használati előzményeknél a megfelelő RFID olvasó táblázatában. &
+			
+				Az olvasóhoz kötött RBG LED zölden villogott, miután megkapta a választ, az RFID használati előzmény oldalon a megfelelő adatok jelennek meg a hozzá tartozó olvasó táblázatában.\\
+				\rowcolor[HTML]{EFEFEF} 
+				
+				Kapcsoló csatlakozott a szerverhez. - Főoldal &
+				
+				A kapcsolónak a paneljén lévő felirat megjelenik a megfelelő állapottal. &
+				
+				A kapcsolónak a paneljén a felirat megjelent a kapcsolási állapotnak megfelelően. \\
+				\rowcolor[HTML]{FFFFFF} 
+				
+				Kapcsoló nem csatlakozott szerverhez. - Főoldal &
+				
+				A kapcsoló paneljén megjelenik a felirat, hogy jelenleg nem elérhető. &
+				
+				A kapcsolónak a paneljén a felirat sikeresen megjeleníti, hogy az eszköz jelenleg nem elérhető - a gomb most már nem kapcsolható. \\
+				\rowcolor[HTML]{EFEFEF} 
+				Kapcsolóval bekapcsoljuk az eszközt. &
+				
+				A kapcsoló paneljén a felirat és a gomb jelzi, hogy be lett kapcsolva az eszköz. Az eszköz bekapcsolt állapotba kerül. &
+				
+				A kapcsoló paneljén a felirat és a gomb sikeresen jelzi, hogy be lett kapcsolva az eszköz. Az eszköz szintén sikeresen bekapcsolt állapotba került. \\
+				\rowcolor[HTML]{FFFFFF} 
+				
+				Kapcsolóval kikapcsoljuk az eszközt. &
+				
+				A kapcsoló paneljén a felirat és a gomb jelzi, hogy ki lett kapcsolva az eszköz. Az eszköz kikapcsolt állapotba kerül. &
+				
+				A kapcsoló paneljén a felirat és a gomb sikeresen jelzi, hogy ki lett  kapcsolva az eszköz. Az eszköz szintén sikeresen kikapcsolt állapotba került. \\ \hline
 		\end{tabular}
-		\caption{Manuális tesztelések a webalkalmazásra}
-		\label{table:manual-testing-results}
-	\end{table}
+		\caption{Manuális tesztelések RFID-ra és kapcsolóra}
+		\label{rfid-toggle-test-table}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{|p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
+		\hline
+		\rowcolor[HTML]{C0C0C0} 
+		{\color[HTML]{333333} \textbf{Teszt leírása}} &
+		{\color[HTML]{333333} \textbf{Elvárt eredmények}} &
+		{\color[HTML]{333333} \textbf{Tapasztalatok}}
+		\\
+		\rowcolor[HTML]{EFEFEF} 
+		Kamera csatlakozik a szerverhez - Főoldal. &
+		
+		A megadott kamera panelen megjelenik a kamera élő képe. &
+		
+		A megadott kamera panelen sikeresen megjelenik a kamera élő képe.
+		\\
+		Kamera nem csatlakozik vagy lecsatlakozott a szerverről - Főoldal &
+		
+		A megadott kamera panelen kiírja, hogy nem sikerült a kapcsolódás, és újra próbálozik. &
+		
+		A megadott kamera panelen sikeresen kiírja, hogy nem sikerült a kapcsolódás, és újra próbálozik.
+		\\
+		\rowcolor[HTML]{EFEFEF} 
+		Kamera nem csatlakozik vagy lecsatlakozott a szerverről - Adott kamera kép oldala. &
+		
+		A megadott kamera panelen megjelenik a kamera élő képe. &
+		
+		A megadott kamera panelen sikeresen megjelenik a kamera élő képe.
+		\\
+		Kamera nem csatlakozik a szerverhez - Adott kamera kép oldala &
+		
+		A kamera panelen kiírja, hogy nem sikerült a kapcsolódás, és újra próbálozik. &
+		
+		A kamera panelen sikeresen kiírja, hogy nem sikerült a kapcsolódás, és újra próbálozik.
+		\\ \hline
+	\end{tabular}
+	\caption{Manuális tesztelések kamerára}
+	\label{camera-test-table}
+\end{table}
+
 	
 	%----------
 	\chapter{Rendszer telepítése}
-
+	Ezen a részen azt szeretném megmutatni, hogy egy Raspberry Pi-re hogyan is tudjuk elérni azt, hogy minden megfelelően működjön, és használhatni lehessen. Terminál utasításokon keresztül lesz elmondva, hogy mit is csináljunk.\\
+	\textbf{Először is győződjünk meg arról, hogy a legfrissebb a rendszerünk.}
 	
+	\begin{verbatim}
+		-> sudo apt update && sudo apt upgrade -y
+	\end{verbatim}
+	\section*{Raspberry beállítása mint Wi-Fi}
+	Itt azokat írom le, ahogyan nekem is alkalmazva lett a Raspberry Pi-n, hogy lehessen majd csatlakozni a Raspberry-hez, mint Wi-Fi.
+	\begin{verbatim}
+		-> sudo apt install hostapd
+		-> sudo systemctl unmask hostapd
+		-> sudo systemctl enable hostapd
+		-> sudo apt install dnsmasq
+		-> sudo DEBIAN_FRONTEND=noninteractive apt install -y
+					 netfilter-persistent iptables-persistent
+		-> sudo nano /etc/dhcpcd.conf
+	\end{verbatim}
+	Fájl végére beilleszteni: 
+	\begin{verbatim}
+		interface wlan0
+		static ip_address=192.168.200.1/24
+		nohook wpa_supplicant
+		
+		-> sudo nano /etc/sysctl.d/routed-ap.conf
+	\end{verbatim}
+	Beírni az alábbit:
+	\begin{verbatim}
+		# Enable IPv4 routing
+		net.ipv4.ip_forward=1
+		
+		-> sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+		-> sudo netfilter-persistent save
+		
+		-> sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+		-> sudo nano /etc/dnsmasq.conf
+	\end{verbatim}
+	Hozzáadni az alábbit a file-hoz:
+	\begin{verbatim}
+		interface=wlan0 # Listening interface
+		dhcp-range=192.168.200.150,192.168.200.200,255.255.255.0,24h
+		# Pool of IP addresses served via DHCP
+		domain=wlan     # Local wireless DNS domain
+		address=/smart.pi.home/192.168.200.1
+		# Alias for this router
+		
+		-> sudo rfkill unblock wlan
+		-> sudo nano /etc/hostapd/hostapd.conf
+	\end{verbatim}
+	Hozzáadni az alábbit a file-hoz:
+	\begin{verbatim}
+		# ország kód -> HU - magyar
+		country_code=HU
+		interface=wlan0
+		# Wi-Fi neve:
+		ssid=raspberrySmarthome
+		hw_mode=g
+		channel=7
+		macaddr_acl=0
+		auth_algs=1
+		ignore_broadcast_ssid=0
+		wpa=2
+		# Wi-Fi jelszava:
+		wpa_passphrase=huu1vi9doL
+		wpa_key_mgmt=WPA-PSK
+		wpa_pairwise=TKIP
+		rsn_pairwise=CCMP
+		
+		-> sudo systemctl reboot
+	\end{verbatim}\cite{raspberry-as-wifi}
+
+	\section*{Webalkalmazás telepítése}
+	Én az alábbi leírás alapján telepítettem az alkalmazást Raspberry Pi-re.
+	\begin{verbatim}
+		-> sudo apt install apache2
+		-> sudo apt install php libapache2-mod-php 
+				php-mbstring php-xmlrpc php-soap php-gd 
+				php-xml php-cli php-zip php-bcmath 
+				php-tokenizer php-json php-pear
+				
+		-> sudo apt install mariadb-server
+		-> sudo mysql_secure_installation
+		-> curl -sS https://getcomposer.org/installer | php
+		-> sudo mv composer.phar /usr/local/bin/composer
+		-> sudo chmod +x /usr/local/bin/composer
+		
+		-> sudo git clone https://github.com/OOHQ3E/smarthome/
+		-> sudo chgrp -R www-data /var/www/html/smarthome/web/oohq3e
+		-> sudo chmod -R 775 /var/www/html/smarthome/web/oohq3e/storage
+		-> sudo nano /etc/apache2/sites-available/laravel-project.conf
+	\end{verbatim} 
+	Az alábbit kell így:
+	\begin{verbatim}
+		<VirtualHost *:80>
+		DocumentRoot /var/www/html/smarthome/web/oohq3e/public
+		
+		<Directory /var/www/html/smarthome/web/oohq3e>
+		AllowOverride All
+		Require all granted
+		</Directory>
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+		</VirtualHost>
+		
+		-> sudo a2enmod rewrite
+		-> sudo systemctl restart apache2
+	\end{verbatim}
+	Vissza kell lépni a \textbf{$\backslash$var$\backslash$www$\backslash$html$\backslash$smarthome$\backslash$web$\backslash$oohqe}-be
+	\begin{verbatim}
+		-> composer install
+		-> sudo apt install npm
+		-> npm install
+		-> cp .env.example .env
+	\end{verbatim}
+		Beállítani az adatbázist úgy .env fájlban, ahogyan a rendszeren be lett állítva már, és azokat az adatokat megadni
+	\begin{verbatim}
+		-> sudo mysql -u root
+		-> CREATE DATABASE smarthome;
+		kilépni CTRL+C-vel
+		
+		-> php artisan key:generate
+		-> php artisan migrate:fresh
+	\end{verbatim}\cite{install-laravel-on-ubuntu}
 	\chapter*{Összegzés}
 	\addcontentsline{toc}{chapter}{Összegzés}
 	
@@ -1019,14 +1221,20 @@
 		\textsc{URL:} \url{https://github.com/OOHQ3E/smarthome/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 		
-		\bibitem{raspberry-as-wifi}
-		\textsc{Raspberry configuration for Wi-Fi}\\
-		\textsc{URL:} \url{https://www.raspberrypi.com/documentation//computers/configuration.html#setting-up-a-routed-wireless-access-point}\\
+		\bibitem{github-repo}
+		\textsc{Szakdolgozat GitHub repository-ja}\\
+		\textsc{URL:} \url{https://github.com/OOHQ3E/smarthome/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
 	
 		\bibitem{cypress-docs}
 		\textsc{Offical Cypress Documentation}\\
 		\textsc{URL:} \url{https://docs.cypress.io/guides/overview/why-cypress}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		
+		\bibitem{install-laravel-on-ubuntu}
+		\textsc{How to Install Laravel on Ubuntu 18.04 with Apache}\\
+		\textsc{URL:} \url{https://www.hostinger.com/tutorials/how-to-install-laravel-on-ubuntu-18-04-with-apache-and-php/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
 				
 	\end{thebibliography}

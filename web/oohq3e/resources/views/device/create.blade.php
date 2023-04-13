@@ -9,7 +9,7 @@
         <div class="m-auto w-1/2 py-2">
             <div class="text-center">
                 <h1 class="text-3xl text-white font-sans pb-2 mt-2 uppercase font-light">
-                   Add device to {{$room->name}}
+                   Add device to <span class="font-semibold">{{$room->name}}</span>
                 </h1>
             </div>
         </div>
@@ -51,7 +51,7 @@
                     <input type="text" class="w-11/12 text-center rounded-full" value="192." disabled>
                     <input type="text" class="w-11/12 text-center rounded-full" value="168." disabled>
                     <input type="text" class="w-11/12 text-center rounded-full" value="200." disabled>
-                    <input type="number" id="ip_End" name="ip_End" class="w-11/12 text-center rounded-full" min="2" max="150">
+                    <input type="number" id="ip_End" name="ip_End" class="w-11/12 text-center rounded-full" min="2" max="149">
                 </div>
 
                 <div class="text-gray-50 flex flex-wrap justify-center gap-2">

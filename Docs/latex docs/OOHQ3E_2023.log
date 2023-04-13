@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  12 APR 2023 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  13 APR 2023 23:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -332,28 +332,64 @@ Package babel Info: Making ` an active character on input line 2819.
 Package babel Info: Importing font and identification data for magyar
 (babel)             from babel-hu.ini. Reported on input line 11.
 )
+(c:/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(c:/texlive/2022/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+
+(c:/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen158
+\ar@mcellbox=\box53
+\extrarowheight=\dimen159
+\NC@list=\toks19
+\extratabsurround=\skip50
+\backup@length=\skip51
+\ar@cellbox=\box54
+)
+\everycr=\toks20
+\minrowclearance=\skip52
+\rownum=\count289
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+)
 (c:/texlive/2022/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
 (c:/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count289
-\calc@Bcount=\count290
-\calc@Adimen=\dimen158
-\calc@Bdimen=\dimen159
-\calc@Askip=\skip50
-\calc@Bskip=\skip51
+\calc@Acount=\count290
+\calc@Bcount=\count291
+\calc@Adimen=\dimen160
+\calc@Bdimen=\dimen161
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count291
-\calc@Cskip=\skip52
+\calc@Ccount=\count292
+\calc@Cskip=\skip55
 )
 (c:/texlive/2022/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip53
+\@mathmargin=\skip56
 
 For additional information on amsmath, use the `?' option.
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -361,75 +397,75 @@ Package: amstext 2021/08/26 v2.01 AMS text
 
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
-\ex@=\dimen160
+\@emptytoks=\toks21
+\ex@=\dimen162
 ))
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen161
+\pmbraise@=\dimen163
 )
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count292
+\inf@bad=\count293
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count293
-\leftroot@=\count294
+\uproot@=\count294
+\leftroot@=\count295
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count295
-\DOTSCASE@=\count296
+\classnum@=\count296
+\DOTSCASE@=\count297
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box53
-\strutbox@=\box54
+\Mathstrutbox@=\box55
+\strutbox@=\box56
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen162
+\big@size=\dimen164
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count297
+\macc@depth=\count298
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count298
+\c@MaxMatrixCols=\count299
 \dotsspace@=\muskip17
-\c@parentequation=\count299
-\dspbrk@lvl=\count300
-\tag@help=\toks20
-\row@=\count301
-\column@=\count302
-\maxfields@=\count303
-\andhelp@=\toks21
-\eqnshift@=\dimen163
-\alignsep@=\dimen164
-\tagshift@=\dimen165
-\tagwidth@=\dimen166
-\totwidth@=\dimen167
-\lineht@=\dimen168
-\@envbody=\toks22
-\multlinegap=\skip54
-\multlinetaggap=\skip55
-\mathdisplay@stack=\toks23
+\c@parentequation=\count300
+\dspbrk@lvl=\count301
+\tag@help=\toks22
+\row@=\count302
+\column@=\count303
+\maxfields@=\count304
+\andhelp@=\toks23
+\eqnshift@=\dimen165
+\alignsep@=\dimen166
+\tagshift@=\dimen167
+\tagwidth@=\dimen168
+\totwidth@=\dimen169
+\lineht@=\dimen170
+\@envbody=\toks24
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-\g_MT_multlinerow_int=\count304
-\l_MT_multwidth_dim=\dimen169
-\origjot=\skip56
-\l_MT_shortvdotswithinadjustabove_dim=\dimen170
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen171
-\l_MT_above_intertext_sep=\dimen172
-\l_MT_below_intertext_sep=\dimen173
-\l_MT_above_shortintertext_sep=\dimen174
-\l_MT_below_shortintertext_sep=\dimen175
-\xmathstrut@box=\box55
-\xmathstrut@dim=\dimen176
+\g_MT_multlinerow_int=\count305
+\l_MT_multwidth_dim=\dimen171
+\origjot=\skip59
+\l_MT_shortvdotswithinadjustabove_dim=\dimen172
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen173
+\l_MT_above_intertext_sep=\dimen174
+\l_MT_below_intertext_sep=\dimen175
+\l_MT_above_shortintertext_sep=\dimen176
+\l_MT_below_shortintertext_sep=\dimen177
+\xmathstrut@box=\box57
+\xmathstrut@dim=\dimen178
 )
 (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -444,15 +480,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (c:/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks24
-\thm@bodyfont=\toks25
-\thm@headfont=\toks26
-\thm@notefont=\toks27
-\thm@headpunct=\toks28
-\thm@preskip=\skip57
-\thm@postskip=\skip58
-\thm@headsep=\skip59
-\dth@everypar=\toks29
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip60
+\thm@postskip=\skip61
+\thm@headsep=\skip62
+\dth@everypar=\toks31
 )
 (c:/texlive/2022/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2022/05/22 v0.5v Insert pages of external PDF documents (AM)
@@ -462,44 +498,25 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 (c:/texlive/2022/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen177
-\ESO@tempdimb=\dimen178
-
-(c:/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
-
-(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+\ESO@tempdima=\dimen179
+\ESO@tempdimb=\dimen180
 )
-Package xcolor Info: Driver file: pdftex.def on input line 227.
-
-(c:/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-))
-\AM@pagewidth=\dimen179
-\AM@pageheight=\dimen180
-\AM@fboxrule=\dimen181
+\AM@pagewidth=\dimen181
+\AM@pageheight=\dimen182
+\AM@fboxrule=\dimen183
 
 (c:/texlive/2022/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2022/05/22 v0.5v Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count305
-\AM@pagebox=\box56
-\AM@global@opts=\toks30
-\AM@pagecnt=\count306
-\AM@toc@title=\toks31
-\c@AM@survey=\count307
-\AM@templatesizebox=\box57
+\pdfpages@includegraphics@status=\count306
+\AM@pagebox=\box58
+\AM@global@opts=\toks32
+\AM@pagecnt=\count307
+\AM@toc@title=\toks33
+\c@AM@survey=\count308
+\AM@templatesizebox=\box59
 )
-\c@tetel=\count308
+\c@tetel=\count309
 
 (c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -516,31 +533,35 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ))
 (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-08-30 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count309
-\l__pdf_internal_box=\box58
+\l__color_backend_stack_int=\count310
+\l__pdf_internal_box=\box60
 )
-(./OOHQ3E_2023.aux)
+(./OOHQ3E_2023.aux
+
+LaTeX Warning: Label `github-repo' multiply defined.
+
+)
 \openout1 = `OOHQ3E_2023.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-Package hyperref Info: Link coloring OFF on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+Package hyperref Info: Link coloring OFF on input line 46.
  (./OOHQ3E_2023.out) (./OOHQ3E_2023.out)
 \@outlinefile=\write3
 \openout3 = `OOHQ3E_2023.out'.
@@ -581,65 +602,65 @@ Package hyperref Info: Link coloring OFF on input line 45.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-5.
+6.
 (c:/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<ot1.cmap>>
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-5.
+6.
 
 (c:/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<oml.cmap>>
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-45.
+46.
 
 (c:/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<oms.cmap>>
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-45.
+46.
 
 (c:/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 45.
+(Font)              <12> on input line 46.
 <<omx.cmap>>
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 45.
+(Font)              <8> on input line 46.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 45.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
+(Font)              <6> on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
 
 
 (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
 
 
 (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> OMX/cmex/m/n on input line 45.
+(Font)                  OMX/lmex/m/n --> OMX/cmex/m/n on input line 46.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> OMX/cmex/m/n on input line 45.
+(Font)                  OMX/lmex/m/n --> OMX/cmex/m/n on input line 46.
 
 (c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count310
-\scratchdimen=\dimen182
-\scratchbox=\box59
-\nofMPsegments=\count311
-\nofMParguments=\count312
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count313
-\MPscratchDim=\dimen183
-\MPnumerator=\count314
-\makeMPintoPDFobject=\count315
-\everyMPtoPDFconversion=\toks33
+\scratchcounter=\count311
+\scratchdimen=\dimen184
+\scratchbox=\box61
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen185
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks35
 ) (c:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -649,12 +670,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count316
+\c@lstlisting=\count317
 
 (c:/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks34
-\inpenc@posthook=\toks35
+\inpenc@prehook=\toks36
+\inpenc@posthook=\toks37
 )
 (c:/texlive/2022/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -671,7 +692,7 @@ LaTeX Info: Redefining \mit on input line 578.
 <eszterhazy-logo-hu.pdf, id=250, 256.07971pt x 88.04292pt>
 File: eszterhazy-logo-hu.pdf Graphic file (type pdf)
 <use eszterhazy-logo-hu.pdf>
-Package pdftex.def Info: eszterhazy-logo-hu.pdf  used on input line 52.
+Package pdftex.def Info: eszterhazy-logo-hu.pdf  used on input line 53.
 (pdftex.def)             Requested size: 256.07907pt x 88.0427pt.
  [1
 
@@ -691,11 +712,11 @@ Package pdftex.def Info: eszterhazy-logo-hu.pdf  used on input line 52.
 
 ] [6]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-05.
+06.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [7] [8]
-Overfull \hbox (2.17653pt too wide) in paragraph at lines 135--137
+Overfull \hbox (2.17653pt too wide) in paragraph at lines 136--138
 \T1/lmr/m/n/12 A Ho-me As-sis-tant 2013 no-vem-be-ré-re ke-rült pub-li-ká-lás-r
 a \T1/lmr/m/it/12 Git-Hub.com\T1/lmr/m/n/12 -on \T1/lmr/m/sc/12 Pa-u-lus Scho-
  []
@@ -709,7 +730,7 @@ a \T1/lmr/m/it/12 Git-Hub.com\T1/lmr/m/n/12 -on \T1/lmr/m/sc/12 Pa-u-lus Scho-
 File: ./src/schematics/ESP32 CAM schematics.pdf Graphic file (type pdf)
 <use ./src/schematics/ESP32 CAM schematics.pdf>
 Package pdftex.def Info: ./src/schematics/ESP32 CAM schematics.pdf  used on inp
-ut line 215.
+ut line 216.
 (pdftex.def)             Requested size: 441.01773pt x 231.02228pt.
  [13 <./src/schematics/ESP32 CAM schematics.pdf>]
 <./src/schematics/temperature and humidity sensor_bb.pdf, id=469, 658.46pt x 21
@@ -718,7 +739,7 @@ File: ./src/schematics/temperature and humidity sensor_bb.pdf Graphic file (typ
 e pdf)
 <use ./src/schematics/temperature and humidity sensor_bb.pdf>
 Package pdftex.def Info: ./src/schematics/temperature and humidity sensor_bb.pd
-f  used on input line 227.
+f  used on input line 228.
 (pdftex.def)             Requested size: 441.01773pt x 143.87103pt.
  [14 <./src/schematics/temperature and humidity sensor_bb.pdf>]
 <./src/schematics/RFID reader schematics_bb.pdf, id=535, 658.46pt x 304.13625pt
@@ -726,14 +747,14 @@ f  used on input line 227.
 File: ./src/schematics/RFID reader schematics_bb.pdf Graphic file (type pdf)
 <use ./src/schematics/RFID reader schematics_bb.pdf>
 Package pdftex.def Info: ./src/schematics/RFID reader schematics_bb.pdf  used o
-n input line 244.
+n input line 245.
 (pdftex.def)             Requested size: 441.01773pt x 203.70525pt.
 <./src/schematics/ESP32 toggle schematics_bb.pdf, id=538, 472.76625pt x 307.147
 5pt>
 File: ./src/schematics/ESP32 toggle schematics_bb.pdf Graphic file (type pdf)
 <use ./src/schematics/ESP32 toggle schematics_bb.pdf>
 Package pdftex.def Info: ./src/schematics/ESP32 toggle schematics_bb.pdf  used 
-on input line 261.
+on input line 262.
 (pdftex.def)             Requested size: 441.01773pt x 286.53pt.
  [15 <./src/schematics/RFID reader schematics_bb.pdf>] [16 <./src/schematics/ES
 P32 toggle schematics_bb.pdf>]
@@ -742,41 +763,41 @@ P32 toggle schematics_bb.pdf>]
 File: ./src/icons/arrow-left-solid.png Graphic file (type png)
 <use ./src/icons/arrow-left-solid.png>
 Package pdftex.def Info: ./src/icons/arrow-left-solid.png  used on input line 3
-29.
+30.
 (pdftex.def)             Requested size: 14.22636pt x 12.20059pt.
 <./src/icons/clock-rotate-left-solid.png, id=686, 515.0442pt x 515.0442pt>
 File: ./src/icons/clock-rotate-left-solid.png Graphic file (type png)
 <use ./src/icons/clock-rotate-left-solid.png>
 Package pdftex.def Info: ./src/icons/clock-rotate-left-solid.png  used on input
- line 332.
+ line 333.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
 <./src/icons/plus-solid.png, id=687, 418.6842pt x 418.6842pt>
 File: ./src/icons/plus-solid.png Graphic file (type png)
 <use ./src/icons/plus-solid.png>
-Package pdftex.def Info: ./src/icons/plus-solid.png  used on input line 335.
+Package pdftex.def Info: ./src/icons/plus-solid.png  used on input line 336.
 (pdftex.def)             Requested size: 14.22636pt x 14.22101pt.
 <./src/icons/pen-to-square-regular.png, id=688, 510.9489pt x 510.9489pt>
 File: ./src/icons/pen-to-square-regular.png Graphic file (type png)
 <use ./src/icons/pen-to-square-regular.png>
 Package pdftex.def Info: ./src/icons/pen-to-square-regular.png  used on input l
-ine 338.
+ine 339.
 (pdftex.def)             Requested size: 14.22636pt x 14.2207pt.
 <./src/icons/trash-can-solid.png, id=689, 450.7239pt x 515.0442pt>
 File: ./src/icons/trash-can-solid.png Graphic file (type png)
 <use ./src/icons/trash-can-solid.png>
 Package pdftex.def Info: ./src/icons/trash-can-solid.png  used on input line 34
-1.
+2.
 (pdftex.def)             Requested size: 14.22636pt x 16.25226pt.
 <./src/icons/arrow-rotate-right-solid.png, id=690, 466.8642pt x 450.7239pt>
 File: ./src/icons/arrow-rotate-right-solid.png Graphic file (type png)
 <use ./src/icons/arrow-rotate-right-solid.png>
 Package pdftex.def Info: ./src/icons/arrow-rotate-right-solid.png  used on inpu
-t line 344.
+t line 345.
 (pdftex.def)             Requested size: 14.22636pt x 13.73433pt.
 <./src/icons/ban-solid.png, id=691, 515.0442pt x 515.0442pt>
 File: ./src/icons/ban-solid.png Graphic file (type png)
 <use ./src/icons/ban-solid.png>
-Package pdftex.def Info: ./src/icons/ban-solid.png  used on input line 347.
+Package pdftex.def Info: ./src/icons/ban-solid.png  used on input line 348.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
  [19 <./src/icons/arrow-left-solid.png> <./src/icons/clock-rotate-left-solid.pn
 g> <./src/icons/plus-solid.png> <./src/icons/pen-to-square-regular.png> <./src/
@@ -784,33 +805,37 @@ icons/trash-can-solid.png> <./src/icons/arrow-rotate-right-solid.png>]
 <./src/icons/gear-solid.png, id=708, 485.4135pt x 514.8033pt>
 File: ./src/icons/gear-solid.png Graphic file (type png)
 <use ./src/icons/gear-solid.png>
-Package pdftex.def Info: ./src/icons/gear-solid.png  used on input line 350.
+Package pdftex.def Info: ./src/icons/gear-solid.png  used on input line 351.
 (pdftex.def)             Requested size: 14.22636pt x 15.08208pt.
 <./src/icons/key-solid.png, id=709, 515.0442pt x 515.0442pt>
 File: ./src/icons/key-solid.png Graphic file (type png)
 <use ./src/icons/key-solid.png>
-Package pdftex.def Info: ./src/icons/key-solid.png  used on input line 353.
+Package pdftex.def Info: ./src/icons/key-solid.png  used on input line 354.
 (pdftex.def)             Requested size: 14.22636pt x 14.22466pt.
 <./src/icons/id-card-clip-solid.png, id=710, 579.1236pt x 515.0442pt>
 File: ./src/icons/id-card-clip-solid.png Graphic file (type png)
 <use ./src/icons/id-card-clip-solid.png>
 Package pdftex.def Info: ./src/icons/id-card-clip-solid.png  used on input line
- 356.
+ 357.
 (pdftex.def)             Requested size: 14.22636pt x 12.64502pt.
 [20 <./src/icons/ban-solid.png> <./src/icons/gear-solid.png> <./src/icons/key-s
 olid.png> <./src/icons/id-card-clip-solid.png>] [21]
 3. fejezet.
+
+LaTeX Warning: Citation `raspberry-as-wifi' on page 22 undefined on input line 
+401.
+
 [22
 
 ]
-<./src/database.png, id=761, 1180.41pt x 641.39626pt>
+<./src/database.png, id=759, 1180.41pt x 641.39626pt>
 File: ./src/database.png Graphic file (type png)
 <use ./src/database.png>
-Package pdftex.def Info: ./src/database.png  used on input line 413.
+Package pdftex.def Info: ./src/database.png  used on input line 414.
 (pdftex.def)             Requested size: 441.01773pt x 239.63239pt.
  [23 <./src/database.png>] [24]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 440.
+nput line 441.
 
 (c:/texlive/2022/texmf-dist/tex/latex/base/latin2.def
 File: latin2.def 2021/02/14 v1.3d Input encoding file
@@ -830,257 +855,303 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (c:/texlive/2022/texmf-dist/tex/latex/base/latin2.def
 File: latin2.def 2021/02/14 v1.3d Input encoding file
 ) [25]
-<./src/codes/route.png, id=833, 514.92375pt x 31.317pt>
+<./src/codes/route.png, id=831, 514.92375pt x 31.317pt>
 File: ./src/codes/route.png Graphic file (type png)
 <use ./src/codes/route.png>
-Package pdftex.def Info: ./src/codes/route.png  used on input line 454.
+Package pdftex.def Info: ./src/codes/route.png  used on input line 455.
 (pdftex.def)             Requested size: 441.01773pt x 26.82265pt.
-<./src/codes/route_with_var.png, id=834, 630.55576pt x 34.9305pt>
+<./src/codes/route_with_var.png, id=832, 630.55576pt x 34.9305pt>
 File: ./src/codes/route_with_var.png Graphic file (type png)
 <use ./src/codes/route_with_var.png>
-Package pdftex.def Info: ./src/codes/route_with_var.png  used on input line 460
+Package pdftex.def Info: ./src/codes/route_with_var.png  used on input line 461
 .
 (pdftex.def)             Requested size: 441.01773pt x 24.43144pt.
-<./src/codes/controller_func.png, id=835, 259.56975pt x 31.317pt>
+<./src/codes/controller_func.png, id=833, 259.56975pt x 31.317pt>
 File: ./src/codes/controller_func.png Graphic file (type png)
 <use ./src/codes/controller_func.png>
 Package pdftex.def Info: ./src/codes/controller_func.png  used on input line 46
-4.
+5.
 (pdftex.def)             Requested size: 441.01773pt x 53.20949pt.
  [26 <./src/codes/route.png>]
-<./src/codes/return_view.png, id=860, 329.43076pt x 76.48575pt>
+<./src/codes/return_view.png, id=858, 329.43076pt x 76.48575pt>
 File: ./src/codes/return_view.png Graphic file (type png)
 <use ./src/codes/return_view.png>
-Package pdftex.def Info: ./src/codes/return_view.png  used on input line 485.
+Package pdftex.def Info: ./src/codes/return_view.png  used on input line 486.
 (pdftex.def)             Requested size: 441.01773pt x 102.40047pt.
-<./src/codes/return_lists.png, id=861, 350.5095pt x 167.4255pt>
+<./src/codes/return_lists.png, id=859, 350.5095pt x 167.4255pt>
 File: ./src/codes/return_lists.png Graphic file (type png)
 <use ./src/codes/return_lists.png>
-Package pdftex.def Info: ./src/codes/return_lists.png  used on input line 489.
+Package pdftex.def Info: ./src/codes/return_lists.png  used on input line 490.
 (pdftex.def)             Requested size: 441.01773pt x 210.66089pt.
  [27 <./src/codes/route_with_var.png> <./src/codes/controller_func.png>] [28 <.
 /src/codes/return_view.png> <./src/codes/return_lists.png>]
-<./src/pages_img/index.png, id=883, 1156.32pt x 539.616pt>
+<./src/pages_img/index.png, id=881, 1156.32pt x 539.616pt>
 File: ./src/pages_img/index.png Graphic file (type png)
 <use ./src/pages_img/index.png>
-Package pdftex.def Info: ./src/pages_img/index.png  used on input line 511.
+Package pdftex.def Info: ./src/pages_img/index.png  used on input line 512.
 (pdftex.def)             Requested size: 441.01773pt x 205.8055pt.
  [29 <./src/pages_img/index.png>] [30]
-<./src/pages_img/settings.png, id=905, 1142.46825pt x 540.8205pt>
+<./src/pages_img/settings.png, id=903, 1142.46825pt x 540.8205pt>
 File: ./src/pages_img/settings.png Graphic file (type png)
 <use ./src/pages_img/settings.png>
-Package pdftex.def Info: ./src/pages_img/settings.png  used on input line 543.
+Package pdftex.def Info: ./src/pages_img/settings.png  used on input line 544.
 (pdftex.def)             Requested size: 441.01773pt x 208.77356pt.
-<./src/pages_img/sensor-error.png, id=908, 1149.093pt x 372.1905pt>
+<./src/pages_img/sensor-error.png, id=906, 1149.093pt x 372.1905pt>
 File: ./src/pages_img/sensor-error.png Graphic file (type png)
 <use ./src/pages_img/sensor-error.png>
 Package pdftex.def Info: ./src/pages_img/sensor-error.png  used on input line 5
-53.
+54.
 (pdftex.def)             Requested size: 441.01773pt x 142.84796pt.
  [31 <./src/pages_img/settings.png>]
-<./src/pages_img/modify-sensor-in-bedroom.png, id=928, 1153.911pt x 479.99326pt
+<./src/pages_img/modify-sensor-in-bedroom.png, id=926, 1153.911pt x 479.99326pt
 >
 File: ./src/pages_img/modify-sensor-in-bedroom.png Graphic file (type png)
 <use ./src/pages_img/modify-sensor-in-bedroom.png>
 Package pdftex.def Info: ./src/pages_img/modify-sensor-in-bedroom.png  used on 
-input line 578.
+input line 579.
 (pdftex.def)             Requested size: 441.01773pt x 183.44667pt.
  [32 <./src/pages_img/sensor-error.png>]
-<./src/pages_img/rfid-settings.png, id=937, 1139.457pt x 536.60475pt>
+<./src/pages_img/rfid-settings.png, id=935, 1139.457pt x 536.60475pt>
 File: ./src/pages_img/rfid-settings.png Graphic file (type png)
 <use ./src/pages_img/rfid-settings.png>
 Package pdftex.def Info: ./src/pages_img/rfid-settings.png  used on input line 
-591.
+592.
 (pdftex.def)             Requested size: 441.01773pt x 207.68654pt.
  [33 <./src/pages_img/modify-sensor-in-bedroom.png>]
-<./src/pages_img/add-rfid-tag.png, id=949, 1154.51324pt x 343.2825pt>
+<./src/pages_img/add-rfid-tag.png, id=947, 1154.51324pt x 343.2825pt>
 File: ./src/pages_img/add-rfid-tag.png Graphic file (type png)
 <use ./src/pages_img/add-rfid-tag.png>
 Package pdftex.def Info: ./src/pages_img/add-rfid-tag.png  used on input line 6
-15.
+16.
 (pdftex.def)             Requested size: 441.01773pt x 131.12964pt.
 
 [34 <./src/pages_img/rfid-settings.png> <./src/pages_img/add-rfid-tag.png>]
-<./src/pages_img/modify-rfid-tag.png, id=963, 1156.32pt x 410.7345pt>
+<./src/pages_img/modify-rfid-tag.png, id=961, 1156.32pt x 410.7345pt>
 File: ./src/pages_img/modify-rfid-tag.png Graphic file (type png)
 <use ./src/pages_img/modify-rfid-tag.png>
 Package pdftex.def Info: ./src/pages_img/modify-rfid-tag.png  used on input lin
-e 630.
+e 631.
 (pdftex.def)             Requested size: 441.01773pt x 156.65105pt.
-<./src/pages_img/rfid-use-history.png, id=968, 1141.26375pt x 532.99126pt>
+<./src/pages_img/rfid-use-history.png, id=966, 1141.26375pt x 532.99126pt>
 File: ./src/pages_img/rfid-use-history.png Graphic file (type png)
 <use ./src/pages_img/rfid-use-history.png>
 Package pdftex.def Info: ./src/pages_img/rfid-use-history.png  used on input li
-ne 642.
+ne 643.
 (pdftex.def)             Requested size: 441.01773pt x 205.96268pt.
 
 [35 <./src/pages_img/modify-rfid-tag.png>]
-<./src/pages_img/humidity-chart.png, id=983, 398.6895pt x 396.2805pt>
+<./src/pages_img/humidity-chart.png, id=981, 398.6895pt x 396.2805pt>
 File: ./src/pages_img/humidity-chart.png Graphic file (type png)
 <use ./src/pages_img/humidity-chart.png>
 Package pdftex.def Info: ./src/pages_img/humidity-chart.png  used on input line
- 662.
+ 663.
 (pdftex.def)             Requested size: 441.01773pt x 438.35277pt.
  [36 <./src/pages_img/rfid-use-history.png>]
-<./src/HU_sensor with webserver uml diagram.png, id=991, 882.29625pt x 519.9425
+<./src/HU_sensor with webserver uml diagram.png, id=989, 882.29625pt x 519.9425
 pt>
 File: ./src/HU_sensor with webserver uml diagram.png Graphic file (type png)
 <use ./src/HU_sensor with webserver uml diagram.png>
 Package pdftex.def Info: ./src/HU_sensor with webserver uml diagram.png  used o
-n input line 678.
+n input line 679.
 (pdftex.def)             Requested size: 441.01773pt x 259.89128pt.
  [37 <./src/pages_img/humidity-chart.png>] [38 <./src/HU_sensor with webserver 
 uml diagram.png (PNG copy)>] [39] [40] [41] [42]
 4. fejezet.
+
+Underfull \hbox (badness 10000) in paragraph at lines 756--758
+
+ []
+
 [43
 
 ]
-Underfull \hbox (badness 2073) in paragraph at lines 782--783
-\T1/lmr/m/n/12 the sys-tem acc-ura-tely re-
+<./src/pages_img/cypress.png, id=1047, 1156.32pt x 618.51076pt>
+File: ./src/pages_img/cypress.png Graphic file (type png)
+<use ./src/pages_img/cypress.png>
+Package pdftex.def Info: ./src/pages_img/cypress.png  used on input line 770.
+(pdftex.def)             Requested size: 441.01773pt x 235.89536pt.
+
+Underfull \hbox (badness 1430) in paragraph at lines 785--785
+[]|\T1/lmr/m/n/12 Az RFID cím-ke hoz-zás
  []
 
 
-Underfull \hbox (badness 3219) in paragraph at lines 785--785
-[]\T1/lmr/m/n/12 The sys-tem sho-uld al-low
+Underfull \hbox (badness 1430) in paragraph at lines 791--791
+[]|\T1/lmr/m/n/12 Az RFID cím-ke hoz-zás
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 786--787
-[]\T1/lmr/m/n/12 The test was par-ti-ally
+Underfull \hbox (badness 3158) in paragraph at lines 791--791
+\T1/lmr/m/n/12 va-só-hoz 8 má-sod-per-cen
  []
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 786--787
-\T1/lmr/m/n/12 acc-ura-tely re-cog-ni-zing the
+Underfull \hbox (badness 4193) in paragraph at lines 798--799
+[]|\T1/lmr/m/n/12 RFID ol-va-só-hoz hoz-zá-
  []
 
 
-Underfull \hbox (badness 2042) in paragraph at lines 790--791
-\T1/lmr/m/n/12 the RFID tags re-main-ing
+Underfull \hbox (badness 6063) in paragraph at lines 798--799
+\T1/lmr/m/n/12 érin-tünk egy ol-va-só-hoz
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 794--795
-\T1/lmr/m/n/12 the sys-tem de-tec-ting and
+Underfull \hbox (badness 5970) in paragraph at lines 801--801
+[]|\T1/lmr/m/n/12 Olvasóhoz kö-tött RGB
  []
 
 
-Overfull \hbox (31.59222pt too wide) in paragraph at lines 776--797
- [][] 
+Underfull \hbox (badness 4193) in paragraph at lines 806--806
+[]|\T1/lmr/m/n/12 RFID ol-va-só-hoz hoz-zá-
  []
 
-[44] [45]
+
+Underfull \hbox (badness 5970) in paragraph at lines 808--808
+[]|\T1/lmr/m/n/12 Olvasóhoz kö-tött RGB
+ []
+
+
+Underfull \hbox (badness 2393) in paragraph at lines 808--808
+\T1/lmr/m/n/12 LED zöl-den vil-log, eh-
+ []
+
+
+Underfull \hbox (badness 1888) in paragraph at lines 813--813
+[]|\T1/lmr/m/n/12 Kapcsoló csat-la-ko-zott a
+ []
+
+
+Underfull \hbox (badness 2261) in paragraph at lines 820--820
+[]|\T1/lmr/m/n/12 Kapcsoló nem csat-la-ko-
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 837--837
+\T1/lmr/m/n/12 jel-zi, hogy ki lett kap-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 852--852
+[]|\T1/lmr/m/n/12 Kamera csat-la-ko-zik a
+ []
+
+[44 <./src/pages_img/cypress.png>] [45] [46]
 5. fejezet.
-[46
-
-] [47
+[47
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 812--816
+
+LaTeX Warning: Citation `raspberry-as-wifi' on page 48 undefined on input line 
+953.
+
+[48] [49] [50] [51
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1014--1018
 \T1/lmr/m/sc/12 URL:[]$\T1/lmtt/m/n/12 https : / / developer . amazon . com / b
 logs / alexa / post /
  []
 
 
-Overfull \hbox (206.61446pt too wide) in paragraph at lines 812--816
+Overfull \hbox (206.61446pt too wide) in paragraph at lines 1014--1018
 \T1/lmtt/m/n/12 a89f7243-[]08a0-[]4c73-[]8fc5-[]eb604a93f437 / define-[]your-[]
 appliance-[]category-[]for-[]a-[]better-[]customer-[]experience$[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 833--836
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1038
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . linux . com / topic /
  embedded-[]iot /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--856
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1058
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . raspberrypi . com / d
 ocumentation / computers /
  []
 
-[48
+[52
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 858--861
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1063
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . espressif . com / sit
 es / default / files / documentation /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 873--876
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1078
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . sparkfun . com / data
 sheets / Sensors / Temperature /
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 878--881
+Underfull \hbox (badness 1057) in paragraph at lines 1080--1083
 []\T1/lmr/m/sc/12 U.S. Fo-od and Drug Ad-mi-nistra-ti-on: \T1/lmr/m/it/12 Ra-di
 o Fre-qu-ency Iden-ti-fi-ca-ti-on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 878--881
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1083
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . fda . gov / radiation
 -[]emitting-[]products /
  []
 
 
-Overfull \hbox (11.71037pt too wide) in paragraph at lines 878--881
+Overfull \hbox (11.71037pt too wide) in paragraph at lines 1080--1083
 \T1/lmtt/m/n/12 electromagnetic-[]compatibility-[]emc / radio-[]frequency-[]ide
 ntification-[]rfid$[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 888--891
+Underfull \hbox (badness 10000) in paragraph at lines 1090--1093
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . circuitbread . com / 
 ee-[]faq /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--901
+Underfull \hbox (badness 10000) in paragraph at lines 1100--1103
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . techtarget . com / wh
 atis / definition /
  []
 
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 903--906
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 1105--1108
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . pluralsight . com / c
 ourses /
  []
 
-[50]
-Overfull \hbox (147.33386pt too wide) in paragraph at lines 993--996
+[54]
+Overfull \hbox (147.33386pt too wide) in paragraph at lines 1195--1198
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / iotprojectsideas . com / co
 nnect-[]rfid-[]to-[]php-[]mysql-[]database-[]with-[]nodemcu-[]esp8266/$[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1001
+Underfull \hbox (badness 10000) in paragraph at lines 1200--1203
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . arduino . cc / refere
 nce / en / libraries /
  []
 
 
-Overfull \hbox (8.9978pt too wide) in paragraph at lines 1003--1006
+Overfull \hbox (8.9978pt too wide) in paragraph at lines 1205--1208
 \T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . instructables . com /
  Arduino-[]to-[]Laravel-[]Communication/$[] 
  []
 
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 1023--1026
-\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . raspberrypi . com / d
-ocumentation / /computers /
+[55]
+Underfull \hbox (badness 10000) in paragraph at lines 1236--1239
+\T1/lmr/m/sc/12 URL: []$\T1/lmtt/m/n/12 https : / / www . hostinger . com / tut
+orials /
  []
 
 
 
 pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
  version <1.6>, but at most version <1.5> allowed
-<nyilatkozat.pdf, id=1143, 597.432pt x 845.07718pt>
+<nyilatkozat.pdf, id=1172, 597.432pt x 845.07718pt>
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf>
-Package pdftex.def Info: nyilatkozat.pdf  used on input line 1035.
+Package pdftex.def Info: nyilatkozat.pdf  used on input line 1243.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 
 
@@ -1088,7 +1159,7 @@ pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
  version <1.6>, but at most version <1.5> allowed
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf>
-Package pdftex.def Info: nyilatkozat.pdf  used on input line 1035.
+Package pdftex.def Info: nyilatkozat.pdf  used on input line 1243.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 
 
@@ -1098,37 +1169,50 @@ pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
 
 pdfTeX warning: pdflatex.exe (file ./nyilatkozat.pdf): PDF inclusion: found PDF
  version <1.6>, but at most version <1.5> allowed
-<nyilatkozat.pdf, id=1146, page=1, 597.432pt x 845.07718pt>
+<nyilatkozat.pdf, id=1175, page=1, 597.432pt x 845.07718pt>
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1035.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1243.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1035.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1243.
 (pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
-[52]
+[56
+pdfTeX warning (ext4): destination with the same identifier (name{cite.github-r
+epo}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1243 	\includepdf{nyilatkozat.pdf}
+                                    ]
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1035.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1243.
 (pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1035.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1243.
 (pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
 File: nyilatkozat.pdf Graphic file (type pdf)
 <use nyilatkozat.pdf, page 1>
-Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1035.
+Package pdftex.def Info: nyilatkozat.pdf , page1 used on input line 1243.
 (pdftex.def)             Requested size: 597.45789pt x 845.1138pt.
- [53 <./nyilatkozat.pdf>] (./OOHQ3E_2023.aux)
+ [57 <./nyilatkozat.pdf>]
+(./OOHQ3E_2023.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `OOHQ3E_2023.out' has not changed.
-(rerunfilecheck)             Checksum: 25BB1BEBD21BD9A3E199709D7E82C362;12046.
+(rerunfilecheck)             Checksum: DFAEC7BCF1916ECB2F3D4B7A0AFF03E7;12048.
  ) 
 Here is how much of TeX's memory you used:
- 19993 strings out of 475075
- 328052 string characters out of 5783001
- 1318271 words of memory out of 5000000
- 40699 multiletter control sequences out of 15000+600000
+ 20153 strings out of 475075
+ 330727 string characters out of 5783001
+ 1320838 words of memory out of 5000000
+ 40843 multiletter control sequences out of 15000+600000
  559239 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,81p,1878b,3668s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1146,10 +1230,10 @@ xlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-d
 ist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pu
 blic/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 ><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on OOHQ3E_2023.pdf (53 pages, 4397945 bytes).
+Output written on OOHQ3E_2023.pdf (57 pages, 4508035 bytes).
 PDF statistics:
- 1296 PDF objects out of 1440 (max. 8388607)
- 1077 compressed objects within 11 object streams
- 284 named destinations out of 1000 (max. 500000)
- 676 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1328 PDF objects out of 1440 (max. 8388607)
+ 1102 compressed objects within 12 object streams
+ 293 named destinations out of 1000 (max. 500000)
+ 681 words of extra memory for PDF output out of 10000 (max. 10000000)
 

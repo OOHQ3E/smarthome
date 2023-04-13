@@ -56,10 +56,7 @@
 
                 @endforelse
         </table>
-
         @empty
-        <span>Database has no use value!</span>
+        <p id="no_room_message" class="text-center font-bold m-2 text-xl">There is no RFID use history in the database!</p>
         @endforelse
-
-
 </div>

@@ -68,7 +68,7 @@
                 <input type="text" class="w-11/12 text-center rounded-full" value="192." disabled>
                 <input type="text" class="w-11/12 text-center rounded-full" value="168." disabled>
                 <input type="text" class="w-11/12 text-center rounded-full" value="200." disabled>
-                <input type="number" id="ip_End" name="ip_End" class="w-11/12 text-center rounded-full" min="2" max="150" value="{{$device->ip_End}}">
+                <input type="number" id="ip_End" name="ip_End" class="w-11/12 text-center rounded-full" min="2" max="149" value="{{$device->ip_End}}">
             </div>
 
             <div class="text-gray-50 flex flex-wrap justify-center gap-2">

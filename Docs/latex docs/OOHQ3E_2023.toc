@@ -55,6 +55,6 @@
 \select@language {magyar} \contentsline {chapter}{\numberline {4}Tesztelések}{43}{chapter.4}%
 \select@language {magyar} \contentsline {section}{\numberline {4.1}Cypress automatizált tesztelések}{43}{section.4.1}%
 \select@language {magyar} \contentsline {section}{\numberline {4.2}Manuális tesztelések}{44}{section.4.2}%
-\select@language {magyar} \contentsline {chapter}{\numberline {5}Rendszer telepítése}{46}{chapter.5}%
-\select@language {magyar} \contentsline {chapter}{Összegzés}{47}{chapter*.8}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{48}{chapter*.9}%
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Rendszer telepítése}{47}{chapter.5}%
+\select@language {magyar} \contentsline {chapter}{Összegzés}{51}{chapter*.10}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{52}{chapter*.11}%
