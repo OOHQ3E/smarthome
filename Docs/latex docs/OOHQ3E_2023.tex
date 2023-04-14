@@ -15,6 +15,7 @@
 \usepackage[magyar]{babel}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{mathtools,amssymb,amsthm,pdfpages}
+\usepackage{xurl}
 \footnotestyle{rule=fourth}
 
 \newtheorem{tetel}{Tétel}[chapter]
@@ -88,11 +89,11 @@
 	\subsection{Amazon rendszere - Alexa Smart Home}
 	2014-ben lépett be be a piacra az Amazon -- \emph{az akkor még újdonságnak számító} -- okos hangszórójukkal, az Amazon Echo-val. Ekkor még leginkább csak annyira volt képes, hogy a felhasználó zenét tudja irányítani hang utasításokkal. Ez az eszköz úgy működik, hogy ebbe bele van integrálva az Amazon sajátos virtuális asszisztense, amit Alexának hívnak. Ugye mint kezdetleges szoftver, neki sem voltak a képességei túl szerteágazóak. Leginkább arra tudta az ember használni, hogy egyszerű kérdéseket tegyen fel az ember, és zenét tudjon elindítani, leállítani átugrani.
 	
-	Nem is annyira később, amikor elkezdett egyre jobban fejlődni Alexa, úgy egyre több mindenre kezdhette el használni az ember: termosztátok beállítása, izzók ki- és bekapcsolására is már lehetett használni. Miután az Amazon egyre többet fektetett bele a rendszerükbe felettébb szerteágazó lett annak a használata az otthonokban. Még arra is volt lehetőség már ekkor, hogy akár bevásárló listát készítsen, és azokat meg is tudja rendelni a felhasználó az Amazonról, mindezt Alexa használatával. A cég 2017 május 23-án jelentette be, hogy a \emph{Smart Home Skill API}-jukba\footnote{A blog poszt amiben bejelentették a Smart Home Skill API bővítését\cite{amazon-api}} innentől kezdve megadható, hogy milyen eszközöket is csatlakoztatunk a rendszerükbe, ami kitárta a lehetőségeket az otthoni okos készülékek automatizációjára. Mindez vezetett az okos otthon piac és a virtuális asszisztensek szerepének növekedéséhez.
+	Nem is annyira később, amikor elkezdett egyre jobban fejlődni Alexa, úgy egyre több mindenre kezdhette el használni az ember: termosztátok beállítása, izzók ki- és bekapcsolására is már lehetett használni. Miután az Amazon egyre többet fektetett bele a rendszerükbe felettébb szerteágazó lett annak a használata az otthonokban. Még arra is volt lehetőség már ekkor, hogy akár bevásárló listát készítsen, és azokat meg is tudja rendelni a felhasználó az Amazonról, mindezt Alexa használatával. A cég 2017 május 23-án jelentette be, hogy a \emph{Smart Home Skill API}-jukba\cite{amazon-api} innentől kezdve megadható, hogy milyen eszközöket is csatlakoztatunk a rendszerükbe, ami kitárta a lehetőségeket az otthoni okos készülékek automatizációjára. Mindez vezetett az okos otthon piac és a virtuális asszisztensek szerepének növekedéséhez.
 	
 	Eszközök leginkább hangvezérléssel irányíthatóak, miután követtük az általuk biztosított használati útmutatót. Néhány esetben az Amazon Alexa alkalmazás elegendő lehet, de ha olyan eszközt szeretnénk használni, amelyhez saját alkalmazás tartozik, akkor azt is le kell töltenünk.
 	
-	Az Amazon által szolgáltatott okos otthon rendszer 2023-ra olyan népszerűségi szintre jutott, hogy az Amerikai Egyesült Államokban az ilyen hang vezérelt hangszórók 68.2\%-a az Amazon Echo.\footnote{Statisztikai adatokat az Earthweb: ,,How Many People Use Alexa in 2023? (U.S. Amazon Statistics)'' cikkjéből \cite{amazon-stats}} 
+	Az Amazon által szolgáltatott okos otthon rendszer 2023-ra olyan népszerűségi szintre jutott, hogy az Amerikai Egyesült Államokban az ilyen hang vezérelt hangszórók 68.2\%-a az Amazon Echo.\cite{amazon-stats}
 	
 	Mindezzel napjainkban több ezer eszköz használható már ezen a rendszeren belül: legyen az biztonsági rendszer, háztartási gépek, vagy esetleg szórakoztató rendszerek. Érthető is, hogy sokan miért is szeretik ezt a rendszert használni.
 	
@@ -103,9 +104,9 @@
 	
 	Az akkor még Nest Labs által készült termékek olyanok voltak mint az öntanuló termosztát -- amit 2011-ben hoztak létre ,,Nest Learning Thermostat''\footnote{Magyarul: Nest Tanuló Termosztát} néven, ami Wi-Fi-re kapcsolható volt, és szenzorok segítségével alkalmazkodhatott a beltéri hőmérsékleti körülményekre. Ezt követte a következő termékük, a füst és szén-monoxid érzékelő, aminek a neve ,,Nest Protect'' volt. 2014-ben felvásárolták a Dropcam nevezetű céget ami biztonsági kamerákat készítettek, amik után a Nest Labs ezt követő terméke a Nest Cam volt 2015-ben.
 	
-	A Nest Labs egyre jobban látszódó sikerének köszönhetően a Google felvásárolta 2014 januárjában. 2018-ig még önállóan működött a Nest, ami után beolvasztották a Google otthoni termékcsaládba, ezzel létre hozva a Google Nest termékcsaládot, ami számos termékekkel rendelkezik mostanára: termosztát, ajtócsengő, ajtózár, biztonsági kamera, virtuális asszisztenssel integrált érintőképernyős központi egység.\footnote{\label{google-store} További jelenleg elérhető Google Nest családba tartozó termékek: \url{https://store.google.com/gb/category/connected_home} oldalon megtalálható}
+	A Nest Labs egyre jobban látszódó sikerének köszönhetően a Google felvásárolta 2014 januárjában. 2018-ig még önállóan működött a Nest, ami után beolvasztották a Google otthoni termékcsaládba, ezzel létre hozva a Google Nest termékcsaládot, ami számos termékekkel rendelkezik mostanára: termosztát, ajtócsengő, ajtózár, biztonsági kamera, virtuális asszisztenssel integrált érintőképernyős központi egység.\cite{google-home-nest}
 	
-	Az Amazon Echo-hoz hasonló első terméke a Google-nek a Google Home volt, amit 2016 októberében jelentettek be. Ez a cég sajátos virtuális asszisztensével a Google Assistant-tel volt felszerelve, és ugyan úgy lehetett neki utasításokat adni, és kérdéseket feltenni. Azóta már több otthonon belül alkalmazható eszköz elérhető egyenesen a Google Store-ból.\footref{google-store} Vagy egyéb támogatott harmadik felek által készített ilyen eszközökkel.
+	Az Amazon Echo-hoz hasonló első terméke a Google-nek a Google Home volt, amit 2016 októberében jelentettek be. Ez a cég sajátos virtuális asszisztensével a Google Assistant-tel volt felszerelve, és ugyan úgy lehetett neki utasításokat adni, és kérdéseket feltenni. Azóta már több otthonon belül alkalmazható eszköz elérhető egyenesen a Google Store-ból.\cite{google-home-nest}
 	
 	Az egyik legnagyobb előnye a Google Home rendszernek az integrációja más Google szolgáltatásokkal, mint például a Google Térkép, a Google Naptár és a Google Fotók. Ez azt jelenti, hogy a felhasználók kéz nélkül is hozzáférhetnek személyes információikhoz és ütemtervükhöz, szimplán csak a Google Asszisztensnek feltéve a kérdést.
 	
@@ -126,17 +127,17 @@
 	
 	\section{Nyílt forráskódú rendszerek}
 	\subsection{Mit is az, hogy open source?}
-	Open source, azaz nyílt forráskódú szoftver az olyan, aminek a forráskódját szabadon lehet vizsgálni, módosítani, és akár ki is egészíteni. A kód az a része egy szoftvernek amit a legtöbb felhasználó bizonyára soha nem fog látni. Ez az a kód, amit a programozók változtathatnak hogy megváltozzon a program vagy alkalmazás működése. Azok a programozók, akik hozzáférhetnek egy szoftver forráskódjához, azokat feljeszthetik, és javíthatják azzal hogy például új funkciót adnak hozzá, vagy kijavítanak egy olyan részt, ami nem minden esetben működik helyesen.\footnote{\label{open-source-fn}A nyílt forráskódú szoftverről az irodalomjegyzék \cite{what-is-open-source}. részén található}
+	Open source, azaz nyílt forráskódú szoftver az olyan, aminek a forráskódját szabadon lehet vizsgálni, módosítani, és akár ki is egészíteni. A kód az a része egy szoftvernek amit a legtöbb felhasználó bizonyára soha nem fog látni. Ez az a kód, amit a programozók változtathatnak hogy megváltozzon a program vagy alkalmazás működése. Azok a programozók, akik hozzáférhetnek egy szoftver forráskódjához, azokat feljeszthetik, és javíthatják azzal hogy például új funkciót adnak hozzá, vagy kijavítanak egy olyan részt, ami nem minden esetben működik helyesen.\cite{what-is-open-source}
 	
 	Azonban azt, hogy egy szoftver nyílt forráskódú, nem feltétlenül jelenti azt, hogy az adott szoftver ingyenes használatban áll. Nyílt forráskódot fejlesztő programozók kérhetnek pénzt azért a nyílt forrású szoftverért, hogy ha ők alkották meg, vagy hozzájárulásukkal készült el. 
 	
-	Bizonyos esetekben azonban, mivel a nyílt forráskódú licenc megkövetelheti a program forráskódjának kiadását amikor szoftvert adnak el másoknak, egyes programozók úgy találják, hogy jövedelmezőbb pénzt kérni a felhasználóktól a szoftverszolgáltatásokért és - támogatásért (nem feltétlenül magáért a szoftverért). Így a szoftvereik ingyenesek maradnak, és pénzt keresnek azzal, hogy másoknak segítenek telepíteni, használni és hibaelhárítást végezni.\footref{open-source-fn}
+	Bizonyos esetekben azonban, mivel a nyílt forráskódú licenc megkövetelheti a program forráskódjának kiadását amikor szoftvert adnak el másoknak, egyes programozók úgy találják, hogy jövedelmezőbb pénzt kérni a felhasználóktól a szoftverszolgáltatásokért és - támogatásért (nem feltétlenül magáért a szoftverért). Így a szoftvereik ingyenesek maradnak, és pénzt keresnek azzal, hogy másoknak segítenek telepíteni, használni és hibaelhárítást végezni.\cite{what-is-open-source}
 	
 	\subsection{Home Assistant}
 	A Home Assistant 2013 novemberére került publikálásra \emph{GitHub.com}-on \textsc{Paulus Schoutsen} által. Ez ekkor még egy Python programozási nyelven megírt alkalmazás volt.
-	Ekkor még ez egy egyszerű program volt, ami napnyugtakor felkapcsolta a lámpát. Azóta a szoftver elég érett lett, és körülbelül 20 aktív hozzájáruló dolgozik a projekten, ennek köszönhetően kéthetente érkezik frissítés a rendszerre.\footnote{\label{history-of-home-assistant}A történet bővebben az irodalomjegyzék  \cite{creation-of-home-assistant}. részén megtalálható.}
+	Ekkor még ez egy egyszerű program volt, ami napnyugtakor felkapcsolta a lámpát. Azóta a szoftver elég érett lett, és körülbelül 20 aktív hozzájáruló dolgozik a projekten, ennek köszönhetően kéthetente érkezik frissítés a rendszerre.\cite{creation-of-home-assistant}
 	
-	Ez a szoftver bármely olyan rendszeren működik, ami a Python 3 programozási nyelvet tudja futtatni. Biztosít mobil és számítógép alkalmazást is, mellyel több ezer támogatott eszközt tudunk irányítani. Annyi a különbség ez a rendszer és a nagyobb cégek által biztosított között, hogy ez teljesen lokálisan fut, és hogy ha esetleg internet kimaradás lenne, még akkor is tudjuk ugyan úgy irányítani eszközeinket. A rendszer által számos ismert okos eszköz támogatott, mint például a Philips Hue, IKEA TRÅDFRI, és akár az Amazon Echo, Google Home, és a Xiaomi Mi Home által támogatott eszközök, és még a virtuális asszisztensük is.\footnote{A támogatott rendszerek a weboldalukon elérhető, ami az irodalomjegyzék \cite{home-assistance-itegrations}. részén megtalálható} Mindez annak köszönhető, mert Z-Wave és a Zigbee protokoll is támogatott a rendszer által, és mivel nyílt forráskódú a szoftver, ezért bármikor lehet az hogy valamelyik felhasználó vagy esetleg fejlesztő hozzáadja bizonyos termékeket kiegészítésként. 
+	Ez a szoftver bármely olyan rendszeren működik, ami a Python 3 programozási nyelvet tudja futtatni. Biztosít mobil és számítógép alkalmazást is, mellyel több ezer támogatott eszközt tudunk irányítani. Annyi a különbség ez a rendszer és a nagyobb cégek által biztosított között, hogy ez teljesen lokálisan fut, és hogy ha esetleg internet kimaradás lenne, még akkor is tudjuk ugyan úgy irányítani eszközeinket. A rendszer által számos ismert okos eszköz támogatott, mint például a Philips Hue, IKEA TRÅDFRI, és akár az Amazon Echo, Google Home, és a Xiaomi Mi Home által támogatott eszközök, és még a virtuális asszisztensük is.\cite{home-assistance-itegrations} Mindez annak köszönhető, mert Z-Wave és a Zigbee protokoll is támogatott a rendszer által, és mivel nyílt forráskódú a szoftver, ezért bármikor lehet az hogy valamelyik felhasználó vagy esetleg fejlesztő hozzáadja bizonyos termékeket kiegészítésként. 
 
 	A rendszerrel háztartásunk energiafelhasználását is nyilván lehet tartani. Szabadon testre szabható a felület kinézete a felhasználók ízlése szerint. Szintén pozitívum lehet, hogy az szoftver támogatja a magyar nyelvet is.
 	
@@ -152,8 +153,7 @@
 	
 	A szoftvernek hivatalos oldalon megtalálható a teljes dokumentációja, hogy mit hogyan kell összeállítani és használni, ezért lehet kedvelt olyan személyek számára, akik szeretik a dolgokat maguknak összeállítani. A rendszer nagy támogatást és közösséget élvez, így ha felmerülne bármilyen kérdés, biztosan választ kapunk rá.
 	
-	Az ezzel létrehozott otthonunkat a legtöbb felületen el tudjuk érni, legyen az MacOS, Windows, Linux, Android vagy iOS.
-	\footnote{Az OpenHAB hivatalos oldala megtalálható a az irodalomjegyzék \cite{openhab}. részén, ahol olvasható a dokumentációjuk, a céljaik, és egyéb blogjaik.}
+	Az ezzel létrehozott otthonunkat a legtöbb felületen el tudjuk érni, legyen az MacOS, Windows, Linux, Android vagy iOS.\cite{openhab}
 	
 	%----------
 	\chapter{Alkalmazott eszközök}
@@ -166,7 +166,7 @@
 	
 	\section{Hardver}\label{hardware-sec}
 	\subsection{Mi is az hogy IoT?}
-	IoT\footnote{(Internet of Things) - magyarul: Internet dolgai}-k azok olyan eszközök, melyek Wi-Fi hálózaton keresztül párosíthatóak, és irányíthatóak. Ilyenek lehetnek a háztartásunkban levő olyan eszközök, melyeket távolról is tudunk irányítani interneten keresztül. Legyen ez például a Xiaomi forrólevegős sütője, vagy egy okos izzó. 
+	IoT\footnote{Internet of Things - magyarul: Internet dolgai}-k azok olyan eszközök, melyek Wi-Fi hálózaton keresztül párosíthatóak, és irányíthatóak. Ilyenek lehetnek a háztartásunkban levő olyan eszközök, melyeket távolról is tudunk irányítani interneten keresztül. Legyen ez például a Xiaomi forrólevegős sütője, vagy egy okos izzó. 
 	
 	Ebbe a kategóriába tartoznak a mikrokontrollerek is, amik mini programozható elektronikák, az alkalmazott Raspberry Pi 4B is.
 	
@@ -179,7 +179,7 @@
 	
 	Elsődleges célja az volt Eben Upton-nak hogy olcsó és könnyen elérhető számítógépeket juttassanak el fiatalok számára.
 	
-	A Raspberry számítógépeknek elsődlegesen két fajtája volt: az A Model, ami olcsóbb, és a B Model, ami gyorsabb volt.\footnote{Az irodalomjegyzék \cite{raspberrypi-history}. részén megtalálható a bővebb története a Raspberry Pi-nak}
+	A Raspberry számítógépeknek elsődlegesen két fajtája volt: az A Model, ami olcsóbb, és a B Model, ami gyorsabb volt.\cite{raspberrypi-history}
 	
 	Rendkívül sokoldalú ez a kis számítógép, és ezért is ennyire előszeretett a használata a programozók körében.\\
 	\textbf{Az általam használt Raspberry Pi 4B specifikációi:}
@@ -191,13 +191,11 @@
 	
 	\subsection{NodeMCU - ESP-WROOM-32}\label{nodemcu-sec}
 	
-	A NodeMCU az Esperessif Systems ESP8266-12E Wi-Fi System-On-Chip\footnote{Rendszer a chipen} rendszeren alapul, amely egy nyílt forráskódú, Lua-alapú firmware-rel\footnote{Magyarul: Fix tárban tárolt információ, rendszer} van felszerelve. tökéletes az IoT-alkalmazásokhoz és más olyan helyzetekhez, ahol vezeték nélküli kapcsolatra van szükség. Ez a chip nagyon sok hasonlóságot mutat az Arduino-val – mindkettő mikrokontrollerrel felszerelt prototípus lap, amely az Arduino IDE segítségével programozható.\cite{esp-8266}
+	A NodeMCU az Esperessif Systems ESP8266-12E Wi-Fi System-On-Chip\footnote{Magyarul: rendszer a chipen} rendszeren alapul, amely egy nyílt forráskódú, Lua-alapú firmware-rel\footnote{Magyarul: Fix tárban tárolt információ, rendszer} van felszerelve. tökéletes az IoT-alkalmazásokhoz és más olyan helyzetekhez, ahol vezeték nélküli kapcsolatra van szükség. Ez a chip nagyon sok hasonlóságot mutat az Arduino-val – mindkettő mikrokontrollerrel felszerelt prototípus lap, amely az Arduino IDE segítségével programozható.\cite{esp-8266}
 	
 	Az ESP-WROOM-32 mikrovezérlő egy erős és sokoldalú eszköz, amely remek választás lehet egy okos otthon projekt számára. Alacsony energiaigényű processzora és integrált Wi-Fi és Bluetooth képességei alkalmasak szenzorok és eszközök vezérlésére és kommunikációjára.
 	
 	Az ESP-WROOM-32S mikrovezérlő adatlapja részletes technikai információkat tartalmaz a funkcióiról és képességeiről.\cite{esp-32-datasheet}
-	
-	Összességében az ESP-WROOM-32S mikrovezérlő egy erős és rugalmas eszköz az okos otthoni rendszerek építéséhez, és az adatlap széleskörű technikai információkat nyújt a fejlesztők számára, akik ezzel az eszközzel szeretnének tervezni és programozni.
 	
 	Éppen ezért is lehet elsődleges választás robotika oktatás közben egy NodeMCU használata, én is például az egyetemi tanulmányaim során a Robotikai alapjai nevű tárgyon találkoztam ezzel az eszközzel először.
 	
@@ -388,7 +386,7 @@
 	
 	Éppen ezért is esett a választásom a projekt tervezési fázisában a Laravel keretrendszerre. Ez a webalkalmazás még Laravel 9-nél indult el.
 	
-	\chapter{A web alkalmazás felépítése és működése}
+	\chapter{A rendszer felépítése és működése}
 	\section{Raspberry Pi 4B alkalmazása}
 	
 	Legelőször, amikor a Raspberry Pi-t elkezdtem használni arra, hogy szolgáltassa a weboldalt, akkor úgy volt, hogy egy már megadott Wi-Fi-re csatlakozott rá -- Ez nem a legjobb megoldás volt, mivel szükséges volt beleégetni a Raspberry config fájljába, hogy mi annak a Wi-Finek az SSID-je és a jelszava.
@@ -745,7 +743,7 @@
 	%----------
 	
 	\chapter{Tesztelések}
-	Egy szoftver -- vagy bármilyen termék -- tesztelése az egyik legfontosabb dolog, hogy garantálni tudjuk a lehető legjobb működést. Minél több teszt van elvégezve, annál több hibát találunk meg. Ha tesztelés közben hiba jelentkezik, azt orvosolni kell minél előbb.
+	Egy szoftver -- vagy bármilyen termék -- tesztelése az egyik legfontosabb dolog, hogy garantálni tudjuk a lehető legjobb működést. Minél több teszt van elvégezve, annál több hibát találunk meg. Ha tesztelés közben hiba jelentkezik, azt orvosolni kell minél előbb. Ezért is törekedtem arra fejlesztés közben is arra, hogy minden funkciót rendszeresen teszteljek, amire automatizált és manuális teszteket is végre hajtottam.
 	
 	\section{Cypress automatizált tesztelések}
 	
@@ -888,7 +886,7 @@
 	\begin{verbatim}
 		-> sudo apt update && sudo apt upgrade -y
 	\end{verbatim}
-	\section*{Raspberry beállítása mint Wi-Fi}
+	\section{Raspberry beállítása mint Wi-Fi}
 	Itt azokat írom le, ahogyan nekem is alkalmazva lett a Raspberry Pi-n, hogy lehessen majd csatlakozni a Raspberry-hez, mint Wi-Fi.
 	\begin{verbatim}
 		-> sudo apt install hostapd
@@ -952,7 +950,7 @@
 		-> sudo systemctl reboot
 	\end{verbatim}\cite{raspberry-as-wifi}
 
-	\section*{Webalkalmazás telepítése}
+	\section{Webalkalmazás telepítése}
 	Én az alábbi leírás alapján telepítettem az alkalmazást Raspberry Pi-re.
 	\begin{verbatim}
 		-> sudo apt install apache2
@@ -1003,239 +1001,258 @@
 		
 		-> php artisan key:generate
 		-> php artisan migrate:fresh
+		-> npm run build
 	\end{verbatim}\cite{install-laravel-on-ubuntu}
 	\chapter*{Összegzés}
-	\addcontentsline{toc}{chapter}{Összegzés}
 	
-	\begin{thebibliography}{20}
+	Ahogy befejezem a szakdolgozat projektet, elégedettséget éreztem. Az okos otthon rendszer fejlesztése nehéz volt, de a végtermék figyelemre méltó. A rendszerhez felülethez Laravel, eszköz kezelésre NodeMCU, Wi-Fi routerként és a projekt gerinceként pedig egy Raspberry Pi szolgál.
+	
+	A NodeMCU-kat sokféle speciális célú eszközként használtam fel. Ilyen például a kamera, az RFID-olvasó használat rögzítéssel, a hőmérséklet és páratartalom szenzor, amely valós idejű adatot jelenít meg, és gráf oldalt tartalmaz a szenzor adatokhoz.  Végül de nem utolsó sorban az eszköz kapcsoló. Ezek az eszközök párhuzamosan működnek a rendszerben, és a felhasználói felületen keresztül használhatóak és érhetők el.
+	
+	Az út nehéz volt, de nagyon értékes tanulságokkal gazdagított. A rendszer kialakítása közben megtanultam a felhasználóbarát felület létrehozásának csínját-bínját, valamint a hardver és szoftver zökkenőmentes integrálását. A NodeMCU és a Laravel nagyon szépen működik együtt, mert mindkettő elősegíti a gyors fejlődést és rugalmas keretet kínál a jövőbeli bővítéshez. A rendszer sokoldalúságát a NodeMCU eszközök demonstrálják, rendszerbe integrálása pedig az okos otthon rendszerekben rejlő lehetőségeket mutatja be.
+	
+	Az okos otthoni rendszerek iránti igény növekszik, és büszke vagyok arra, hogy hozzájárulhattam ehhez a területhez.
+	
+	Mégis hosszú út áll előttem. A jövőben az MQTT beépítésével és a különböző okos eszközök támogatásával bővíteni fogom a rendszer funkcionalitását és alkalmazhatóságát. A további kényelem érdekében automatizációt és távoli hozzáférést tervezek megvalósítani a rendszerhez, amely lehetővé teszi a felhasználók számára, hogy a világ bármely pontjáról kezelhessék okos otthon eszközüket.
+	
+	Végezetül remélem, hogy a szoftvert egy nyílt forráskódú okos otthon automatizálási rendszerként adjam ki, amit bárki használhat. A felhasználók jelenleg angol nyelven használhatják a rendszert, de a jövőben további nyelvekre is tervezem a támogatást.
+	
+	
+	
+	
+	\begin{thebibliography}{46}
 		\addcontentsline{toc}{chapter}{\bibname}
 		
 		\bibitem{amazon-api}
 		\textsc{Jeff Blankenburg}: \emph{Define Your Appliance Category for a Better Customer Experience}\\
 		\textsc{URL:}%
 		 \url{https://developer.amazon.com/blogs/alexa/post/a89f7243-08a0-4c73-8fc5-eb604a93f437/define-your-appliance-category-for-a-better-customer-experience}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{amazon-stats}
 		\textsc{Jason Wise}: \emph{How Many People Use Alexa in 2023? (U.S. Amazon Statistics)} \\
 		\textsc{URL:} \url{https://earthweb.com/alexa-users/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
+		
+		\bibitem{google-home-nest}
+		\textsc{Google Home Nest termékei}\\
+		\textsc{URL:} \url{https://store.google.com/gb/category/connected_home}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{xiaomi-home}
-		\textsc{HandWiki}: \emph{Engineering:Xiaomi Smart Home}
+		\textsc{HandWiki}: \emph{Engineering:Xiaomi Smart Home}\\
 		\textsc{URL:} \url{https://handwiki.org/wiki/Engineering:Xiaomi_Smart_Home}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{what-is-open-source}
 		\textsc{What is open source}\\
 		\textsc{URL:} \url{https://opensource.com/resources/what-open-source}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{creation-of-home-assistant}
 		\textsc{Eric Brown}: \emph{Home Assistant: The Python Approach to Home Automation}\\
 		\textsc{URL:} \url{https://www.linux.com/topic/embedded-iot/home-assistant-python-approach-home-automation/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{home-assistance-itegrations}
 		\textsc{Home Assistant - Integrations}\\
 		\textsc{URL:} \url{https://www.home-assistant.io/integrations/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{openhab}
 		\textsc{OpenHAB hivatalos oldala}\\
 		\textsc{URL:} \url{https://www.openhab.org/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{raspberrypi-history}
 		\textsc{The Epic Story of the Raspberry Pi}\\
 		\textsc{URL:} \url{https://raspberrytips.com/raspberry-pi-history/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{raspberrypi-4b}
 		\textsc{Offical Raspberry Pi 4B dokumentation}\\
 		\textsc{URL:} \url{https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-4}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{esp-32-datasheet}
 		\textsc{Espressif Systems:} \emph{ESP32­-WROOM-­32 Datasheet}\\
 		\textsc{URL:} \url{https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{esp32-devices}
 		\textsc{Offical ESP32 devices documentation}\\
 		\textsc{URL:} \url{http://esp32.net/#Info}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{esp-8266}
 		\textsc{ANAT ZAIT:} \emph{NODEMCU - A PERFECT BOARD FOR IOT}\\
 		\textsc{URL:} \url{https://www.circuito.io/blog/nodemcu-esp8266/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{dht22}
 		\textsc{Aosong Electronics Co.,Ltd:} \emph{Digital-output relative humidity \& temperature sensor/module DHT22 (DHT22 also named as AM2302)}\\
 		\textsc{URL:} \url{https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{rfid-desc}
 		\textsc{U.S. Food and Drug Administration:} \emph{Radio Frequency Identification (RFID)}\\
 		\textsc{URL:} \url{https://www.fda.gov/radiation-emitting-products/electromagnetic-compatibility-emc/radio-frequency-identification-rfid}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{rfid-datasheet}
 		\textsc{Handson Technology:} \emph{RC522 RFID Development Kit}\\
 		\textsc{URL:} \url{http://www.handsontec.com/dataspecs/RC522.pdf}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{solid-state-relay}
 		\textsc{Jayesh Upadhyay:} \emph{How do Solid State Relays work?}\\
 		\textsc{URL:} \url{https://www.circuitbread.com/ee-faq/how-do-solid-state-relays-work}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{cpp}
 		\textsc{Romain Juillet:} \emph{Essentials of Programming in C++}\\
 		\textsc{URL:} \url{https://www.bocasay.com/essentials-programming-c/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{php}
 		\textsc{Robert Sheldon:} \emph{DEFINITION: PHP (Hypertext Preprocessor)}\\
 		\textsc{URL:} \url{https://www.techtarget.com/whatis/definition/PHP-Hypertext-Preprocessor}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{javascript}
 		\textsc{Susan Simkins:} \emph{Quick Start to JavaScript: Volume 1}\\
 		\textsc{URL:} \url{https://www.pluralsight.com/courses/quick-start-javascript-1-1870}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{jquery}
 		\textsc{jQuery}\\
 		\textsc{URL:} \url{https://jquery.com/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{chartJS}
 		\textsc{Chart.js hivatalos dokumentáció oldala}\\
 		\textsc{URL:} \url{https://www.chartjs.org/docs/latest/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{tailwind-docs}
 		\textsc{Tailwind CSS hivatalos dokumentáció oldala}\\
 		\textsc{URL:} \url{https://tailwindcss.com/docs}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{dbdiagram-io}
 		\textsc{dbDiagram.io oldala}\\
 		\textsc{URL:} \url{https://dbdiagram.io/home}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{fontawesome}
 		\textsc{Fontawesome - Free Icons}\\
 		\textsc{URL:} \url{https://fontawesome.com/search?o=r&m=free}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{fritzing-library}
 		\textsc{Achim Pieters} \emph{Fritzing – New Parts}\\
 		\textsc{URL:} \url{https://www.studiopieters.nl/fritzing/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{fritzing-light}
 		\textsc{Alfred Dagenais} \emph{Fritzing Components - Light bulb}\\
 		\textsc{URL:} \url{https://github.com/alfreddagenais/fritzing-components/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{fritzing-SSR}
 		\textsc{Fritzing Forum} \emph{SSR-40va solid state relay}\\
 		\textsc{URL:} \url{https://forum.fritzing.org/t/ssr-40va-solid-state-relay/16832}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{fritzing-rfid}
 		\textsc{amontanes} \emph{RFID-RC522}\\
 		\textsc{URL:} \url{https://fritzing.org/projects/mfrc522}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{laravel-intro}
 		\textsc{Laravel - Overview}\\
 		\textsc{URL:} \url{https://www.tutorialspoint.com/laravel/laravel_overview.htm}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{laravel-docs}
 		\textsc{Offical Laravel Documentation}\\
 		\textsc{URL:} \url{https://laravel.com/docs/10.x}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{laravel-model}
 		\textsc{Eloquent: Getting Started}\\
 		\textsc{URL:} \url{https://laravel.com/docs/9.x/eloquent}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{laravel-route}
 		\textsc{Routing}\\
 		\textsc{URL:} \url{https://laravel.com/docs/9.x/routing}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{laravel-controller}
 		\textsc{Controllers}\\
 		\textsc{URL:} \url{https://laravel.com/docs/9.x/controllers}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{laravel-eloquent}
 		\textsc{Eloquent: Getting Started}\\
 		\textsc{URL:} \url{https://laravel.com/docs/9.x/eloquent}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{laravel-blade}
 		\textsc{Blade Templates}\\
 		\textsc{URL:} \url{https://laravel.com/docs/9.x/blade}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{tailwind-responsive}
 		\textsc{Core Concepts: Responsive Design}\\
 		\textsc{URL:} \url{https://tailwindcss.com/docs/responsive-design}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{RFID-card-reader}
 		\textsc{Connect RFID to PHP \& MySQL Database with NodeMcu ESP8266}\\
 		\textsc{URL:} \url{https://iotprojectsideas.com/connect-rfid-to-php-mysql-database-with-nodemcu-esp8266/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{adafruit-dht-library}
 		\textsc{Arduino.cc} \emph{Adafruit: DHT sensor library}\\
 		\textsc{URL:} \url{https://www.arduino.cc/reference/en/libraries/dht-sensor-library/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{arduino-to-laravel}
 		\textsc{Arduino to Laravel Communication}\\
 		\textsc{URL:} \url{https://www.instructables.com/Arduino-to-Laravel-Communication/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{async-webserver}
 		\textsc{Async Web Server for ESP8266 and ESP32}\\
 		\textsc{URL:} \url{https://github.com/me-no-dev/ESPAsyncWebServer/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{esp32-cam}
 		\textsc{ESP32-CAM-Arduino-IDE}\\
 		\textsc{URL:} \url{https://github.com/RuiSantosdotme/ESP32-CAM-Arduino-IDE/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
-		\bibitem{github-repo}
-		\textsc{Szakdolgozat GitHub repository-ja}\\
-		\textsc{URL:} \url{https://github.com/OOHQ3E/smarthome/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-		
-		\bibitem{github-repo}
-		\textsc{Szakdolgozat GitHub repository-ja}\\
-		\textsc{URL:} \url{https://github.com/OOHQ3E/smarthome/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
-		
-	
 		\bibitem{cypress-docs}
 		\textsc{Offical Cypress Documentation}\\
 		\textsc{URL:} \url{https://docs.cypress.io/guides/overview/why-cypress}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
+		
+		\bibitem{github-repo}
+		\textsc{Szakdolgozat GitHub repository-ja}\\
+		\textsc{URL:} \url{https://github.com/OOHQ3E/smarthome/}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
+		
+		\bibitem{raspberry-as-wifi}
+		\textsc{Raspberry configuration for Wi-Fi}\\
+		\textsc{URL:} \url{https://www.raspberrypi.com/documentation//computers/configuration.html#setting-up-a-routed-wireless-access-point}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{install-laravel-on-ubuntu}
 		\textsc{How to Install Laravel on Ubuntu 18.04 with Apache}\\
 		\textsc{URL:} \url{https://www.hostinger.com/tutorials/how-to-install-laravel-on-ubuntu-18-04-with-apache-and-php/}\\
-		\textsc{Link utoljára ellenőrizve:} 2023.03.31.
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 				
 	\end{thebibliography}
 	
