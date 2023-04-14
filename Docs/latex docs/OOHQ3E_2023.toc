@@ -43,14 +43,14 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {3.3.4}Blade}{28}{subsection.3.3.4}%
 \select@language {magyar} \contentsline {section}{\numberline {3.4}Kezelő felület bemutatása és működése}{29}{section.3.4}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.4.1}Főoldal}{29}{subsection.3.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.2}Beállítások}{30}{subsection.3.4.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.2}Beállítások}{31}{subsection.3.4.2}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.4.3}RFID beállítások}{33}{subsection.3.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.4}RFID használati táblázat}{35}{subsection.3.4.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.4.5}Hőmérsékleti és páratartalom előzmények - ChartJS}{36}{subsection.3.4.5}%
-\select@language {magyar} \contentsline {section}{\numberline {3.5}Eszközök kommunikációja a webszerverrel}{37}{section.3.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.4}RFID használati táblázat}{36}{subsection.3.4.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.5}Hőmérsékleti és páratartalom előzmények - ChartJS}{37}{subsection.3.4.5}%
+\select@language {magyar} \contentsline {section}{\numberline {3.5}Eszközök kommunikációja a webszerverrel}{38}{section.3.5}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.5.1}Hőmérséklet és Páratartalom szenzor}{38}{subsection.3.5.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.5.2}Eszköz kapcsoló}{39}{subsection.3.5.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.5.3}Kamera}{40}{subsection.3.5.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5.2}Eszköz kapcsoló}{40}{subsection.3.5.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5.3}Kamera}{41}{subsection.3.5.3}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.5.4}RFID kártya olvasó}{41}{subsection.3.5.4}%
 \select@language {magyar} \contentsline {chapter}{\numberline {4}Tesztelések}{43}{chapter.4}%
 \select@language {magyar} \contentsline {section}{\numberline {4.1}Cypress automatizált tesztelések}{43}{section.4.1}%

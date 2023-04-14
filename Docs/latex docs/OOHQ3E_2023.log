@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  13 APR 2023 23:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.11)  14 APR 2023 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -855,18 +855,18 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (c:/texlive/2022/texmf-dist/tex/latex/base/latin2.def
 File: latin2.def 2021/02/14 v1.3d Input encoding file
 ) [25]
-<./src/codes/route.png, id=831, 514.92375pt x 31.317pt>
+<./src/codes/route.png, id=830, 514.92375pt x 31.317pt>
 File: ./src/codes/route.png Graphic file (type png)
 <use ./src/codes/route.png>
 Package pdftex.def Info: ./src/codes/route.png  used on input line 455.
 (pdftex.def)             Requested size: 441.01773pt x 26.82265pt.
-<./src/codes/route_with_var.png, id=832, 630.55576pt x 34.9305pt>
+<./src/codes/route_with_var.png, id=831, 630.55576pt x 34.9305pt>
 File: ./src/codes/route_with_var.png Graphic file (type png)
 <use ./src/codes/route_with_var.png>
 Package pdftex.def Info: ./src/codes/route_with_var.png  used on input line 461
 .
 (pdftex.def)             Requested size: 441.01773pt x 24.43144pt.
-<./src/codes/controller_func.png, id=833, 259.56975pt x 31.317pt>
+<./src/codes/controller_func.png, id=832, 259.56975pt x 31.317pt>
 File: ./src/codes/controller_func.png Graphic file (type png)
 <use ./src/codes/controller_func.png>
 Package pdftex.def Info: ./src/codes/controller_func.png  used on input line 46
@@ -902,60 +902,59 @@ File: ./src/pages_img/sensor-error.png Graphic file (type png)
 Package pdftex.def Info: ./src/pages_img/sensor-error.png  used on input line 5
 54.
 (pdftex.def)             Requested size: 441.01773pt x 142.84796pt.
- [31 <./src/pages_img/settings.png>]
-<./src/pages_img/modify-sensor-in-bedroom.png, id=926, 1153.911pt x 479.99326pt
+ [31 <./src/pages_img/settings.png>] [32 <./src/pages_img/sensor-error.png>]
+<./src/pages_img/modify-sensor-in-bedroom.png, id=932, 1153.911pt x 479.99326pt
 >
 File: ./src/pages_img/modify-sensor-in-bedroom.png Graphic file (type png)
 <use ./src/pages_img/modify-sensor-in-bedroom.png>
 Package pdftex.def Info: ./src/pages_img/modify-sensor-in-bedroom.png  used on 
 input line 579.
 (pdftex.def)             Requested size: 441.01773pt x 183.44667pt.
- [32 <./src/pages_img/sensor-error.png>]
-<./src/pages_img/rfid-settings.png, id=935, 1139.457pt x 536.60475pt>
+<./src/pages_img/rfid-settings.png, id=934, 1139.457pt x 536.60475pt>
 File: ./src/pages_img/rfid-settings.png Graphic file (type png)
 <use ./src/pages_img/rfid-settings.png>
 Package pdftex.def Info: ./src/pages_img/rfid-settings.png  used on input line 
 592.
 (pdftex.def)             Requested size: 441.01773pt x 207.68654pt.
  [33 <./src/pages_img/modify-sensor-in-bedroom.png>]
-<./src/pages_img/add-rfid-tag.png, id=947, 1154.51324pt x 343.2825pt>
+<./src/pages_img/add-rfid-tag.png, id=946, 1154.51324pt x 343.2825pt>
 File: ./src/pages_img/add-rfid-tag.png Graphic file (type png)
 <use ./src/pages_img/add-rfid-tag.png>
 Package pdftex.def Info: ./src/pages_img/add-rfid-tag.png  used on input line 6
 16.
 (pdftex.def)             Requested size: 441.01773pt x 131.12964pt.
 
-[34 <./src/pages_img/rfid-settings.png> <./src/pages_img/add-rfid-tag.png>]
-<./src/pages_img/modify-rfid-tag.png, id=961, 1156.32pt x 410.7345pt>
+[34 <./src/pages_img/rfid-settings.png>]
+<./src/pages_img/modify-rfid-tag.png, id=962, 1156.32pt x 410.7345pt>
 File: ./src/pages_img/modify-rfid-tag.png Graphic file (type png)
 <use ./src/pages_img/modify-rfid-tag.png>
 Package pdftex.def Info: ./src/pages_img/modify-rfid-tag.png  used on input lin
 e 631.
 (pdftex.def)             Requested size: 441.01773pt x 156.65105pt.
-<./src/pages_img/rfid-use-history.png, id=966, 1141.26375pt x 532.99126pt>
+ [35 <./src/pages_img/add-rfid-tag.png> <./src/pages_img/modify-rfid-tag.png>]
+<./src/pages_img/rfid-use-history.png, id=975, 1141.26375pt x 532.99126pt>
 File: ./src/pages_img/rfid-use-history.png Graphic file (type png)
 <use ./src/pages_img/rfid-use-history.png>
 Package pdftex.def Info: ./src/pages_img/rfid-use-history.png  used on input li
 ne 643.
 (pdftex.def)             Requested size: 441.01773pt x 205.96268pt.
-
-[35 <./src/pages_img/modify-rfid-tag.png>]
-<./src/pages_img/humidity-chart.png, id=981, 398.6895pt x 396.2805pt>
+ [36 <./src/pages_img/rfid-use-history.png>]
+<./src/pages_img/humidity-chart.png, id=986, 398.6895pt x 396.2805pt>
 File: ./src/pages_img/humidity-chart.png Graphic file (type png)
 <use ./src/pages_img/humidity-chart.png>
 Package pdftex.def Info: ./src/pages_img/humidity-chart.png  used on input line
  663.
 (pdftex.def)             Requested size: 441.01773pt x 438.35277pt.
- [36 <./src/pages_img/rfid-use-history.png>]
-<./src/HU_sensor with webserver uml diagram.png, id=989, 882.29625pt x 519.9425
+ [37 <./src/pages_img/humidity-chart.png>]
+<./src/HU_sensor with webserver uml diagram.png, id=995, 882.29625pt x 519.9425
 pt>
 File: ./src/HU_sensor with webserver uml diagram.png Graphic file (type png)
 <use ./src/HU_sensor with webserver uml diagram.png>
 Package pdftex.def Info: ./src/HU_sensor with webserver uml diagram.png  used o
 n input line 679.
 (pdftex.def)             Requested size: 441.01773pt x 259.89128pt.
- [37 <./src/pages_img/humidity-chart.png>] [38 <./src/HU_sensor with webserver 
-uml diagram.png (PNG copy)>] [39] [40] [41] [42]
+ [38 <./src/HU_sensor with webserver uml diagram.png (PNG copy)>] [39] [40] [41
+] [42]
 4. fejezet.
 
 Underfull \hbox (badness 10000) in paragraph at lines 756--758
@@ -1211,7 +1210,7 @@ Package rerunfilecheck Info: File `OOHQ3E_2023.out' has not changed.
 Here is how much of TeX's memory you used:
  20153 strings out of 475075
  330727 string characters out of 5783001
- 1320838 words of memory out of 5000000
+ 1308838 words of memory out of 5000000
  40843 multiletter control sequences out of 15000+600000
  559239 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1230,7 +1229,7 @@ xlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-d
 ist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pu
 blic/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 ><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on OOHQ3E_2023.pdf (57 pages, 4508035 bytes).
+Output written on OOHQ3E_2023.pdf (57 pages, 4508278 bytes).
 PDF statistics:
  1328 PDF objects out of 1440 (max. 8388607)
  1102 compressed objects within 12 object streams
