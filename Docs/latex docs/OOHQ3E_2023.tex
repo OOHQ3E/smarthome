@@ -15,6 +15,7 @@
 \usepackage[magyar]{babel}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{mathtools,amssymb,amsthm,pdfpages}
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{xurl}
 \footnotestyle{rule=fourth}
 
@@ -46,9 +47,10 @@
 
 \begin{document}
 	\institute{Matematikai és Informatikai Intézet}
-	\title{Programozható elektronikák alkalmazásai}
-	\author{Bagoly Gábor\\Programtervező informatikus}
-	\supervisor{Dr. Geda Gábor\\Egyetemi docens}
+	\title{Programozható elektronikák alkalmazásai\\
+	\large{Kompakt okos otthon létrehozása mikrokontrollerekkel}}
+	\author{Bagoly Gábor\\Programtervező Informatikus}
+	\supervisor{Dr. Geda Gábor\\Egyetemi Docens}
 	\city{Eger}
 	\date{2023}
 	\maketitle
@@ -73,7 +75,7 @@
 		\item Egy olyan általános kezelőfelületet tudjak létrehozni, amit könnyen tud a felhasználó alkalmazni.
 	\end{itemize}
 	
-	\chapter{Kereskedelmi forgalomban elérhető, jelentősebb okos otthon rendszerek}
+	\chapter{Kereskedelmi forgalomban elérhető, főbb okos otthon rendszerek}
 	\section{Nagyobb cégek által létrehozott ökoszisztémák}
 	Amikor arra kerül a sor, hogy okos otthont szeretnénk összeállítani, akkor ahhoz egy széles palettából tudunk választani eszközöket, legyen az biztonsági kamera, ajtózár vagy akár háztartási eszközök, mint például egy mosógép vagy robot porszívó. Amikor az okos otthon rendszert szeretnénk létrehozni.
 	
@@ -213,7 +215,7 @@
 	
 	A rendszerben mint ,,biztonsági kamera'' van alkalmazva és főoldalon szolgáltat élő közvetítést. Szintén oly módon csatlakozik rá a Raspberry Pi-ra, mint a többi mikrokontroller a rendszerben.\footnote{\label{later-expl-fn}\Aref{csatlakozas-a-webszerverre} részen ennek a működése részletezve lesz.}
 	
-	Adott a lehetőség ezzel az eszközzel is, hogy akár memóriakártyára mentsünk képeket, amit a kamera felvesz, és van egy saját beépített LED lámpája is. Azonban ezeket a funkciókat a rendszer aktuális verziójában nem alkalmazom, csak és kizárólag elő közvetítésre.
+	Adott a lehetőség ezzel az eszközzel is, hogy akár memóriakártyára mentsünk képeket, amit a kamera felvesz, és van egy saját beépített LED lámpája is. Azonban ezeket a funkciókat a rendszer aktuális verziójában nem alkalmazom, csak és kizárólag elő közvetítésre.%
 	
 	\begin{figure}[ht!]
 		\centering
@@ -238,7 +240,7 @@
 	\end{table}
 
 	\textbf{Kapcsoláshoz magyarázat:}
-	Ebben az esetben azért lett így párosítva egy FTDI Programmer-el\footnote{Magyarul: FTDI programozó} az ESP32-CAM, hogy a vezérlőkódot fel tudjam rá tölteni. Az adatátvitelre az U0R - TX és az U0T - RX portok összekötése biztosítja ezt. A GPIO 0 és GND arra szolgál, hogy amikor töltenénk fel a kódot a kamerára, akkor ahhoz meg kell nyomni a gombot, mint ahogyan \aref{esp32-cam-schematics}.~képen is látható. Az 5V - VCC a tápellátás, a GND - GND a földelés. Ha a programozását elvégeztük, akkor elegendő a tápot biztosítani az ESP32-CAM-nek.
+	Ebben az esetben azért lett így összekapcsolva az ESP32-CAM egy FTDI Programmer-el,\footnote{Magyarul: FTDI programozó} hogy a vezérlőkódot fel tudjam rá tölteni. Az adatátvitelt az U0R - TX és az U0T - RX portok összekötése biztosítja. A GPIO 0 - GND kód feltöltéséhez kell, abban az esetben, amikor töltenénk fel a kódot a kamerára, akkor ahhoz meg kell nyomni a gombot, mint ahogyan \aref{esp32-cam-schematics}.~képen is látható. Az 5V - VCC a tápellátás, a GND - GND a földelés. Ha a programozását elvégeztük, akkor elegendő a tápot biztosítani az ESP32-CAM-nek.
 	
 	\subsection{DHT22 - hőmérséklet és páratartalom szenzor}
 	
@@ -328,7 +330,7 @@
 	
 	A mikrokontrollerek legtöbbjét C++-al szokták programozni, amihez az Arduino IDE az egyik legnépszerűbb választás, ami számos kiegészítőkkel, és mikrokontrollerek programozásához használatos funkciókkal rendelkezik, legyen ez a kód feltöltése, vagy a soros monitoron megjelenített információk kiírása. Külső könyvtárak is hozzáadhatóak a különböző eszközök támogatása érdekében. 
 	
-	\subsection{HTML és a CSS}
+	\subsection{HTML és CSS}
 	A HTML\footnote{Hyper Text Markup Language, magyarul Hiper Szöveg Leíró Nyelv} egy leírónyelv, amely szövegek leírására és megjelenítésére szolgál. Számos funkciója van, mint a bekezdések, táblázatok, vagy képek beszúrása. Többnyire weboldalak elkészítésénél használják. Mezőket ,,<>''-en belül határozzuk meg és lezárni ehhez hasonlóan ,,</>''-el kell. Mindezt annak megfelelően kell párosítani, hogy mit is írunk: legyez ez például egy bekezdés, ami ,,<p>\footnote{,,p'' az angol paragraph (bekezdés) szóra utal} </p>'' aminek a két tag közé kell beírni a szöveget.
 	
 	Mindez kevés arra, hogy a szöveg kinézetét változtassuk, ezért is társítják melléje a CSS-t, azaz Cascading Style Sheet-et\footnote{Magyarul: Kaszkádolt Stílus Lap}, ami HTML vagy XML nyelvek által meghatározott megjelenés formázására szolgál. Ezeket a stílus leírásokat ,,<style></style>'' tag-ek közé szoktuk leírni. Megvan ennek is a sajátos meghatározási módja, hogy mit- és hogyan alkalmazunk.
@@ -378,7 +380,7 @@
 	Szakdolgozatom során ezt használtam arra, hogy elkészítsem az adatbázis tervét, és majd \aref{database} szakaszon lesz róla egy mellékelt kép is ami \aref{database-fig}.~ábrán látható, hogy hogyan is lett mindez kialakítva.
 	
 	\subsection{Font Awesome}
-	A Font Awesome egy népszerű nyílt forráskódú ikon könyvtár, amely skálázható vektor ikonokat\footnote{Ez azt jelenti, hogy egy algoritmus segítségével mindig ugyan olyan minőségű lesz a kép, bármekkorára is nagyítjuk.}kínál, amelyek testre szabhatóak az oldalukon, és CSS alkalmazásával is. A könyvtár több ezer ikont tartalmaz, amik széles körű kategóriákat fednek le, például márka vagy közösségi média ikonokat. Lehetőség van fizetős és ingyenes ikonok használatára is.
+	A Font Awesome egy népszerű nyílt forráskódú ikon könyvtár, amely skálázható vektor ikonokat\footnote{Ez azt jelenti, hogy egy algoritmus segítségével mindig ugyanolyan minőségű lesz a kép, bármekkorára is nagyítjuk.}kínál, amelyek testre szabhatóak az oldalukon, és CSS alkalmazásával is. A könyvtár több ezer ikont tartalmaz, amik széles körű kategóriákat fednek le, például márka vagy közösségi média ikonokat. Lehetőség van fizetős és ingyenes ikonok használatára is.
 	
 	A Font Awesome egy rugalmas és könnyen használható megoldást kínál az ikonok hozzáadásához weboldalakhoz vagy alkalmazásokhoz, lehetővé téve a fejlesztőknek, hogy feldobják projektjeik kinézetét. A könyvtár folyamatosan frissül új ikonokkal és funkciókkal.\cite{fontawesome}\\
 	\textbf{Az általam használt ikonok, a rendszerben:}
@@ -447,14 +449,14 @@
 	\chapter{A rendszer felépítése és működése}
 	\section{Raspberry Pi 4B alkalmazása}
 	
-	Legelőször, amikor a Raspberry Pi-t elkezdtem használni arra, hogy szolgáltassa a weboldalt, akkor úgy volt, hogy egy már megadott Wi-Fi-re csatlakozott rá -- Ez nem a legjobb megoldás volt, mivel szükséges volt beleégetni a Raspberry config fájljába, hogy mi annak a Wi-Finek az SSID-je és a jelszava.
+	Legelőször, amikor a Raspberry Pi-t elkezdtem használni arra, hogy szolgáltassa a weboldalt, akkor úgy volt, hogy egy már megadott Wi-Fi-re csatlakozott rá. Ez nem a legjobb megoldás volt, mivel szükséges volt beleégetni a Raspberry config fájljába, hogy mi annak a Wi-Finek az SSID-je és a jelszava.
 	
 	A Raspberry-t SSH\footnote{Secure Shell} használatával kapcsolódok fel rá, amit egy helyi és egy távoli számítógép közötti biztonságos csatorna kiépítésére fejlesztettek ki.
 	A projekt fel van töltve GitHub-ra\cite{github-repo}, ami egy verziókövető rendszer. Innen klónoztam le a Raspberry-re a projektet, és így tartom napra készen ezen.
 	
 	A projektet a \emph{/var/www/html/} mappán belülre kellett helyezni és apache2 könyvtár segítségével tudtam elérni a webalkalmazást host-olni, azaz szolgáltatni, és elérni is.
 	MySQL-el használom az adatbázist a Raspberry-n is.
-	Miután már többet foglalkoztam a projekttel, akkor rájöttem hogy a Wi-Fi-re való csatlakozás nem a legoptimálisabb, ezért jött az az ötlet, hogy maga a Raspberry vegye fel a Wi-Fi router szerepét. Ez úgy valósul meg, hogy először is Ethernet kábellel biztosítom a Raspberry számára az internetet. Utána pedig a Raspberry Pi hivatalos oldalán való leírás\cite{raspberry-as-wifi} segítségével teljesen be tudtam állítani Wi-Fi routerként.\\
+	Miután már többet foglalkoztam a projekttel, akkor rájöttem, hogy a Wi-Fi-re való csatlakozás nem a legoptimálisabb, ezért jött az az ötlet, hogy maga a Raspberry vegye fel a Wi-Fi router szerepét. Ez úgy valósul meg, hogy először is Ethernet kábellel biztosítom a Raspberry számára az internetet. Utána pedig a Raspberry Pi hivatalos oldalán való leírás\cite{raspberry-as-wifi} segítségével teljesen be tudtam állítani Wi-Fi routerként.\\
 	\textbf{Fontosabb tudni valók ezzel:}
 	Az interface statikus felülete \emph{192.168.200.1}-re lett állítva, ez az első IP cím, ezért sem lehet az ESP-knek 1-re végződő IP véget adni. DHCP\footnote{Dynamic Host Configuration Protocol, azaz Dinamikus Gazdagép Konfigurációs Protokoll} szerver 150-es IP végtől dinamikusan állítja az IP címeket, ezért nem lehet az ESP-nek 149-től nagyobb IP véget adni, hogy statikusan és könnyen elérhetőek legyenek az eszközök.
 	
@@ -464,7 +466,7 @@
 	
 	Mindegyik táblában van plusz két -- \emph{a Laravel által automatikus létrehozott} -- mező: a \emph{,,created\_at''} azaz létrehozás dátuma, és az \emph{,,updated\_at''}, ami az utolsó módosítás dátuma.
 	
-	A táblázatban az idegen kulcsok azért is lettek így kialakítva, hogy a későbbiekben könnyebben lehessen kezelni, és azért is, hogy, ha például egy szobát töröl a felhasználó, amihez tartozik különböző adat akkor azt is törölje vele együtt, ezt nevezzük kaszkádolt törlésnek.
+	A táblázatban az idegen kulcsok azért is lettek így kialakítva, hogy a későbbiekben könnyebben lehessen kezelni és azért is, hogy, ha például egy szobát töröl a felhasználó, amihez tartoznak különböző eszközök, akkor azokat is törölje vele együtt, ezt nevezzük kaszkádolt törlésnek.
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=1\textwidth]{./src/database}
@@ -485,7 +487,7 @@
 	Mivel egy ESP használható RFID kártyaolvasóként, ezért nyilván kell tartani azt is, hogy mely címkék lettek eddig felvéve a rendszerbe. Egy RFID címke az alábbi mezőket tartalmazza: \emph{,,name''}, azaz egy név, \emph{,,uid''}, ami az RFID címének az az adata, amit az olvasó kap, és egy \emph{,,esp\_id''}, azaz annak az olvasónak az azonosítója, amihez tartozik egy címke.
 	
 	\subsection*{esp\_use\_data, azaz RFID címkéknek az előzmény adatai}
-	A rendszerben úgy lettek alkalmazva az RFID-k, hogy amikor benne van a rendszerben egy adott címke, és az használatra kerül, akkor annak a időpontja rögzítésre kerül. Ennek az alábbi mezőket tartalmazza: \emph{,,tag\_id''}, azaz a használt RFID címke azonosítója, \emph{,,esp\_id''}, ami a annak az RFID olvasónak az azonosítója, ami beolvasta a címkét.
+	A rendszerben úgy lettek alkalmazva az RFID-k, hogy amikor benne van a rendszerben egy adott címke és az használatra kerül, akkor annak a időpontja rögzítésre kerül. Ez az alábbi mezőket tartalmazza: \emph{,,tag\_id''}, azaz a használt RFID címke azonosítója, \emph{,,esp\_id''}, ami a annak az RFID olvasónak az azonosítója, ami beolvasta a címkét.
 	
 	\section{Laravel működése}
 	
@@ -506,20 +508,34 @@
 	
 	Például a projektben a \emph{,,http://192.168.200.1\textbf{/settings\footnote{Magyarul beállítások}}''} megmondja a vezérlőnek, hogy ilyenkor irányítsa át a felhasználót a beállítások oldalra.
 	
-	A \emph{,,web.php''}-ban a beállítás oldalra való irányítás így néz ki:
+	A \emph{,,web.php''}-ban a beállítás oldalra való irányítás \aref{settings-route}.~kódsoron látható.
 	\\
-	\includegraphics[width=1\textwidth]{./src/codes/route}
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[width=1\textwidth]{./src/codes/route}
+		\captionof{lstlisting}{Hőmérséklet és páratartalom szenzor oldal útvonala}
+		\label{settings-route}
+	\end{minipage}
 	\\
-	Ezen a kódsoron az látszik, hogy egy \emph{,,\textbf{get}''} HTTP kérést kapunk a \emph{,,\textbf{/settings}''} útvonalon, és ezzel az \emph{,,\textbf{EspController}''} vezérlőnek az \emph{,,\textbf{index}''} függvényét hívjuk meg. A \emph{,,\textbf{->name()}''}-en pedig meg lett adva egy név, amire hivatkozva tudunk egyszerűbben akár hosszabb útvonalakat is meghívni.
+	\Aref{settings-route}.~programkódban azt láthatjuk, hogy egy \emph{,,\textbf{get}''} HTTP kérést kapunk a \emph{,,\textbf{/settings}''} útvonalon, és ezzel az \emph{,,\textbf{EspController}''} vezérlőnek az \emph{,,\textbf{index}''} függvényét hívjuk meg. A \emph{,,\textbf{->name()}''}-en pedig meg lett adva egy név, amire hivatkozva tudunk egyszerűbben akár hosszabb útvonalakat is meghívni.
 	\\
-	Hogy ha a vezérlőnek változót szeretnénk átadni, akkor azt pedig így tudjuk megadni:
+	Hogy ha a vezérlőnek változót szeretnénk átadni, akkor azt pedig úgy tudjuk megadni, mint ahogyan \aref{chart-room-route}.~kódsoron is látható.
 	\\
-	\includegraphics[width=1\textwidth]{./src/codes/route_with_var}
-	Ezen a kódsoron is látszik, hogy úgy kell megadni egy változót, amit a vezérlőnek adunk át, hogy \emph{,,\textbf{\{\}}''}-k közé beírjuk azt a változó nevet. Ez az útvonal azért felelős, hogy a hőmérséklet és páratartalom szenzor által mért adatoknak külön oldalát nyissa meg, a \emph{,,\textbf{room}''} pedig azt adja meg, hogy mi a szoba azonosítója. Modell nevét át lehet átadni útvonal paraméterként, hogyha azonosítót -- \emph{ezáltal egy modellt} -- szeretnénk kinyerni.\cite{laravel-route}
-	Itt pedig az látható, amikor a vezérlőben hogyan érjük el az ez által megadott modellt.
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[width=1\textwidth]{./src/codes/route_with_var}
+		\captionof{lstlisting}{Hőmérséklet és páratartalom szenzor oldal útvonala}
+		\label{chart-room-route}
+	\end{minipage}
+	\Aref{chart-room-route}.~kódsoron is látszik, hogy úgy kell megadni egy változót, amit a vezérlőnek adunk át, hogy \emph{,,\textbf{\{\}}''}-k közé beírjuk azt a változó nevet. Ez az útvonal azért felelős, hogy a hőmérséklet és páratartalom szenzor által mért adatoknak külön oldalát nyissa meg, a \emph{,,\textbf{room}''} pedig azt adja meg, hogy mi a szoba azonosítója. A Modell nevét át lehet adni útvonal paraméterként, hogyha azonosítót -- \emph{ezáltal egy modellt} -- szeretnénk kinyerni.\cite{laravel-route}
+	\Aref{esp-sensor-cont-index}.~kódsoron pedig az látható, hogy a vezérlőben hogyan érjük el az ez által megadott modellt.
 	\\
-	\includegraphics[width=1\textwidth]{./src/codes/controller_func}
-	
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[width=1\textwidth]{./src/codes/controller_func}
+		\captionof{lstlisting}{\emph{,,EspSensorController''} index metódusa}
+		\label{esp-sensor-cont-index}
+	\end{minipage}
 	\subsection{Controller}
 	A Controller, más néven vezérlő felelős a háttérben lévő folyamatok lebonyolításáért, és kezeli a felhasználói bemenetet és kapcsolatban áll a modellel és nézettel.
 	
@@ -535,29 +551,36 @@
 		\item \textbf{update(Request \$request, ModelNev \$modelnev)} a megadott rekord módosítása az adatbázisban
 		\item \textbf{destroy(ModelNev \$modelnev)} adott rekord törlése az adatbázisból
 	\end{itemize}
-	Ezeken kívül más metódusokat is szabadon létrehozhatunk. Én is például ezt tettem az eszköz kapcsoláshoz, az \emph{,,EspController''}-en belül a \emph{,,Toggle(\$esp,\$status)''} metódussal. amit majd \aref{csatlakozas-a-webszerverre}.~szakaszon kifejtek.
+	Ezeken kívül más metódusokat is szabadon létrehozhatunk. Én például ezt tettem az eszköz kapcsoláshoz, az \emph{,,EspController''}-en belül a \emph{,,Toggle(\$esp,\$status)''} metódussal, amit majd \aref{csatlakozas-a-webszerverre}.~szakaszon kifejtek.
 	\\
-	Ezen a képen pedig egy példa látható, hogy hogyan is adhatunk vissza egy adott rekordot egy adott nézetbe.
+	\Aref{roomcontroller-edit}.~programkódban pedig egy példa látható, hogy hogyan is adhatunk vissza egy adott rekordot egy adott nézettel.\\
+	\begin{minipage}{1\linewidth}
+		\centering
+		\label{return-room}\includegraphics[width=1\textwidth]{./src/codes/return_view}
+		\captionof{lstlisting}{\emph{,,RoomController''} edit metódusa}
+		\label{roomcontroller-edit}
+	\end{minipage}
 	\\
-	\label{return-room}\includegraphics[width=1\textwidth]{./src/codes/return_view}
+	\Aref{roomcontroller-edit}.~programkódban az látható, hogy azt a nézetet adja vissza, ami egy szoba módosítására való, egy adott szoba rekorddal. Amikor visszaadunk egy nézetet, akkor lehetőség van arra, hogy ne csak egy adott rekordot adjunk vissza, hanem több rekordot, vagy rekord listákat is. Arra pedig itt egy példa kód.\\
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[width=1\textwidth]{./src/codes/return_lists}
+		\captionof{lstlisting}{\emph{,,RoomController''} index metódusa}
+	\end{minipage}
 	\\
-	Ezen a képen is látható, hogy azt a nézetet adja vissza, ami egy szoba módosítására való, egy adott szoba rekorddal. Amikor visszaadunk egy nézetet lehetőség van arra, hogy ne csak egy adott rekordot adjunk vissza, hanem több rekordot, vagy rekord listákat is. Arra pedig itt egy példa kód.
-	\\
-	\includegraphics[width=1\textwidth]{./src/codes/return_lists}
-	
-	Ez a \emph{,,RoomController''}-nek az \emph{index()} metódusa, ami azért felelős, hogy a főoldalon meg lehessen jeleníteni az összes szobát és eszközt. Szintén a \emph{,,Room::all();''} az összes szoba rekordot az adatbázisban egy listába gyűjti össze, ami a Laravel Eloquent\cite{laravel-eloquent} egyik tulajdonsága közé tartozik, ami egy ORM\footnote{Object-Relational Mapper, azaz Objektum-relációs leképező}, ami könnyebbé teszi az adatbázisban elérhető rekordok elérését Model-ekkel és rajtuk végrehajtható műveletekkel.
+	Ez a \emph{,,RoomController''}-nek az \emph{index()} metódusa, ami azért felelős, hogy a főoldalon meg lehessen jeleníteni az összes szobát és eszközt. Szintén a \emph{,,Room::all();''} az összes szoba rekordot az adatbázisban egy listába gyűjti össze, ami a Laravel Eloquent\cite{laravel-eloquent} egyik tulajdonsága közé tartozik, ami egy ORM\footnote{Object-Relational Mapper, azaz Objektum-relációs leképező}. Ez könnyebbé teszi az adatbázisban elérhető rekordok elérését Model-ekkel és rajtuk végrehajtható műveletekkel.
 	\subsection{Blade}
-	A Laravelnek az egyik sajátossága a ,,\emph{nezetNeve.\textbf{blade}.php}'' típusú fájloknak elnevezett nézetek, amik lehetővé  teszik azt, hogy ilyen blade utasításokat tudjuk végrehajtani. \textbf{,,\{\{\}\}''} -- ilyen dupla kapcsos zárójelek között tudunk például a nézetben megjeleníteni egy rekordot.
+	A Laravelnek az egyik sajátossága a ,,\emph{nezetNeve.\textbf{blade}.php}'' típusú fájloknak elnevezett nézetek, amik lehetővé  teszik azt, hogy ilyen blade utasításokat tudjunk végrehajtani. \textbf{,,\{\{\}\}''} -- ilyen dupla kapcsos zárójelek között tudunk például a nézetben megjeleníteni egy rekordot.
 	
 	Másik ilyen sajátossága a PHP utasítások megadása \textbf{@}-jel leírásával. Például egy ,,ha'' kérdés így néz ki Laravel blade utasítással: \emph{,,@if() @endif''}.\cite{laravel-blade}
 	
-	Pédlául \aref{return-room}.~szakaszban annál a kódnál, ahol egy szobát adunk vissza a módosítás nézetbe, és annak szobának a nevét így érhetjük el: \emph{\textbf{,,\{\{\$room->name\}\}''}}
+	Pédlául \aref{return-room}.~programkódban, ahol egy szobát adunk vissza a módosítás nézetbe, és annak szobának a nevét így érhetjük el: \emph{\textbf{,,\{\{\$room->name\}\}''}}
 	
 	%----------
-	\section{A kezelő felület bemutatása és működése}
-	Az alábbi szakaszokon az kezelő felület megjelenését, és működését fogom taglalni. Igyekeztem letisztult design kialakítására. Az összes lap úgy van megoldva, hogy a lehető legtöbb képernyőfajtán megfelelően nézzen ki, azaz mindegyik oldal reszponzív. MindeztS a Tailwind CSS reszponzivitási eszközeit használva.\cite{tailwind-responsive}
+	\section{A kezelői felület bemutatása és működése}
+	Az alábbi szakaszokon a kezelői felület megjelenését, és működését fogom taglalni. Igyekeztem letisztult design kialakítására. Az összes lap úgy van megoldva, hogy a lehető legtöbb képernyőfajtán megfelelően nézzen ki, azaz mindegyik oldal reszponzív. Mindezt a Tailwind CSS reszponzivitási eszközeit használva.\cite{tailwind-responsive}
 	\subsection{A főoldal}
-	A főoldal az akkor jelenik meg, hogy ha a Raspberry Pi által szolgáltatott Wi-Fi-re felcsatlakozunk, és hogy ha böngészőnek a kereső sávjába azt írjuk, hogy:\\
+	A főoldal akkor jelenik meg, hogy ha a Raspberry Pi által szolgáltatott Wi-Fi-re felcsatlakozunk, és hogy ha böngészőnek a kereső sávjába azt írjuk, hogy:\\
 	\textbf{\emph{,,192.168.200.1''}}.
 	
 	Hogy ha nincs még se szoba, se ezen belül eszköz az adatbázisba felvéve, akkor az a szöveg fogad minket, hogy \emph{,,There are no rooms added to the database!''}, ami magyarul azt jeleni, hogy \emph{,,Nincsen szoba az adatbázisba felvéve!''}.
@@ -573,11 +596,11 @@
 	Az adatok úgy jelennek meg, hogy a \emph{,,RoomController''} \emph{,,index()''} metódusából visszakapja a nézet a szobákat és az eszközöket külön listában. A Laravel Blade-nek van egy olyan utasítása, hogy \emph{,,@forelse(\$rekordok as \$rekord) @empty @endforelse''}. Ez a hármas egy olyan módosított \emph{,,@foreach''}, ami rendelkezik egy olyan utasítás résszel, (\emph{,,@empty''}) hogy mi a teendő, hogy ha a végig iterálandó lista üres.
 	Ezért is van, az hogy figyelmeztető felirat jelenik meg, hogy ha nincs szoba az adatbázisban.
 	
-	Ezen az iteráláson belül van még egy ilyen iterálás ami az eszközökön megy végig, amiben pedig egy olyan \emph{,,@if()''}, azaz ,,ha'' utasítás van, ami leelenőrzi, hogy az adott eszköz az adott szobához tartozik-e és azon belül az is, hogy milyen az eszköz típusa. Ezért van az, hogy például egy hőmérséklet és páratartalom adatokat megjelenítő panel máshogyan néz ki, mint egy eszköz kapcsolásra használatos panel.
+	Ezen az iteráláson belül van még egy ilyen iterálás, ami az eszközökön megy végig, amiben pedig egy olyan \emph{,,@if()''}, azaz ,,ha'' utasítás van, ami leelenőrzi, hogy az adott eszköz az adott szobához tartozik-e és azon belül azt is, hogy milyen az eszköz típusa. Ezért van az, hogy például egy hőmérséklet és páratartalom adatokat megjelenítő panel máshogyan néz ki, mint egy eszköz kapcsolásra használatos panel.
 	\\
 	\textbf{Toggle, azaz kapcsoló panel:}
 	\\
-	Mindegyik kapcsoló típusú panelhez tartozik egy \emph{,,onClick()''} metódus ami azt nézi, hogy rá lett-e kattintva a gombra. Melléje még dinamikusan párosul egy jQuery kód, ami kiírja az oldal betöltésekor\footnote{\label{document-ready}Amit a \emph{,,\$(document).ready(function()\{...\}''} mond meg, hogy betöltött-e az oldal}, hogy csatlakozni próbál az adott ESP eszközhöz.\footnote{Ez később majd \aref{toggle} részen lesz elmagyarázva.} Ha nem sikerül választ kapni az adott ESP eszköztől, akkor átállítja a kapcsoló feliratát arra, hogy jelenleg nem elérhető, és a kattinthatósági funkciót is elveszi a gombról.
+	Mindegyik kapcsoló\cite{flowbite-toggle} típusú panelhez tartozik egy \emph{,,onClick()''} metódus, ami azt nézi, hogy rá lett-e kattintva a gombra. Melléje még dinamikusan párosul egy jQuery kód, ami kiírja az oldal betöltésekor\footnote{\label{document-ready}Amit a \emph{,,\$(document).ready(function()\{...\}''} mond meg, hogy betöltött-e az oldal}, hogy csatlakozni próbál az adott ESP eszközhöz.\footnote{Ez később majd \aref{toggle} részen lesz elmagyarázva.} Ha nem sikerül választ kapni az adott ESP eszköztől, akkor átállítja a kapcsoló feliratát arra, hogy jelenleg nem elérhető, és a kattinthatósági funkciót is elveszi a gombról.
 	\\
 	\textbf{Hőmérséklet és páratartalom panel:}
 	\\
@@ -586,15 +609,15 @@
 	Hogy ha rákattintunk a szenzor panelre, akkor átvisz minket egy másik oldalra, ahol az elmúlt 24 órában rögzített óránkénti átlagos hőmérséklet és páratartalom adatokat nézhetjük meg.
 	\\
 	\textbf{Kamera panel:}
-	A főoldalon élőben lehet látni az adott kamerának a közvetítését. Ehhez a panelhez több dolog is társul: vagy egy \emph{,,onLoad()''} metódus, ami azt nézi, hogy a kép betöltött-e, ami annyit tesz hogy a kapcsolódási kísérlet feliratot átállítja a szenzor nevére és az IP végződésére. Amikor betöltődik az oldal\footref{document-ready}, akkor a panelra kiíródik, hogy kapcsolódni próbál az adott kamerához. Ezt egy olyan \emph{,,EventListener''}, azaz esemény hallgató tartozik, ami azt nézi, hogy a kapcsolódási kísérlet sikertelen volt-e. Ilyenkor a felirat visszaállítódik arra, hogy kapcsolódni próbál, és meg is ismétli a kapcsolódást. Ezek után beállítódik az, hogy ez a kapcsolódási kísérlet 15 másodpercenként megismétlődjön. 
+	A főoldalon élőben lehet látni az adott kamerának a közvetítését. Ehhez a panelhez több dolog is társul: vagy egy \emph{,,onLoad()''} metódus, ami azt nézi, hogy a kép betöltött-e, ami annyit tesz, hogy a kapcsolódási kísérlet feliratot átállítja a szenzor nevére és az IP végződésére. Amikor betöltődik az oldal\footref{document-ready}, akkor a panelra kiíródik, hogy kapcsolódni próbál az adott kamerához. Ezt egy olyan \emph{,,EventListener''}, azaz esemény hallgató tartozik, ami azt nézi, hogy a kapcsolódási kísérlet sikertelen volt-e. Ilyenkor a felirat visszaállítódik arra, hogy kapcsolódni próbál, és meg is ismétli a kapcsolódást. Ezek után beállítódik az, hogy ez a kapcsolódási kísérlet 15 másodpercenként megismétlődjön. 
 	
-	Hogy ha rákattintunk a kamera képére, akkor átvisz minket egy másik oldalra, ahol nagyobban láthatjuk annak az egy kamerának a közvetítését. Ennek a jQuery logikája ugyan az, mint a főoldalon.\\
+	Hogy ha rákattintunk a kamera képére, akkor átvisz minket egy másik oldalra, ahol nagyban láthatjuk annak az egy kamerának a közvetítését. Ennek a jQuery logikája ugyanaz, mint a főoldalon.\\
 	\textbf{Átjutás a beállításokra:}
 	Az oldalon, hogy, ha a bal felső sarokban rákattintunk a fogaskerék ikonra, akkor átjutunk a beállítások oldalra.
 	\subsection{Beállítások}
 	A beállítások oldal a főoldalon már alkalmazott módon listázza ki a szobákat és a hozzá tartozó eszközöket: egymásba ágazott \emph{,,@forelse''} utasítás-sal és egy \emph{,,@if''}, ami leellenőrzi, hogy az adott eszköz az adott szobához tartozik-e. Ahogyan \aref{settings}.~képen is látható.
 	
-	Tudni kell azt, hogy szobát kell hozzáadni az adatbázisba, hogy eszközt tudjunk felvenni hozzá. Ennek az az egyetlen kikötése, hogy két szoba ugyan azzal a névvel nem lehet létre hozni. Ha szobát akarunk hozzáadni a rendszerbe, akkor az oldal tetején található \emph{,,Add Room''}\footnote{Azaz Szoba Hozzáadása} gombra kell kattintani, ahol megadhatjuk, hogy a szobának mi legyen a neve.\footnote{Természetesen a vezérlőben le van kezelve, hogy nem lehet üresen hagyni az adott mezőt, vagy hogy már létezik egy ilyen szoba az adatbázisban. Mindez le van kezelve a szoba módosításnál is.}
+	Tudni kell azt, hogy szobát kell hozzáadni az adatbázisba, hogy eszközt tudjunk felvenni hozzá. Ennek az az egyetlen előfeltétele, hogy két szoba ugyanazzal a névvel nem lehet létre hozni. Ha szobát akarunk hozzáadni a rendszerhez, akkor az oldal tetején található \emph{,,Add Room''}\footnote{Azaz Szoba Hozzáadása} gombra kell kattintani, ahol megadhatjuk, hogy a szobának mi legyen a neve.\footnote{Természetesen a vezérlőben le van kezelve, hogy nem lehet üresen hagyni az adott mezőt, vagy hogy már létezik egy ilyen szoba az adatbázisban. Mindez le van kezelve a szoba módosításnál is.}
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=1\textwidth]{./src/pages_img/settings}
@@ -603,16 +626,16 @@
 	\end{figure}\\
 	Alapvetően minden szobához tartozik három gomb: \emph{,,Add Device''}, azaz Eszköz Hozzáadása, \emph{,,Modify Room''}, azaz Szoba Módosítása, és \emph{,,Delete Room''}, azaz Szoba Törlése. 
 	
-	Legelőször is, amikor hozzá szeretnénk adni egy új eszközt egy adott szobához, akkor \aref{add-sensor-error}.~képhez hasonló oldal fog minket fogadni.\footnote{A piros keretben lévő hiba üzenetet kivéve: -- ez csak azért van így megjelenítve, hogy bemutassam, hogy ezt így jelzi az oldal, hogy ha egy oldalhoz több mint egy szenzort szeretnénk hozzáadni.}
+	Legelőször is, amikor hozzá szeretnénk adni egy új eszközt egy adott szobához, akkor \aref{add-sensor-error}.~képhez hasonló oldal fog minket fogadni.\footnote{A piros keretben lévő hibaüzenetet kivéve: -- ez csak azért van így megjelenítve, hogy bemutassam, hogy ezt így jelzi az oldal, hogy ha egy oldalhoz több mint egy szenzort szeretnénk hozzáadni.}
 	
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=1\textwidth]{./src/pages_img/sensor-error}
-		\caption{Eszköz hozzáadása oldal, ahol egy egy szobába akartunk adni egy második szenzort is}
+		\caption{Eszköz hozzáadása oldal, ahol még egy szenzort akarunk rakni egy szobába}
 		\label{add-sensor-error}
 	\end{figure}
 	
-	Itt megadhatjuk az eszköz típusát,~--~amit \aref{database}.~szakaszban leírtam, hogy milyen típusú eszközöket adhatunk a rendszerbe,~--~egy tetszőleges nevet, és az ESP szenzornak az IP-jének az utolsó tagját. Hogy ha törölni szeretnénk eddig minden mezőbe bevitt adatot, akkor a \emph{,,Reset Data''}\footnote{Azaz Adatok Visszaállítása} gombra nyomhatunk, és akkor újból üres lesz minden mező. Hogy ha meggondoltuk magunkat, és mégsem akarunk egy új eszközt hozzáadni a szobához, akkor a \emph{,,Cancel''}, azaz Mégse gomb-ra kattintva visszakerülünk a beállítások panelre. Hogy ha minden szükséges adatot beírtunk a mezőkbe, akkor az \emph{,,Add Device''}, azaz Eszköz hozzáadása gombra kattintva megkezdődik az eszköz hozzáadásának kísérlete az adatbázisba. Mindezt a vezérlőben leellenőrzök, majd ennek megfelelően viselkedik az oldal. Ha hiba van akkor azt megjeleníti, hogy ha pedig sikerül a hozzáadás, akkor pedig visszairányít a beállítások panelre, és értesít az oldal, hogy sikeres volt az eszköz hozzáadása az adott szobába.
+	Itt megadhatjuk az eszköz típusát,~--~amit \aref{database}.~szakaszban leírtam, hogy milyen típusú eszközöket adhatunk a rendszerbe,~--~egy tetszőleges nevet, és az ESP szenzornak az IP-jének az utolsó tagját. Hogy ha törölni szeretnénk az oldal mezőnek eddig bevitt adatait, akkor a \emph{,,Reset Data''}\footnote{Azaz Adatok Visszaállítása} gombra nyomhatunk, és akkor újból üres lesz minden mező. Hogy ha meggondoltuk magunkat, és mégsem akarunk egy új eszközt hozzáadni a szobához, akkor a \emph{,,Cancel''}, azaz Mégse gomb-ra kattintva visszakerülünk a beállítások panelre. Hogy ha minden szükséges adatot beírtunk a mezőkbe, akkor az \emph{,,Add Device''}, azaz Eszköz hozzáadása gombra kattintva megkezdődik az eszköz hozzáadásának kísérlete az adatbázisba. Mindezt a vezérlőben leellenőrzöm, hogy ennek megfelelően viselkedik az oldal. Ha hiba van, akkor azt megjeleníti, hogy ha pedig sikerül a hozzáadás, akkor pedig visszairányít a beállítások panelre és értesít az oldal, hogy sikeres volt az eszköz hozzáadása az adott szobába.
 	
 	 A határok ezekre az adatokra kliens és vezérlő oldalon is le vannak természetesen kezelve.\\
 	\textbf{Ezek az esetek az alábbiak:} 
@@ -636,7 +659,7 @@
 		\caption{Eszköz módosítás oldal}
 		\label{modify}
 	\end{figure}\\
-	Ezen a részen ugyanúgy le vannak kezelve az esetek, mint a hozzáadásnál is. Itt a \emph{,,Reset Data''} gomb az eredeti adatokra állítja vissza a mezőkben lévő adatokat. Még annyi különbséggel, hogy itt már kiválaszthatjuk, hogy melyik szobába is szeretnénk átállítani az adott eszközt, már ,hogy ha a felhasználó szeretné. Ha végeztünk a módosítással akkor az \emph{,,Apply Changes''}, azaz Módosítások Alkalmazása gombra kattintva az adatok ellenőrzésre kerülnek, mint ahogyan az eszköz hozzáadásnál történt.
+	Ezen a részen ugyanúgy le vannak kezelve az esetek, mint a hozzáadásnál is. Itt a \emph{,,Reset Data''} gomb az eredeti adatokra állítja vissza a mezőkben lévő adatokat. Még annyi különbséggel, hogy itt már kiválaszthatjuk, hogy melyik szobába is szeretnénk átállítani az adott eszközt, már, hogy ha a felhasználó szeretné. Ha végeztünk a módosítással akkor az \emph{,,Apply Changes''}, azaz Módosítások Alkalmazása gombra kattintva az adatok ellenőrzésre kerülnek, mint ahogyan az eszköz hozzáadásnál történt.
 	
 	A beállítások fülből lehet átmenni az RFID beállítások oldalra, hogy ha rákattintunk az oldal tetején lévő \emph{,,RFID Settings''}\footnote{Azaz RFID beállítások} gombra.
 	
@@ -649,7 +672,7 @@
 		\caption{RFID beállítások oldal}
 		\label{rfid-settings}
 	\end{figure}
-	Ezen az oldalon a beállítások oldalhoz majdnem ugyanúgy van kilistázva, hogy milyen RFID olvasók és hozzá tartozó RFID címkék, és azok adatai, mint ahogyan \aref{rfid-settings}.~képen látható.\\
+	Ezen az oldalon a beállítások oldalhoz majdnem ugyanúgy van kilistázva, hogy milyen RFID olvasó és hozzá tartozó RFID címkék, és azok adatai, mint ahogyan \aref{rfid-settings}.~képen látható.\\
 	\textbf{Egy RFID tagnek az alábbi adatait lehet látni:}
 	\begin{itemize}
 		\item Name -- Taghez hozzáadott név
@@ -665,7 +688,7 @@
 		\item RFID tag neve maximum 50 karakter lehet.
 	\end{itemize}
 	
-	Mint ahogyan az alap beállítások oldalon, itt is visszajelzést kapunk vagy helyileg a form-on, hogy ha valami hiba adódik valamelyik adattal vagy az RFID beállítások beállítások oldalon kapunk visszajelzést a műveletről, és annak sikerességéről.
+	Mint ahogyan az alap beállítások oldalon, itt is visszajelzést kapunk vagy helyileg a form-on, hogy ha valami hiba adódik valamelyik adattal vagy az RFID beállítások oldalon kapunk visszajelzést a műveletről, és annak sikerességéről.
 	
 	\begin{figure}[ht!]
 		\centering
@@ -674,11 +697,11 @@
 		\label{add-rfid-tag}
 	\end{figure}
 
-	Ezen az oldalon azt láthatjuk, hogy van egy mező, amibe írhatunk, ami az RFID tag-hez tartozó név\footnote{Tag name}, és van egy másik mező, de abba nem tudunk írni. Ez azért van, mivel úgy lett megoldva a tag hozzárendelése az olvasóhoz, hogy rá kell kattintani a \emph{,,Read Tag''}\footnote{Azaz Címke beolvasása} gombra, és ezután van 8 másodpercünk\footnote{Azért adtam ennyi időt rá, mert ennyi idő alatt kellően van időnk ezt a műveletet elvégezni.}, hogy hozzáérintsük az RFID olvasóhoz az adott címkét, amit hozzá szeretnénk rendelni. 
+	Ezen az oldalon azt láthatjuk, hogy van egy mező, amibe írhatunk, ami az RFID tag-hez tartozó név\footnote{Tag name} és van egy másik mező, de abba nem tudunk írni. Ez azért van, mivel úgy lett megoldva a tag hozzárendelése az olvasóhoz, hogy rá kell kattintani a \emph{,,Read Tag''}\footnote{Azaz Címke beolvasása} gombra, és ezután van 8 másodpercünk\footnote{Azért adtam ennyi időt rá, mert ennyi idő alatt kellően van időnk ezt a műveletet elvégezni.}, hogy hozzáérintsük az RFID olvasóhoz az adott címkét, amit hozzá szeretnénk rendelni. 
 	
 	Ha sikerrel járunk, akkor a címke UID-je megjelenik a megfelelő szövegdobozban. Ellenkező esetben, hogy ha az RFID olvasó offline állapotban van, vagy nem lett tag hozzáérintve az olvasóhoz, akkor értesít az oldal, hogy a művelet sikertelen volt.
 	
-	Itt is ugyanúgy jelen van az a három gomb mint az eszköz, és a szoba hozzáadása oldalon, ami a mentés, az adatok visszaállítsa, és a mégse.
+	Itt is ugyanúgy jelen van az a három gomb, mint az eszköz, és a szoba hozzáadása oldalon, ami a mentés, az adatok visszaállítsa, és a mégse.
 	
 	Az RFID tag módosítására is van lehetőség, hogy ha az adott tag paneljén rákattintunk a módosítás gombra. Ilyenkor lehetőségünk van az RFID olvasó módosítására is\footnote{Természetesen akkor az annak megfelelő RFID olvasóhoz kell majd érinteni a címkét, hogy ha az uid-t szeretnénk megváltoztatni.}, amit láthatunk \aref{modify-rfid-tag}.~képen is. Amikor megváltoztatjuk az adott tag-et, akkor a módosítás dátuma annak megfelelő lesz.
 	
@@ -692,7 +715,7 @@
 	Van lehetőségünk visszalépni a sima beállítások oldalra, hogy ha a bal felső sarokban a vissza nyílra kattintunk. Az \emph{,,RFID Use History''} gomb-ra kattintva pedig áttérünk az RFID használati táblázat oldalra.
 	
 	\subsection{RFID használati táblázat}
-	Az RFID-s rendszer úgy működik\footnote{Mint ahogy részben említve lett \aref{rfid-esp-section}.~szakaszon}, hogy ha fel van véve egy RFID tag az adatbázisba az adott olvasóhoz, akkor alap járaton olvasó állapotban\footnote{Ezt jobban majd \aref{rfid-working}.~szakaszon fogom kifejteni.} van, és amikor benne van az adatbázisban a beolvasott tag UID-je, akkor ugye zölden villog az ESP-hez kötött RGB LED, és felvételre kerül az rfid\_use\_history adatbázis táblába, hogy mikor, és melyik RFID tag volt beolvasva melyik olvasóval.
+	Az RFID-s rendszer úgy működik\footnote{Mint ahogy részben említve lett \aref{rfid-esp-section}.~szakaszon}, hogyha fel van véve egy RFID tag az adatbázisba az adott olvasóhoz, akkor az eszköz alapértelmezett állapota az olvasó állapot\footnote{Ezt jobban majd \aref{rfid-working}.~szakaszon fogom kifejteni.} van, és amikor benne van az adatbázisban a beolvasott tag UID-je, akkor zölden villog az ESP-hez kötött RGB LED, és felvételre kerül az rfid\_use\_history adatbázis táblába, hogy mikor, és melyik RFID tag volt beolvasva melyik olvasóval.
 
 	\begin{figure}[ht!]
 		\centering
@@ -701,34 +724,34 @@
 		\label{rfid-use-history}
 	\end{figure}
 	
-	Hogy ha erre az oldalra megyünk, akkor egy táblázat fog minket fogadni, -- mint ahogyan \aref{rfid-use-history}.~képen is látható -- vagy is inkább annyi táblázat, amennyi olvasót vettünk be a rendszerbe. Ezeknek a táblázatoknak 4 oszlopa van: \textbf{Ordinal number}, azaz sorszám, \textbf{Tag uid} azaz címke azonosító, \textbf{Tag name}, azaz a címkéhez hozzáadott név, és \textbf{Date used}, azaz a használat dátuma.
+	Hogyha erre az oldalra megyünk, akkor egy táblázat fog minket fogadni, -- mint ahogyan \aref{rfid-use-history}.~képen is látható -- vagy is inkább annyi táblázat, amennyi olvasót vettünk be a rendszerbe. Ezeknek a táblázatoknak 4 oszlopa van: \textbf{Ordinal number}, azaz sorszám, \textbf{Tag uid} azaz címke azonosító, \textbf{Tag name}, azaz a címkéhez hozzáadott név, és \textbf{Date used}, azaz a használat dátuma.
 	
 	Ezen a táblázaton nyomon tudjuk követni, hogy mikor is volt használva az adott RFID címkénk.
 	
 	A táblázatba az adatok úgy kerülnek hozzáadásra, hogy először végig iterálunk egy \emph{@foreach}-el az olvasókon, majd ezen belül végig iterálunk az összes használati alkalmon, és annak megfelelően le van ellenőrizve, hogy ahhoz az olvasóhoz tartozik-e az adott használati alkalom. Hogy ha hozzá tartozik, akkor pedig hozzáadja az adott táblázathoz egy sorban azt a rekordot és annak az adatait.
 	
-	Ez elsődlegesen nyomon követés céljából lett ez az oldal megvalósítva, hogy ha komolyabban meg tudnám oldani az RFID használatát, például, hogy ha egy zárhoz tudnám hozzácsatlakoztatni az RFID kártyaolvasós ESP-t, de ez anyagiak miatt nem került sajnos megvalósításra a zárszerkezet alkalmazása.
+	Elsődlegesen nyomon követés céljából lett az oldal megvalósítva, hogy ha komolyabban meg tudnám oldani az RFID használatát, például, hogyha egy zárhoz tudnám hozzácsatlakoztatni az RFID kártyaolvasós ESP-t, de ez anyagiak miatt nem került sajnos megvalósításra a zárszerkezet alkalmazása.
 	
 	Szintén van lehetőség visszalépni az RFID beállítások oldalra, hogy a bal felső sarokban rákattintunk a vissza nyíl ikonra.
 	\subsection{Hőmérsékleti és páratartalom előzmények - ChartJS}
 	
-	Amikor hozzáadásra kerül a rendszerbe egy hőmérséklet és páratartalom szenzor, akkor az az által olvasott adatokat meg tudjuk nézni egy gráfon. Ez akkor van, amikor egy szenzoros panelre kattintunk a főoldalon. Ha rákattintunk, akkor \aref{temp-hum-chart}.~képen látható oldalhoz hasonlót fogunk látni.
+	Amikor hozzáadásra kerül a rendszerbe egy hőmérséklet és páratartalom szenzor, akkor az az által olvasott adatokat meg tudjuk nézni egy grafikonon. Amikor egy szenzoros panelre kattintunk a főoldalon. Ha rákattintunk, akkor \aref{temp-hum-chart}.~képen látható oldalhoz hasonlót fogunk látni.
 	
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=1\textwidth]{./src/pages_img/humidity-chart}
-		\caption{Hőmérséklet és páratartalom szenzor által mért adatoknak gráf oldala}
+		\caption{Hőmérséklet és páratartalom szenzor által mért adatok}
 		\label{temp-hum-chart}
 	\end{figure}
 
-	Az oldal a Chart.js JavaScript könyvtárat használva lett megoldva. Ez mind úgy valósul meg, hogy a vezérlőben le van kérve az elmúlt 24 órányi adatnak az óránkénti átlag mennyisége, és az van továbbítva az oldalnak, és ezáltal lehet megjeleníteni a Chart.js használatával a gráf.
+	Az oldal a Chart.js JavaScript könyvtár használatával lett megoldva. Ez mind úgy valósul meg, hogy a vezérlőben lekérjük az elmúlt 24 órányi adatnak az óránkénti átlag mennyiségét és azt továbbítjuk az oldalnak, és ezáltal lehet megjeleníteni a Chart.js használatával a grafikon.
 	
-	A felső gráf az a hőmérséklet adatokat mutatja, míg az alsó gráf a relatív páratartalom adatokat mutatja meg. 
+	A felső grafikon a hőmérséklet adatokat mutatja, míg az alsó grafikon a relatív páratartalom adatokat. 
 	
-	Itt is szintén lehetőség van visszamenni a főoldalra a bal felső sarokban lévő vissza nyílra kattintva.
+	Itt is lehetőség van visszamenni a főoldalra a bal felső sarokban lévő vissza nyílra kattintva.
 	%----------
 	\section{Eszközök kommunikációja a webszerverrel}\label{csatlakozas-a-webszerverre}
-	Mivel az alkalmazott eszközök \emph{ESP-WROOM-32}-esekkel lett megoldva, ezért valahogyan ki kellett gondolni, hogy ezeket hogyan is alkalmazzam, és hogyan is működjenek. Itt ezen a részen ezt tagalom. Az eszközöknek az adat folyamata \aref{esp-laravel.communication}.~ábrán szemléltetem, amit plantUML-lel készítettem el.
+	Mivel az alkalmazott eszközök \emph{ESP-WROOM-32}-esekkel van megoldva, ezért valahogyan ki kellett gondolni, hogy ezeket hogyan is alkalmazzam, és hogyan is működjenek. Itt ezen a részen ezt részletezem. Az eszközöknek az adat folyamata \aref{esp-laravel.communication}.~ábrán szemléltetem, amit plantUML-lel készítettem el.
 	
 	\begin{figure}[ht!]
 		\centering
@@ -738,15 +761,15 @@
 	\end{figure}
 	
 	\subsection{Hőmérséklet és Páratartalom szenzor}
-	Legelső eszköz, ami beintegrálásra került a rendszerbe az a hőmérséklet és páratartalom szenzor volt. Amikor az ember okos otthont képzel el magának, az első dolog ami eszébe jut ilyenkor az az, hogy az adott szoba hőmérsékletét nyilván tudjuk tartani. 
+	Legelső eszköz, ami beintegrálásra került a rendszerbe, az a hőmérséklet és páratartalom szenzor volt. Amikor az ember okos otthont képzel el magának, az első dolog ami eszébe jut ilyenkor az az, hogy az adott szoba hőmérsékletét nyilván tudjuk tartani. 
 	
 	Első probléma amibe ütköztem az az volt, hogy az ötlet az remek, de hogyan is fogom ezeket az adatokat elküldeni a Laravel oldalnak, hogy azt a vezérlőben el tudjam menteni adatbázisba.
 	
 	Először is kell egy külső könyvtár ahhoz, hogy a DHT22-es szenzort alkalmazni tudjuk.\cite{adafruit-dht-library} Utána pedig arra volt szükség, hogy hogyan is küldjünk Laravel számára adatokat ESP-ről.\cite{arduino-to-laravel}
 	
-	Ahogyan a leírásban néztem, szükséges lesz egy API\footnote{Application Programming Interface, azaz Alkalmazás Programozási Felület} útvonalra, amit a Laravel api.php fájljában található meg. Mivel tudom azt, hogy rekordot akarok elmenteni, ezért ennek a HTTP kérésnek POST-nak kell lennie. Ez az útvonal \emph{192.168.200\textbf{/esp}} lett. Ezen az útvonalon pedig az \emph{,,EspSensorController''} \emph{,,store''} metódusát fogom használni, hogy elmentse a szenzorok által érkező adatokat. 
+	Ahogyan a leírásban néztem, szükséges lesz egy API\footnote{Application Programming Interface, azaz Alkalmazás Programozási Felület} útvonalra, amit a Laravel api.php fájljában található meg. Mivel tudom azt, hogy rekordot akarok elmenteni, ezért ennek a HTTP kérésnek POST-nak kell lennie. Ez az útvonal \emph{192.168.200\textbf{/esp}} lett. Ezen az útvonalon pedig az \emph{,,EspSensorController''} \emph{,,store''} metódusát fogom használni, hogy elmentse a szenzoroktól érkező adatokat. 
 	
-	A leírás úgy alkalmazta az ESP-t hogy meg kellett neki adni azt, hogy rácsatlakozzon a RaspberryPi által szolgáltatott Wi-Fi-re. Ezért meg kell neki adni, hogy mi a Wi-Fi neve, és jelszava. Még a robotika órán tanultakból tudtam azt, hogy be lehet állítani azt, hogy mi legyen az ESP lokális statikus IP címe, mi legyen a gateway és a subnet mask. Mindez azérét volt szükséges, mivel az alkalmazás IP cím végződés alapján kommunikál az ESP-kel. (Például nekem a szenzoros ESP-nek az az IP címe, hogy \emph{192.168.200.5}.)
+	A leírás úgy alkalmazta az ESP-t, hogy meg kellett neki adni azt, hogy rácsatlakozzon a RaspberryPi által szolgáltatott Wi-Fi-re. Ezért meg kell neki adni, hogy mi a Wi-Fi neve, és jelszava. Még a robotika órán tanultakból tudtam azt, hogy be lehet állítani azt, hogy mi legyen az ESP lokális statikus IP címe, mi legyen a gateway és a subnet mask. Mindez azérét volt szükséges, mivel az alkalmazás IP cím végződés alapján kommunikál az ESP-kel. (Például nekem a szenzoros ESP-nek az az IP címe, hogy \emph{192.168.200.5}.)
 	
 	Tudom azt a leírásból, hogy a Laravelnek a \emph{192.168.200.1\textbf{/api/}esp} címre kell küldeni az adatokat, hogy működjön azzal az útvonallal. 
 	
@@ -756,23 +779,23 @@
 	
 	Legelső verziónál még statikusan be volt égetve a kódba, hogy az 1-es id-jű szobának küldi el az adatokat. Miután gondolkodtam ezen, hogy hogyan lehetne azt hogy dinamikusan annak a szobának legyenek elmentve azok az adatok, amihez fel van véve, ahhoz azt a megoldásra gondoltam, hogy a szoba id-je helyett azt küldi el, hogy mi az IP-jének az utolsó része. Itt a vezérlő lekérdezi, hogy akkor ennek alapján melyik szobához tartozik, majd ennek megfelelően kerülnek elmentésre az adatok. Ezek az adatküldések 10 másodpercenként történnek meg, hogy a lehető legfrissebb szenzor adatokat láthassuk.\footnote{Számítások alapján, hogy ha egy teljes éven keresztül működik a rendszer, akkor is 1 szenzornak az adatai az adatbázisban 70megabyte körüli, ami felettébb alacsony memória igényű}
 	
-	A főoldalon, hogy láthassuk ezeket az adatokat, ahhoz jQuery volt használva, ami azt végzi el, hogy egy \emph{,,\$.getJSON()''} metódussal eléri a Laravel web.php-jában az \emph{,,/esp/getLatest/szobaIDje''} útvonalat, ami alapján a vezérlő visszaadja a legutóbbi adatot, ami az adatbázisban található. Ez a függvény első lefutása után beállítja azt, hogy 10 másodpercenként kérje le ezzel metódussal ugyanúgy az adatot, mindez a \emph{,,setInterval()''} metódus használatával.
+	A főoldalon, hogy láthassuk ezeket az adatokat, ahhoz jQuery-t használtam, ami azt végzi el, hogy egy \emph{,,\$.getJSON()''} metódussal eléri a Laravel web.php-jában az \emph{,,/esp/getLatest/szobaIDje''} útvonalat, ami alapján a vezérlő visszaadja a legutóbbi adatot, ami az adatbázisban található. Ez a függvény első lefutása után beállítja azt, hogy 10 másodpercenként kérje le ezzel metódussal ugyanúgy az adatot, mindez a \emph{,,setInterval()''} metódus használatával.
 	
 	\subsection{Eszköz kapcsoló}\label{toggle}
 	
-	A fő céljaim között az volt, hogy eszközöket -- például világítást is -- tudjak kapcsolni ki-- vagy be a rendszerben.  Ehhez kellett egy Async\footnote{Azaz Aszinkron} Webszerver\cite{async-webserver} használata.
+	A fő céljaim között az volt, hogy eszközöket -- például világítást is -- tudjak kapcsolni ki vagy be a rendszerben. Ehhez kellett egy Async\footnote{Azaz Aszinkron} Webszerver\cite{async-webserver} használata.
 	
 	Az ESP működését úgy gondoltam ki az Async Webszerver leírása alapján, hogy legyen három kérés lehetőség az ESP felé: \emph{\textbf{,,status''}}, azaz állapot, \emph{\textbf{,,on''}} azaz be, és \emph{\textbf{,,off''}}, azaz ki. 
 	
 	Amikor kap egy kérést az ESP Async Webszerver, akkor mindig küld vissza egy állapotot, hogy milyen állapotban van -- legyen az \textbf{1}, azaz be--, vagy \textbf{0}, azaz kikapcsolt állapot JSON formátumban. Itt is természetesen ugyanúgy lett megadva a Raspberryre való csatlakozás, mint ahogyan a hőmérséklet-páratartalom szenzornál is.
 	
-	Ha azt a HTTP GET kérést kapja az Async Webserver, hogy \emph{\textbf{,,/status''}}, akkor csak visszaküldi, hogy jelenleg milyen állapotban van az eszköz, amit vezérel. (Bekapcsolás esetén mindig kikapcsolt állapottal kezd az ESP.) Amikor \emph{\textbf{,,/on''}} HTTP GET kérést kap az Async Webserver, akkor átváltja az állapot változót 1-re, a megadott jelnek az állapotát magas-ra állítja, -- ezzel jelet küldve a szilárdtest relének, hogy átfolyhat rajta az áram, ezzel bekapcsolva a hozzá csatolt eszköz -- és visszaküldi JSON formátumban, hogy az állapota \emph{\textbf{,,1''}}, azaz bekapcsolt állapotban van. JSON formátumban ez úgy néz ki, hogy \textbf{\emph{\{"status":1\}}}.
+	Ha azt a HTTP GET kérést kapja az Async Webserver, hogy \emph{\textbf{,,/status''}}, akkor csak visszaküldi, hogy jelenleg milyen állapotban van az eszköz, amit vezérel. (Bekapcsolás esetén mindig kikapcsolt állapottal kezd az ESP.) Amikor \emph{\textbf{,,/on''}} HTTP GET kérést kap az Async Webserver, akkor átváltja az állapot változót 1-re, a megadott jelnek az állapotát magas-ra állítja, -- ezzel jelet küldve a szilárdtest relének, hogy átfolyhat rajta az áram, ezzel bekapcsolva a hozzá csatolt eszközt -- és visszaküldi JSON formátumban, hogy az állapota \emph{\textbf{,,1''}}, azaz bekapcsolt állapotban van. JSON formátumban ez úgy néz ki, hogy \textbf{\emph{\{"status":1\}}}.
 	
 	Ehhez hasonlóan zajlik le, amikor azt a HTTP GET kérést kapja az Async Webszerver, hogy \emph{\textbf{,,/off''}}, annyi különbséggel, hogy az állapotot átállítja 0-ra, a szilárdtest relének a jelet alacsonyra állítja, -- ezzel kikapcsolva az eszközt -- és JSON formátumban azt küldi vissza, hogy \emph{\textbf{,,0''}}.
 	
 	Laravel oldalon jQuery használatával vannak a kérések megoldva. Mindegyik kapcsoló típusú elemhez dinamikusan hozzá van rendelve az \emph{,,onClick()''} metódussal, hogy hívja meg a \emph{,,toggle()''}, azaz kapcsolás metódust. Amikor betölt az oldal, akkor lefut egy \emph{,,getStatus()''}, azaz állapot ellenőrzés, ahol jQuery volt használva, ami azt végzi el, hogy egy \emph{,,\$.getJSON()''} metódussal eléri a Laravel web.php-jában a \emph{,,/getStatus/espIPvége''} útvonalat, ami vezérlőnek azt a feladatot adja, hogy küldjön HTTP GET kérést az adott ESP által szolgáltatott Async Webszerver felé. A kapott JSON válasz alapján pedig átállítja a kapcsolót be- vagy kikapcsolt állapotra a felületen, és a feliratát is annak megfelelően átírja, ha nem sikerül választ kapni valamilyen hiba miatt, vagy mert offline állapotban van az ESP, akkor letiltásra kerül a kapcsolható gomb a felületen és a feliraton az jelenik meg, hogy jelenleg nem elérhető az adott eszköz.
 	
-	A \emph{,,toggle()''} metódus azt nézi, hogy a felületen található kapcsolót be- vagy ki kapcsoltuk, ez alapján éri el a Laravel web.php-ban a \emph{,,/esp/toggle/espIPvége/állapot''} útvonalon keresztül a \emph{,,Toggle()''} metódust, ami annyit tesz, hogy HTTP GET kérést küld a megadott ESP-nek azzal, hogy be- vagy ki szeretnénk kapcsolni a rákapcsolt eszközt. Lekéri azért ilyenkor még egyszer biztonság kedvéért, hogy milyen állapotot is vett fel az eszköz.
+	A \emph{,,toggle()''} metódus azt nézi, hogy a felületen található kapcsolót be- vagy ki kapcsoltuk, ez alapján éri el a Laravel web.php-ban a \emph{,,/esp/toggle/espIPvége/állapot''} útvonalon keresztül a \emph{,,Toggle()''} metódust, ami annyit tesz, hogy HTTP GET kérést küld a megadott ESP-nek azzal, hogy be- vagy ki szeretnénk kapcsolni a rákapcsolt eszközt. A biztonság kedvéért ilyenkor lekéri még egyszer azért, hogy milyen állapotot is vett fel az eszköz.
 	
 	\subsection{Kamera}
 	
@@ -780,13 +803,13 @@
 	
 	Azt, hogy hogyan szolgáltasson webszerverként élő képet az ESP32-CAM, az egy forrás-ból\cite{esp32-cam} származik, amibe annyi módosítást végeztem el, hogy az IP-je statikus legyen az ESP32-CAM-nek, hogy biztosítsam ezzel a könnyű elérést. 
 	
-	Második probléma az volt, hogy legelőször úgy volt megoldva az egész, hogy lekérdezi az oldal egy \emph{,,\$.getJSON()''} metódussal, hogy a kamera elérhető-e. Miközben csatlakozik, akkor pedig azt a feliratot jelenítené meg az oldal, hogy próbál csatlakozni az adott eszközre. Ebből az a probléma adódott, hogy amikor betölt a kép előbb, mint hogy választ kapjon a metódus, akkor megjelenik a szolgáltatott felvétel, de a csatlakozási kísérletnek a felirat is marad ilyenkor még.
+	Második probléma az volt, hogy legelőször úgy volt megoldva, hogy lekérdezi az oldal egy \emph{,,\$.getJSON()''} metódussal, hogy a kamera elérhető-e. Miközben csatlakozik, akkor pedig azt a feliratot jelenítené meg az oldal, hogy próbál csatlakozni az adott eszközre. Ebből az a probléma adódott, hogy amikor betölt a kép előbb, mint hogy választ kapjon a metódus, akkor megjelenik a szolgáltatott felvétel, de a csatlakozási kísérletnek felirata is maradt ugyan úgy.
 	
-	Ezekre az sikerült elterveznem egy olyan megoldást, ami megfelelően működik akkor is hogy ha később lesz online a kamera, vagy egyből csatlakozik, vagy ha menet közben megszakadna a kapcsolat a kamerával. 
+	Ezekre sikerült elterveznem egy olyan megoldást, ami megfelelően működik akkor is, hogy ha később lesz online a kamera, vagy egyből csatlakozik, vagy ha menet közben megszakadna a kapcsolat a kamerával. 
 	
-	Így a kamerához több metódus tartozik a főoldalon a jól működő megoldáshoz: egy beépített jQuery \emph{,,onLoad()''} metódus, ami akkor fut le, hogy ha a kép betölt, egy beépített esemény hallgató, azaz \emph{,,EventListener''}, ami azt ellenőrzi, hogy hiba adódott-e a kép elérése közben, egy általam megírt \emph{,,imageExists()''} metódus, ami \emph{,,\$.getJSON()''} lekérdezéssel azt ellenőrzi, hogy elérhető-e a kamera, egy \emph{,,error()''} metódus, ami átállítja a feliratot arra, hogy hiba keletkezett, majd a képet újból beállítja, és egy \emph{,,success()''} metódus, ami átállítja a csatlakozási kérelemről a feliratot arra, hogy mi az eszköz neve és az IP végződése.
+	Így a kamerához több metódus tartozik a főoldalon a jól működő megoldáshoz: egy beépített jQuery \emph{,,onLoad()''} metódus, ami akkor fut le, hogyha a kép betölt, egy beépített esemény hallgató, azaz \emph{,,EventListener''}, ami azt ellenőrzi, hogy hiba adódott-e a kép elérése közben, egy általam megírt \emph{,,imageExists()''} metódus, ami \emph{,,\$.getJSON()''} lekérdezéssel azt ellenőrzi, hogy elérhető-e a kamera, egy \emph{,,error()''} metódus, ami átállítja a feliratot arra, hogy hiba keletkezett, majd a képet újból beállítja, és egy \emph{,,success()''} metódus, ami átállítja a csatlakozási kérelemről a feliratot arra, hogy mi az eszköz neve és az IP végződése.
 	
-	Annyi az egy hátránya ennek az ESP32-CAM-nek a megoldásával, hogy egyszerre csak egy eszközről lehet megtekinteni a szolgáltatott felvételt.
+	Az az egy hátránya ennek a megoldásnak, hogy egyszerre csak egy eszközről lehet megtekinteni a szolgáltatott felvételt.
 	 
 	\subsection{RFID kártya olvasó}\label{rfid-working}
 	
@@ -796,7 +819,7 @@
 	
 	Mint ahogyan a hőmérséklet-páratartalom szenzoros eszköznél van az API részt hívja meg csak itt a \emph{,,\textbf{/rfid/}''} útvonalon az \emph{,,RfidUseDataController''} \emph{,,store''} metódusát, ami legelőször lekérdezi, hogy van-e ilyen címke azzal az UID-vel, amit beolvasott, majd ha ez létezik, akkor elmenti az \emph{,,esp\_use\_data''} táblába, hogy mikor lett beolvasva az a címke, -- majd mint ahogyan már említettem -- \emph{,,OK''} válasz esetén zölden fog villogni a hozzá kötött RGB LED. Ha nem szerepel az adatbázisban az UID, akkor nem kerül lementésre semmi, hanem visszaküldi az ESP-nek hogy \emph{,,FAIL''}, és pirosan fog ebben az esetben villogni a rákötött RGB LED.
 	
-	A másik állapot az akkor van, amikor \aref{add-rfid-tag}.~képen vagy \aref{modify-rfid-tag}.~képen látható \emph{,,Read Tag''}-ra kattintunk. Ehhez a gombhoz van egy \emph{,,onClick()''} metódus, ami azt nézi, hogy rá lett-e kattintva, olyankor meghívja a \emph{,,GetUID()''} metódust, ami az alábbiakat végzi el: először is ellenőrzi, hogy az oldalon melyik olvasó lett kiválasztva, majd egy \emph{,,\$.getJSON()''} metódussal meghívja a web.php-n lévő \emph{/getTag/olvasóID/} útvonalon az \emph{,,EspController''}-ben lévő \emph{,,getTag()''} metódust, ami megkapja az adott olvasó ID-je alapján, hogy mi az IP végződése, ami alapján küld annak az ESP-nek az Acync Webszerverére azt a HTTP GET kérést, hogy \emph{,,/read''}, ami átállítja az ESP állapotát, hogy JSON formátumba küldje vissza a beolvasott UID-t. Erre be lett állítva, hogy 8 másodperc legyen arra, hogy ezt a műveletet elvégezze a felhasználó. Így az ESP-től kapott UID-t a vezérlő továbbítja vissza a \emph{,,getTag()''} metódus \emph{,,\$.getJSON()''}-be ezt. Ez alapján írja be az adott UID szöveges mezőbe az adott címke UID-jét.
+	A másik állapot akkor van, amikor \aref{add-rfid-tag}.~képen vagy \aref{modify-rfid-tag}.~képen látható \emph{,,Read Tag''}-ra kattintunk. Ehhez a gombhoz van egy \emph{,,onClick()''} metódus, ami azt nézi, hogy rá lett-e kattintva. Olyankor meghívja a \emph{,,GetUID()''} metódust, ami az alábbiakat végzi el: először is ellenőrzi, hogy az oldalon melyik olvasó lett kiválasztva, majd egy \emph{,,\$.getJSON()''} metódussal meghívja a web.php-n lévő \emph{/getTag/olvasóID/} útvonalon az \emph{,,EspController''}-ben lévő \emph{,,getTag()''} metódust, ami megkapja az adott olvasó ID-je alapján, hogy mi az IP végződése, ami alapján küld annak az ESP-nek az Acync Webszerverére azt a HTTP GET kérést, hogy \emph{,,/read''}, ami átállítja az ESP állapotát, hogy JSON formátumba küldje vissza a beolvasott UID-t. Erre be lett állítva, hogy 8 másodperc legyen arra, hogy ezt a műveletet elvégezze a felhasználó. Így az ESP-től kapott UID-t a vezérlő továbbítja vissza a \emph{,,getTag()''} metódus \emph{,,\$.getJSON()''}-be ezt. Ez alapján írja be az adott UID szöveges mezőbe az adott címke UID-jét.
 	
 	%----------
 	
@@ -819,7 +842,7 @@
 		\item Eszköz hozzáadása és módosítása elvárt hibajelzésekkel.
 		\item Majd a végén törli a használt szobákat -- ezzel az eszközöket is.
 	\end{itemize}
-	\Aref{cypress-test}.~képen pedig az látható, hogy lefutott az összes alábbi teszt sikeresen.
+	\Aref{cypress-test}.~képen pedig az látható, hogy az összes teszt sikeresen lefutott.
 	
 	\begin{figure}[ht!]
 		\centering
@@ -828,7 +851,7 @@
 		\label{cypress-test}
 	\end{figure}
 	\section{Manuális tesztelések}
-	Olyan tesztelések lettek manuálisan elvégezve, amelyeket nem lehetséges automatizált teszteléssel elvégezni: \Aref{rfid-toggle-test-table}.~táblázatban az RFID olvasó és a kapcsoló eszköz teszteléseit, \aref{camera-test-table}.~táblázatban pedig a kamera teszteléseit jegyeztem fel.
+	Olyan tesztelések végeztem manuálisan, amelyeket nem lehetséges automatizált teszteléssel elvégezni: \Aref{rfid-toggle-test-table}.~táblázatban az RFID olvasó és a kapcsoló eszköz teszteléseit, \aref{camera-test-table}.~táblázatban pedig a kamera teszteléseit jegyeztem fel.
 	\begin{table}
 		\begin{tabular}{|p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
 			\hline
@@ -838,13 +861,13 @@
 			{\color[HTML]{333333} \textbf{Tapasztalatok}}
 			\\
 			\rowcolor[HTML]{EFEFEF} 
-				Az RFID címke hozzás és módosítás oldalon, ha \emph{,,Read Tag''}-re kattintunk és címkét nem érintünk az olvasóhoz, és letelik a 8 másodperc. &
+				Az RFID címke hozzáadás és módosítás oldalon, ha \emph{,,Read Tag''}-re kattintunk és címkét nem érintünk az olvasóhoz, és letelik a 8 másodperc. &
 				 
 				Az oldal jelzi, hogy nem sikerült a beolvasás. &
 			
 				Az oldal egy értesítésben jelezte, hogy a beolvasás nem sikerült, és próbáljuk újra.
 				 \\
-				Az RFID címke hozzás és módosítás oldalon, ha \emph{,,Read Tag''}-re kattintunk és érintünk  címkét az olvasóhoz 8 másodpercen belül. &
+				Az RFID címke hozzáadás és módosítás oldalon, ha \emph{,,Read Tag''}-re kattintunk és érintünk  címkét az olvasóhoz 8 másodpercen belül. &
 				
 				Az oldalon a UID mezőben megjelenik az adott címke UID-ja. &
 			
@@ -938,14 +961,14 @@
 	
 	%----------
 	\chapter{Rendszer telepítése}
-	Ezen a részen azt szeretném megmutatni, hogy egy Raspberry Pi-re hogyan is tudjuk elérni azt, hogy minden megfelelően működjön, és használhatni lehessen. Terminál utasításokon keresztül lesz elmondva, hogy mit is csináljunk.\\
+	Ezen a részen azt szeretném megmutatni, hogy egy Raspberry Pi-re hogyan is tudjuk elérni azt, hogy minden megfelelően működjön, és használni lehessen. Terminál utasításokon keresztül mondjuk el, hogy mit is csináljunk.\\
 	\textbf{Először is győződjünk meg arról, hogy a legfrissebb a rendszerünk.}
 	
 	\begin{verbatim}
 		-> sudo apt update && sudo apt upgrade -y
 	\end{verbatim}
-	\section{Raspberry beállítása mint Wi-Fi}
-	Itt azokat írom le, ahogyan nekem is alkalmazva lett a Raspberry Pi-n, hogy lehessen majd csatlakozni a Raspberry-hez, mint Wi-Fi.
+	\section{Raspberry beállítása mint Wi-Fi hozzáférési pont}
+	Itt azokat írom le, ahogyan nekem is alkalmazva lett a Raspberry Pi-n, hogy lehessen majd csatlakozni a Raspberry-hez, mint Wi-Fi hozzáférési pont.
 	\begin{verbatim}
 		-> sudo apt install hostapd
 		-> sudo systemctl unmask hostapd
@@ -1064,11 +1087,11 @@
 	\chapter*{Összegzés}
 	\addcontentsline{toc}{chapter}{Összegzés}
 	
-	Ahogy befejezem a szakdolgozat projektet, elégedettséget éreztem. Az okos otthon rendszer fejlesztése nehéz volt, de a végtermék figyelemre méltó. A rendszerhez felülethez Laravel, eszköz kezelésre NodeMCU, Wi-Fi routerként és a projekt gerinceként pedig egy Raspberry Pi szolgál.
+	Ahogy befejezem a szakdolgozat projektet, elégedettséget éreztem. Az okos otthon rendszer fejlesztése nehéz volt, de a végtermék figyelemre méltó. A rendszerhez felület létrehozáshoz Laravel, az eszköz kezelésre NodeMCU, Wi-Fi hozzáférési pontként és a projekt gerinceként pedig egy Raspberry Pi szolgál.
 	
-	A NodeMCU-kat sokféle speciális célú eszközként használtam fel. Ilyen például a kamera, az RFID-olvasó használat rögzítéssel, a hőmérséklet és páratartalom szenzor, amely valós idejű adatot jelenít meg, és gráf oldalt tartalmaz a szenzor adatokhoz.  Végül de nem utolsó sorban az eszköz kapcsoló. Ezek az eszközök párhuzamosan működnek a rendszerben, és a felhasználói felületen keresztül használhatóak és érhetők el.
+	A NodeMCU-kat sokféle speciális célú eszközként használtam fel. Ilyen például a kamera, az RFID-olvasó használat rögzítéssel, a hőmérséklet és páratartalom szenzor, amely valós idejű adatot jelenít meg, és grafikon oldalt tartalmaz a szenzor adatokhoz.  Végül de nem utolsó sorban az eszköz kapcsoló. Ezek az eszközök párhuzamosan működnek a rendszerben, és a felhasználói felületen keresztül használhatóak és érhetők el.
 	
-	Az út nehéz volt, de nagyon értékes tanulságokkal gazdagított. A rendszer kialakítása közben megtanultam a felhasználóbarát felület létrehozásának csínját-bínját, valamint a hardver és szoftver zökkenőmentes integrálását. A NodeMCU és a Laravel nagyon szépen működik együtt, mert mindkettő elősegíti a gyors fejlődést és rugalmas keretet kínál a jövőbeli bővítéshez. A rendszer sokoldalúságát a NodeMCU eszközök demonstrálják, rendszerbe integrálása pedig az okos otthon rendszerekben rejlő lehetőségeket mutatja be.
+	Az út nehéz volt, de nagyon értékes tapasztalatokkal gazdagított. A rendszer kialakítása közben megtanultam a felhasználóbarát felület létrehozásának csínját-bínját, valamint a hardver és szoftver zökkenőmentes integrálását. A NodeMCU és a Laravel nagyon szépen működik együtt, mert mindkettő elősegíti a gyors fejlődést és rugalmas keretet kínál a jövőbeli bővítéshez. A rendszer sokoldalúságát a NodeMCU eszközök demonstrálják, rendszerbe integrálásuk pedig az okos otthon rendszerekben rejlő lehetőségeket mutatja be.
 	
 	Az okos otthoni rendszerek iránti igény növekszik, és büszke vagyok arra, hogy hozzájárulhattam ehhez a területhez.
 	
@@ -1261,6 +1284,11 @@
 		\bibitem{tailwind-responsive}
 		\textsc{Core Concepts: Responsive Design}\\
 		\textsc{URL:} \url{https://tailwindcss.com/docs/responsive-design}\\
+		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
+		
+		\bibitem{flowbite-toggle}
+		\textsc{Tailwind CSS Toggle - Flowbite}\\
+		\textsc{URL:} \url{https://flowbite.com/docs/forms/toggle/}\\
 		\textsc{Link utoljára ellenőrizve:} 2023.04.13.
 		
 		\bibitem{RFID-card-reader}
