@@ -33,6 +33,7 @@ Route::post("/modify/device/{room}/{device}",[EspController::class,'update'])->n
 Route::delete('/device/delete/{device}', [EspController::class,'destroy'])->name('Delete Device (esp)');
 
 Route::get('/', [RoomController::class, 'index'])->name('Main Page');
+
 Route::get("/create/room", [RoomController::class,'create'])->name('Create Room Form');
 Route::post("/create/room", [RoomController::class,'store'])->name('Store New Room');
 Route::get("/modify/room/{room}",[RoomController::class,'edit'])->name('Modify Room Form');

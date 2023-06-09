@@ -69,7 +69,7 @@
                                             </button>
                                         </td>
                                         <td class="p-2 m-1/3 text-white">
-                                            <form action="/delete/tag/{{$tag->name}}" method="POST">
+                                            <form action="/delete/tag/{{$tag->id}}" method="POST">
                                                 @csrf
                                                 {{method_field('DELETE')}}
                                                 <button id="delete_tag_{{$tag->name}}" class="shadow-xl w-14 h-14 uppercase text-center rounded-lg bg-red-500 transition hover:bg-red-800" name="id" type="submit" value="{{ $tag -> id }}">
