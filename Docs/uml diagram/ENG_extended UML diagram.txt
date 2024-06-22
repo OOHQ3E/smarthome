@@ -1,0 +1,34 @@
+@startuml
+!theme vibrant
+cloud "{}API" #lightblue
+actor User as Felhasználó
+node nodeMCU
+entity Sensor as Szenzor
+entity Camera
+entity "RFID scanner"
+entity Appliance as Eszköz
+
+frame WebSzerver#lightgrey;line.dashed{
+node RaspberryPi
+node Laravel #red
+database MySQL #lightblue
+}
+WebSzerver -down-> Felhasználó: show data
+Felhasználó -> WebSzerver : request data
+
+WebSzerver -up-> "{}API" : JSON response from Laravel controller
+"{}API" -r-> WebSzerver  : status / data
+
+nodeMCU -up--> "{}API" : HTTP POST request
+"{}API" ---> nodeMCU : response status
+
+Camera -up-> "{}API": video feed
+Szenzor -up-> nodeMCU : sending data
+"RFID scanner" -up-> nodeMCU : sending data
+nodeMCU -down-> Eszköz  : OFF / ON
+
+RaspberryPi -down-> Laravel
+Laravel -up-> RaspberryPi
+Laravel -down-> MySQL
+MySQL -up-> Laravel
+@enduml
